@@ -1,0 +1,73 @@
+version: '3'
+
+services:
+  webapp:
+    build:
+      context: ./webapp
+    container_name: farmcommerce-webapp
+    restart: always
+    ports:
+      - '3000:3000'
+    depends_on:
+      - api
+    volumes:
+      - ./webapp:/var/app/:rw,cached
+    env_file:
+      - 'variables.env'
+    command: >
+      sh -c '
+      yarn install &&
+      yarn dev
+      '
+  api:
+    build:
+      context: ./api
+    container_name: farmcommerce-api
+    ports:
+      - '3003:3003'
+      - '8226:8226'
+    depends_on:
+      - database
+    volumes:
+      - ./api:/var/app/:rw,cached
+    env_file:
+      - 'variables.env'
+    command: >
+      sh -c '
+      yarn install &&
+      yarn build &&
+      yarn db:init &&
+      yarn migrate:latest &&
+      yarn seed:run dev &&
+      yarn dev
+      '
+  database:
+    container_name: farmcommerce-database
+    environment:
+      DEBUG: 'false'
+      POSTGRES_HOST_AUTH_METHOD: 'trust'
+      POSTGRES_PASSWORD: '${PG_PASSWD:-postgres}'
+      POSTGRES_USER: '${PG_USER:-postgres}'
+      POSTGRES_DB: '${PG_DATABASE:-main}'
+    healthcheck:
+      test: [ 'CMD-SHELL', 'pg_isready -U postgres' ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    ports:
+      - '6432:5432'
+    image: postgres:14
+    restart: unless-stopped
+    volumes:
+      - scya_pgdata:/var/lib/postgresql/data
+  caching:
+    image: redis:alpine3.16
+    container_name: farmcommerce-caching
+    ports:
+      - '7379:6379'
+    volumes:
+      - scya_cache:/data
+    user: redis
+volumes:
+  scya_cache:
+  scya_pgdata:

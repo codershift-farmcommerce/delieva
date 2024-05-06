@@ -1,0 +1,5 @@
+.idea/
+api/
+webapp/
+*.log
+.DS_Store
