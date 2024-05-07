@@ -59,15 +59,15 @@ services:
     image: postgres:14
     restart: unless-stopped
     volumes:
-      - scya_pgdata:/var/lib/postgresql/data
+      - farmcommerce_pgdata:/var/lib/postgresql/data
   caching:
     image: redis:alpine3.16
     container_name: farmcommerce-caching
     ports:
       - '7379:6379'
     volumes:
-      - scya_cache:/data
+      - farmcommerce_cache:/data
     user: redis
 volumes:
-  scya_cache:
-  scya_pgdata:
+  farmcommerce_cache:
+  farmcommerce_pgdata:
