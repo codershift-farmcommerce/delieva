@@ -1,9 +1,16 @@
 version: '3'
 
 services:
-  webapp:
+  reverse-proxy:
+    build:
+      context: ./webapp
+      dockerfile: nginx.Dockerfile
+    container_name: farmcommerce-reverse-proxy
     ports:
-      - '80:80'
+      - "443:443"
+      - "80:80"
+    restart: always
+  webapp:
     command: >
       sh -c '
       yarn install &&
