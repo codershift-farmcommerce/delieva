@@ -29,3 +29,15 @@ services:
       yarn seed:run prod &&
       yarn start
       '
+
+  tasks:
+    build:
+      context: ./api
+    container_name: farmcommerce-tasks
+    depends_on: api
+    command: >
+      sh -c '
+      yarn install &&
+      yarn build &&
+      yarn start:tasks
+      '
