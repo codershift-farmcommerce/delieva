@@ -11,6 +11,7 @@ services:
       - "80:80"
     restart: always
   webapp:
+    tmpfs: /tmp
     command: >
       sh -c '
       yarn install &&
@@ -18,6 +19,7 @@ services:
       yarn start
       '
   api:
+    tmpfs: /tmp
     ports:
       - '3003:3003'
     command: >
