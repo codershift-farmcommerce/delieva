@@ -19,7 +19,9 @@ services:
       yarn start
       '
   api:
-    tmpfs: /tmp
+    tmpfs:
+      - /tmp
+      - /usr/local/share/.cache/yarn
     ports:
       - '3003:3003'
     command: >
