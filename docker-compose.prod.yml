@@ -22,6 +22,8 @@ services:
     tmpfs:
       - /tmp
       - /usr/local/share/.cache/yarn
+      - /root/.npm/_logs
+      - /root/.npm/_cacache
     ports:
       - '3003:3003'
     command: >
