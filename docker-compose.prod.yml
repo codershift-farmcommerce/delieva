@@ -1,13 +1,6 @@
 version: '3'
 
 services:
-  reverse-proxy:
-    build:
-      context: ./webapp
-    container_name: farmcommerce-reverse-proxy
-    ports:
-      - "3000:3000"
-    restart: always
   webapp:
     tmpfs: /tmp
     command: >
