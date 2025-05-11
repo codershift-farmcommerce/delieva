@@ -4,7 +4,6 @@ services:
   reverse-proxy:
     build:
       context: ./webapp
-      dockerfile: nginx.Dockerfile
     container_name: farmcommerce-reverse-proxy
     ports:
       - "443:443"
