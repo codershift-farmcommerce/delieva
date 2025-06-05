@@ -1,6 +1,4 @@
 .idea/
-api/
-webapp/
 *.log
 .DS_Store
 docker-compose.override.yml
