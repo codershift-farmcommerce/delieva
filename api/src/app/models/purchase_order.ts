@@ -1,11 +1,11 @@
-import { Ctx } from 'src/app/context'
+import { Ctx } from 'api/src/app/context'
 import {
   PurchaseOrderGetReceiptRQ,
   PurchaseOrderGetReportRQ,
   PurchaseOrderReturnOrderRQ,
   PurchaseOrderProcessRQ,
   PurchaseOrderReturnOrderDetailsRQ,
-} from 'lib/requests/purchase_order'
+} from 'interface/requests/purchase_order'
 import {
   PurchaseOrderGetReceiptRS,
   PurchaseOrderGetReportRS,
@@ -13,8 +13,8 @@ import {
   PurchaseOrderReturnOrderDetailsRS,
   PurchaseOrderProcessFailRS,
   PurchaseOrderProcessSuccessRS,
-} from 'lib/responses/purchase_order'
-import { BarcodeType, generateBarcode } from 'src/util/barcode'
+} from 'interface/responses/purchase_order'
+import { BarcodeType, generateBarcode } from 'api/src/util/barcode'
 import * as customerCreditModel from './customer_credit'
 import * as customerModel from './customer'
 import { getUnitPricesForCart } from './product'
@@ -31,8 +31,8 @@ import {
   PurchaseOrderForBankAccount,
   PurchaseOrderForReconciliationReceipt,
   PurchaseOrderStatus,
-} from 'lib/entities/purchase_order'
-import { FinishedProductUnitType } from 'lib/entities/finished_product'
+} from 'interface/entities/purchase_order'
+import { FinishedProductUnitType } from 'interface/entities/finished_product'
 
 type PurchaseOrderDetailSQLRow = {
   product: {

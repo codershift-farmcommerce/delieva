@@ -1,4 +1,4 @@
-import { AuditEntry, Ctx } from 'src/app/context'
+import { AuditEntry, Ctx } from 'api/src/app/context'
 
 export default async (ctx: Ctx, next: Function) => {
   ctx.audit = async (entry: AuditEntry) => {

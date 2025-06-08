@@ -1,11 +1,11 @@
-import { PurchaseOrderEndpoints } from 'codershift-farmcommerce-api/endpoints/purchase_order'
+import { PurchaseOrderEndpoints } from 'interface/endpoints/purchase_order'
 import {
   PurchaseOrderGetReceiptRQ,
   PurchaseOrderGetReportRQ,
   PurchaseOrderReturnOrderDetailsRQ,
   PurchaseOrderReturnOrderRQ,
   PurchaseOrderProcessRQ,
-} from 'codershift-farmcommerce-api/requests/purchase_order'
+} from 'interface/requests/purchase_order'
 import {
   PurchaseOrderGetReceiptRS,
   PurchaseOrderGetReportRS,
@@ -13,7 +13,7 @@ import {
   PurchaseOrderReturnOrderRS,
   PurchaseOrderProcessFailRS,
   PurchaseOrderProcessSuccessRS,
-} from 'codershift-farmcommerce-api/responses/purchase_order'
+} from 'interface/responses/purchase_order'
 import { sendRequest } from '../request'
 
 export class PurchaseOrderClient implements PurchaseOrderEndpoints {

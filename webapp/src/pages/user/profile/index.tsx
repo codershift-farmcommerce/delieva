@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
-import UserProfile from 'src/views/user/profile/profile'
-import Base from 'src/pages/base'
+import UserProfile from 'webapp/src/views/user/profile/profile'
+import Base from 'webapp/src/pages/base'
 import React from 'react'
 
 const Index: NextPage = () => {

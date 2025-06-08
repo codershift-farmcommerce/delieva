@@ -1,18 +1,18 @@
 import { Ctx } from '../context'
-import { RawMaterialEndpoints } from 'lib/endpoints/raw_material'
+import { RawMaterialEndpoints } from 'interface/endpoints/raw_material'
 import {
   RawMaterialAddRQ,
   RawMaterialListRQ,
   RawMaterialSearchRQ,
-} from 'lib/requests/raw_material'
+} from 'interface/requests/raw_material'
 import {
   RawMaterialListRS,
   RawMaterialSearchRS,
-} from 'lib/responses/raw_material'
-import * as raw_material from 'src/app/models/raw_material'
-import { action } from 'src/app/context/decorators/endpoint_actions'
-import { Application } from 'lib'
-import { AddRS, ModifyRS } from 'lib/responses/common'
+} from 'interface/responses/raw_material'
+import * as raw_material from 'api/src/app/models/raw_material'
+import { action } from 'api/src/app/context/decorators/endpoint_actions'
+import { Application } from 'interface'
+import { AddRS, ModifyRS } from 'interface/responses/common'
 
 export class RawMaterialService implements RawMaterialEndpoints {
   private ctx: Ctx

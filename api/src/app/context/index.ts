@@ -1,8 +1,8 @@
 import { Context as KoaContext } from 'koa'
-import { LogEntry } from 'src/util/logging/logger'
+import { LogEntry } from 'api/src/util/logging/logger'
 import { Knex } from 'knex'
-import { UserRole } from 'lib/entities/user'
-import { DATABASE } from 'setup/db/types'
+import { UserRole } from 'interface/entities/user'
+import { DATABASE } from 'api/setup/db/types'
 
 export type SessionData = {
   user_id: number

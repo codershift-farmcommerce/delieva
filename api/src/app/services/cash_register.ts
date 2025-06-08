@@ -1,5 +1,5 @@
-import { Ctx } from 'src/app/context'
-import { CashRegisterEndpoints } from 'lib/endpoints/cash_register'
+import { Ctx } from 'api/src/app/context'
+import { CashRegisterEndpoints } from 'interface/endpoints/cash_register'
 import {
   CashRegisterAddRQ,
   CashRegisterAssignCashierRQ,
@@ -20,7 +20,7 @@ import {
   CashRegisterReconciliationGetReportRQ,
   CashRegisterUnassignCashierRQ,
   CashRegisterWithdrawRQ,
-} from 'lib/requests/cash_register'
+} from 'interface/requests/cash_register'
 import {
   CashRegisterAddRS,
   CashRegisterAssignCashierRS,
@@ -39,12 +39,12 @@ import {
   CashRegisterReconciliationGetReportRS,
   CashRegisterUnassignCashierRS,
   CashRegisterWithdrawRS,
-} from 'lib/responses/cash_register'
+} from 'interface/responses/cash_register'
 import { action } from '../context/decorators/endpoint_actions'
-import { Application } from 'lib'
-import * as cash_register from 'src/app/models/cash_register'
-import * as userModel from 'src/app/models/user'
-import { ModifyRS } from 'lib/responses/common'
+import { Application } from 'interface'
+import * as cash_register from 'api/src/app/models/cash_register'
+import * as userModel from 'api/src/app/models/user'
+import { ModifyRS } from 'interface/responses/common'
 
 export class CashRegisterService implements CashRegisterEndpoints {
   private ctx: Ctx

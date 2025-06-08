@@ -1,16 +1,16 @@
-import { RawMaterialEndpoints } from 'codershift-farmcommerce-api/endpoints/raw_material'
+import { RawMaterialEndpoints } from 'interface/endpoints/raw_material'
 import {
   RawMaterialAddRQ,
   RawMaterialListRQ,
   RawMaterialModifyRQ,
   RawMaterialSearchRQ,
-} from 'codershift-farmcommerce-api/requests/raw_material'
+} from 'interface/requests/raw_material'
 import {
   RawMaterialListRS,
   RawMaterialSearchRS,
-} from 'codershift-farmcommerce-api/responses/raw_material'
+} from 'interface/responses/raw_material'
 import { sendRequest } from '../request'
-import { AddRS, ModifyRS } from 'codershift-farmcommerce-api/responses/common'
+import { AddRS, ModifyRS } from 'interface/responses/common'
 
 export class RawMaterialClient implements RawMaterialEndpoints {
   path(): 'raw_material' {

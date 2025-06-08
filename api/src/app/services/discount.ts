@@ -1,4 +1,4 @@
-import { DiscountEndpoints } from 'lib/endpoints/discount'
+import { DiscountEndpoints } from 'interface/endpoints/discount'
 import {
   DiscountAddRQ,
   DiscountDeleteRQ,
@@ -6,7 +6,7 @@ import {
   DiscountGetForCustomerAndProductsRQ,
   DiscountListRQ,
   DiscountModifyRQ,
-} from 'lib/requests/discount'
+} from 'interface/requests/discount'
 import {
   DiscountAddFailRS,
   DiscountAddSuccessRS,
@@ -15,12 +15,12 @@ import {
   DiscountGetForCustomerAndProductRS,
   DiscountGetForCustomerAndProductsRS,
   DiscountListRS,
-} from 'lib/responses/discount'
-import { Ctx } from 'src/app/context'
-import * as discount from 'src/app/models/discount'
+} from 'interface/responses/discount'
+import { Ctx } from 'api/src/app/context'
+import * as discount from 'api/src/app/models/discount'
 import { action } from '../context/decorators/endpoint_actions'
-import { Application } from 'lib'
-import { ModifyRS } from '../../../lib/responses/common'
+import { Application } from 'interface'
+import { ModifyRS } from 'interface/responses/common'
 
 export class DiscountServices implements DiscountEndpoints {
   private ctx: Ctx

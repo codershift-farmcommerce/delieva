@@ -1,4 +1,4 @@
-import { ApiErrorCode } from 'lib/entities/api_error_code'
+import { ApiErrorCode } from 'interface/entities/api_error_code'
 import { buildUIMessage, defaultUIMessage, Language } from './message_builder'
 import { AppErrorProperties, CodeType } from './types'
 

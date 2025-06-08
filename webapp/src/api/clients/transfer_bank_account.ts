@@ -1,6 +1,6 @@
-import { TransferBankAccountEndpoints } from 'codershift-farmcommerce-api/endpoints/transfer_bank_account'
-import { TransferBankAccountListRQ } from 'codershift-farmcommerce-api/requests/transfer_bank_account'
-import { TransferBankAccountListRS } from 'codershift-farmcommerce-api/responses/transfer_bank_account'
+import { TransferBankAccountEndpoints } from 'interface/endpoints/transfer_bank_account'
+import { TransferBankAccountListRQ } from 'interface/requests/transfer_bank_account'
+import { TransferBankAccountListRS } from 'interface/responses/transfer_bank_account'
 import { sendRequest } from '../request'
 
 export class TransferBankAccountClient implements TransferBankAccountEndpoints {

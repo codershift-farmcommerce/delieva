@@ -5,14 +5,14 @@ import {
   FinishedProductListRQ,
   FinishedProductModifyRQ,
   FinishedProductSearchRQ,
-} from 'lib/requests/finished_product'
+} from 'interface/requests/finished_product'
 import {
   FinishedProductGetSalesReportRS,
   FinishedProductListRS,
   FinishedProductSearchRS,
-} from 'lib/responses/finished_product'
-import { AddRS, ModifyRS } from 'lib/responses/common'
-import { FinishedProductUnitType } from 'lib/entities/finished_product'
+} from 'interface/responses/finished_product'
+import { AddRS, ModifyRS } from 'interface/responses/common'
+import { FinishedProductUnitType } from 'interface/entities/finished_product'
 
 type FinishedProductSQLRow = {
   code: string

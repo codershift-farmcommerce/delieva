@@ -1,7 +1,7 @@
-import { CashRegisterEndpoints } from 'codershift-farmcommerce-api/endpoints/cash_register'
-import { ClientConfigurationEndpoints } from 'codershift-farmcommerce-api/endpoints/client_configuration'
-import { ClientConfigurationListRQ } from 'codershift-farmcommerce-api/requests/client_configuration'
-import { ClientConfigurationListRS } from 'codershift-farmcommerce-api/responses/client_configuration'
+import { CashRegisterEndpoints } from 'interface/endpoints/cash_register'
+import { ClientConfigurationEndpoints } from 'interface/endpoints/client_configuration'
+import { ClientConfigurationListRQ } from 'interface/requests/client_configuration'
+import { ClientConfigurationListRS } from 'interface/responses/client_configuration'
 import { sendRequest } from '../request'
 
 export class ClientConfigurationClient implements ClientConfigurationEndpoints {

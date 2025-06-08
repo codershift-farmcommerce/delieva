@@ -1,12 +1,12 @@
-import { Ctx } from 'src/app/context'
-import { Application } from 'lib'
-import { redisKeysForSession } from 'src/util/redis'
+import { Ctx } from 'api/src/app/context'
+import { Application } from 'interface'
+import { redisKeysForSession } from 'api/src/util/redis'
 import {
   actionApplications,
   unsecuredActions,
-} from 'src/app/context/decorators/endpoint_actions'
-import { throwApiError } from 'src/app/context/api_error'
-import { ApiErrorCode } from 'lib/entities/api_error_code'
+} from 'api/src/app/context/decorators/endpoint_actions'
+import { throwApiError } from 'api/src/app/context/api_error'
+import { ApiErrorCode } from 'interface/entities/api_error_code'
 
 export default async (ctx: Ctx, next: Function) => {
   const path = ctx.path.slice(1)

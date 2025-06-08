@@ -1,16 +1,16 @@
-import { AuthEndpoints } from 'codershift-farmcommerce-api/endpoints/auth'
+import { AuthEndpoints } from 'interface/endpoints/auth'
 import {
   AuthChangePasswordRQ,
   AuthGenerateAuthorizationCodeRQ,
   AuthLoginRQ,
   AuthLogoutRQ,
-} from 'codershift-farmcommerce-api/requests/auth'
+} from 'interface/requests/auth'
 import {
   AuthChangePasswordRS,
   AuthGenerateAuthorizationCodeRS,
   AuthLoginRS,
   AuthLogoutRS,
-} from 'codershift-farmcommerce-api/responses/auth'
+} from 'interface/responses/auth'
 import { sendRequest } from '../request'
 
 export class AuthClient implements AuthEndpoints {

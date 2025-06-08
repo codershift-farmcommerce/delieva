@@ -1,22 +1,22 @@
-import { UserManagementEndpoints } from 'lib/endpoints/user_management'
+import { UserManagementEndpoints } from 'interface/endpoints/user_management'
 import {
   UserManagementCreateUserRQ,
   UserManagementDisableUserRQ,
   UserManagementEnableUserRQ,
   UserManagementListUsersRQ,
   UserManagementResetUserPasswordRQ,
-} from 'lib/requests/user_management'
+} from 'interface/requests/user_management'
 import {
   UserManagementCreateUserRS,
   UserManagementDisableUserRS,
   UserManagementEnableUserRS,
   UserManagementListUsersRS,
   UserManagementResetUserPasswordRS,
-} from 'lib/responses/user_management'
-import { action } from 'src/app/context/decorators/endpoint_actions'
-import * as user from 'src/app/models/user'
-import { Ctx } from 'src/app/context'
-import { Application } from 'lib'
+} from 'interface/responses/user_management'
+import { action } from 'api/src/app/context/decorators/endpoint_actions'
+import * as user from 'api/src/app/models/user'
+import { Ctx } from 'api/src/app/context'
+import { Application } from 'interface'
 
 export class UserManagementService implements UserManagementEndpoints {
   private ctx: Ctx

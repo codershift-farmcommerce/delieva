@@ -1,4 +1,4 @@
-import { DiscountEndpoints } from 'codershift-farmcommerce-api/endpoints/discount'
+import { DiscountEndpoints } from 'interface/endpoints/discount'
 import {
   DiscountAddRQ,
   DiscountDeleteRQ,
@@ -6,7 +6,7 @@ import {
   DiscountGetForCustomerAndProductsRQ,
   DiscountListRQ,
   DiscountModifyRQ,
-} from 'codershift-farmcommerce-api/requests/discount'
+} from 'interface/requests/discount'
 import {
   DiscountAddSuccessRS,
   DiscountAddFailRS,
@@ -15,9 +15,9 @@ import {
   DiscountDeleteFailRS,
   DiscountGetForCustomerAndProductsRS,
   DiscountGetForCustomerAndProductRS,
-} from 'codershift-farmcommerce-api/responses/discount'
+} from 'interface/responses/discount'
 import { sendRequest } from '../request'
-import { ModifyRS } from 'codershift-farmcommerce-api/responses/common'
+import { ModifyRS } from 'interface/responses/common'
 
 export class DiscountClient implements DiscountEndpoints {
   path(): 'discount' {

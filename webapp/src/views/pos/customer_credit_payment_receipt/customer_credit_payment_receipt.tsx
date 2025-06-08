@@ -1,12 +1,12 @@
-import { CustomerCreditClient } from 'src/api/clients/customer_credit'
+import { CustomerCreditClient } from 'webapp/src/api/clients/customer_credit'
 import React, { useEffect, useState } from 'react'
-import { CustomerCreditPaymentReceipt } from 'codershift-farmcommerce-api/entities/customer_credit'
+import { CustomerCreditPaymentReceipt } from 'interface/entities/customer_credit'
 import { useReactToPrint } from 'react-to-print'
 import styles from './customer_credit_payment_receipt.module.css'
 import moment from 'moment/moment'
-import { formatMonetary } from 'src/components/functions/formatting'
-import { FormOfPaymentTranslation } from 'src/components/functions/translations'
-import { FormOfPayment } from 'codershift-farmcommerce-api/entities/purchase_order'
+import { formatMonetary } from 'webapp/src/components/functions/formatting'
+import { FormOfPaymentTranslation } from 'webapp/src/components/functions/translations'
+import { FormOfPayment } from 'interface/entities/purchase_order'
 
 export type CustomerCreditPaymentReceiptProps = {
   creditPaymentId: number | null

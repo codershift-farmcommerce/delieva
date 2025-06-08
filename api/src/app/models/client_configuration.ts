@@ -1,10 +1,10 @@
-import { ClientConfigurationListRQ } from 'lib/requests/client_configuration'
-import { ClientConfigurationListRS } from 'lib/responses/client_configuration'
+import { ClientConfigurationListRQ } from 'interface/requests/client_configuration'
+import { ClientConfigurationListRS } from 'interface/responses/client_configuration'
 import { Ctx } from '../context'
 import {
   Configuration,
   ConfigurationKey,
-} from 'lib/entities/client_configuration'
+} from 'interface/entities/client_configuration'
 
 type ClientConfigurationSQLRow = {
   key: string

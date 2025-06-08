@@ -1,32 +1,32 @@
 import * as bcrypt from 'bcrypt'
 import * as crypto from 'crypto'
 import * as Bluebird from 'bluebird'
-import { AuthEndpoints } from 'lib/endpoints/auth'
+import { AuthEndpoints } from 'interface/endpoints/auth'
 import {
   AuthChangePasswordRQ,
   AuthGenerateAuthorizationCodeRQ,
   AuthLoginRQ,
   AuthLogoutRQ,
-} from 'lib/requests/auth'
+} from 'interface/requests/auth'
 import {
   AuthChangePasswordRS,
   AuthGenerateAuthorizationCodeRS,
   AuthLoginRS,
   AuthLogoutRS,
-} from 'lib/responses/auth'
-import { Ctx, SessionData } from 'src/app/context'
-import * as userModel from 'src/app/models/user'
-import * as userAuthorizationCodeModel from 'src/app/models/user_authorization_code'
-import { redisKeysForSession } from 'src/util/redis'
+} from 'interface/responses/auth'
+import { Ctx, SessionData } from 'api/src/app/context'
+import * as userModel from 'api/src/app/models/user'
+import * as userAuthorizationCodeModel from 'api/src/app/models/user_authorization_code'
+import { redisKeysForSession } from 'api/src/util/redis'
 import {
   action,
   unsecured_action,
-} from 'src/app/context/decorators/endpoint_actions'
-import { LogType } from 'src/util/logging/logType'
-import { LogLevel } from 'src/util/logging/logger'
-import { UserRole, UserRoleApplications } from 'lib/entities/user'
-import { Application } from 'lib'
-import { DATABASE } from 'setup/db/types'
+} from 'api/src/app/context/decorators/endpoint_actions'
+import { LogType } from 'api/src/util/logging/logType'
+import { LogLevel } from 'api/src/util/logging/logger'
+import { UserRole, UserRoleApplications } from 'interface/entities/user'
+import { Application } from 'interface'
+import { DATABASE } from 'api/setup/db/types'
 
 export const SessionTimeByApplication: Record<Application, number> = {
   [Application.SYSTEM_MANAGEMENT]: hoursToSeconds(18),

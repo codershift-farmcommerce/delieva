@@ -1,7 +1,7 @@
 import * as _ from 'lodash'
 import * as traverse from 'traverse'
-import * as logger from 'src/util/logging/logger'
-import { LogLevel } from 'src/util/logging/logger'
+import * as logger from 'api/src/util/logging/logger'
+import { LogLevel } from 'api/src/util/logging/logger'
 import { LogType } from './logType'
 
 const sensitiveKeys = [

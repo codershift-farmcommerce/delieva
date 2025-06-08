@@ -1,5 +1,5 @@
 import Redis from 'ioredis'
-import { Ctx } from 'src/app/context'
+import { Ctx } from 'api/src/app/context'
 
 const redisUri =
   process.env.NODE_ENV === 'production'

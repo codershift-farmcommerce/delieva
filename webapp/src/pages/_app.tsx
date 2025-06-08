@@ -1,4 +1,4 @@
-import 'src/pages/styles/globals.css'
+import 'webapp/src/pages/styles/globals.css'
 import { ContextProvider } from '../context'
 import type { AppProps } from 'next/app'
 

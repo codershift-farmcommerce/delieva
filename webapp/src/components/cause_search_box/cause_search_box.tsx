@@ -1,8 +1,8 @@
-import { SearchBox } from 'src/components/search_box/search_box'
+import { SearchBox } from 'webapp/src/components/search_box/search_box'
 import React, { ForwardedRef } from 'react'
-import { SearchResultItem } from 'codershift-farmcommerce-api/entities/common'
-import { Cause, CauseAction } from 'codershift-farmcommerce-api/entities/cause'
-import { CauseClient } from 'src/api/clients/cause_client'
+import { SearchResultItem } from 'interface/entities/common'
+import { Cause, CauseAction } from 'interface/entities/cause'
+import { CauseClient } from 'webapp/src/api/clients/cause_client'
 
 const cashRegisterWithdrawalCauseClient = new CauseClient()
 

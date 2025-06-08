@@ -1,6 +1,6 @@
-import { Ctx } from 'src/app/context'
-import { LogLevel } from 'src/util/logging/logger'
-import { LogType } from 'src/util/logging/logType'
+import { Ctx } from 'api/src/app/context'
+import { LogLevel } from 'api/src/util/logging/logger'
+import { LogType } from 'api/src/util/logging/logType'
 
 export default async (ctx: Ctx, next: Function) => {
   ctx.log({

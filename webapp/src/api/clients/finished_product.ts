@@ -1,18 +1,18 @@
-import { FinishedProductEndpoints } from 'codershift-farmcommerce-api/endpoints/finished_product'
+import { FinishedProductEndpoints } from 'interface/endpoints/finished_product'
 import {
   FinishedProductAddRQ,
   FinishedProductGetSalesReportRQ,
   FinishedProductListRQ,
   FinishedProductModifyRQ,
   FinishedProductSearchRQ,
-} from 'codershift-farmcommerce-api/requests/finished_product'
+} from 'interface/requests/finished_product'
 import {
   FinishedProductGetSalesReportRS,
   FinishedProductListRS,
   FinishedProductSearchRS,
-} from 'codershift-farmcommerce-api/responses/finished_product'
+} from 'interface/responses/finished_product'
 import { sendRequest } from '../request'
-import { AddRS, ModifyRS } from 'codershift-farmcommerce-api/responses/common'
+import { AddRS, ModifyRS } from 'interface/responses/common'
 
 export class FinishedProductClient implements FinishedProductEndpoints {
   path(): 'finished_product' {

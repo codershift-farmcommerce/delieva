@@ -1,19 +1,19 @@
-import { UserManagementEndpoints } from 'codershift-farmcommerce-api/endpoints/user_management'
+import { UserManagementEndpoints } from 'interface/endpoints/user_management'
 import {
   UserManagementCreateUserRQ,
   UserManagementListUsersRQ,
   UserManagementResetUserPasswordRQ,
   UserManagementEnableUserRQ,
   UserManagementDisableUserRQ,
-} from 'codershift-farmcommerce-api/requests/user_management'
+} from 'interface/requests/user_management'
 import {
   UserManagementCreateUserRS,
   UserManagementListUsersRS,
   UserManagementResetUserPasswordRS,
   UserManagementEnableUserRS,
   UserManagementDisableUserRS,
-} from 'codershift-farmcommerce-api/responses/user_management'
-import { sendRequest } from 'src/api/request'
+} from 'interface/responses/user_management'
+import { sendRequest } from 'webapp/src/api/request'
 
 export class UserManagementClient implements UserManagementEndpoints {
   path(): 'user_management' {

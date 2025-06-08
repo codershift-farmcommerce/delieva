@@ -4,12 +4,12 @@ import {
   RawMaterialListRQ,
   RawMaterialModifyRQ,
   RawMaterialSearchRQ,
-} from 'lib/requests/raw_material'
+} from 'interface/requests/raw_material'
 import {
   RawMaterialListRS,
   RawMaterialSearchRS,
-} from 'lib/responses/raw_material'
-import { AddRS, ModifyRS } from 'lib/responses/common'
+} from 'interface/responses/raw_material'
+import { AddRS, ModifyRS } from 'interface/responses/common'
 
 type RawMaterialSQLRow = {
   code: string

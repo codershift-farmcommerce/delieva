@@ -1,5 +1,5 @@
-import DropdownSearchBox from 'src/components/dropdown_search_box/dropdown_search_box'
-import { UserRole } from 'codershift-farmcommerce-api/entities/user'
+import DropdownSearchBox from 'webapp/src/components/dropdown_search_box/dropdown_search_box'
+import { UserRole } from 'interface/entities/user'
 
 export type UserRoleDropdownSearchBoxProps = {
   label: string

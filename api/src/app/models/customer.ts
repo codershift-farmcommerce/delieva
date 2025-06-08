@@ -1,4 +1,4 @@
-import { Ctx } from 'src/app/context'
+import { Ctx } from 'api/src/app/context'
 import {
   CustomerAddRQ,
   CustomerDisableRQ,
@@ -7,16 +7,16 @@ import {
   CustomerModifyRQ,
   CustomerSearchRQ,
   CustomerGetMovementsReportRQ,
-} from 'lib/requests/customer'
+} from 'interface/requests/customer'
 import {
   CustomerAddFailRS,
   CustomerAddSuccessRS,
   CustomerListRS,
   CustomerSearchRS,
   CustomerGetMovementsReportRS,
-} from 'lib/responses/customer'
-import { CustomerMovementEntry } from 'lib/entities/customer'
-import { ModifyRS } from 'lib/responses/common'
+} from 'interface/responses/customer'
+import { CustomerMovementEntry } from 'interface/entities/customer'
+import { ModifyRS } from 'interface/responses/common'
 
 type CustomerSQLRow = {
   id: number

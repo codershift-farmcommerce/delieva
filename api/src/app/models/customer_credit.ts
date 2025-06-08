@@ -1,4 +1,4 @@
-import { Ctx } from 'src/app/context'
+import { Ctx } from 'api/src/app/context'
 import {
   CustomerCreditAddPaymentRQ,
   CustomerCreditCancelPaymentRQ,
@@ -9,7 +9,7 @@ import {
   CustomerCreditGetPaymentsOfCurrentOpenReconciliationRQ,
   CustomerCreditGetUnpaidPurchaseOrdersRQ,
   CustomerCreditListRQ,
-} from 'lib/requests/customer_credit'
+} from 'interface/requests/customer_credit'
 import {
   CustomerCreditAddPaymentRS,
   CustomerCreditCancelPaymentRS,
@@ -20,7 +20,7 @@ import {
   CustomerCreditGetPaymentsOfCurrentOpenReconciliationRS,
   CustomerCreditGetUnpaidPurchaseOrdersRS,
   CustomerCreditListRS,
-} from 'lib/responses/customer_credit'
+} from 'interface/responses/customer_credit'
 import { Knex } from 'knex'
 import {
   getAssignedCashRegister,
@@ -30,13 +30,13 @@ import {
 import {
   FormOfPayment,
   FormOfPaymentWithAmount,
-} from 'lib/entities/purchase_order'
+} from 'interface/entities/purchase_order'
 import * as transfer_bank_account_model from './transfer_bank_account'
 import {
   CustomerCreditPaymentForBankAccount,
   CustomerCreditPaymentForReconciliationReceipt,
   CustomerCreditPaymentStatus,
-} from 'lib/entities/customer_credit'
+} from 'interface/entities/customer_credit'
 import Transaction = Knex.Transaction
 
 type CustomerCreditGetPaymentReceiptRawSQL = {

@@ -1,11 +1,11 @@
 import * as fs from 'node:fs'
-import * as excel from 'src/util/excel'
-import { ProductEndpoints } from 'lib/endpoints/product'
-import { Ctx } from 'src/app/context'
+import * as excel from 'api/src/util/excel'
+import { ProductEndpoints } from 'interface/endpoints/product'
+import { Ctx } from 'api/src/app/context'
 import * as moment from 'moment'
-import { action } from 'src/app/context/decorators/endpoint_actions'
-import { Application } from 'lib'
-import * as product from 'src/app/models/product'
+import { action } from 'api/src/app/context/decorators/endpoint_actions'
+import { Application } from 'interface'
+import * as product from 'api/src/app/models/product'
 import {
   ProductListRS,
   ProductGetByCodeRS,
@@ -14,7 +14,7 @@ import {
   ProductDisableRS,
   ProductEnableRS,
   ProductGetSalesReportRS,
-} from 'lib/responses/product'
+} from 'interface/responses/product'
 import {
   ProductListRQ,
   ProductGetByCodeRQ,
@@ -25,10 +25,10 @@ import {
   ProductDisableRQ,
   ProductEnableRQ,
   ProductGetSalesReportRQ,
-} from 'lib/requests/product'
-import { AddRS, ModifyRS } from 'lib/responses/common'
-import { FileType } from 'src/util/excel'
-import { attachFile } from 'src/util/files'
+} from 'interface/requests/product'
+import { AddRS, ModifyRS } from 'interface/responses/common'
+import { FileType } from 'api/src/util/excel'
+import { attachFile } from 'api/src/util/files'
 import { Worksheet } from 'exceljs'
 
 export class ProductService implements ProductEndpoints {

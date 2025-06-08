@@ -1,6 +1,6 @@
 import { Ctx } from '../context'
-import { TransferBankAccountListRQ } from 'lib/requests/transfer_bank_account'
-import { TransferBankAccountListRS } from 'lib/responses/transfer_bank_account'
+import { TransferBankAccountListRQ } from 'interface/requests/transfer_bank_account'
+import { TransferBankAccountListRS } from 'interface/responses/transfer_bank_account'
 
 type TransferBankAccountSQLRow = {
   id: number

@@ -1,13 +1,14 @@
 FROM node:20.11-bookworm
 
-WORKDIR /var/app
+WORKDIR /var/app/api
 
 WORKDIR /tmp
 COPY package.json /tmp/
 RUN yarn install && yarn global add knex -y
-WORKDIR /var/app
-COPY . /var/app/
-RUN cp -a /tmp/node_modules /var/app/
+WORKDIR /var/app/api
+COPY . /var/app/api
+COPY ../interface /var/app/interface
+RUN cp -a /tmp/node_modules /var/app/api
 
 EXPOSE 3003
 EXPOSE 8226

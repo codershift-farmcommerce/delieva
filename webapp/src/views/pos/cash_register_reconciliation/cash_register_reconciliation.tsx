@@ -1,14 +1,14 @@
-import ViewContainer from 'src/components/views/container/container'
+import ViewContainer from 'webapp/src/components/views/container/container'
 import {
   CashRegister,
   OpenedCashRegisterReconciliation,
-} from 'codershift-farmcommerce-api/entities/cash_register'
+} from 'interface/entities/cash_register'
 import React, { useEffect, useRef, useState } from 'react'
-import { CashRegisterClient } from 'src/api/clients/cash_register'
-import Table from 'src/components/table/table'
-import { formatMonetary } from 'src/components/functions/formatting'
-import ViewHeader from 'src/components/views/header/header'
-import viewStyles from 'src/views/views.module.css'
+import { CashRegisterClient } from 'webapp/src/api/clients/cash_register'
+import Table from 'webapp/src/components/table/table'
+import { formatMonetary } from 'webapp/src/components/functions/formatting'
+import ViewHeader from 'webapp/src/components/views/header/header'
+import viewStyles from 'webapp/src/views/views.module.css'
 import styles from './cash_register_reconciliation.module.css'
 import clsx from 'clsx'
 import { toast } from 'react-toastify'

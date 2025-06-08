@@ -1,6 +1,6 @@
 import * as path from 'path'
 import * as knexLib from 'knex'
-import { getKnexConfig } from 'setup/db/knexfile'
+import { getKnexConfig } from 'api/setup/db/knexfile'
 import * as Bluebird from 'bluebird'
 import { DATABASE } from './types'
 

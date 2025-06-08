@@ -1,7 +1,7 @@
-import { Application } from 'lib'
-import * as logger from 'src/util/logging/logger'
-import { LogLevel } from 'src/util/logging/logger'
-import { LogType } from 'src/util/logging/logType'
+import { Application } from 'interface'
+import * as logger from 'api/src/util/logging/logger'
+import { LogLevel } from 'api/src/util/logging/logger'
+import { LogType } from 'api/src/util/logging/logType'
 
 const log = logger.getChildLogger({})
 

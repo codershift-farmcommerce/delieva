@@ -1,27 +1,27 @@
 import * as fs from 'node:fs'
 import * as moment from 'moment/moment'
 import { Ctx } from '../context'
-import { FinishedProductEndpoints } from 'lib/endpoints/finished_product'
+import { FinishedProductEndpoints } from 'interface/endpoints/finished_product'
 import {
   FinishedProductAddRQ,
   FinishedProductGetSalesReportRQ,
   FinishedProductListRQ,
   FinishedProductSearchRQ,
-} from 'lib/requests/finished_product'
+} from 'interface/requests/finished_product'
 import {
   FinishedProductGetSalesReportRS,
   FinishedProductListRS,
   FinishedProductSearchRS,
-} from 'lib/responses/finished_product'
-import * as finished_product from 'src/app/models/finished_product'
-import { action } from 'src/app/context/decorators/endpoint_actions'
-import { Application } from 'lib'
-import { AddRS, ModifyRS } from 'lib/responses/common'
+} from 'interface/responses/finished_product'
+import * as finished_product from 'api/src/app/models/finished_product'
+import { action } from 'api/src/app/context/decorators/endpoint_actions'
+import { Application } from 'interface'
+import { AddRS, ModifyRS } from 'interface/responses/common'
 import { Promise } from 'bluebird'
-import * as excel from 'src/util/excel'
-import { FileType } from 'src/util/excel'
+import * as excel from 'api/src/util/excel'
+import { FileType } from 'api/src/util/excel'
 import { Worksheet } from 'exceljs'
-import { attachFile } from 'src/util/files'
+import { attachFile } from 'api/src/util/files'
 
 export class FinishedProductService implements FinishedProductEndpoints {
   private ctx: Ctx

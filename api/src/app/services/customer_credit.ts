@@ -1,5 +1,5 @@
 import * as fs from 'node:fs'
-import { CustomerCreditEndpoints } from 'lib/endpoints/customer_credit'
+import { CustomerCreditEndpoints } from 'interface/endpoints/customer_credit'
 import { Ctx } from '../context'
 import {
   CustomerCreditAddPaymentRQ,
@@ -11,7 +11,7 @@ import {
   CustomerCreditGetPaymentsOfCurrentOpenReconciliationRQ,
   CustomerCreditGetUnpaidPurchaseOrdersRQ,
   CustomerCreditListRQ,
-} from 'lib/requests/customer_credit'
+} from 'interface/requests/customer_credit'
 import {
   CustomerCreditAddPaymentRS,
   CustomerCreditCancelPaymentRS,
@@ -22,14 +22,14 @@ import {
   CustomerCreditGetPaymentsOfCurrentOpenReconciliationRS,
   CustomerCreditGetUnpaidPurchaseOrdersRS,
   CustomerCreditListRS,
-} from 'lib/responses/customer_credit'
+} from 'interface/responses/customer_credit'
 import { action } from '../context/decorators/endpoint_actions'
-import { Application } from 'lib'
-import * as customer_credit from 'src/app/models/customer_credit'
-import * as customerModel from 'src/app/models/customer'
-import { attachFile } from 'src/util/files'
-import * as excel from 'src/util/excel'
-import { FileType } from 'src/util/excel'
+import { Application } from 'interface'
+import * as customer_credit from 'api/src/app/models/customer_credit'
+import * as customerModel from 'api/src/app/models/customer'
+import { attachFile } from 'api/src/util/files'
+import * as excel from 'api/src/util/excel'
+import { FileType } from 'api/src/util/excel'
 import { Worksheet } from 'exceljs'
 import * as moment from 'moment/moment'
 import * as userModel from '../models/user'

@@ -1,15 +1,15 @@
-import { SearchRQ } from 'lib/entities/common'
+import { SearchRQ } from 'interface/entities/common'
 import {
   CauseAddRQ,
   CauseFilter,
   CauseListRQ,
   CauseSearchRQ,
-} from 'lib/requests/cause'
-import { CauseAddRS, CauseListRS, CauseSearchRS } from 'lib/responses/cause'
-import { CauseEndpoints } from 'lib/endpoints/cause'
-import { Ctx } from 'src/app/context'
-import { action } from 'src/app/context/decorators/endpoint_actions'
-import { Application } from 'lib'
+} from 'interface/requests/cause'
+import { CauseAddRS, CauseListRS, CauseSearchRS } from 'interface/responses/cause'
+import { CauseEndpoints } from 'interface/endpoints/cause'
+import { Ctx } from 'api/src/app/context'
+import { action } from 'api/src/app/context/decorators/endpoint_actions'
+import { Application } from 'interface'
 import * as cause from '../models/cause'
 
 export class Cause implements CauseEndpoints {

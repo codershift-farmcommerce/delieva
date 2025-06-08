@@ -1,5 +1,5 @@
 import {AppErrorProperties, MissingInfoProperties} from './types'
-import { ApiErrorCode } from 'lib/entities/api_error_code'
+import { ApiErrorCode } from 'interface/entities/api_error_code'
 
 export enum Language {
   es = 'es',

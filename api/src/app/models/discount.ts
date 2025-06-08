@@ -6,7 +6,7 @@ import {
   DiscountGetForCustomerAndProductRS,
   DiscountGetForCustomerAndProductsRS,
   DiscountListRS,
-} from 'lib/responses/discount'
+} from 'interface/responses/discount'
 import {
   DiscountAddRQ,
   DiscountDeleteRQ,
@@ -14,10 +14,10 @@ import {
   DiscountGetForCustomerAndProductsRQ,
   DiscountListRQ,
   DiscountModifyRQ,
-} from 'lib/requests/discount'
-import { Ctx } from 'src/app/context'
-import { ModifyRS } from 'lib/responses/common'
-import { Discount, DiscountType } from '../../../lib/entities/discount'
+} from 'interface/requests/discount'
+import { Ctx } from 'api/src/app/context'
+import { ModifyRS } from 'interface/responses/common'
+import { Discount, DiscountType } from 'interface/entities/discount'
 
 export async function add(
   ctx: Ctx,

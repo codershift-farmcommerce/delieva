@@ -1,4 +1,4 @@
-import { CashRegisterEndpoints } from 'codershift-farmcommerce-api/endpoints/cash_register'
+import { CashRegisterEndpoints } from 'interface/endpoints/cash_register'
 import {
   CashRegisterAddRQ,
   CashRegisterAssignCashierRQ,
@@ -19,7 +19,7 @@ import {
   CashRegisterReconciliationGetReportRQ,
   CashRegisterUnassignCashierRQ,
   CashRegisterWithdrawRQ,
-} from 'codershift-farmcommerce-api/requests/cash_register'
+} from 'interface/requests/cash_register'
 import {
   CashRegisterAddRS,
   CashRegisterAssignCashierRS,
@@ -37,10 +37,10 @@ import {
   CashRegisterReconciliationGetReportRS,
   CashRegisterUnassignCashierRS,
   CashRegisterWithdrawRS,
-} from 'codershift-farmcommerce-api/responses/cash_register'
+} from 'interface/responses/cash_register'
 import { sendRequest } from '../request'
-import { ModifyRS } from 'codershift-farmcommerce-api/responses/common'
-import { CashRegisterOtherIncomeReceipt } from 'codershift-farmcommerce-api/entities/cash_register'
+import { ModifyRS } from 'interface/responses/common'
+import { CashRegisterOtherIncomeReceipt } from 'interface/entities/cash_register'
 
 export class CashRegisterClient implements CashRegisterEndpoints {
   path(): 'cash_register' {
