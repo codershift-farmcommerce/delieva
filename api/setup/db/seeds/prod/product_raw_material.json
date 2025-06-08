@@ -1,0 +1,1198 @@
+[
+  {
+    "product_code": "AD200",
+    "raw_material_code": "AD"
+  },
+  {
+    "product_code": "AL",
+    "raw_material_code": "AL"
+  },
+  {
+    "product_code": "AL3",
+    "raw_material_code": "AL"
+  },
+  {
+    "product_code": "AM",
+    "raw_material_code": "AD"
+  },
+  {
+    "product_code": "AN",
+    "raw_material_code": "AN"
+  },
+  {
+    "product_code": "BA",
+    "raw_material_code": "BA"
+  },
+  {
+    "product_code": "C100",
+    "raw_material_code": "COCO"
+  },
+  {
+    "product_code": "CA",
+    "raw_material_code": "CA"
+  },
+  {
+    "product_code": "CA100",
+    "raw_material_code": "CAN"
+  },
+  {
+    "product_code": "CC2",
+    "raw_material_code": "CC"
+  },
+  {
+    "product_code": "CH100",
+    "raw_material_code": "CHC"
+  },
+  {
+    "product_code": "CH2",
+    "raw_material_code": "CHIPO"
+  },
+  {
+    "product_code": "CH200",
+    "raw_material_code": "CHC"
+  },
+  {
+    "product_code": "CH3",
+    "raw_material_code": "CHIPO"
+  },
+  {
+    "product_code": "CHA100",
+    "raw_material_code": "CHA"
+  },
+  {
+    "product_code": "CHA2",
+    "raw_material_code": "CHA"
+  },
+  {
+    "product_code": "CHA200",
+    "raw_material_code": "CHA"
+  },
+  {
+    "product_code": "CHC2",
+    "raw_material_code": "CHC"
+  },
+  {
+    "product_code": "CHQ100",
+    "raw_material_code": "CHQ"
+  },
+  {
+    "product_code": "CHQ2",
+    "raw_material_code": "CHQ"
+  },
+  {
+    "product_code": "CHQ200",
+    "raw_material_code": "CHQ"
+  },
+  {
+    "product_code": "CHSN",
+    "raw_material_code": "CHSN"
+  },
+  {
+    "product_code": "CHSN2",
+    "raw_material_code": "CHSN"
+  },
+  {
+    "product_code": "CO3",
+    "raw_material_code": "COCO"
+  },
+  {
+    "product_code": "COC1",
+    "raw_material_code": "COCO"
+  },
+  {
+    "product_code": "CR",
+    "raw_material_code": "CR"
+  },
+  {
+    "product_code": "CS",
+    "raw_material_code": "CS"
+  },
+  {
+    "product_code": "CS100",
+    "raw_material_code": "CS"
+  },
+  {
+    "product_code": "CS2",
+    "raw_material_code": "CS"
+  },
+  {
+    "product_code": "CS250",
+    "raw_material_code": "CS"
+  },
+  {
+    "product_code": "CS50",
+    "raw_material_code": "CS"
+  },
+  {
+    "product_code": "EA3",
+    "raw_material_code": "EA"
+  },
+  {
+    "product_code": "FM",
+    "raw_material_code": "FM"
+  },
+  {
+    "product_code": "FM3",
+    "raw_material_code": "FM"
+  },
+  {
+    "product_code": "BA1",
+    "raw_material_code": "BA"
+  },
+  {
+    "product_code": "B1",
+    "raw_material_code": "B"
+  },
+  {
+    "product_code": "B",
+    "raw_material_code": "B"
+  },
+  {
+    "product_code": "BA2",
+    "raw_material_code": "BA"
+  },
+  {
+    "product_code": "BA3",
+    "raw_material_code": "BA"
+  },
+  {
+    "product_code": "B2",
+    "raw_material_code": "B"
+  },
+  {
+    "product_code": "C",
+    "raw_material_code": "C"
+  },
+  {
+    "product_code": "B3",
+    "raw_material_code": "B"
+  },
+  {
+    "product_code": "C1",
+    "raw_material_code": "C"
+  },
+  {
+    "product_code": "C2",
+    "raw_material_code": "C"
+  },
+  {
+    "product_code": "C3",
+    "raw_material_code": "C"
+  },
+  {
+    "product_code": "CH",
+    "raw_material_code": "CHIPO"
+  },
+  {
+    "product_code": "CH1",
+    "raw_material_code": "CHIPO"
+  },
+  {
+    "product_code": "CA1",
+    "raw_material_code": "CA"
+  },
+  {
+    "product_code": "CA2",
+    "raw_material_code": "CA"
+  },
+  {
+    "product_code": "E",
+    "raw_material_code": "E"
+  },
+  {
+    "product_code": "E1",
+    "raw_material_code": "E"
+  },
+  {
+    "product_code": "E2",
+    "raw_material_code": "E"
+  },
+  {
+    "product_code": "E3",
+    "raw_material_code": "E"
+  },
+  {
+    "product_code": "ES",
+    "raw_material_code": "ES"
+  },
+  {
+    "product_code": "ES1",
+    "raw_material_code": "ES"
+  },
+  {
+    "product_code": "ES3",
+    "raw_material_code": "ES"
+  },
+  {
+    "product_code": "ES2",
+    "raw_material_code": "ES"
+  },
+  {
+    "product_code": "EA1",
+    "raw_material_code": "EA"
+  },
+  {
+    "product_code": "EA",
+    "raw_material_code": "EA"
+  },
+  {
+    "product_code": "EA2",
+    "raw_material_code": "EA"
+  },
+  {
+    "product_code": "AJ3",
+    "raw_material_code": "AJ"
+  },
+  {
+    "product_code": "AE",
+    "raw_material_code": "AE"
+  },
+  {
+    "product_code": "FR",
+    "raw_material_code": "FR"
+  },
+  {
+    "product_code": "AE3",
+    "raw_material_code": "AE"
+  },
+  {
+    "product_code": "AN3",
+    "raw_material_code": "AN"
+  },
+  {
+    "product_code": "FR2",
+    "raw_material_code": "FR"
+  },
+  {
+    "product_code": "GA3",
+    "raw_material_code": "GA"
+  },
+  {
+    "product_code": "GAN",
+    "raw_material_code": "GAR"
+  },
+  {
+    "product_code": "GAR",
+    "raw_material_code": "GAR"
+  },
+  {
+    "product_code": "GAR2",
+    "raw_material_code": "GAR"
+  },
+  {
+    "product_code": "GAR3",
+    "raw_material_code": "GAR"
+  },
+  {
+    "product_code": "GC",
+    "raw_material_code": "GC"
+  },
+  {
+    "product_code": "GC1",
+    "raw_material_code": "GC"
+  },
+  {
+    "product_code": "GC3",
+    "raw_material_code": "GC"
+  },
+  {
+    "product_code": "GD",
+    "raw_material_code": "GD"
+  },
+  {
+    "product_code": "GRA",
+    "raw_material_code": "GRA"
+  },
+  {
+    "product_code": "HABA",
+    "raw_material_code": "HABA"
+  },
+  {
+    "product_code": "HABA2",
+    "raw_material_code": "HABA"
+  },
+  {
+    "product_code": "HABA3",
+    "raw_material_code": "HABA"
+  },
+  {
+    "product_code": "HB",
+    "raw_material_code": "HB"
+  },
+  {
+    "product_code": "HB1",
+    "raw_material_code": "HB"
+  },
+  {
+    "product_code": "HB2",
+    "raw_material_code": "HB"
+  },
+  {
+    "product_code": "HB3",
+    "raw_material_code": "HB"
+  },
+  {
+    "product_code": "HBB",
+    "raw_material_code": "HBB"
+  },
+  {
+    "product_code": "HBB1",
+    "raw_material_code": "HBB"
+  },
+  {
+    "product_code": "HBB2",
+    "raw_material_code": "HBB"
+  },
+  {
+    "product_code": "HBB3",
+    "raw_material_code": "HBB"
+  },
+  {
+    "product_code": "HC",
+    "raw_material_code": "HC"
+  },
+  {
+    "product_code": "HC1",
+    "raw_material_code": "HC"
+  },
+  {
+    "product_code": "HC2",
+    "raw_material_code": "HC"
+  },
+  {
+    "product_code": "HC3",
+    "raw_material_code": "HC"
+  },
+  {
+    "product_code": "HCH",
+    "raw_material_code": "HCH"
+  },
+  {
+    "product_code": "HCH1",
+    "raw_material_code": "HCH"
+  },
+  {
+    "product_code": "HCH2",
+    "raw_material_code": "HCH"
+  },
+  {
+    "product_code": "HCH3",
+    "raw_material_code": "HCH"
+  },
+  {
+    "product_code": "HE",
+    "raw_material_code": "HE"
+  },
+  {
+    "product_code": "HE1",
+    "raw_material_code": "HE"
+  },
+  {
+    "product_code": "HE2",
+    "raw_material_code": "HE"
+  },
+  {
+    "product_code": "HE3",
+    "raw_material_code": "HE"
+  },
+  {
+    "product_code": "HH",
+    "raw_material_code": "HH"
+  },
+  {
+    "product_code": "HH1",
+    "raw_material_code": "HH"
+  },
+  {
+    "product_code": "HH2",
+    "raw_material_code": "HH"
+  },
+  {
+    "product_code": "HH3",
+    "raw_material_code": "HH"
+  },
+  {
+    "product_code": "HJ",
+    "raw_material_code": "HJ"
+  },
+  {
+    "product_code": "HJ1",
+    "raw_material_code": "HJ"
+  },
+  {
+    "product_code": "HJ2",
+    "raw_material_code": "HJ"
+  },
+  {
+    "product_code": "HJ3",
+    "raw_material_code": "HJ"
+  },
+  {
+    "product_code": "HM",
+    "raw_material_code": "HM"
+  },
+  {
+    "product_code": "HM1",
+    "raw_material_code": "HM"
+  },
+  {
+    "product_code": "HM2",
+    "raw_material_code": "HM"
+  },
+  {
+    "product_code": "HM3",
+    "raw_material_code": "HM"
+  },
+  {
+    "product_code": "HMI",
+    "raw_material_code": "HMI"
+  },
+  {
+    "product_code": "HMI1",
+    "raw_material_code": "HMI"
+  },
+  {
+    "product_code": "HMI2",
+    "raw_material_code": "HMI"
+  },
+  {
+    "product_code": "HMI3",
+    "raw_material_code": "HMI"
+  },
+  {
+    "product_code": "HN",
+    "raw_material_code": "HN"
+  },
+  {
+    "product_code": "HN1",
+    "raw_material_code": "HN"
+  },
+  {
+    "product_code": "HN2",
+    "raw_material_code": "HN"
+  },
+  {
+    "product_code": "HN3",
+    "raw_material_code": "HN"
+  },
+  {
+    "product_code": "HQ",
+    "raw_material_code": "HQ"
+  },
+  {
+    "product_code": "HQ1",
+    "raw_material_code": "HQ"
+  },
+  {
+    "product_code": "HQ2",
+    "raw_material_code": "HQ"
+  },
+  {
+    "product_code": "G",
+    "raw_material_code": "G"
+  },
+  {
+    "product_code": "G2",
+    "raw_material_code": "G"
+  },
+  {
+    "product_code": "G3",
+    "raw_material_code": "G"
+  },
+  {
+    "product_code": "GS",
+    "raw_material_code": "GS"
+  },
+  {
+    "product_code": "GS1",
+    "raw_material_code": "GS"
+  },
+  {
+    "product_code": "GS2",
+    "raw_material_code": "GS"
+  },
+  {
+    "product_code": "GS3",
+    "raw_material_code": "GS"
+  },
+  {
+    "product_code": "GD1",
+    "raw_material_code": "GD"
+  },
+  {
+    "product_code": "GD2",
+    "raw_material_code": "GD"
+  },
+  {
+    "product_code": "GD3",
+    "raw_material_code": "GD"
+  },
+  {
+    "product_code": "GN",
+    "raw_material_code": "GN"
+  },
+  {
+    "product_code": "FR3",
+    "raw_material_code": "FR"
+  },
+  {
+    "product_code": "GA2",
+    "raw_material_code": "GA"
+  },
+  {
+    "product_code": "GA1",
+    "raw_material_code": "GA"
+  },
+  {
+    "product_code": "GC2",
+    "raw_material_code": "GC"
+  },
+  {
+    "product_code": "HQ3",
+    "raw_material_code": "HQ"
+  },
+  {
+    "product_code": "HQJ",
+    "raw_material_code": "HQJ"
+  },
+  {
+    "product_code": "HQJ1",
+    "raw_material_code": "HQJ"
+  },
+  {
+    "product_code": "HQJ2",
+    "raw_material_code": "HQJ"
+  },
+  {
+    "product_code": "HQJ3",
+    "raw_material_code": "HQJ"
+  },
+  {
+    "product_code": "HSN",
+    "raw_material_code": "HSN"
+  },
+  {
+    "product_code": "HSN1",
+    "raw_material_code": "HSN"
+  },
+  {
+    "product_code": "HSN2",
+    "raw_material_code": "HSN"
+  },
+  {
+    "product_code": "HSN3",
+    "raw_material_code": "HSN"
+  },
+  {
+    "product_code": "J1",
+    "raw_material_code": "J"
+  },
+  {
+    "product_code": "JAM",
+    "raw_material_code": "JAM"
+  },
+  {
+    "product_code": "KIWI3",
+    "raw_material_code": "KIWI"
+  },
+  {
+    "product_code": "LENTEJA",
+    "raw_material_code": "LENTEJA"
+  },
+  {
+    "product_code": "M",
+    "raw_material_code": "M"
+  },
+  {
+    "product_code": "M2",
+    "raw_material_code": "M"
+  },
+  {
+    "product_code": "M3",
+    "raw_material_code": "M"
+  },
+  {
+    "product_code": "MANGO3",
+    "raw_material_code": "MANGO"
+  },
+  {
+    "product_code": "MF3",
+    "raw_material_code": "MF"
+  },
+  {
+    "product_code": "MH",
+    "raw_material_code": "MH"
+  },
+  {
+    "product_code": "MH1",
+    "raw_material_code": "MH"
+  },
+  {
+    "product_code": "MH2",
+    "raw_material_code": "MH"
+  },
+  {
+    "product_code": "MN3",
+    "raw_material_code": "MN"
+  },
+  {
+    "product_code": "MT3",
+    "raw_material_code": "MT"
+  },
+  {
+    "product_code": "NCH",
+    "raw_material_code": "NCH"
+  },
+  {
+    "product_code": "NG",
+    "raw_material_code": "NG"
+  },
+  {
+    "product_code": "NG2",
+    "raw_material_code": "NG"
+  },
+  {
+    "product_code": "NG3",
+    "raw_material_code": "NG"
+  },
+  {
+    "product_code": "NGP",
+    "raw_material_code": "NGP"
+  },
+  {
+    "product_code": "NGP2",
+    "raw_material_code": "NGP"
+  },
+  {
+    "product_code": "NGP3",
+    "raw_material_code": "NGP"
+  },
+  {
+    "product_code": "NI",
+    "raw_material_code": "NI"
+  },
+  {
+    "product_code": "NI3",
+    "raw_material_code": "NI"
+  },
+  {
+    "product_code": "NPN3",
+    "raw_material_code": "NPN"
+  },
+  {
+    "product_code": "NU2",
+    "raw_material_code": "NU"
+  },
+  {
+    "product_code": "NU3",
+    "raw_material_code": "NU"
+  },
+  {
+    "product_code": "NUC2",
+    "raw_material_code": "NUC"
+  },
+  {
+    "product_code": "PC",
+    "raw_material_code": "PC"
+  },
+  {
+    "product_code": "PCG3",
+    "raw_material_code": "PEG"
+  },
+  {
+    "product_code": "PEG2",
+    "raw_material_code": "PEG"
+  },
+  {
+    "product_code": "PEG3",
+    "raw_material_code": "PEG"
+  },
+  {
+    "product_code": "MT1",
+    "raw_material_code": "MT"
+  },
+  {
+    "product_code": "MT2",
+    "raw_material_code": "MT"
+  },
+  {
+    "product_code": "MX",
+    "raw_material_code": "MX"
+  },
+  {
+    "product_code": "MX3",
+    "raw_material_code": "MX"
+  },
+  {
+    "product_code": "MX1",
+    "raw_material_code": "MX"
+  },
+  {
+    "product_code": "MX2",
+    "raw_material_code": "MX"
+  },
+  {
+    "product_code": "J",
+    "raw_material_code": "J"
+  },
+  {
+    "product_code": "J2",
+    "raw_material_code": "J"
+  },
+  {
+    "product_code": "J3",
+    "raw_material_code": "J"
+  },
+  {
+    "product_code": "PAS1",
+    "raw_material_code": "PAS"
+  },
+  {
+    "product_code": "PIÑA",
+    "raw_material_code": "PIÑA"
+  },
+  {
+    "product_code": "KIWI",
+    "raw_material_code": "KIWI"
+  },
+  {
+    "product_code": "MANGO",
+    "raw_material_code": "MANGO"
+  },
+  {
+    "product_code": "MN",
+    "raw_material_code": "MN"
+  },
+  {
+    "product_code": "MF2",
+    "raw_material_code": "MF"
+  },
+  {
+    "product_code": "MH3",
+    "raw_material_code": "MH"
+  },
+  {
+    "product_code": "NU",
+    "raw_material_code": "NU"
+  },
+  {
+    "product_code": "NPN",
+    "raw_material_code": "NPN"
+  },
+  {
+    "product_code": "PGN",
+    "raw_material_code": "PGN"
+  },
+  {
+    "product_code": "PEG",
+    "raw_material_code": "PEG"
+  },
+  {
+    "product_code": "PIÑA3",
+    "raw_material_code": "PIÑA"
+  },
+  {
+    "product_code": "PIS2",
+    "raw_material_code": "PIS"
+  },
+  {
+    "product_code": "PIS3",
+    "raw_material_code": "PIS"
+  },
+  {
+    "product_code": "PM",
+    "raw_material_code": "PM"
+  },
+  {
+    "product_code": "PN",
+    "raw_material_code": "PN"
+  },
+  {
+    "product_code": "PN3",
+    "raw_material_code": "PN"
+  },
+  {
+    "product_code": "PNA3",
+    "raw_material_code": "PNA"
+  },
+  {
+    "product_code": "PP",
+    "raw_material_code": "PP"
+  },
+  {
+    "product_code": "PS",
+    "raw_material_code": "PS"
+  },
+  {
+    "product_code": "PS3",
+    "raw_material_code": "PS"
+  },
+  {
+    "product_code": "PSG",
+    "raw_material_code": "PSG"
+  },
+  {
+    "product_code": "PSG3",
+    "raw_material_code": "PSG"
+  },
+  {
+    "product_code": "PT",
+    "raw_material_code": "PT"
+  },
+  {
+    "product_code": "SGN",
+    "raw_material_code": "SG"
+  },
+  {
+    "product_code": "SN",
+    "raw_material_code": "SN"
+  },
+  {
+    "product_code": "SS",
+    "raw_material_code": "SS"
+  },
+  {
+    "product_code": "SS1",
+    "raw_material_code": "SS"
+  },
+  {
+    "product_code": "SS2",
+    "raw_material_code": "SS"
+  },
+  {
+    "product_code": "SS3",
+    "raw_material_code": "SS"
+  },
+  {
+    "product_code": "TC",
+    "raw_material_code": "TC"
+  },
+  {
+    "product_code": "TC2",
+    "raw_material_code": "TC"
+  },
+  {
+    "product_code": "TCA",
+    "raw_material_code": "TCA"
+  },
+  {
+    "product_code": "TE",
+    "raw_material_code": "TE"
+  },
+  {
+    "product_code": "TES",
+    "raw_material_code": "TES"
+  },
+  {
+    "product_code": "TGA",
+    "raw_material_code": "TGA"
+  },
+  {
+    "product_code": "TMX",
+    "raw_material_code": "TMX"
+  },
+  {
+    "product_code": "AD100",
+    "raw_material_code": "AD"
+  },
+  {
+    "product_code": "S",
+    "raw_material_code": "S"
+  },
+  {
+    "product_code": "S1",
+    "raw_material_code": "S"
+  },
+  {
+    "product_code": "S2",
+    "raw_material_code": "S"
+  },
+  {
+    "product_code": "S3",
+    "raw_material_code": "S"
+  },
+  {
+    "product_code": "PIS",
+    "raw_material_code": "PIS"
+  },
+  {
+    "product_code": "SG",
+    "raw_material_code": "SG"
+  },
+  {
+    "product_code": "SG2",
+    "raw_material_code": "SG"
+  },
+  {
+    "product_code": "SG3",
+    "raw_material_code": "SG"
+  },
+  {
+    "product_code": "PPN",
+    "raw_material_code": "PPN"
+  },
+  {
+    "product_code": "PP10",
+    "raw_material_code": "PPN"
+  },
+  {
+    "product_code": "GA",
+    "raw_material_code": "GA"
+  },
+  {
+    "product_code": "G1",
+    "raw_material_code": "G"
+  },
+  {
+    "product_code": "B20",
+    "raw_material_code": "B"
+  },
+  {
+    "product_code": "C20",
+    "raw_material_code": "C"
+  },
+  {
+    "product_code": "CH20",
+    "raw_material_code": "CHIPO"
+  },
+  {
+    "product_code": "CA20",
+    "raw_material_code": "C"
+  },
+  {
+    "product_code": "MH20",
+    "raw_material_code": "MH"
+  },
+  {
+    "product_code": "E20",
+    "raw_material_code": "E"
+  },
+  {
+    "product_code": "S20",
+    "raw_material_code": "S"
+  },
+  {
+    "product_code": "MT20",
+    "raw_material_code": "MT"
+  },
+  {
+    "product_code": "ES20",
+    "raw_material_code": "ES"
+  },
+  {
+    "product_code": "ESA20",
+    "raw_material_code": "EA"
+  },
+  {
+    "product_code": "MX20",
+    "raw_material_code": "MX"
+  },
+  {
+    "product_code": "G20",
+    "raw_material_code": "G"
+  },
+  {
+    "product_code": "GA20",
+    "raw_material_code": "GA"
+  },
+  {
+    "product_code": "GC20",
+    "raw_material_code": "GC"
+  },
+  {
+    "product_code": "GS20",
+    "raw_material_code": "GS"
+  },
+  {
+    "product_code": "J20",
+    "raw_material_code": "J"
+  },
+  {
+    "product_code": "GD20",
+    "raw_material_code": "GD"
+  },
+  {
+    "product_code": "GN20",
+    "raw_material_code": "GN"
+  },
+  {
+    "product_code": "HN20",
+    "raw_material_code": "HN"
+  },
+  {
+    "product_code": "HH20",
+    "raw_material_code": "HH"
+  },
+  {
+    "product_code": "HM20",
+    "raw_material_code": "HM"
+  },
+  {
+    "product_code": "HQ20",
+    "raw_material_code": "HQ"
+  },
+  {
+    "product_code": "HCH20",
+    "raw_material_code": "HCH"
+  },
+  {
+    "product_code": "HE20",
+    "raw_material_code": "HE"
+  },
+  {
+    "product_code": "HJ20",
+    "raw_material_code": "HJ"
+  },
+  {
+    "product_code": "HBBQ20",
+    "raw_material_code": "HBB"
+  },
+  {
+    "product_code": "HQJ20",
+    "raw_material_code": "HQJ"
+  },
+  {
+    "product_code": "HMI20",
+    "raw_material_code": "HMI"
+  },
+  {
+    "product_code": "B5",
+    "raw_material_code": "B"
+  },
+  {
+    "product_code": "C5",
+    "raw_material_code": "C"
+  },
+  {
+    "product_code": "CH5",
+    "raw_material_code": "CHIPO"
+  },
+  {
+    "product_code": "CA5",
+    "raw_material_code": "C"
+  },
+  {
+    "product_code": "MH5",
+    "raw_material_code": "MH"
+  },
+  {
+    "product_code": "E5",
+    "raw_material_code": "E"
+  },
+  {
+    "product_code": "S5",
+    "raw_material_code": "S"
+  },
+  {
+    "product_code": "MT5",
+    "raw_material_code": "MT"
+  },
+  {
+    "product_code": "ES5",
+    "raw_material_code": "ES"
+  },
+  {
+    "product_code": "ESA5",
+    "raw_material_code": "EA"
+  },
+  {
+    "product_code": "MX5",
+    "raw_material_code": "MX"
+  },
+  {
+    "product_code": "G5",
+    "raw_material_code": "G"
+  },
+  {
+    "product_code": "GA5",
+    "raw_material_code": "GA"
+  },
+  {
+    "product_code": "GC5",
+    "raw_material_code": "GC"
+  },
+  {
+    "product_code": "GS5",
+    "raw_material_code": "GS"
+  },
+  {
+    "product_code": "J5",
+    "raw_material_code": "J"
+  },
+  {
+    "product_code": "GD5",
+    "raw_material_code": "GD"
+  },
+  {
+    "product_code": "GN5",
+    "raw_material_code": "GN"
+  },
+  {
+    "product_code": "HN5",
+    "raw_material_code": "HN"
+  },
+  {
+    "product_code": "HH5",
+    "raw_material_code": "HH"
+  },
+  {
+    "product_code": "HM5",
+    "raw_material_code": "HM"
+  },
+  {
+    "product_code": "HQ5",
+    "raw_material_code": "HQ"
+  },
+  {
+    "product_code": "HCH5",
+    "raw_material_code": "HCH"
+  },
+  {
+    "product_code": "HE5",
+    "raw_material_code": "HE"
+  },
+  {
+    "product_code": "HJ5",
+    "raw_material_code": "HJ"
+  },
+  {
+    "product_code": "HBBQ5",
+    "raw_material_code": "HBB"
+  },
+  {
+    "product_code": "HQJ5",
+    "raw_material_code": "HQJ"
+  },
+  {
+    "product_code": "HMI5",
+    "raw_material_code": "HMI"
+  },
+  {
+    "product_code": "NG5",
+    "raw_material_code": "NG"
+  },
+  {
+    "product_code": "NPG5",
+    "raw_material_code": "NPG"
+  },
+  {
+    "product_code": "CA3",
+    "raw_material_code": "CA"
+  },
+  {
+    "product_code": "MT",
+    "raw_material_code": "MT"
+  },
+  {
+    "product_code": "TS",
+    "raw_material_code": "TS"
+  },
+  {
+    "product_code": "TS2",
+    "raw_material_code": "TOS"
+  },
+  {
+    "product_code": "TS3",
+    "raw_material_code": "TOS"
+  }
+]

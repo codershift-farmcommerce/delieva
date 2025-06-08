@@ -1,0 +1,66 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid black;
+  padding-top: 1em;
+}
+
+.body_container {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.balance_container {
+  margin-bottom: 1em;
+}
+
+.credit_payment_container {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.field_label {
+  margin-left: 1em;
+  margin-right: 0.5em;
+  font-size: 16px;
+}
+
+.balance_label {
+  font-size: 18px;
+  padding: 0.2em 0.5em;
+  width: 18em;
+}
+
+.form_of_payment_item {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: 1em;
+}
+
+.amount_label {
+  margin-left: 1em;
+  margin-right: 0.5em;
+}
+
+.form_of_payment_container {
+  display: flex;
+  align-items: center;
+  margin-top: 1em;
+  margin-left: 1em;
+}
+
+.form_of_payment_item {
+  margin-bottom: 0.5em;
+  margin-right: 1em;
+}
+
+.payment_amount_input {
+  padding: 0.5em;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.buttons_container {
+  margin-top: 1em;
+  margin-left: 1em;
+}

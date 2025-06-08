@@ -1,0 +1,547 @@
+[
+  {
+    "code": "AD",
+    "name": "AMARANTO DULCE",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "AE",
+    "name": "ARANDANO ENCHILADO",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "AJ",
+    "name": "AJONJOLI GARAPIÑADO",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "AL",
+    "name": "ALMENDRA",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "AN",
+    "name": "ARANDANO NATURAL",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "B",
+    "name": "BOTANERO",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "BA",
+    "name": "BOTANERO AJO",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "C",
+    "name": "CANTINERO",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "COCO",
+    "name": "COCO",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "CA",
+    "name": "CANTINERO AJO",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "CAN",
+    "name": "CANELA",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "CC",
+    "name": "CREMA DE CACAHUATE",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "CHIPO",
+    "name": "CHIPOTLE M",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "CHC",
+    "name": "CHIPS CAMOTE",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "CHA",
+    "name": "CHIPS ADOBADA",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "CHQ",
+    "name": "CHIPS QUESO JALAPEÑO",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "CHSN",
+    "name": "CHIPS SALSA NEGRA",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "CR",
+    "name": "CACAHUATE RUNER",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "CS",
+    "name": "CARNE SECA",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "E",
+    "name": "ENCHILADO",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "ES",
+    "name": "ESPAÑOL",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "EA",
+    "name": "ESPAÑOL AJO",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "FM",
+    "name": "FRUTOS MIXTOS",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "FR",
+    "name": "FRITURA",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "G",
+    "name": "GARAPIÑADO",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "GA",
+    "name": "GARAPIÑADO AJONJOLI",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "GAR",
+    "name": "GARBANZO",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "GC",
+    "name": "GARAPIÑADO COCO",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "GD",
+    "name": "GRANILLO DULCE",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "GN",
+    "name": "GRANILLO NATURAL",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "GRA",
+    "name": "GRANZON",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "GS",
+    "name": "GARAPIÑADO SABORES",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "HABA",
+    "name": "HABA ENCHILADA",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "HB",
+    "name": "HOT BLUE",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "HBB",
+    "name": "HOT BBQ",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "HC",
+    "name": "HOT CANELA",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "HCH",
+    "name": "HOT CHIPOTLE",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "HE",
+    "name": "HOT ELOTE",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "HH",
+    "name": "HOT HABANERO",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "HJ",
+    "name": "HOT JALAPEÑO",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "HQJ",
+    "name": "HOT QUESO JALAPEÑO",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "HM",
+    "name": "HOT MANGO",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "HMI",
+    "name": "HOT MICHELADO",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "HN",
+    "name": "HOT NUTS",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "HQ",
+    "name": "HOT QUESO",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "HSN",
+    "name": "HOT SALSA NEGRA",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "J",
+    "name": "JAPONES",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "JAM",
+    "name": "JAMONCILLO DE LECHE",
+    "unit_type": "PIECE"
+  },
+  {
+    "code": "KIWI",
+    "name": "KIWI",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "LENTEJA",
+    "name": "LENTEJA",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "M",
+    "name": "MIXTURA",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "MANGO",
+    "name": "MANGO ENCHILADO",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "MF",
+    "name": "MIXTURA FRUTOS SECOS",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "MH",
+    "name": "MITADES HABANERAS",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "MN",
+    "name": "MANGO NATURAL",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "MT",
+    "name": "MITADES TOSTADAS",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "MX",
+    "name": "MIXTO",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "NCH",
+    "name": "NUEZ CON CHOCOLATE",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "NG",
+    "name": "NUEZ GARAPIÑADA",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "NGP",
+    "name": "NUEZ GARAPIÑADA PEDACERIA",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "NI",
+    "name": "NUEZ DE LA INDIA",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "NPN",
+    "name": "NUEZ PEDACERIA NATURAL",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "NPG",
+    "name": "NUEZ PEDACERIA GARAPIÑADA",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "NU",
+    "name": "NUEZ NATURAL MITAD",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "NUC",
+    "name": "NUEZ CON CASCARA",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "PAS",
+    "name": "PASAS",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "PC",
+    "name": "PEPITA GARAPIÑADA CALABAZA",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "PEG",
+    "name": "PEPITA GIRASOL GARAPIÑADA",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "PIÑA",
+    "name": "PIÑA ENCHILADA",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "PIS",
+    "name": "PISTACHE",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "PN",
+    "name": "PEPITA NATURAL",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "PM",
+    "name": "PIPITORIA MIXTURA",
+    "unit_type": "PIECE"
+  },
+  {
+    "code": "PNA",
+    "name": "PIÑA NATURAL",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "PP",
+    "name": "PIPITORIA",
+    "unit_type": "PIECE"
+  },
+  {
+    "code": "PPN",
+    "name": "PIPITORIA NUEZ",
+    "unit_type": "PIECE"
+  },
+  {
+    "code": "PS",
+    "name": "PEPITA SALADA",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "PSG",
+    "name": "PEPITA SALADA GIRASOL",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "PT",
+    "name": "PEDACERIA TOSTADA",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "S",
+    "name": "SALADO",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "SG",
+    "name": "SEMILLA GIRASOL",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "SN",
+    "name": "SEMILLA NATURAL",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "SS",
+    "name": "SEMILLA SALADA",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "TC",
+    "name": "TOSTADO CON CASCARA",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "TCA",
+    "name": "CANTINERO EN TUBITOS",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "TE",
+    "name": "ENCHILADO EN TUBITOS",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "TES",
+    "name": "ESPAÑOL EN TUBITOS",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "TGA",
+    "name": "GARAPIÑADO AJONJOLI EN TUBITOS",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "TMX",
+    "name": "MIXTO EN TUBITOS",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "TS",
+    "name": "SALADO EN TUBITOS",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "TOS",
+    "name": "TOSTADAS",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "PGN",
+    "name": "PEPITA GIRASOL NATURAL",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "BBK",
+    "name": "SALSA BBK",
+    "unit_type": "PIECE"
+  },
+  {
+    "code": "CM",
+    "name": "CAJA MAZAPAN",
+    "unit_type": "PIECE"
+  },
+  {
+    "code": "CSN",
+    "name": "CHIPS CAMOTE SALSA NEGRA",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "CUBIERTO",
+    "name": "CUBIERTO DULCE",
+    "unit_type": "PIECE"
+  },
+  {
+    "code": "DN",
+    "name": "DULCE DE NUEZ",
+    "unit_type": "PIECE"
+  },
+  {
+    "code": "DT",
+    "name": "DULCE DE TAMARINDO",
+    "unit_type": "PIECE"
+  },
+  {
+    "code": "MAZ",
+    "name": "MAZAPAN PIEZA",
+    "unit_type": "PIECE"
+  },
+  {
+    "code": "MER",
+    "name": "MERMELADA",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "MERMELADA",
+    "name": "MERMELADA SABORES",
+    "unit_type": "KILOGRAM"
+  },
+  {
+    "code": "PAL",
+    "name": "PIPITORIA PIEZA",
+    "unit_type": "PIECE"
+  },
+  {
+    "code": "PCH",
+    "name": "PALETA CHOCOLATE",
+    "unit_type": "PIECE"
+  },
+  {
+    "code": "PG",
+    "name": "PIPITORIA GRANDE",
+    "unit_type": "PIECE"
+  },
+  {
+    "code": "PG-A",
+    "name": "PIPITORIA GIGANTE AJONJOLI",
+    "unit_type": "PIECE"
+  },
+  {
+    "code": "PG-C",
+    "name": "PIPITORIA GDE PEPITA CALABAZA",
+    "unit_type": "PIECE"
+  },
+  {
+    "code": "PG-N",
+    "name": "PIPITORIA GIGANTE NUEZ",
+    "unit_type": "PIECE"
+  },
+  {
+    "code": "PG-P",
+    "name": "PIITORIA GIGANTE PEPITA",
+    "unit_type": "PIECE"
+  },
+  {
+    "code": "SALSA",
+    "name": "SALSA ROJA",
+    "unit_type": "LITER"
+  },
+  {
+    "code": "SM",
+    "name": "SALSA MACHA",
+    "unit_type": "LITER"
+  }
+]

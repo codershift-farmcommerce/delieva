@@ -1,0 +1,752 @@
+[
+  {
+    "id": 1,
+    "name": "Publico en General",
+    "phone_number": "",
+    "address": "",
+    "city": "",
+    "email": ""
+  },
+  {
+    "name": "ADRIAN CANO",
+    "phone_number": "6141153263",
+    "address": "PARRAL CHIHUAHUA",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "ADRIAN P ",
+    "phone_number": "6142160341",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "ANA SOFIA",
+    "phone_number": "6142897049",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "ANCHONDO",
+    "phone_number": "6144157969",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "ANDUJO",
+    "phone_number": "6141678362",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "ANDY",
+    "phone_number": "6144949590",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "ARMANDO ALVAREZ",
+    "phone_number": "6141110524",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "CENTRO",
+    "phone_number": "",
+    "address": "",
+    "city": "",
+    "email": ""
+  },
+  {
+    "name": "CARMELO ESCANDUJO",
+    "phone_number": "",
+    "address": "",
+    "city": "",
+    "email": ""
+  },
+  {
+    "name": "CARRUCEL",
+    "phone_number": "6141788716",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "CESAR ARAGON",
+    "phone_number": "6145770771",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "CESAR P ",
+    "phone_number": "6142217173",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "CITLALY",
+    "phone_number": "6141599226",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "DULCERIA HERRERA",
+    "phone_number": "6141329442",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "EGIPTO",
+    "phone_number": "",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "EL MILAGRO",
+    "phone_number": "NA",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "EME 1",
+    "phone_number": "",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "EME 2",
+    "phone_number": "6142193801",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "EXIPTO",
+    "phone_number": "6141399219",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "GEORGINA",
+    "phone_number": "6142783024",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "GERARDO",
+    "phone_number": "6142935804",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "JAIME MONTAÑEZ",
+    "phone_number": "6143705231",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "JOSE HOLGUIN",
+    "phone_number": "6251068543",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "LA AVELLANA",
+    "phone_number": "6143062094",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "LETICIA GONZALES",
+    "phone_number": "6143341601",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "LOS CANASTOS VALLARTA",
+    "phone_number": "",
+    "address": "",
+    "city": "",
+    "email": ""
+  },
+  {
+    "name": "LOS  CANASTOS HACIENDAS",
+    "phone_number": "6143205317",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "MI FRUTO LILIA",
+    "phone_number": "NA",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "LA FE",
+    "phone_number": "6142103593",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "MARIO DE NOVA",
+    "phone_number": "6141754145",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "MARIO HERRERA",
+    "phone_number": "6146072852",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "MARTIN MACIAS",
+    "phone_number": "6144881657",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "MOY DOS",
+    "phone_number": "6141847268",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "BELEN GALINDO",
+    "phone_number": "6142083313",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "MOY UNO ",
+    "phone_number": "6142398694",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "MOY CEDIS",
+    "phone_number": "6441983863",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "NOEL ",
+    "phone_number": "6142479360",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "CINTIHA MANCIAS",
+    "phone_number": "6141278519",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "PACO CANASTOS",
+    "phone_number": "6141913119",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "DULCERIA PINOCHO",
+    "phone_number": "6142470012",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "SEMILLAS TARAHUMARA",
+    "phone_number": "6142773825",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "SARA",
+    "phone_number": "6142240581",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "SAUL  ROCHA",
+    "phone_number": "6141497345",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "SONIA ANDUJO",
+    "phone_number": "6142311198",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "SPRI-ERIC",
+    "phone_number": "6491049337",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "TIO MOY",
+    "phone_number": "6141968735",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "VICTOR ",
+    "phone_number": "6142688707",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "YARIS",
+    "phone_number": "",
+    "address": "",
+    "city": "",
+    "email": ""
+  },
+  {
+    "name": "YOLY",
+    "phone_number": "6141828201",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "OLIVIA SANCHEZ",
+    "phone_number": "",
+    "address": "",
+    "city": "",
+    "email": ""
+  },
+  {
+    "name": "YOSHY",
+    "phone_number": "6142475242",
+    "address": "",
+    "city": "CHIHUAHUA",
+    "email": ""
+  },
+  {
+    "name": "ADRIAN JIMENEZ",
+    "phone_number": "6391239558",
+    "address": "",
+    "city": "MEOQUI Y DELICIAS",
+    "email": ""
+  },
+  {
+    "name": "ANDRES EDU",
+    "phone_number": "6391210732",
+    "address": "",
+    "city": "MEOQUI Y DELICIAS",
+    "email": ""
+  },
+  {
+    "name": "CANASTOS DELICIAS",
+    "phone_number": "6391928103",
+    "address": "",
+    "city": "MEOQUI Y DELICIAS",
+    "email": ""
+  },
+  {
+    "name": "CARLOS AGUILAR",
+    "phone_number": "6391314040",
+    "address": "",
+    "city": "MEOQUI Y DELICIAS",
+    "email": ""
+  },
+  {
+    "name": "DANIEL NEGRETE",
+    "phone_number": "6391478915",
+    "address": "",
+    "city": "MEOQUI Y DELICIAS",
+    "email": ""
+  },
+  {
+    "name": "DANIEL SOSA",
+    "phone_number": "8186058364",
+    "address": "",
+    "city": "MEOQUI Y DELICIAS",
+    "email": ""
+  },
+  {
+    "name": "EDU",
+    "phone_number": "6391336296",
+    "address": "",
+    "city": "MEOQUI Y DELICIAS",
+    "email": ""
+  },
+  {
+    "name": "EL SEMBRADOR",
+    "phone_number": "6391298697",
+    "address": "",
+    "city": "MEOQUI Y DELICIAS",
+    "email": ""
+  },
+  {
+    "name": "EL TRIUNFO",
+    "phone_number": "6391069557",
+    "address": "",
+    "city": "MEOQUI Y DELICIAS",
+    "email": ""
+  },
+  {
+    "name": "ELODIA",
+    "phone_number": "8713772357",
+    "address": "",
+    "city": "MEOQUI Y DELICIAS",
+    "email": ""
+  },
+  {
+    "name": "GUERITO ROSALES",
+    "phone_number": "6391295340",
+    "address": "",
+    "city": "MEOQUI Y DELICIAS",
+    "email": ""
+  },
+  {
+    "name": "IVAN MUELA",
+    "phone_number": "6566422473",
+    "address": "",
+    "city": "MEOQUI Y DELICIAS",
+    "email": ""
+  },
+  {
+    "name": "JAIME DE AVILA",
+    "phone_number": "6391184344",
+    "address": "",
+    "city": "MEOQUI Y DELICIAS",
+    "email": ""
+  },
+  {
+    "name": "JOSE MESA",
+    "phone_number": "6142782509",
+    "address": "",
+    "city": "MEOQUI Y DELICIAS",
+    "email": ""
+  },
+  {
+    "name": "MOY DELICIAS",
+    "phone_number": "6391067794",
+    "address": "",
+    "city": "MEOQUI Y DELICIAS",
+    "email": ""
+  },
+  {
+    "name": "PLASDUL",
+    "phone_number": "6391331717",
+    "address": "",
+    "city": "MEOQUI Y DELICIAS",
+    "email": ""
+  },
+  {
+    "name": "PLASTICOS DELICIAS",
+    "phone_number": "6391092537",
+    "address": "",
+    "city": "MEOQUI Y DELICIAS",
+    "email": ""
+  },
+  {
+    "name": "ROSIO",
+    "phone_number": "6391609916",
+    "address": "",
+    "city": "MEOQUI Y DELICIAS",
+    "email": ""
+  },
+  {
+    "name": "SANTY",
+    "phone_number": "6391331962",
+    "address": "",
+    "city": "MEOQUI Y DELICIAS",
+    "email": ""
+  },
+  {
+    "name": "SEMILLAS RODRIGUEZ",
+    "phone_number": "6391066765",
+    "address": "",
+    "city": "MEOQUI Y DELICIAS",
+    "email": ""
+  },
+  {
+    "name": "ABRAHAM GONZALES",
+    "phone_number": "6564101991",
+    "address": "",
+    "city": "FORANEOS",
+    "email": ""
+  },
+  {
+    "name": "CHUY DUARTE",
+    "phone_number": "8712131160",
+    "address": "",
+    "city": "FORANEOS",
+    "email": ""
+  },
+  {
+    "name": "DANIELA",
+    "phone_number": "6391126195",
+    "address": "",
+    "city": "FORANEOS",
+    "email": ""
+  },
+  {
+    "name": "EDMUNDO",
+    "phone_number": "NA",
+    "address": "",
+    "city": "FORANEOS",
+    "email": ""
+  },
+  {
+    "name": "FABIOLA ZALASAR",
+    "phone_number": "6566561577",
+    "address": "C.SN BERNARDO 8236-10 FRAC. PACEO DE SANTA MONICA, CD.JUAREZ CHIHUAHUA CP. 32695",
+    "city": "FORANEOS",
+    "email": ""
+  },
+  {
+    "name": "JUAN  AGUILAR",
+    "phone_number": "6688568687",
+    "address": "CONVENIO TINI PAC.30385. LILIANA MARIA AGUILAR BOJORQUEZ, LOS MOCHIS SINALOA CP. 81249",
+    "city": "FORANEOS",
+    "email": ""
+  },
+  {
+    "name": "LETICIA GUADARRAMA",
+    "phone_number": "6251102590",
+    "address": "CALLE AGUSTIN MELGAR ENTRE CHIAPAS Y OAXACA #4020, CUAUHTEMOC CHIH",
+    "city": "FORANEOS",
+    "email": ""
+  },
+  {
+    "name": "LUIS ENRRIQUE",
+    "phone_number": "6566381112",
+    "address": "",
+    "city": "FORANEOS",
+    "email": ""
+  },
+  {
+    "name": "LUIS HERNANDEZ",
+    "phone_number": "6564372625",
+    "address": "",
+    "city": "FORANEOS",
+    "email": ""
+  },
+  {
+    "name": "NADIA RODRIGUEZ",
+    "phone_number": "6251582983",
+    "address": "CUAUHTEMOC CHIH",
+    "city": "FORANEOS",
+    "email": ""
+  },
+  {
+    "name": "RAFAEL BAZAN",
+    "phone_number": "8717185635",
+    "address": "",
+    "city": "FORANEOS",
+    "email": ""
+  },
+  {
+    "name": "RAMON ANTUNEZ",
+    "phone_number": "8717272016",
+    "address": "COMERCIALIZADORA DE ESPECIAS Y SEMILLAS DEL NORTE.   DEL MAIZ 1800-210 Y 211 SANTA MARIA. TORREON COAHUILA, MEXICO.27020",
+    "city": "FORANEOS",
+    "email": ""
+  },
+  {
+    "name": "SERGIO VALDEZ ",
+    "phone_number": "8717958464",
+    "address": "",
+    "city": "FORANEOS",
+    "email": ""
+  },
+  {
+    "name": "YESENIA PALLAN",
+    "phone_number": "6271212446",
+    "address": "PARRAL CHIHUAHUA OCURRE",
+    "city": "FORANEOS",
+    "email": ""
+  },
+  {
+    "name": "ELITA",
+    "phone_number": "5545706166",
+    "address": "GRACIANO SANCHES #25 ENTRE MANUEL ALMANZA Y LOPEZ ARIAS, COLONIA EJIDO PRIMERO DE MAYO NORTE ",
+    "city": "",
+    "email": ""
+  },
+  {
+    "name": "MARTHA ELENA MUELA ROMERO",
+    "phone_number": "6441429904",
+    "address": "PRIVADA VICENZA #3237 FRAC.MONTE CARLO.OBREGON SONORA CP.85136",
+    "city": "FORANEOS",
+    "email": ""
+  },
+  {
+    "name": "RODOLFO MANCIAS RIVAS",
+    "phone_number": "8711286982",
+    "address": "TORREON COAHUILA DIAGONAL REFORMA 1800 INTERIOR 242 MERCADO DE ABASTOS",
+    "city": "",
+    "email": ""
+  },
+  {
+    "name": "JOSEFINA TARANGO",
+    "phone_number": "",
+    "address": "VIRGILIO ELIZONDO RUIZ CORTINEZ #150-C OTE.COL VILLA SAN ANTONIOGUADALUPE, N.L",
+    "city": "",
+    "email": ""
+  },
+  {
+    "name": "CONDIMENTOS RIVERA",
+    "phone_number": "6251154463",
+    "address": "",
+    "city": "CUAUHTEMOC",
+    "email": ""
+  },
+  {
+    "name": "CRISTIAN",
+    "phone_number": "6251175374",
+    "address": "",
+    "city": "CUAUHTEMOC",
+    "email": ""
+  },
+  {
+    "name": "EL TREBOL",
+    "phone_number": "6255827313",
+    "address": "",
+    "city": "CUAUHTEMOC",
+    "email": ""
+  },
+  {
+    "name": "FRUTERIA GUTIERREZ",
+    "phone_number": "6255890731",
+    "address": "",
+    "city": "CUAUHTEMOC",
+    "email": ""
+  },
+  {
+    "name": "JOSE ",
+    "phone_number": "6251151613",
+    "address": "",
+    "city": "CUAUHTEMOC",
+    "email": ""
+  },
+  {
+    "name": "JOSE HOLGUIN",
+    "phone_number": "6251068543",
+    "address": "",
+    "city": "CUAUHTEMOC",
+    "email": ""
+  },
+  {
+    "name": "JUAN ANGEL GUERRA",
+    "phone_number": "6251069293",
+    "address": "CUAUHTEMOC CHIH",
+    "city": "CUAUHTEMOC",
+    "email": ""
+  },
+  {
+    "name": "ROSA AIDE RIVERA PRODUCTOS DEL SUR",
+    "phone_number": "6251146254",
+    "address": "",
+    "city": "CUAUHTEMOC",
+    "email": ""
+  },
+  {
+    "name": "SONIA OLVEDA DULCE PACION",
+    "phone_number": "6252839088",
+    "address": "",
+    "city": "CUAUHTEMOC",
+    "email": ""
+  },
+  {
+    "name": "RAFAEL CHAVEZ",
+    "phone_number": "6481093930",
+    "address": "",
+    "city": "CAMARGO",
+    "email": ""
+  },
+  {
+    "name": "FORRAJES Y CONDIMENTOS",
+    "phone_number": "6481039020",
+    "address": "",
+    "city": "CAMARGO",
+    "email": ""
+  },
+  {
+    "name": "DULCERIA KINS",
+    "phone_number": "6484697343",
+    "address": "",
+    "city": "CAMARGO",
+    "email": ""
+  },
+  {
+    "name": "LA GRANJITA",
+    "phone_number": "6484623488",
+    "address": "",
+    "city": "CAMARGO",
+    "email": ""
+  },
+  {
+    "name": "LUZ ELVA RAMOS MARTINEZ",
+    "phone_number": "6485058358",
+    "address": "",
+    "city": "CAMARGO",
+    "email": ""
+  },
+  {
+    "name": "SUPER CAMARGO",
+    "phone_number": "6481007705",
+    "address": "",
+    "city": "CAMARGO",
+    "email": ""
+  },
+  {
+    "name": "PAPA CONEJO",
+    "phone_number": "6481218839",
+    "address": "",
+    "city": "CAMARGO",
+    "email": ""
+  },
+  {
+    "name": "ABARROTES Y CARNICERIA CASTILLO",
+    "phone_number": "NA",
+    "address": "",
+    "city": "CAMARGO",
+    "email": ""
+  }
+]

@@ -1,0 +1,123 @@
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 4em;
+  background-color: black;
+  color: white;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  letter-spacing: 0.3px;
+}
+
+.client_logo {
+  width: 3em;
+  margin-left: 1em;
+}
+
+.app_name {
+  font-size: 1.6rem;
+  margin-left: 0.5em;
+  margin-right: 1em;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: 'Poppins', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, sans-serif;
+}
+
+.app_name:hover {
+  color: lightyellow;
+  cursor: pointer;
+}
+
+.menu_item {
+  display: flex;
+  margin-left: 3em;
+  flex-direction: column;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.menu_key:hover {
+  color: #FFEB3B;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.selected_menu_key {
+  color: #FFEB3B;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.hidden {
+  display: none;
+}
+
+.selected_option_list {
+  display: block;
+  position: fixed;
+  padding: 1em;
+  margin-top: 2em;
+  background-color: lightgray;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+.option_list_item {
+  margin-bottom: 0.5em;
+}
+
+.option_list_item:last-child {
+  margin-bottom: 0;
+}
+
+.option_list_item_link {
+  cursor: pointer;
+}
+
+.option_list_item_link_disabled {
+  color: grey;
+}
+
+.menu_item_user_email {
+  display: flex;
+  flex-direction: column;
+  margin-right: 5em;
+  margin-left: auto;
+  color: white;
+}
+
+.selected_option_list_user_link {
+  display: block;
+  position: fixed;
+  padding: 0.2em;
+  margin-top: 2em;
+  background-color: lightgray;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.user_link {
+  margin-left: 0.5em;
+  margin-right: 1em;
+}
+
+.user_link:hover {
+  cursor: pointer;
+  text-decoration: black underline;
+}
+
+.profile_link {
+  margin-left: 0.5em;
+  margin-right: 1em;
+}
+
+.profile_link:hover {
+  cursor: pointer;
+  text-decoration: black underline;
+}

@@ -1,0 +1,1592 @@
+[
+  {
+    "product_code": "AD200",
+    "finished_product_code": "AD",
+    "unit_quantity": 0.2
+  },
+  {
+    "product_code": "AL",
+    "finished_product_code": "AL",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "AL3",
+    "finished_product_code": "AL",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "AM",
+    "finished_product_code": "AD",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "AN",
+    "finished_product_code": "AN",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "BA",
+    "finished_product_code": "BA",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "C100",
+    "finished_product_code": "COCO",
+    "unit_quantity": 0.1
+  },
+  {
+    "product_code": "CA",
+    "finished_product_code": "CA",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "CA100",
+    "finished_product_code": "CAN",
+    "unit_quantity": 0.1
+  },
+  {
+    "product_code": "CC2",
+    "finished_product_code": "CC",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "CH100",
+    "finished_product_code": "CHC",
+    "unit_quantity": 0.1
+  },
+  {
+    "product_code": "CH2",
+    "finished_product_code": "CHIPO",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "CH200",
+    "finished_product_code": "CHC",
+    "unit_quantity": 0.2
+  },
+  {
+    "product_code": "CH3",
+    "finished_product_code": "CHIPO",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "CHA100",
+    "finished_product_code": "CHA",
+    "unit_quantity": 0.1
+  },
+  {
+    "product_code": "CHA2",
+    "finished_product_code": "CHA",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "CHA200",
+    "finished_product_code": "CHA",
+    "unit_quantity": 0.2
+  },
+  {
+    "product_code": "CHC2",
+    "finished_product_code": "CHC",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "CHQ100",
+    "finished_product_code": "CHQ",
+    "unit_quantity": 0.1
+  },
+  {
+    "product_code": "CHQ2",
+    "finished_product_code": "CHQ",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "CHQ200",
+    "finished_product_code": "CHQ",
+    "unit_quantity": 0.2
+  },
+  {
+    "product_code": "CHSN",
+    "finished_product_code": "CHSN",
+    "unit_quantity": 0.1
+  },
+  {
+    "product_code": "CHSN2",
+    "finished_product_code": "CHSN",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "CO3",
+    "finished_product_code": "COCO",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "COC1",
+    "finished_product_code": "COCO",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "CR",
+    "finished_product_code": "CR",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "CS",
+    "finished_product_code": "CS",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "CS100",
+    "finished_product_code": "CS",
+    "unit_quantity": 0.1
+  },
+  {
+    "product_code": "CS2",
+    "finished_product_code": "CS",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "CS250",
+    "finished_product_code": "CS",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "CS50",
+    "finished_product_code": "CS",
+    "unit_quantity": 0.05
+  },
+  {
+    "product_code": "EA3",
+    "finished_product_code": "EA",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "FM",
+    "finished_product_code": "FM",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "FM3",
+    "finished_product_code": "FM",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "BA1",
+    "finished_product_code": "BA",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "B1",
+    "finished_product_code": "B",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "B",
+    "finished_product_code": "B",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "BA2",
+    "finished_product_code": "BA",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "BA3",
+    "finished_product_code": "BA",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "B2",
+    "finished_product_code": "B",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "C",
+    "finished_product_code": "C",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "B3",
+    "finished_product_code": "B",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "C1",
+    "finished_product_code": "C",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "C2",
+    "finished_product_code": "C",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "C3",
+    "finished_product_code": "C",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "CH",
+    "finished_product_code": "CHIPO",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "CH1",
+    "finished_product_code": "CHIPO",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "CA1",
+    "finished_product_code": "CA",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "CA2",
+    "finished_product_code": "CA",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "E",
+    "finished_product_code": "E",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "E1",
+    "finished_product_code": "E",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "E2",
+    "finished_product_code": "E",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "E3",
+    "finished_product_code": "E",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "ES",
+    "finished_product_code": "ES",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "ES1",
+    "finished_product_code": "ES",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "ES3",
+    "finished_product_code": "ES",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "ES2",
+    "finished_product_code": "ES",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "EA1",
+    "finished_product_code": "EA",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "EA",
+    "finished_product_code": "EA",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "EA2",
+    "finished_product_code": "EA",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "AJ3",
+    "finished_product_code": "AJ",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "AE",
+    "finished_product_code": "AE",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "FR",
+    "finished_product_code": "FR",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "AE3",
+    "finished_product_code": "AE",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "AN3",
+    "finished_product_code": "AN",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "FR2",
+    "finished_product_code": "FR",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "GA3",
+    "finished_product_code": "GA",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "GAN",
+    "finished_product_code": "GAR",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "GAR",
+    "finished_product_code": "GAR",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "GAR2",
+    "finished_product_code": "GAR",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "GAR3",
+    "finished_product_code": "GAR",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "GC",
+    "finished_product_code": "GC",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "GC1",
+    "finished_product_code": "GC",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "GC3",
+    "finished_product_code": "GC",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "GD",
+    "finished_product_code": "GD",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "GRA",
+    "finished_product_code": "GRA",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "HABA",
+    "finished_product_code": "HABA",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "HABA2",
+    "finished_product_code": "HABA",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "HABA3",
+    "finished_product_code": "HABA",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "HB",
+    "finished_product_code": "HB",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "HB1",
+    "finished_product_code": "HB",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "HB2",
+    "finished_product_code": "HB",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "HB3",
+    "finished_product_code": "HB",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "HBB",
+    "finished_product_code": "HBB",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "HBB1",
+    "finished_product_code": "HBB",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "HBB2",
+    "finished_product_code": "HBB",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "HBB3",
+    "finished_product_code": "HBB",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "HC",
+    "finished_product_code": "HC",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "HC1",
+    "finished_product_code": "HC",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "HC2",
+    "finished_product_code": "HC",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "HC3",
+    "finished_product_code": "HC",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "HCH",
+    "finished_product_code": "HCH",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "HCH1",
+    "finished_product_code": "HCH",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "HCH2",
+    "finished_product_code": "HCH",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "HCH3",
+    "finished_product_code": "HCH",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "HE",
+    "finished_product_code": "HE",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "HE1",
+    "finished_product_code": "HE",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "HE2",
+    "finished_product_code": "HE",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "HE3",
+    "finished_product_code": "HE",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "HH",
+    "finished_product_code": "HH",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "HH1",
+    "finished_product_code": "HH",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "HH2",
+    "finished_product_code": "HH",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "HH3",
+    "finished_product_code": "HH",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "HJ",
+    "finished_product_code": "HJ",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "HJ1",
+    "finished_product_code": "HJ",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "HJ2",
+    "finished_product_code": "HJ",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "HJ3",
+    "finished_product_code": "HJ",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "HM",
+    "finished_product_code": "HM",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "HM1",
+    "finished_product_code": "HM",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "HM2",
+    "finished_product_code": "HM",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "HM3",
+    "finished_product_code": "HM",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "HMI",
+    "finished_product_code": "HMI",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "HMI1",
+    "finished_product_code": "HMI",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "HMI2",
+    "finished_product_code": "HMI",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "HMI3",
+    "finished_product_code": "HMI",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "HN",
+    "finished_product_code": "HN",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "HN1",
+    "finished_product_code": "HN",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "HN2",
+    "finished_product_code": "HN",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "HN3",
+    "finished_product_code": "HN",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "HQ",
+    "finished_product_code": "HQ",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "HQ1",
+    "finished_product_code": "HQ",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "HQ2",
+    "finished_product_code": "HQ",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "G",
+    "finished_product_code": "G",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "G2",
+    "finished_product_code": "G",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "G3",
+    "finished_product_code": "G",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "GS",
+    "finished_product_code": "GS",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "GS1",
+    "finished_product_code": "GS",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "GS2",
+    "finished_product_code": "GS",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "GS3",
+    "finished_product_code": "GS",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "GD1",
+    "finished_product_code": "GD",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "GD2",
+    "finished_product_code": "GD",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "GD3",
+    "finished_product_code": "GD",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "GN",
+    "finished_product_code": "GN",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "FR3",
+    "finished_product_code": "FR",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "GA2",
+    "finished_product_code": "GA",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "GA1",
+    "finished_product_code": "GA",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "GC2",
+    "finished_product_code": "GC",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "HQ3",
+    "finished_product_code": "HQ",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "HQJ",
+    "finished_product_code": "HQJ",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "HQJ1",
+    "finished_product_code": "HQJ",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "HQJ2",
+    "finished_product_code": "HQJ",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "HQJ3",
+    "finished_product_code": "HQJ",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "HSN",
+    "finished_product_code": "HSN",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "HSN1",
+    "finished_product_code": "HSN",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "HSN2",
+    "finished_product_code": "HSN",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "HSN3",
+    "finished_product_code": "HSN",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "J1",
+    "finished_product_code": "J",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "JAM",
+    "finished_product_code": "JAM",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "KIWI3",
+    "finished_product_code": "KIWI",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "LENTEJA",
+    "finished_product_code": "LENTEJA",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "M",
+    "finished_product_code": "M",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "M2",
+    "finished_product_code": "M",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "M3",
+    "finished_product_code": "M",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "MANGO3",
+    "finished_product_code": "MANGO",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "MF3",
+    "finished_product_code": "MF",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "MH",
+    "finished_product_code": "MH",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "MH1",
+    "finished_product_code": "MH",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "MH2",
+    "finished_product_code": "MH",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "MN3",
+    "finished_product_code": "MN",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "MT3",
+    "finished_product_code": "MT",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "NCH",
+    "finished_product_code": "NCH",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "NG",
+    "finished_product_code": "NG",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "NG2",
+    "finished_product_code": "NG",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "NG3",
+    "finished_product_code": "NG",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "NGP",
+    "finished_product_code": "NGP",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "NGP2",
+    "finished_product_code": "NGP",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "NGP3",
+    "finished_product_code": "NGP",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "NI",
+    "finished_product_code": "NI",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "NI3",
+    "finished_product_code": "NI",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "NPN3",
+    "finished_product_code": "NPN",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "NU2",
+    "finished_product_code": "NU",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "NU3",
+    "finished_product_code": "NU",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "NUC2",
+    "finished_product_code": "NUC",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "PC",
+    "finished_product_code": "PC",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "PCG3",
+    "finished_product_code": "PEG",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "PEG2",
+    "finished_product_code": "PEG",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "PEG3",
+    "finished_product_code": "PEG",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "MT1",
+    "finished_product_code": "MT",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "MT2",
+    "finished_product_code": "MT",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "MX",
+    "finished_product_code": "MX",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "MX3",
+    "finished_product_code": "MX",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "MX1",
+    "finished_product_code": "MX",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "MX2",
+    "finished_product_code": "MX",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "J",
+    "finished_product_code": "J",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "J2",
+    "finished_product_code": "J",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "J3",
+    "finished_product_code": "J",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "PAS1",
+    "finished_product_code": "PAS",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "PIÑA",
+    "finished_product_code": "PIÑA",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "KIWI",
+    "finished_product_code": "KIWI",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "MANGO",
+    "finished_product_code": "MANGO",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "MN",
+    "finished_product_code": "MN",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "MF2",
+    "finished_product_code": "MF",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "MH3",
+    "finished_product_code": "MH",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "NU",
+    "finished_product_code": "NU",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "NPN",
+    "finished_product_code": "NPN",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "PGN",
+    "finished_product_code": "PGN",
+    "unit_quantity": 0.2
+  },
+  {
+    "product_code": "PEG",
+    "finished_product_code": "PEG",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "PIÑA3",
+    "finished_product_code": "PIÑA",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "PIS2",
+    "finished_product_code": "PIS",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "PIS3",
+    "finished_product_code": "PIS",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "PM",
+    "finished_product_code": "PM",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "PN",
+    "finished_product_code": "PN",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "PN3",
+    "finished_product_code": "PN",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "PNA3",
+    "finished_product_code": "PNA",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "PP",
+    "finished_product_code": "PP",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "PS",
+    "finished_product_code": "PS",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "PS3",
+    "finished_product_code": "PS",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "PSG",
+    "finished_product_code": "PSG",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "PSG3",
+    "finished_product_code": "PSG",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "PT",
+    "finished_product_code": "PT",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "SGN",
+    "finished_product_code": "SG",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "SN",
+    "finished_product_code": "SN",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "SS",
+    "finished_product_code": "SS",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "SS1",
+    "finished_product_code": "SS",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "SS2",
+    "finished_product_code": "SS",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "SS3",
+    "finished_product_code": "SS",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "TC",
+    "finished_product_code": "TC",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "TC2",
+    "finished_product_code": "TC",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "TCA",
+    "finished_product_code": "TCA",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "TE",
+    "finished_product_code": "TE",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "TES",
+    "finished_product_code": "TES",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "TGA",
+    "finished_product_code": "TGA",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "TMX",
+    "finished_product_code": "TMX",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "AD100",
+    "finished_product_code": "AD",
+    "unit_quantity": 0.1
+  },
+  {
+    "product_code": "S",
+    "finished_product_code": "S",
+    "unit_quantity": 0.1
+  },
+  {
+    "product_code": "S1",
+    "finished_product_code": "S",
+    "unit_quantity": 0.1
+  },
+  {
+    "product_code": "S2",
+    "finished_product_code": "S",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "S3",
+    "finished_product_code": "S",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "PIS",
+    "finished_product_code": "PIS",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "SG",
+    "finished_product_code": "SG",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "SG2",
+    "finished_product_code": "SG",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "SG3",
+    "finished_product_code": "SG",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "PPN",
+    "finished_product_code": "PPN",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "PP10",
+    "finished_product_code": "PP",
+    "unit_quantity": 10
+  },
+  {
+    "product_code": "GA",
+    "finished_product_code": "GA",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "G1",
+    "finished_product_code": "G",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "B20",
+    "finished_product_code": "B",
+    "unit_quantity": 20
+  },
+  {
+    "product_code": "C20",
+    "finished_product_code": "C",
+    "unit_quantity": 20
+  },
+  {
+    "product_code": "CH20",
+    "finished_product_code": "CHIPO",
+    "unit_quantity": 20
+  },
+  {
+    "product_code": "CA20",
+    "finished_product_code": "C",
+    "unit_quantity": 20
+  },
+  {
+    "product_code": "MH20",
+    "finished_product_code": "MH",
+    "unit_quantity": 20
+  },
+  {
+    "product_code": "E20",
+    "finished_product_code": "E",
+    "unit_quantity": 20
+  },
+  {
+    "product_code": "S20",
+    "finished_product_code": "S",
+    "unit_quantity": 20
+  },
+  {
+    "product_code": "MT20",
+    "finished_product_code": "MT",
+    "unit_quantity": 20
+  },
+  {
+    "product_code": "ES20",
+    "finished_product_code": "ES",
+    "unit_quantity": 20
+  },
+  {
+    "product_code": "ESA20",
+    "finished_product_code": "EA",
+    "unit_quantity": 20
+  },
+  {
+    "product_code": "MX20",
+    "finished_product_code": "MX",
+    "unit_quantity": 20
+  },
+  {
+    "product_code": "G20",
+    "finished_product_code": "G",
+    "unit_quantity": 20
+  },
+  {
+    "product_code": "GA20",
+    "finished_product_code": "GA",
+    "unit_quantity": 20
+  },
+  {
+    "product_code": "GC20",
+    "finished_product_code": "GC",
+    "unit_quantity": 20
+  },
+  {
+    "product_code": "GS20",
+    "finished_product_code": "GS",
+    "unit_quantity": 20
+  },
+  {
+    "product_code": "J20",
+    "finished_product_code": "J",
+    "unit_quantity": 20
+  },
+  {
+    "product_code": "GD20",
+    "finished_product_code": "GD",
+    "unit_quantity": 20
+  },
+  {
+    "product_code": "GN20",
+    "finished_product_code": "GN",
+    "unit_quantity": 20
+  },
+  {
+    "product_code": "HN20",
+    "finished_product_code": "HN",
+    "unit_quantity": 20
+  },
+  {
+    "product_code": "HH20",
+    "finished_product_code": "HH",
+    "unit_quantity": 20
+  },
+  {
+    "product_code": "HM20",
+    "finished_product_code": "HM",
+    "unit_quantity": 20
+  },
+  {
+    "product_code": "HQ20",
+    "finished_product_code": "HQ",
+    "unit_quantity": 20
+  },
+  {
+    "product_code": "HCH20",
+    "finished_product_code": "HCH",
+    "unit_quantity": 20
+  },
+  {
+    "product_code": "HE20",
+    "finished_product_code": "HE",
+    "unit_quantity": 20
+  },
+  {
+    "product_code": "HJ20",
+    "finished_product_code": "HJ",
+    "unit_quantity": 20
+  },
+  {
+    "product_code": "HBBQ20",
+    "finished_product_code": "HBB",
+    "unit_quantity": 20
+  },
+  {
+    "product_code": "HQJ20",
+    "finished_product_code": "HQJ",
+    "unit_quantity": 20
+  },
+  {
+    "product_code": "HMI20",
+    "finished_product_code": "HMI",
+    "unit_quantity": 20
+  },
+  {
+    "product_code": "B5",
+    "finished_product_code": "B",
+    "unit_quantity": 5
+  },
+  {
+    "product_code": "C5",
+    "finished_product_code": "C",
+    "unit_quantity": 5
+  },
+  {
+    "product_code": "CH5",
+    "finished_product_code": "CHIPO",
+    "unit_quantity": 5
+  },
+  {
+    "product_code": "CA5",
+    "finished_product_code": "C",
+    "unit_quantity": 5
+  },
+  {
+    "product_code": "MH5",
+    "finished_product_code": "MH",
+    "unit_quantity": 5
+  },
+  {
+    "product_code": "E5",
+    "finished_product_code": "E",
+    "unit_quantity": 5
+  },
+  {
+    "product_code": "S5",
+    "finished_product_code": "S",
+    "unit_quantity": 5
+  },
+  {
+    "product_code": "MT5",
+    "finished_product_code": "MT",
+    "unit_quantity": 5
+  },
+  {
+    "product_code": "ES5",
+    "finished_product_code": "ES",
+    "unit_quantity": 5
+  },
+  {
+    "product_code": "ESA5",
+    "finished_product_code": "EA",
+    "unit_quantity": 5
+  },
+  {
+    "product_code": "MX5",
+    "finished_product_code": "MX",
+    "unit_quantity": 5
+  },
+  {
+    "product_code": "G5",
+    "finished_product_code": "G",
+    "unit_quantity": 5
+  },
+  {
+    "product_code": "GA5",
+    "finished_product_code": "GA",
+    "unit_quantity": 5
+  },
+  {
+    "product_code": "GC5",
+    "finished_product_code": "GC",
+    "unit_quantity": 5
+  },
+  {
+    "product_code": "GS5",
+    "finished_product_code": "GS",
+    "unit_quantity": 5
+  },
+  {
+    "product_code": "J5",
+    "finished_product_code": "J",
+    "unit_quantity": 5
+  },
+  {
+    "product_code": "GD5",
+    "finished_product_code": "GD",
+    "unit_quantity": 5
+  },
+  {
+    "product_code": "GN5",
+    "finished_product_code": "GN",
+    "unit_quantity": 5
+  },
+  {
+    "product_code": "HN5",
+    "finished_product_code": "HN",
+    "unit_quantity": 5
+  },
+  {
+    "product_code": "HH5",
+    "finished_product_code": "HH",
+    "unit_quantity": 5
+  },
+  {
+    "product_code": "HM5",
+    "finished_product_code": "HM",
+    "unit_quantity": 5
+  },
+  {
+    "product_code": "HQ5",
+    "finished_product_code": "HQ",
+    "unit_quantity": 5
+  },
+  {
+    "product_code": "HCH5",
+    "finished_product_code": "HCH",
+    "unit_quantity": 5
+  },
+  {
+    "product_code": "HE5",
+    "finished_product_code": "HE",
+    "unit_quantity": 5
+  },
+  {
+    "product_code": "HJ5",
+    "finished_product_code": "HJ",
+    "unit_quantity": 5
+  },
+  {
+    "product_code": "HBBQ5",
+    "finished_product_code": "HBB",
+    "unit_quantity": 5
+  },
+  {
+    "product_code": "HQJ5",
+    "finished_product_code": "HQJ",
+    "unit_quantity": 5
+  },
+  {
+    "product_code": "HMI5",
+    "finished_product_code": "HMI",
+    "unit_quantity": 5
+  },
+  {
+    "product_code": "NG5",
+    "finished_product_code": "NG",
+    "unit_quantity": 5
+  },
+  {
+    "product_code": "NPG5",
+    "finished_product_code": "NPG",
+    "unit_quantity": 5
+  },
+  {
+    "product_code": "CA3",
+    "finished_product_code": "CA",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "MT",
+    "finished_product_code": "MT",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "TS",
+    "finished_product_code": "TS",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "TS2",
+    "finished_product_code": "TOS",
+    "unit_quantity": 0.5
+  },
+  {
+    "product_code": "TS3",
+    "finished_product_code": "TOS",
+    "unit_quantity": 0.25
+  },
+  {
+    "product_code": "BBK",
+    "finished_product_code": "BBK",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "CM",
+    "finished_product_code": "CM",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "CSN100",
+    "finished_product_code": "CSN",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "CUBIERTO",
+    "finished_product_code": "CUBIERTO",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "DN",
+    "finished_product_code": "DN",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "DT",
+    "finished_product_code": "DT",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "MAZ",
+    "finished_product_code": "MAZ",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "MER",
+    "finished_product_code": "MER",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "MERMELADA",
+    "finished_product_code": "MERMELADA",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "PAL",
+    "finished_product_code": "PAL",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "PCH",
+    "finished_product_code": "PCH",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "PG",
+    "finished_product_code": "PG",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "PG-A",
+    "finished_product_code": "PG-A",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "PG-C",
+    "finished_product_code": "PG-C",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "PG-N",
+    "finished_product_code": "PG-N",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "PG-P",
+    "finished_product_code": "PG-P",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "PG10",
+    "finished_product_code": "PAL",
+    "unit_quantity": 10
+  },
+  {
+    "product_code": "SALSA",
+    "finished_product_code": "SALSA",
+    "unit_quantity": 1
+  },
+  {
+    "product_code": "SM",
+    "finished_product_code": "SM",
+    "unit_quantity": 1
+  }
+]

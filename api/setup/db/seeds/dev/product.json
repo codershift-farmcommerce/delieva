@@ -1,0 +1,3182 @@
+[
+  {
+    "id": 761,
+    "code": "AD200",
+    "name": "AMARANTO DULCE 200 GMS",
+    "wholesale_unit_price": 40,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 40
+  },
+  {
+    "id": 765,
+    "code": "AL",
+    "name": "ALMENDRA KG A GRANEL",
+    "wholesale_unit_price": 200,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 200
+  },
+  {
+    "id": 766,
+    "code": "AL3",
+    "name": "ALMENDRA CUARTO",
+    "wholesale_unit_price": 50,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 50
+  },
+  {
+    "id": 767,
+    "code": "AM",
+    "name": "AMARANTO DULCE",
+    "wholesale_unit_price": 80,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 80
+  },
+  {
+    "id": 768,
+    "code": "AN",
+    "name": "ARANDANO NATURAL",
+    "wholesale_unit_price": 180,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 180
+  },
+  {
+    "id": 774,
+    "code": "BA",
+    "name": "BOTANERO AJO GRANEL",
+    "wholesale_unit_price": 42,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 42
+  },
+  {
+    "id": 778,
+    "code": "BBK",
+    "name": "SALSA BBK",
+    "wholesale_unit_price": 61,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 61
+  },
+  {
+    "id": 781,
+    "code": "C100",
+    "name": "COCO 100 GRS",
+    "wholesale_unit_price": 20,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 20
+  },
+  {
+    "id": 784,
+    "code": "CA",
+    "name": "CANTINERO AJO KG GRANEL",
+    "wholesale_unit_price": 42,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 42
+  },
+  {
+    "id": 786,
+    "code": "CA100",
+    "name": "CANELA DE 100 GMS",
+    "wholesale_unit_price": 40,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 40
+  },
+  {
+    "id": 789,
+    "code": "CC2",
+    "name": "CREMA DE CACAHUATE MEDIO",
+    "wholesale_unit_price": 30,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 30
+  },
+  {
+    "id": 792,
+    "code": "CH100",
+    "name": "CHIPS CAMOTE 100 GMS",
+    "wholesale_unit_price": 12,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 20
+  },
+  {
+    "id": 793,
+    "code": "CH2",
+    "name": "CHIPOTLE M MEDIO",
+    "wholesale_unit_price": 22,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 30
+  },
+  {
+    "id": 794,
+    "code": "CH200",
+    "name": "CHIPS CAMOTE 200 GMS",
+    "wholesale_unit_price": 24,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 40
+  },
+  {
+    "id": 795,
+    "code": "CH3",
+    "name": "CHIPOTLE M CUARTO",
+    "wholesale_unit_price": 12,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 15
+  },
+  {
+    "id": 796,
+    "code": "CHA100",
+    "name": "CHIPS ADOBADA DE 100 GS",
+    "wholesale_unit_price": 12,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 20
+  },
+  {
+    "id": 797,
+    "code": "CHA2",
+    "name": "CHIPS ADOBADA MEDIO",
+    "wholesale_unit_price": 60,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 60
+  },
+  {
+    "id": 798,
+    "code": "CHA200",
+    "name": "CHIPS ADOBADA 200 GS",
+    "wholesale_unit_price": 24,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 40
+  },
+  {
+    "id": 799,
+    "code": "CHC2",
+    "name": "CHIPS CAMOTE MEDIO",
+    "wholesale_unit_price": 60,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 60
+  },
+  {
+    "id": 800,
+    "code": "CHQ100",
+    "name": "CHIPS QUESO JALAPEÑO 100 GS",
+    "wholesale_unit_price": 12,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 20
+  },
+  {
+    "id": 801,
+    "code": "CHQ2",
+    "name": "CHIPS QUESO JALAPEÑO MEDIO",
+    "wholesale_unit_price": 60,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 60
+  },
+  {
+    "id": 802,
+    "code": "CHQ200",
+    "name": "CHIPS QUESO JALAPEÑO 200GS",
+    "wholesale_unit_price": 24,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 40
+  },
+  {
+    "id": 803,
+    "code": "CHSN",
+    "name": "CHIPS SALSA NEGRA 100 GRS",
+    "wholesale_unit_price": 12,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 20
+  },
+  {
+    "id": 804,
+    "code": "CHSN2",
+    "name": "CHIPS SALSA NEGRA DE MEDIO",
+    "wholesale_unit_price": 60,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 60
+  },
+  {
+    "id": 805,
+    "code": "CM",
+    "name": "CAJA MAZAPAN",
+    "wholesale_unit_price": 280,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 300
+  },
+  {
+    "id": 806,
+    "code": "CO3",
+    "name": "COCO CUARTO",
+    "wholesale_unit_price": 25,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 25
+  },
+  {
+    "id": 807,
+    "code": "COC1",
+    "name": "COCO KILO",
+    "wholesale_unit_price": 100,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 100
+  },
+  {
+    "id": 808,
+    "code": "CR",
+    "name": "CACAHUATE RUNER KG GRANEL",
+    "wholesale_unit_price": 38,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 38
+  },
+  {
+    "id": 809,
+    "code": "CS",
+    "name": "CARNE SECA KG.",
+    "wholesale_unit_price": 1200,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 1200
+  },
+  {
+    "id": 810,
+    "code": "CS100",
+    "name": "CARNE SECA 100 GRS",
+    "wholesale_unit_price": 120,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 120
+  },
+  {
+    "id": 811,
+    "code": "CS2",
+    "name": "CARNE SECA MEDIO",
+    "wholesale_unit_price": 600,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 600
+  },
+  {
+    "id": 812,
+    "code": "CS250",
+    "name": "CARNE SECA 250G",
+    "wholesale_unit_price": 300,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 300
+  },
+  {
+    "id": 813,
+    "code": "CS50",
+    "name": "CARNE SECA 50 GRS",
+    "wholesale_unit_price": 60,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 60
+  },
+  {
+    "id": 814,
+    "code": "CSN100",
+    "name": "CHIPS CAMOTE SALSA NEGRA",
+    "wholesale_unit_price": 12,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 20
+  },
+  {
+    "id": 815,
+    "code": "CUBIERTO",
+    "name": "CUBIERTO DULCE",
+    "wholesale_unit_price": 17,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 17
+  },
+  {
+    "id": 816,
+    "code": "DN",
+    "name": "DULCE DE NUEZ",
+    "wholesale_unit_price": 30,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 30
+  },
+  {
+    "id": 817,
+    "code": "DT",
+    "name": "DULCE DE TAMARINDO",
+    "wholesale_unit_price": 15,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 15
+  },
+  {
+    "id": 825,
+    "code": "EA3",
+    "name": "ESPAÑOL AJO CUARTO",
+    "wholesale_unit_price": 12,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 15
+  },
+  {
+    "id": 830,
+    "code": "FM",
+    "name": "FRUTOS MIXTOS KILO",
+    "wholesale_unit_price": 175,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 200
+  },
+  {
+    "id": 831,
+    "code": "FM3",
+    "name": "FRUTO MIXTO CUARTO",
+    "wholesale_unit_price": 50,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 50
+  },
+  {
+    "id": 775,
+    "code": "BA1",
+    "name": "BOTANERO AJO KILO",
+    "wholesale_unit_price": 43,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 60
+  },
+  {
+    "id": 771,
+    "code": "B1",
+    "name": "BOTANERO KG",
+    "wholesale_unit_price": 43,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 60
+  },
+  {
+    "id": 770,
+    "code": "B",
+    "name": "BOTANERO KG GRANEL",
+    "wholesale_unit_price": 42,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 42
+  },
+  {
+    "id": 776,
+    "code": "BA2",
+    "name": "BOTANERO AJO MEDIO",
+    "wholesale_unit_price": 22,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 30
+  },
+  {
+    "id": 777,
+    "code": "BA3",
+    "name": "BOTANERO AJO CUARTO",
+    "wholesale_unit_price": 12,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 15
+  },
+  {
+    "id": 772,
+    "code": "B2",
+    "name": "BOTANERO MEDIO",
+    "wholesale_unit_price": 22,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 30
+  },
+  {
+    "id": 779,
+    "code": "C",
+    "name": "CANTINERO KG GRANEL",
+    "wholesale_unit_price": 42,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 42
+  },
+  {
+    "id": 773,
+    "code": "B3",
+    "name": "BOTANERO CUARTO",
+    "wholesale_unit_price": 12,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 15
+  },
+  {
+    "id": 780,
+    "code": "C1",
+    "name": "CANTINERO KG",
+    "wholesale_unit_price": 43,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 60
+  },
+  {
+    "id": 782,
+    "code": "C2",
+    "name": "CANTINERO MEDIO",
+    "wholesale_unit_price": 22,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 30
+  },
+  {
+    "id": 783,
+    "code": "C3",
+    "name": "CANTINERO CUARTO",
+    "wholesale_unit_price": 12,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 15
+  },
+  {
+    "id": 790,
+    "code": "CH",
+    "name": "CHIPOTLE M.GRANEL",
+    "wholesale_unit_price": 42,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 42
+  },
+  {
+    "id": 791,
+    "code": "CH1",
+    "name": "CHIPOTLE M KG",
+    "wholesale_unit_price": 43,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 60
+  },
+  {
+    "id": 785,
+    "code": "CA1",
+    "name": "CANTINERO AJO KG",
+    "wholesale_unit_price": 43,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 60
+  },
+  {
+    "id": 787,
+    "code": "CA2",
+    "name": "CANTINERO AJO MEDIO",
+    "wholesale_unit_price": 22,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 30
+  },
+  {
+    "id": 818,
+    "code": "E",
+    "name": "ENCHILADO KG GRANEL",
+    "wholesale_unit_price": 42,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 42
+  },
+  {
+    "id": 819,
+    "code": "E1",
+    "name": "ENCHILADO KG",
+    "wholesale_unit_price": 43,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 60
+  },
+  {
+    "id": 820,
+    "code": "E2",
+    "name": "ENCHILADO MEDIO",
+    "wholesale_unit_price": 22,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 30
+  },
+  {
+    "id": 821,
+    "code": "E3",
+    "name": "ENCHILADO CUARTO",
+    "wholesale_unit_price": 12,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 15
+  },
+  {
+    "id": 826,
+    "code": "ES",
+    "name": "ESPAÑOL KG GRANEL",
+    "wholesale_unit_price": 42,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 42
+  },
+  {
+    "id": 827,
+    "code": "ES1",
+    "name": "ESPAÑOL KG",
+    "wholesale_unit_price": 43,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 60
+  },
+  {
+    "id": 829,
+    "code": "ES3",
+    "name": "ESPAÑOL CUARTO",
+    "wholesale_unit_price": 12,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 15
+  },
+  {
+    "id": 828,
+    "code": "ES2",
+    "name": "ESPAÑOL MEDIO",
+    "wholesale_unit_price": 22,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 30
+  },
+  {
+    "id": 823,
+    "code": "EA1",
+    "name": "ESPAÑOL AJO KG",
+    "wholesale_unit_price": 45,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 60
+  },
+  {
+    "id": 822,
+    "code": "EA",
+    "name": "ESPAÑOL AJO KG GRANEL",
+    "wholesale_unit_price": 44,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 44
+  },
+  {
+    "id": 824,
+    "code": "EA2",
+    "name": "ESPAÑOL AJO MEDIO",
+    "wholesale_unit_price": 23,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 30
+  },
+  {
+    "id": 764,
+    "code": "AJ3",
+    "name": "AJONJOLI GARAPIÑADO CUARTO",
+    "wholesale_unit_price": 12,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 15
+  },
+  {
+    "id": 762,
+    "code": "AE",
+    "name": "ARANDANO ENCHILADO KG",
+    "wholesale_unit_price": 160,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 160
+  },
+  {
+    "id": 832,
+    "code": "FR",
+    "name": "FRITURA GRANEL",
+    "wholesale_unit_price": 64,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 64
+  },
+  {
+    "id": 763,
+    "code": "AE3",
+    "name": "ARANDANO ENCHILADO CUARTO",
+    "wholesale_unit_price": 40,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 40
+  },
+  {
+    "id": 769,
+    "code": "AN3",
+    "name": "ARANDANO NATURAL CUARTO",
+    "wholesale_unit_price": 45,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 45
+  },
+  {
+    "id": 833,
+    "code": "FR2",
+    "name": "FRITURA MEDIO",
+    "wholesale_unit_price": 32,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 32
+  },
+  {
+    "id": 842,
+    "code": "GA3",
+    "name": "GAR. AJONJOLI CUARTO",
+    "wholesale_unit_price": 11,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 15
+  },
+  {
+    "id": 843,
+    "code": "GAN",
+    "name": "GARBANZO NATURAL",
+    "wholesale_unit_price": 34,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 34
+  },
+  {
+    "id": 844,
+    "code": "GAR",
+    "name": "GARBANZO A GRANEL",
+    "wholesale_unit_price": 80,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 80
+  },
+  {
+    "id": 845,
+    "code": "GAR2",
+    "name": "GARVANZO MEDIO",
+    "wholesale_unit_price": 40,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 40
+  },
+  {
+    "id": 846,
+    "code": "GAR3",
+    "name": "GARBANZO DE CUARTO",
+    "wholesale_unit_price": 20,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 20
+  },
+  {
+    "id": 847,
+    "code": "GC",
+    "name": "GAR. COCO GRANEL",
+    "wholesale_unit_price": 44,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 44
+  },
+  {
+    "id": 848,
+    "code": "GC1",
+    "name": "GAR. COCO KG",
+    "wholesale_unit_price": 44,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 60
+  },
+  {
+    "id": 850,
+    "code": "GC3",
+    "name": "GAR. COCO CUARTO",
+    "wholesale_unit_price": 11,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 15
+  },
+  {
+    "id": 851,
+    "code": "GD",
+    "name": "GRANILLO DULCE KG GRANEL",
+    "wholesale_unit_price": 38,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 38
+  },
+  {
+    "id": 856,
+    "code": "GRA",
+    "name": "GRANZON KG GRANEL",
+    "wholesale_unit_price": 85,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 85
+  },
+  {
+    "id": 861,
+    "code": "HABA",
+    "name": "HABA ENCHILADA KG",
+    "wholesale_unit_price": 100,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 100
+  },
+  {
+    "id": 862,
+    "code": "HABA2",
+    "name": "HABA MEDIO",
+    "wholesale_unit_price": 50,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 50
+  },
+  {
+    "id": 863,
+    "code": "HABA3",
+    "name": "HABA CUARTO",
+    "wholesale_unit_price": 25,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 25
+  },
+  {
+    "id": 864,
+    "code": "HB",
+    "name": "HOT BLUE A GRANEL",
+    "wholesale_unit_price": 61,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 61
+  },
+  {
+    "id": 865,
+    "code": "HB1",
+    "name": "HOT BLUE KILO",
+    "wholesale_unit_price": 63,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 63
+  },
+  {
+    "id": 866,
+    "code": "HB2",
+    "name": "HOT BLUE MEDIO",
+    "wholesale_unit_price": 32,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 32
+  },
+  {
+    "id": 867,
+    "code": "HB3",
+    "name": "HOT BLUE CUARTO",
+    "wholesale_unit_price": 16,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 16
+  },
+  {
+    "id": 868,
+    "code": "HBB",
+    "name": "HOT BBQ",
+    "wholesale_unit_price": 61,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 61
+  },
+  {
+    "id": 869,
+    "code": "HBB1",
+    "name": "HOT BBQ KILO",
+    "wholesale_unit_price": 63,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 63
+  },
+  {
+    "id": 870,
+    "code": "HBB2",
+    "name": "HOT BBQ MEDIO",
+    "wholesale_unit_price": 32,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 32
+  },
+  {
+    "id": 871,
+    "code": "HBB3",
+    "name": "HOT BBQ CUARTO",
+    "wholesale_unit_price": 16,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 16
+  },
+  {
+    "id": 872,
+    "code": "HC",
+    "name": "HOT CANELA A GRANEL",
+    "wholesale_unit_price": 61,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 61
+  },
+  {
+    "id": 873,
+    "code": "HC1",
+    "name": "HOT CANELA KILO",
+    "wholesale_unit_price": 63,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 63
+  },
+  {
+    "id": 874,
+    "code": "HC2",
+    "name": "HOT CANELA MEDIO",
+    "wholesale_unit_price": 32,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 32
+  },
+  {
+    "id": 875,
+    "code": "HC3",
+    "name": "HOT CANELA CUARTO",
+    "wholesale_unit_price": 16,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 16
+  },
+  {
+    "id": 876,
+    "code": "HCH",
+    "name": "HOT CHIPOTLE KG GRANEL",
+    "wholesale_unit_price": 61,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 61
+  },
+  {
+    "id": 877,
+    "code": "HCH1",
+    "name": "HOT CHIPOTLE KILO",
+    "wholesale_unit_price": 63,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 63
+  },
+  {
+    "id": 878,
+    "code": "HCH2",
+    "name": "HOT CHIPOTLE MEDIO",
+    "wholesale_unit_price": 32,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 32
+  },
+  {
+    "id": 879,
+    "code": "HCH3",
+    "name": "HOT CHIPOTLE CUARTO",
+    "wholesale_unit_price": 16,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 16
+  },
+  {
+    "id": 880,
+    "code": "HE",
+    "name": "HOT ELOTE",
+    "wholesale_unit_price": 61,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 61
+  },
+  {
+    "id": 881,
+    "code": "HE1",
+    "name": "HOT ELOTE KILO",
+    "wholesale_unit_price": 63,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 63
+  },
+  {
+    "id": 882,
+    "code": "HE2",
+    "name": "HOT ELOTE MEDIO",
+    "wholesale_unit_price": 32,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 32
+  },
+  {
+    "id": 883,
+    "code": "HE3",
+    "name": "HOT ELOTE CUARTO",
+    "wholesale_unit_price": 16,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 16
+  },
+  {
+    "id": 884,
+    "code": "HH",
+    "name": "HOT HABANERO",
+    "wholesale_unit_price": 61,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 61
+  },
+  {
+    "id": 885,
+    "code": "HH1",
+    "name": "HOT HABANERO KILO",
+    "wholesale_unit_price": 63,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 63
+  },
+  {
+    "id": 886,
+    "code": "HH2",
+    "name": "HOT HABANERO MEDIO",
+    "wholesale_unit_price": 32,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 32
+  },
+  {
+    "id": 887,
+    "code": "HH3",
+    "name": "HOT HABANERO CUARTO",
+    "wholesale_unit_price": 16,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 16
+  },
+  {
+    "id": 888,
+    "code": "HJ",
+    "name": "HOT JALAPEÑO",
+    "wholesale_unit_price": 61,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 61
+  },
+  {
+    "id": 889,
+    "code": "HJ1",
+    "name": "HOT JALAPEÑO KILO",
+    "wholesale_unit_price": 63,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 63
+  },
+  {
+    "id": 890,
+    "code": "HJ2",
+    "name": "HOT JALAPEÑO MEDIO",
+    "wholesale_unit_price": 32,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 32
+  },
+  {
+    "id": 891,
+    "code": "HJ3",
+    "name": "HOT JALAPEÑO CUARTO",
+    "wholesale_unit_price": 16,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 16
+  },
+  {
+    "id": 893,
+    "code": "HM",
+    "name": "HOT MANGO GRANEL",
+    "wholesale_unit_price": 61,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 61
+  },
+  {
+    "id": 894,
+    "code": "HM1",
+    "name": "HOT MANGO KILO",
+    "wholesale_unit_price": 63,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 63
+  },
+  {
+    "id": 895,
+    "code": "HM2",
+    "name": "HOT MANGO MEDIO",
+    "wholesale_unit_price": 32,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 32
+  },
+  {
+    "id": 896,
+    "code": "HM3",
+    "name": "HOT MANGO CUARTO",
+    "wholesale_unit_price": 16,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 16
+  },
+  {
+    "id": 897,
+    "code": "HMI",
+    "name": "HOT MICHELADO GRANEL",
+    "wholesale_unit_price": 61,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 61
+  },
+  {
+    "id": 898,
+    "code": "HMI1",
+    "name": "HOT MICHELADO KILO",
+    "wholesale_unit_price": 63,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 63
+  },
+  {
+    "id": 899,
+    "code": "HMI2",
+    "name": "HOT MICHELADO MEDIO",
+    "wholesale_unit_price": 32,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 32
+  },
+  {
+    "id": 900,
+    "code": "HMI3",
+    "name": "HOT MICHELADO CUARTO",
+    "wholesale_unit_price": 16,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 16
+  },
+  {
+    "id": 901,
+    "code": "HN",
+    "name": "HOT NUTS GRANEL",
+    "wholesale_unit_price": 61,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 61
+  },
+  {
+    "id": 902,
+    "code": "HN1",
+    "name": "HOT NUTS KILO",
+    "wholesale_unit_price": 63,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 63
+  },
+  {
+    "id": 903,
+    "code": "HN2",
+    "name": "HOT NUTS MEDIO",
+    "wholesale_unit_price": 32,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 32
+  },
+  {
+    "id": 904,
+    "code": "HN3",
+    "name": "HOT NUTS CUARTO",
+    "wholesale_unit_price": 16,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 16
+  },
+  {
+    "id": 905,
+    "code": "HQ",
+    "name": "HOT QUESO GRANEL",
+    "wholesale_unit_price": 61,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 61
+  },
+  {
+    "id": 906,
+    "code": "HQ1",
+    "name": "HOT QUESO KILO",
+    "wholesale_unit_price": 63,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 63
+  },
+  {
+    "id": 907,
+    "code": "HQ2",
+    "name": "HOT QUESO MEDIO",
+    "wholesale_unit_price": 32,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 32
+  },
+  {
+    "id": 835,
+    "code": "G",
+    "name": "GARAPIÑADO GRANEL",
+    "wholesale_unit_price": 45,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 45
+  },
+  {
+    "id": 837,
+    "code": "G2",
+    "name": "GARAPIÑADO MEDIO",
+    "wholesale_unit_price": 23,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 30
+  },
+  {
+    "id": 838,
+    "code": "G3",
+    "name": "GARAPIÑADO CUARTO",
+    "wholesale_unit_price": 12,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 15
+  },
+  {
+    "id": 857,
+    "code": "GS",
+    "name": "GARAPIÑADO SABORES GRANEL",
+    "wholesale_unit_price": 45,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 45
+  },
+  {
+    "id": 858,
+    "code": "GS1",
+    "name": "GARAPIÑADO SABORES KILO",
+    "wholesale_unit_price": 46,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 60
+  },
+  {
+    "id": 859,
+    "code": "GS2",
+    "name": "GARAPIÑADO SABORES MEDIO",
+    "wholesale_unit_price": 23,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 30
+  },
+  {
+    "id": 860,
+    "code": "GS3",
+    "name": "GARAPIÑADO SABORES CUARTO",
+    "wholesale_unit_price": 12,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 15
+  },
+  {
+    "id": 852,
+    "code": "GD1",
+    "name": "GRANILLO DULCE KILO",
+    "wholesale_unit_price": 40,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 60
+  },
+  {
+    "id": 853,
+    "code": "GD2",
+    "name": "GRANILLO DULCE MEDIO",
+    "wholesale_unit_price": 20,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 30
+  },
+  {
+    "id": 854,
+    "code": "GD3",
+    "name": "GRANILLO DULCE CUARTO",
+    "wholesale_unit_price": 12,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 15
+  },
+  {
+    "id": 855,
+    "code": "GN",
+    "name": "GRANILLO NATURAL GRANEL",
+    "wholesale_unit_price": 38,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 38
+  },
+  {
+    "id": 834,
+    "code": "FR3",
+    "name": "FRITURA DE CUARTO",
+    "wholesale_unit_price": 16,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 16
+  },
+  {
+    "id": 841,
+    "code": "GA2",
+    "name": "GAR. AJONJOLI MEDIO",
+    "wholesale_unit_price": 23,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 30
+  },
+  {
+    "id": 840,
+    "code": "GA1",
+    "name": "GAR. AJONJOLI KG",
+    "wholesale_unit_price": 45,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 60
+  },
+  {
+    "id": 849,
+    "code": "GC2",
+    "name": "GAR. COCO MEDIO",
+    "wholesale_unit_price": 23,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 30
+  },
+  {
+    "id": 908,
+    "code": "HQ3",
+    "name": "HOT QUESO CUARTO",
+    "wholesale_unit_price": 16,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 16
+  },
+  {
+    "id": 909,
+    "code": "HQJ",
+    "name": "HOT QUESO JALAPEÑO A GRANEL",
+    "wholesale_unit_price": 61,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 61
+  },
+  {
+    "id": 910,
+    "code": "HQJ1",
+    "name": "HOT QUESO JALAPEÑO KILO",
+    "wholesale_unit_price": 63,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 63
+  },
+  {
+    "id": 911,
+    "code": "HQJ2",
+    "name": "HOT QUESO JALAPEÑO MEDIO",
+    "wholesale_unit_price": 32,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 32
+  },
+  {
+    "id": 912,
+    "code": "HQJ3",
+    "name": "HOT QUESO JALAPEÑO CUARTO",
+    "wholesale_unit_price": 16,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 16
+  },
+  {
+    "id": 913,
+    "code": "HSN",
+    "name": "HOT SALSA NEGRA A GRANEL",
+    "wholesale_unit_price": 61,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 61
+  },
+  {
+    "id": 914,
+    "code": "HSN1",
+    "name": "HOT SALSA NEGRA KILO",
+    "wholesale_unit_price": 63,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 63
+  },
+  {
+    "id": 915,
+    "code": "HSN2",
+    "name": "HOT SALSA NEGRA MEDIO",
+    "wholesale_unit_price": 32,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 32
+  },
+  {
+    "id": 916,
+    "code": "HSN3",
+    "name": "HOT SALSA NEGRA CUARTO",
+    "wholesale_unit_price": 16,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 16
+  },
+  {
+    "id": 918,
+    "code": "J1",
+    "name": "JAPONES KG",
+    "wholesale_unit_price": 58,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 60
+  },
+  {
+    "id": 921,
+    "code": "JAM",
+    "name": "JAMONCILLO DE LECHE",
+    "wholesale_unit_price": 25,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 25
+  },
+  {
+    "id": 923,
+    "code": "KIWI3",
+    "name": "KIWI CUARTO",
+    "wholesale_unit_price": 50,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 50
+  },
+  {
+    "id": 924,
+    "code": "LENTEJA",
+    "name": "LENTEJA DE CUARTO",
+    "wholesale_unit_price": 15,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 15
+  },
+  {
+    "id": 925,
+    "code": "M",
+    "name": "MIXTURA GRANEL",
+    "wholesale_unit_price": 100,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 100
+  },
+  {
+    "id": 926,
+    "code": "M2",
+    "name": "MIXTURA MEDIO",
+    "wholesale_unit_price": 50,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 50
+  },
+  {
+    "id": 927,
+    "code": "M3",
+    "name": "MIXTURA CUARTO",
+    "wholesale_unit_price": 25,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 25
+  },
+  {
+    "id": 929,
+    "code": "MANGO3",
+    "name": "MANGO ENCHILADO CUARTO",
+    "wholesale_unit_price": 50,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 50
+  },
+  {
+    "id": 930,
+    "code": "MAZ",
+    "name": "MAZAPAN PIEZA",
+    "wholesale_unit_price": 15,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 15
+  },
+  {
+    "id": 931,
+    "code": "MER",
+    "name": "MERMELADA",
+    "wholesale_unit_price": 130,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 130
+  },
+  {
+    "id": 932,
+    "code": "MERMELADA",
+    "name": "MERMELADA SABORES",
+    "wholesale_unit_price": 130,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 130
+  },
+  {
+    "id": 934,
+    "code": "MF3",
+    "name": "MIXTURA FRUTOS SECOS CUARTO",
+    "wholesale_unit_price": 50,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 50
+  },
+  {
+    "id": 935,
+    "code": "MH",
+    "name": "MITADES HABANERAS GRANEL",
+    "wholesale_unit_price": 50,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 50
+  },
+  {
+    "id": 936,
+    "code": "MH1",
+    "name": "MITADES HABANERAS KILO",
+    "wholesale_unit_price": 50,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 60
+  },
+  {
+    "id": 937,
+    "code": "MH2",
+    "name": "MITADES HABANERAS MEDIO",
+    "wholesale_unit_price": 25,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 30
+  },
+  {
+    "id": 940,
+    "code": "MN3",
+    "name": "MANGO NATURAL CUARTO",
+    "wholesale_unit_price": 50,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 50
+  },
+  {
+    "id": 944,
+    "code": "MT3",
+    "name": "MITAD TOSTADA CUARTO",
+    "wholesale_unit_price": 11,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 15
+  },
+  {
+    "id": 949,
+    "code": "NCH",
+    "name": "NUEZ CON CHOCOLATE KILO",
+    "wholesale_unit_price": 360,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 360
+  },
+  {
+    "id": 950,
+    "code": "NG",
+    "name": "NUEZ GARAPIÑADA",
+    "wholesale_unit_price": 220,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 220
+  },
+  {
+    "id": 951,
+    "code": "NG2",
+    "name": "NUEZ GARAPIÑADA MEDIO",
+    "wholesale_unit_price": 110,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 110
+  },
+  {
+    "id": 952,
+    "code": "NG3",
+    "name": "NUEZ GARAPIÑADA CUARTO",
+    "wholesale_unit_price": 55,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 55
+  },
+  {
+    "id": 953,
+    "code": "NGP",
+    "name": "NUEZ GARAPIÑADA PEDACERIA",
+    "wholesale_unit_price": 180,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 180
+  },
+  {
+    "id": 954,
+    "code": "NGP2",
+    "name": "NUEZ GARAPIÑADA PED. MEDIO",
+    "wholesale_unit_price": 90,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 90
+  },
+  {
+    "id": 955,
+    "code": "NGP3",
+    "name": "NUEZ PEDACERIA GAR. CUARTO",
+    "wholesale_unit_price": 45,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 45
+  },
+  {
+    "id": 956,
+    "code": "NI",
+    "name": "NUEZ DE LA INDIA",
+    "wholesale_unit_price": 250,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 250
+  },
+  {
+    "id": 957,
+    "code": "NI3",
+    "name": "NUEZ DE LA INDIA CUARTO",
+    "wholesale_unit_price": 63,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 65
+  },
+  {
+    "id": 959,
+    "code": "NPN3",
+    "name": "NUEZ PEDACERIA CUARTO",
+    "wholesale_unit_price": 45,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 45
+  },
+  {
+    "id": 961,
+    "code": "NU2",
+    "name": "NUEZ NATURAL MEDIO",
+    "wholesale_unit_price": 110,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 110
+  },
+  {
+    "id": 962,
+    "code": "NU3",
+    "name": "NUEZ MITAD CUARTO",
+    "wholesale_unit_price": 55,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 55
+  },
+  {
+    "id": 963,
+    "code": "NUC2",
+    "name": "NUEZ CON CASCARA MEDIO",
+    "wholesale_unit_price": 50,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 50
+  },
+  {
+    "id": 964,
+    "code": "PAL",
+    "name": "PIPITORIA PIEZA",
+    "wholesale_unit_price": 5.5,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 6
+  },
+  {
+    "id": 966,
+    "code": "PC",
+    "name": "PEPITA GARAPIÑADA CALABAZA KG",
+    "wholesale_unit_price": 220,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 220
+  },
+  {
+    "id": 967,
+    "code": "PCG3",
+    "name": "PEPITA GARAPIÑADA CUARTO",
+    "wholesale_unit_price": 55,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 55
+  },
+  {
+    "id": 968,
+    "code": "PCH",
+    "name": "PALETA CHOCOLATE",
+    "wholesale_unit_price": 12,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 12
+  },
+  {
+    "id": 970,
+    "code": "PEG2",
+    "name": "PEPITA GIRASOL GARAPIÑADA MEDIO",
+    "wholesale_unit_price": 40,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 40
+  },
+  {
+    "id": 971,
+    "code": "PEG3",
+    "name": "PEPITA GIRASOL GARAPIÑADA CUARTO",
+    "wholesale_unit_price": 20,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 20
+  },
+  {
+    "id": 972,
+    "code": "PG",
+    "name": "PIPITORIA GRANDE",
+    "wholesale_unit_price": 15,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 15
+  },
+  {
+    "id": 973,
+    "code": "PG-A",
+    "name": "PIPITORIA GIGANTE AJONJOLI",
+    "wholesale_unit_price": 25,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 25
+  },
+  {
+    "id": 974,
+    "code": "PG-C",
+    "name": "PIPITORIA GDE PEPITA CALABAZA",
+    "wholesale_unit_price": 25,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 25
+  },
+  {
+    "id": 975,
+    "code": "PG-N",
+    "name": "PIPITORIA GIGANTE NUEZ",
+    "wholesale_unit_price": 25,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 25
+  },
+  {
+    "id": 976,
+    "code": "PG-P",
+    "name": "PIITORIA GIGANTE PEPITA",
+    "wholesale_unit_price": 25,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 25
+  },
+  {
+    "id": 977,
+    "code": "PG10",
+    "name": "PAQ GARAPIÑADO 10 PIEZAS",
+    "wholesale_unit_price": 50,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 50
+  },
+  {
+    "id": 942,
+    "code": "MT1",
+    "name": "MITADES TOSTADAS KG",
+    "wholesale_unit_price": 42,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 60
+  },
+  {
+    "id": 943,
+    "code": "MT2",
+    "name": "MITADES TOSTADAS MEDIO",
+    "wholesale_unit_price": 22,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 30
+  },
+  {
+    "id": 945,
+    "code": "MX",
+    "name": "MIXTO KG GRANEL",
+    "wholesale_unit_price": 45,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 45
+  },
+  {
+    "id": 948,
+    "code": "MX3",
+    "name": "MIXTO CUARTO",
+    "wholesale_unit_price": 12,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 15
+  },
+  {
+    "id": 946,
+    "code": "MX1",
+    "name": "MIXTO KG",
+    "wholesale_unit_price": 46,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 60
+  },
+  {
+    "id": 947,
+    "code": "MX2",
+    "name": "MIXTO MEDIO",
+    "wholesale_unit_price": 23,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 30
+  },
+  {
+    "id": 917,
+    "code": "J",
+    "name": "JAPONES KG GRANEL",
+    "wholesale_unit_price": 58,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 58
+  },
+  {
+    "id": 919,
+    "code": "J2",
+    "name": "JAPONES MEDIO",
+    "wholesale_unit_price": 29,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 30
+  },
+  {
+    "id": 920,
+    "code": "J3",
+    "name": "JAPONES CUARTO",
+    "wholesale_unit_price": 15,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 15
+  },
+  {
+    "id": 965,
+    "code": "PAS1",
+    "name": "PASAS KILO",
+    "wholesale_unit_price": 50,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 50
+  },
+  {
+    "id": 979,
+    "code": "PIÑA",
+    "name": "PIÑA ENCHILADA KG",
+    "wholesale_unit_price": 200,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 200
+  },
+  {
+    "id": 922,
+    "code": "KIWI",
+    "name": "KIWI KG",
+    "wholesale_unit_price": 200,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 200
+  },
+  {
+    "id": 928,
+    "code": "MANGO",
+    "name": "MANGO ENCHILADO KG",
+    "wholesale_unit_price": 200,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 200
+  },
+  {
+    "id": 939,
+    "code": "MN",
+    "name": "MANGO NATURAL A GRANEL",
+    "wholesale_unit_price": 200,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 200
+  },
+  {
+    "id": 933,
+    "code": "MF2",
+    "name": "MIXTURA FRUTOS SECOS MEDIO",
+    "wholesale_unit_price": 100,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 100
+  },
+  {
+    "id": 938,
+    "code": "MH3",
+    "name": "MITADES HABANERAS CUARTO",
+    "wholesale_unit_price": 12,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 15
+  },
+  {
+    "id": 960,
+    "code": "NU",
+    "name": "NUEZ NATURAL MITAD KG",
+    "wholesale_unit_price": 240,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 240
+  },
+  {
+    "id": 958,
+    "code": "NPN",
+    "name": "NUEZ PEDACERIA NATURAL",
+    "wholesale_unit_price": 200,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 200
+  },
+  {
+    "id": 978,
+    "code": "PGN",
+    "name": "PEPITA GIRASOL NATURAL",
+    "wholesale_unit_price": 78,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 78
+  },
+  {
+    "id": 969,
+    "code": "PEG",
+    "name": "PEPITA GARAPIÑADA KG",
+    "wholesale_unit_price": 220,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 220
+  },
+  {
+    "id": 980,
+    "code": "PIÑA3",
+    "name": "PIÑA ENCHILADA DE CUARTO",
+    "wholesale_unit_price": 50,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 50
+  },
+  {
+    "id": 982,
+    "code": "PIS2",
+    "name": "PISTACHE MEDIO",
+    "wholesale_unit_price": 125,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 125
+  },
+  {
+    "id": 983,
+    "code": "PIS3",
+    "name": "PISTACHE CUARTO",
+    "wholesale_unit_price": 62.5,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 65
+  },
+  {
+    "id": 984,
+    "code": "PM",
+    "name": "PIPITORIA MIXTURA",
+    "wholesale_unit_price": 9,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 9
+  },
+  {
+    "id": 985,
+    "code": "PN",
+    "name": "PEPITA NATURAL GRANEL",
+    "wholesale_unit_price": 220,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 220
+  },
+  {
+    "id": 986,
+    "code": "PN3",
+    "name": "PEPITA NATURAL CUARTO",
+    "wholesale_unit_price": 55,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 55
+  },
+  {
+    "id": 987,
+    "code": "PNA3",
+    "name": "PIÑA NATURAL CUARTO",
+    "wholesale_unit_price": 50,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 50
+  },
+  {
+    "id": 988,
+    "code": "PP",
+    "name": "PIPITORIA PEPITA POR PIEZA",
+    "wholesale_unit_price": 15,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 15
+  },
+  {
+    "id": 991,
+    "code": "PS",
+    "name": "PEPITA SALADA KG",
+    "wholesale_unit_price": 220,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 220
+  },
+  {
+    "id": 992,
+    "code": "PS3",
+    "name": "PEPITA SALADA CUARTO",
+    "wholesale_unit_price": 55,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 55
+  },
+  {
+    "id": 993,
+    "code": "PSG",
+    "name": "PEPITA SALADA GIRASOL KILO",
+    "wholesale_unit_price": 140,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 140
+  },
+  {
+    "id": 994,
+    "code": "PSG3",
+    "name": "PEPITA SALADA DE GIRASOL CUARTO",
+    "wholesale_unit_price": 35,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 35
+  },
+  {
+    "id": 995,
+    "code": "PT",
+    "name": "PEDACERIA TOSTADA",
+    "wholesale_unit_price": 26,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 26
+  },
+  {
+    "id": 1000,
+    "code": "SALSA",
+    "name": "SALSA ROJA",
+    "wholesale_unit_price": 25,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 25
+  },
+  {
+    "id": 1004,
+    "code": "SGN",
+    "name": "SEMILLA GIRASOL NATURAL GRANEL",
+    "wholesale_unit_price": 45,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 45
+  },
+  {
+    "id": 1005,
+    "code": "SM",
+    "name": "SALSA MACHA",
+    "wholesale_unit_price": 65,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 65
+  },
+  {
+    "id": 1006,
+    "code": "SN",
+    "name": "SEMILLA NATURAL KG",
+    "wholesale_unit_price": 120,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 120
+  },
+  {
+    "id": 1007,
+    "code": "SS",
+    "name": "SEMILLA SALADA KG GRANEL",
+    "wholesale_unit_price": 140,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 140
+  },
+  {
+    "id": 1008,
+    "code": "SS1",
+    "name": "SEMILLA SALADA KG",
+    "wholesale_unit_price": 140,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 140
+  },
+  {
+    "id": 1009,
+    "code": "SS2",
+    "name": "SEMILLA SALADA MEDIO",
+    "wholesale_unit_price": 70,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 70
+  },
+  {
+    "id": 1010,
+    "code": "SS3",
+    "name": "SEMILLA SALADA CUARTO",
+    "wholesale_unit_price": 35,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 35
+  },
+  {
+    "id": 1011,
+    "code": "TC",
+    "name": "TOSTADO CON CASCARA KG GRANEL",
+    "wholesale_unit_price": 40,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 50
+  },
+  {
+    "id": 1012,
+    "code": "TC2",
+    "name": "TOSTADO CASCARA MEDIO",
+    "wholesale_unit_price": 25,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 25
+  },
+  {
+    "id": 1013,
+    "code": "TCA",
+    "name": "CANTINERO EN TUBITOS DE KG",
+    "wholesale_unit_price": 48,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 48
+  },
+  {
+    "id": 1014,
+    "code": "TE",
+    "name": "KG ENCHILADO EN TUBITOS",
+    "wholesale_unit_price": 48,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 48
+  },
+  {
+    "id": 1015,
+    "code": "TES",
+    "name": "KG ESPAÑOL EN TUBITOS",
+    "wholesale_unit_price": 48,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 48
+  },
+  {
+    "id": 1016,
+    "code": "TGA",
+    "name": "GAR. AJONJOLI EN TUBITOS KG",
+    "wholesale_unit_price": 50,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 50
+  },
+  {
+    "id": 1017,
+    "code": "TMX",
+    "name": "KG MIXTO EN TUBITOS",
+    "wholesale_unit_price": 50,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 50
+  },
+  {
+    "id": 760,
+    "code": "AD100",
+    "name": "AMARANTO DULCE 100 GMS",
+    "wholesale_unit_price": 20,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 20
+  },
+  {
+    "id": 996,
+    "code": "S",
+    "name": "SALADO KG GRANEL",
+    "wholesale_unit_price": 42,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 42
+  },
+  {
+    "id": 997,
+    "code": "S1",
+    "name": "SALADO KG",
+    "wholesale_unit_price": 43,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 60
+  },
+  {
+    "id": 998,
+    "code": "S2",
+    "name": "SALADO MEDIO",
+    "wholesale_unit_price": 22,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 30
+  },
+  {
+    "id": 999,
+    "code": "S3",
+    "name": "SALADO CUARTO",
+    "wholesale_unit_price": 12,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 15
+  },
+  {
+    "id": 981,
+    "code": "PIS",
+    "name": "PISTACHE KG GRANEL",
+    "wholesale_unit_price": 250,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 250
+  },
+  {
+    "id": 1001,
+    "code": "SG",
+    "name": "SEMILLA GIRASOL GRANEL",
+    "wholesale_unit_price": 55,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 55
+  },
+  {
+    "id": 1002,
+    "code": "SG2",
+    "name": "SEMILLA GIRASOL MEDIO",
+    "wholesale_unit_price": 27.5,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 27.5
+  },
+  {
+    "id": 1003,
+    "code": "SG3",
+    "name": "SEMILLA GIRASOL CUARTO",
+    "wholesale_unit_price": 13.75,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 13.75
+  },
+  {
+    "id": 990,
+    "code": "PPN",
+    "name": "PIPITORIA NUEZ",
+    "wholesale_unit_price": 10,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 10
+  },
+  {
+    "id": 989,
+    "code": "PP10",
+    "name": "PAQUETE PIPITORIA 10 PIEZAS",
+    "wholesale_unit_price": 60,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 60
+  },
+  {
+    "id": 839,
+    "code": "GA",
+    "name": "GAR. AJONJOLI GRANEL",
+    "wholesale_unit_price": 44,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 44
+  },
+  {
+    "id": 836,
+    "code": "G1",
+    "name": "GARAPIÑADO KG",
+    "wholesale_unit_price": 46,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 60
+  },
+  {
+    "id": 1030,
+    "code": "B20",
+    "name": "BOTANERO 20 KG",
+    "wholesale_unit_price": 840,
+    "enabled": true,
+    "created_at": "2024-07-08T17:02:48.193717+00:00",
+    "updated_at": "2024-07-08T17:02:48.193717+00:00",
+    "retail_unit_price": 840
+  },
+  {
+    "id": 1031,
+    "code": "C20",
+    "name": "CANTINERO 20 KG",
+    "wholesale_unit_price": 840,
+    "enabled": true,
+    "created_at": "2024-07-08T17:03:23.240408+00:00",
+    "updated_at": "2024-07-08T17:03:23.240408+00:00",
+    "retail_unit_price": 840
+  },
+  {
+    "id": 1032,
+    "code": "CH20",
+    "name": "CHIPOTLE 20 KG",
+    "wholesale_unit_price": 840,
+    "enabled": true,
+    "created_at": "2024-07-08T17:03:50.138598+00:00",
+    "updated_at": "2024-07-08T17:03:50.138598+00:00",
+    "retail_unit_price": 840
+  },
+  {
+    "id": 1033,
+    "code": "CA20",
+    "name": "CANTINERO 20 KG",
+    "wholesale_unit_price": 840,
+    "enabled": true,
+    "created_at": "2024-07-08T17:04:16.900766+00:00",
+    "updated_at": "2024-07-08T17:04:16.900766+00:00",
+    "retail_unit_price": 840
+  },
+  {
+    "id": 1034,
+    "code": "MH20",
+    "name": "MITADES HABANERAS 20 KG",
+    "wholesale_unit_price": 840,
+    "enabled": true,
+    "created_at": "2024-07-08T17:04:40.250358+00:00",
+    "updated_at": "2024-07-08T17:04:40.250358+00:00",
+    "retail_unit_price": 840
+  },
+  {
+    "id": 1035,
+    "code": "E20",
+    "name": "ENCHILADO 20 KG",
+    "wholesale_unit_price": 840,
+    "enabled": true,
+    "created_at": "2024-07-08T17:06:35.527021+00:00",
+    "updated_at": "2024-07-08T17:06:35.527021+00:00",
+    "retail_unit_price": 840
+  },
+  {
+    "id": 1036,
+    "code": "S20",
+    "name": "SALADO 20 KG",
+    "wholesale_unit_price": 840,
+    "enabled": true,
+    "created_at": "2024-07-08T17:06:59.395523+00:00",
+    "updated_at": "2024-07-08T17:06:59.395523+00:00",
+    "retail_unit_price": 840
+  },
+  {
+    "id": 1037,
+    "code": "MT20",
+    "name": "MITADES TOSADAS 20 KG",
+    "wholesale_unit_price": 820,
+    "enabled": true,
+    "created_at": "2024-07-08T17:07:23.274866+00:00",
+    "updated_at": "2024-07-08T17:07:23.274866+00:00",
+    "retail_unit_price": 820
+  },
+  {
+    "id": 1038,
+    "code": "ES20",
+    "name": "ESPANOL 20 KG",
+    "wholesale_unit_price": 840,
+    "enabled": true,
+    "created_at": "2024-07-08T17:07:52.748454+00:00",
+    "updated_at": "2024-07-08T17:07:52.748454+00:00",
+    "retail_unit_price": 840
+  },
+  {
+    "id": 1039,
+    "code": "ESA20",
+    "name": "ESPANOL CON AJO 20 KG",
+    "wholesale_unit_price": 840,
+    "enabled": true,
+    "created_at": "2024-07-08T17:08:16.222595+00:00",
+    "updated_at": "2024-07-08T17:08:16.222595+00:00",
+    "retail_unit_price": 840
+  },
+  {
+    "id": 1040,
+    "code": "MX20",
+    "name": "MIXTO DE MEDIO 20 KG",
+    "wholesale_unit_price": 900,
+    "enabled": true,
+    "created_at": "2024-07-08T17:08:45.441957+00:00",
+    "updated_at": "2024-07-08T17:08:45.441957+00:00",
+    "retail_unit_price": 900
+  },
+  {
+    "id": 1041,
+    "code": "G20",
+    "name": "GARAPINADO 20 KG",
+    "wholesale_unit_price": 900,
+    "enabled": true,
+    "created_at": "2024-07-08T17:09:07.022753+00:00",
+    "updated_at": "2024-07-08T17:09:07.022753+00:00",
+    "retail_unit_price": 900
+  },
+  {
+    "id": 1042,
+    "code": "GA20",
+    "name": "GARAPINADO AJONJOLI 20 KG",
+    "wholesale_unit_price": 900,
+    "enabled": true,
+    "created_at": "2024-07-08T17:09:35.85164+00:00",
+    "updated_at": "2024-07-08T17:09:35.85164+00:00",
+    "retail_unit_price": 900
+  },
+  {
+    "id": 1043,
+    "code": "GC20",
+    "name": "GARAPINADO COCO 20 KG",
+    "wholesale_unit_price": 900,
+    "enabled": true,
+    "created_at": "2024-07-08T17:10:00.217023+00:00",
+    "updated_at": "2024-07-08T17:10:00.217023+00:00",
+    "retail_unit_price": 900
+  },
+  {
+    "id": 1044,
+    "code": "GS20",
+    "name": "GARAPINADO SABORES 20 KG",
+    "wholesale_unit_price": 900,
+    "enabled": true,
+    "created_at": "2024-07-08T17:10:22.180623+00:00",
+    "updated_at": "2024-07-08T17:10:22.180623+00:00",
+    "retail_unit_price": 900
+  },
+  {
+    "id": 1045,
+    "code": "J20",
+    "name": "JAPONES 20 KG",
+    "wholesale_unit_price": 1160,
+    "enabled": true,
+    "created_at": "2024-07-08T17:12:03.302836+00:00",
+    "updated_at": "2024-07-08T17:12:03.302836+00:00",
+    "retail_unit_price": 1160
+  },
+  {
+    "id": 1046,
+    "code": "GD20",
+    "name": "GRANILLO DULCE 20 KG",
+    "wholesale_unit_price": 760,
+    "enabled": true,
+    "created_at": "2024-07-08T17:12:24.180961+00:00",
+    "updated_at": "2024-07-08T17:12:24.180961+00:00",
+    "retail_unit_price": 760
+  },
+  {
+    "id": 1047,
+    "code": "GN20",
+    "name": "GRANILLO NATURAL 20 KG",
+    "wholesale_unit_price": 760,
+    "enabled": true,
+    "created_at": "2024-07-08T17:12:49.279072+00:00",
+    "updated_at": "2024-07-08T17:12:49.279072+00:00",
+    "retail_unit_price": 760
+  },
+  {
+    "id": 1048,
+    "code": "HN20",
+    "name": "HOT NUTS 20 KG",
+    "wholesale_unit_price": 1220,
+    "enabled": true,
+    "created_at": "2024-07-08T17:13:12.505024+00:00",
+    "updated_at": "2024-07-08T17:13:12.505024+00:00",
+    "retail_unit_price": 1220
+  },
+  {
+    "id": 1049,
+    "code": "HH20",
+    "name": "HOT HABANERO 20 KG",
+    "wholesale_unit_price": 1220,
+    "enabled": true,
+    "created_at": "2024-07-08T17:13:43.141207+00:00",
+    "updated_at": "2024-07-08T17:13:43.141207+00:00",
+    "retail_unit_price": 1220
+  },
+  {
+    "id": 1050,
+    "code": "HM20",
+    "name": "HOT MANGO 20 KG",
+    "wholesale_unit_price": 1220,
+    "enabled": true,
+    "created_at": "2024-07-08T17:14:05.586172+00:00",
+    "updated_at": "2024-07-08T17:14:05.586172+00:00",
+    "retail_unit_price": 1220
+  },
+  {
+    "id": 1051,
+    "code": "HQ20",
+    "name": "HOT QUESO 20 KG",
+    "wholesale_unit_price": 1220,
+    "enabled": true,
+    "created_at": "2024-07-08T17:14:31.184303+00:00",
+    "updated_at": "2024-07-08T17:14:31.184303+00:00",
+    "retail_unit_price": 1220
+  },
+  {
+    "id": 1052,
+    "code": "HCH20",
+    "name": "HOT CHIPOTLE 20 KG",
+    "wholesale_unit_price": 1220,
+    "enabled": true,
+    "created_at": "2024-07-08T17:14:54.460804+00:00",
+    "updated_at": "2024-07-08T17:14:54.460804+00:00",
+    "retail_unit_price": 1220
+  },
+  {
+    "id": 1053,
+    "code": "HE20",
+    "name": "HOT ELOTE 20 KG",
+    "wholesale_unit_price": 1220,
+    "enabled": true,
+    "created_at": "2024-07-08T17:15:34.196072+00:00",
+    "updated_at": "2024-07-08T17:15:34.196072+00:00",
+    "retail_unit_price": 1220
+  },
+  {
+    "id": 1054,
+    "code": "HJ20",
+    "name": "HOT JALAPENO 20 KG",
+    "wholesale_unit_price": 1220,
+    "enabled": true,
+    "created_at": "2024-07-08T17:16:01.798095+00:00",
+    "updated_at": "2024-07-08T17:16:01.798095+00:00",
+    "retail_unit_price": 1220
+  },
+  {
+    "id": 1055,
+    "code": "HBBQ20",
+    "name": "HOT BBQ 20 KG",
+    "wholesale_unit_price": 1220,
+    "enabled": true,
+    "created_at": "2024-07-08T17:16:24.239901+00:00",
+    "updated_at": "2024-07-08T17:16:24.239901+00:00",
+    "retail_unit_price": 1220
+  },
+  {
+    "id": 1056,
+    "code": "HQJ20",
+    "name": "HOT QUESO JALAPENO 20 KG",
+    "wholesale_unit_price": 1220,
+    "enabled": true,
+    "created_at": "2024-07-08T17:16:44.939205+00:00",
+    "updated_at": "2024-07-08T17:16:44.939205+00:00",
+    "retail_unit_price": 1220
+  },
+  {
+    "id": 1057,
+    "code": "HMI20",
+    "name": "HOT MICHELADO 20 KG",
+    "wholesale_unit_price": 1220,
+    "enabled": true,
+    "created_at": "2024-07-08T17:17:13.048284+00:00",
+    "updated_at": "2024-07-08T17:17:13.048284+00:00",
+    "retail_unit_price": 1220
+  },
+  {
+    "id": 1058,
+    "code": "B5",
+    "name": "BOTANERO 5 KG",
+    "wholesale_unit_price": 210,
+    "enabled": true,
+    "created_at": "2024-07-08T17:17:48.775565+00:00",
+    "updated_at": "2024-07-08T17:17:48.775565+00:00",
+    "retail_unit_price": 210
+  },
+  {
+    "id": 1059,
+    "code": "C5",
+    "name": "CANTINERO 5 KG",
+    "wholesale_unit_price": 210,
+    "enabled": true,
+    "created_at": "2024-07-08T17:18:11.855115+00:00",
+    "updated_at": "2024-07-08T17:18:11.855115+00:00",
+    "retail_unit_price": 210
+  },
+  {
+    "id": 1060,
+    "code": "CH5",
+    "name": "CHIPOTLE 5 KG",
+    "wholesale_unit_price": 210,
+    "enabled": true,
+    "created_at": "2024-07-08T17:18:35.665536+00:00",
+    "updated_at": "2024-07-08T17:18:35.665536+00:00",
+    "retail_unit_price": 210
+  },
+  {
+    "id": 1061,
+    "code": "CA5",
+    "name": "CANTINERO 5 KG",
+    "wholesale_unit_price": 210,
+    "enabled": true,
+    "created_at": "2024-07-08T17:19:52.750711+00:00",
+    "updated_at": "2024-07-08T17:19:52.750711+00:00",
+    "retail_unit_price": 210
+  },
+  {
+    "id": 1062,
+    "code": "MH5",
+    "name": "MITADES HABANERAS 5 KG",
+    "wholesale_unit_price": 210,
+    "enabled": true,
+    "created_at": "2024-07-08T17:20:18.516027+00:00",
+    "updated_at": "2024-07-08T17:20:18.516027+00:00",
+    "retail_unit_price": 210
+  },
+  {
+    "id": 1063,
+    "code": "E5",
+    "name": "ENCHILADO 5 KG",
+    "wholesale_unit_price": 210,
+    "enabled": true,
+    "created_at": "2024-07-08T17:20:41.091488+00:00",
+    "updated_at": "2024-07-08T17:20:41.091488+00:00",
+    "retail_unit_price": 210
+  },
+  {
+    "id": 1064,
+    "code": "S5",
+    "name": "SALADO 5 KG",
+    "wholesale_unit_price": 210,
+    "enabled": true,
+    "created_at": "2024-07-08T17:21:16.110559+00:00",
+    "updated_at": "2024-07-08T17:21:16.110559+00:00",
+    "retail_unit_price": 210
+  },
+  {
+    "id": 1065,
+    "code": "MT5",
+    "name": "MITADES TOSADAS 5 KG",
+    "wholesale_unit_price": 205,
+    "enabled": true,
+    "created_at": "2024-07-08T17:21:39.299844+00:00",
+    "updated_at": "2024-07-08T17:21:39.299844+00:00",
+    "retail_unit_price": 205
+  },
+  {
+    "id": 1066,
+    "code": "ES5",
+    "name": "ESPANOL 5 KG",
+    "wholesale_unit_price": 210,
+    "enabled": true,
+    "created_at": "2024-07-08T17:22:02.815988+00:00",
+    "updated_at": "2024-07-08T17:22:02.815988+00:00",
+    "retail_unit_price": 210
+  },
+  {
+    "id": 1067,
+    "code": "ESA5",
+    "name": "ESPANOL CON AJO 5 KG",
+    "wholesale_unit_price": 210,
+    "enabled": true,
+    "created_at": "2024-07-08T17:22:26.991057+00:00",
+    "updated_at": "2024-07-08T17:22:26.991057+00:00",
+    "retail_unit_price": 210
+  },
+  {
+    "id": 1068,
+    "code": "MX5",
+    "name": "MIXTO DE MEDIO 5 KG",
+    "wholesale_unit_price": 225,
+    "enabled": true,
+    "created_at": "2024-07-08T17:22:50.04035+00:00",
+    "updated_at": "2024-07-08T17:22:50.04035+00:00",
+    "retail_unit_price": 225
+  },
+  {
+    "id": 1069,
+    "code": "G5",
+    "name": "GARAPINADO 5 KG",
+    "wholesale_unit_price": 225,
+    "enabled": true,
+    "created_at": "2024-07-08T17:23:10.041566+00:00",
+    "updated_at": "2024-07-08T17:23:10.041566+00:00",
+    "retail_unit_price": 225
+  },
+  {
+    "id": 1070,
+    "code": "GA5",
+    "name": "GARAPINADO AJONJOLI 5 KG",
+    "wholesale_unit_price": 225,
+    "enabled": true,
+    "created_at": "2024-07-08T17:23:29.892066+00:00",
+    "updated_at": "2024-07-08T17:23:29.892066+00:00",
+    "retail_unit_price": 225
+  },
+  {
+    "id": 1071,
+    "code": "GC5",
+    "name": "GARAPINADO COCO 5 KG",
+    "wholesale_unit_price": 225,
+    "enabled": true,
+    "created_at": "2024-07-08T17:23:48.786793+00:00",
+    "updated_at": "2024-07-08T17:23:48.786793+00:00",
+    "retail_unit_price": 225
+  },
+  {
+    "id": 1072,
+    "code": "GS5",
+    "name": "GARAPINADO SABORES 5 KG",
+    "wholesale_unit_price": 225,
+    "enabled": true,
+    "created_at": "2024-07-08T17:24:09.03076+00:00",
+    "updated_at": "2024-07-08T17:24:09.03076+00:00",
+    "retail_unit_price": 225
+  },
+  {
+    "id": 1073,
+    "code": "J5",
+    "name": "JAPONES 5 KG",
+    "wholesale_unit_price": 290,
+    "enabled": true,
+    "created_at": "2024-07-08T17:24:29.403979+00:00",
+    "updated_at": "2024-07-08T17:24:29.403979+00:00",
+    "retail_unit_price": 290
+  },
+  {
+    "id": 1074,
+    "code": "GD5",
+    "name": "GRANILLO DULCE 5 KG",
+    "wholesale_unit_price": 190,
+    "enabled": true,
+    "created_at": "2024-07-08T17:24:49.471036+00:00",
+    "updated_at": "2024-07-08T17:24:49.471036+00:00",
+    "retail_unit_price": 190
+  },
+  {
+    "id": 1075,
+    "code": "GN5",
+    "name": "GRANILLO NATURAL 5 KG",
+    "wholesale_unit_price": 190,
+    "enabled": true,
+    "created_at": "2024-07-08T17:25:11.254459+00:00",
+    "updated_at": "2024-07-08T17:25:11.254459+00:00",
+    "retail_unit_price": 190
+  },
+  {
+    "id": 1076,
+    "code": "HN5",
+    "name": "HOT NUTS 5 KG",
+    "wholesale_unit_price": 305,
+    "enabled": true,
+    "created_at": "2024-07-08T17:25:31.441097+00:00",
+    "updated_at": "2024-07-08T17:25:31.441097+00:00",
+    "retail_unit_price": 305
+  },
+  {
+    "id": 1077,
+    "code": "HH5",
+    "name": "HOT HABANERO 5 KG",
+    "wholesale_unit_price": 305,
+    "enabled": true,
+    "created_at": "2024-07-08T17:25:57.811641+00:00",
+    "updated_at": "2024-07-08T17:25:57.811641+00:00",
+    "retail_unit_price": 305
+  },
+  {
+    "id": 1078,
+    "code": "HM5",
+    "name": "HOT MANGO 5 KG",
+    "wholesale_unit_price": 305,
+    "enabled": true,
+    "created_at": "2024-07-08T17:26:16.30412+00:00",
+    "updated_at": "2024-07-08T17:26:16.30412+00:00",
+    "retail_unit_price": 305
+  },
+  {
+    "id": 1079,
+    "code": "HQ5",
+    "name": "HOT QUESO 5 KG",
+    "wholesale_unit_price": 305,
+    "enabled": true,
+    "created_at": "2024-07-08T17:26:33.083773+00:00",
+    "updated_at": "2024-07-08T17:26:33.083773+00:00",
+    "retail_unit_price": 305
+  },
+  {
+    "id": 1080,
+    "code": "HCH5",
+    "name": "HOT CHIPOTLE 5 KG",
+    "wholesale_unit_price": 305,
+    "enabled": true,
+    "created_at": "2024-07-08T17:26:49.300844+00:00",
+    "updated_at": "2024-07-08T17:26:49.300844+00:00",
+    "retail_unit_price": 305
+  },
+  {
+    "id": 1081,
+    "code": "HE5",
+    "name": "HOT ELOTE 5 KG",
+    "wholesale_unit_price": 305,
+    "enabled": true,
+    "created_at": "2024-07-08T17:27:04.876188+00:00",
+    "updated_at": "2024-07-08T17:27:04.876188+00:00",
+    "retail_unit_price": 305
+  },
+  {
+    "id": 1082,
+    "code": "HJ5",
+    "name": "HOT JALAPENO 5 KG",
+    "wholesale_unit_price": 305,
+    "enabled": true,
+    "created_at": "2024-07-08T17:27:22.020157+00:00",
+    "updated_at": "2024-07-08T17:27:22.020157+00:00",
+    "retail_unit_price": 305
+  },
+  {
+    "id": 1083,
+    "code": "HBBQ5",
+    "name": "HOT BBQ 5 KG",
+    "wholesale_unit_price": 305,
+    "enabled": true,
+    "created_at": "2024-07-08T17:27:36.756491+00:00",
+    "updated_at": "2024-07-08T17:27:36.756491+00:00",
+    "retail_unit_price": 305
+  },
+  {
+    "id": 1084,
+    "code": "HQJ5",
+    "name": "HOT QUESO JALAPENO 5 KG",
+    "wholesale_unit_price": 305,
+    "enabled": true,
+    "created_at": "2024-07-08T17:27:55.520952+00:00",
+    "updated_at": "2024-07-08T17:27:55.520952+00:00",
+    "retail_unit_price": 305
+  },
+  {
+    "id": 1085,
+    "code": "HMI5",
+    "name": "HOT MICHELADO 5 KG",
+    "wholesale_unit_price": 305,
+    "enabled": true,
+    "created_at": "2024-07-08T17:28:12.22693+00:00",
+    "updated_at": "2024-07-08T17:28:12.22693+00:00",
+    "retail_unit_price": 305
+  },
+  {
+    "id": 1086,
+    "code": "NG5",
+    "name": "NUEZ GARAPINADA 5 KG",
+    "wholesale_unit_price": 1100,
+    "enabled": true,
+    "created_at": "2024-07-08T17:28:31.047366+00:00",
+    "updated_at": "2024-07-08T17:28:31.047366+00:00",
+    "retail_unit_price": 1100
+  },
+  {
+    "id": 1087,
+    "code": "NPG5",
+    "name": "NUEZ PEDACERIA GARAPINADA 5 KG",
+    "wholesale_unit_price": 900,
+    "enabled": true,
+    "created_at": "2024-07-08T17:28:51.210481+00:00",
+    "updated_at": "2024-07-08T17:28:51.210481+00:00",
+    "retail_unit_price": 900
+  },
+  {
+    "id": 788,
+    "code": "CA3",
+    "name": "CANTINERO AJO CUARTO",
+    "wholesale_unit_price": 12,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 15
+  },
+  {
+    "id": 941,
+    "code": "MT",
+    "name": "MITADES TOSTADAS GRANEL",
+    "wholesale_unit_price": 41,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 41
+  },
+  {
+    "id": 1088,
+    "code": "TS",
+    "name": "SALADO EN TUBITOS KG\t",
+    "wholesale_unit_price": 48,
+    "enabled": true,
+    "created_at": "2024-07-15T18:32:07.237242+00:00",
+    "updated_at": "2024-07-15T18:32:07.237242+00:00",
+    "retail_unit_price": 48
+  },
+  {
+    "id": 1019,
+    "code": "TS2",
+    "name": "TOSTADAS MEDIO",
+    "wholesale_unit_price": 25,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 25
+  },
+  {
+    "id": 1020,
+    "code": "TS3",
+    "name": "TOSTADAS CUARTO",
+    "wholesale_unit_price": 15,
+    "enabled": true,
+    "created_at": "2024-06-14T20:59:57.774591+00:00",
+    "updated_at": "2024-06-14T20:59:57.774591+00:00",
+    "retail_unit_price": 15
+  }
+]

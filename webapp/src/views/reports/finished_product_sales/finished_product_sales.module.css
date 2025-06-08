@@ -1,0 +1,22 @@
+.header_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header_input {
+  margin-bottom: 0.5em;
+}
+
+.header_button_container {
+  margin-top: 1em;
+}
+
+.tables_container {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  display: flex;
+}
+
+.receipt_container {
+  display: none;
+}

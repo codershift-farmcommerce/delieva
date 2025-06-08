@@ -1,0 +1,102 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  width: 80mm;
+  background-color: #fff;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
+
+.header_item {
+  width: 100%;
+  line-height: 1.5em;
+}
+
+.header_item_phone_number {
+  width: 100%;
+  line-height: 1.5em;
+  text-align: center;
+}
+
+.sub_header_item {
+  width: 100%;
+  line-height: 1.5em;
+  margin-left: 2em;
+}
+
+.product_list_header_container {
+  display: flex;
+  width: 100%;
+  font-size: small;
+}
+
+.product_list_header_item_quantity {
+  width: 3em;
+}
+
+.product_list_item_quantity {
+  width: 3em;
+}
+
+.product_list_header_item_description {
+  width: 7em;
+  text-align: center;
+}
+
+.product_list_item_description {
+  width: 7em;
+}
+
+.product_list_header_item_price {
+  width: 6em;
+  text-align: center;
+}
+
+.product_list_item_price {
+  width: 6em;
+  text-align: center;
+}
+
+.product_list_header_item_import {
+  width: 4em;
+  text-align: center;
+}
+
+.product_list_item_import {
+  width: 4em;
+  text-align: center;
+}
+
+.order_item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.subtotals_container {
+  margin-top: 2em;
+  width: 100%;
+    margin-bottom: 1em;
+}
+
+.subtotals_item_container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.subtotals_footer_container {
+    margin-top: 1em;
+}

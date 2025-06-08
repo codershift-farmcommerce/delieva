@@ -1,0 +1,19 @@
+.form_container_input_label {
+  margin-right: 0.5em;
+}
+
+.form_container_input {
+  padding: 0.5em;
+  width: 25em;
+}
+
+.form_container_input_address {
+  width: 50em;
+}
+
+.form_container_input_container {
+  margin-bottom: 0.5em;
+}
+
+.form_container_buttons {
+}

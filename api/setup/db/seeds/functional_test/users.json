@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Admin",
+    "email": "admin@example.com",
+    "password": "$2b$12$d2xQ.CeoiAbj4ynZ1Efn8e6gKkdyktaiz0G4X8SRPmOpkQ6yVqDbi"
+  },
+  {
+    "name": "Supervisor",
+    "email": "supervisor@example.com",
+    "password": "$2b$12$d2xQ.CeoiAbj4ynZ1Efn8e6gKkdyktaiz0G4X8SRPmOpkQ6yVqDbi"
+  }
+]

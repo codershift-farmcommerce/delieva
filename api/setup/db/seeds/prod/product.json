@@ -1,0 +1,2351 @@
+[
+  {
+    "code": "AD100",
+    "name": "AMARANTO DULCE 100 GMS",
+    "retail_unit_price": 20,
+    "wholesale_unit_price": 20,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.100,
+    "enabled": true
+  },
+  {
+    "code": "AD200",
+    "name": "AMARANTO DULCE 200 GMS",
+    "retail_unit_price": 40,
+    "wholesale_unit_price": 40,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.200,
+    "enabled": true
+  },
+  {
+    "code": "AE",
+    "name": "ARANDANO ENCHILADO KG",
+    "retail_unit_price": 200,
+    "wholesale_unit_price": 200,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "AE3",
+    "name": "ARANDANO ENCHILADO CUARTO",
+    "retail_unit_price": 50,
+    "wholesale_unit_price": 50,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "AJ3",
+    "name": "AJONJOLI GARAPIÑADO CUARTO",
+    "retail_unit_price": 25,
+    "wholesale_unit_price": 25,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "AL",
+    "name": "ALMENDRA KG A GRANEL",
+    "retail_unit_price": 200,
+    "wholesale_unit_price": 200,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "AL3",
+    "name": "ALMENDRA CUARTO",
+    "retail_unit_price": 50,
+    "wholesale_unit_price": 50,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "AM",
+    "name": "AMARANTO DULCE",
+    "retail_unit_price": 80,
+    "wholesale_unit_price": 80,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "AN",
+    "name": "ARANDANO NATURAL",
+    "retail_unit_price": 180,
+    "wholesale_unit_price": 180,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "AN3",
+    "name": "ARANDANO NATURAL CUARTO",
+    "retail_unit_price": 45,
+    "wholesale_unit_price": 45,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "B",
+    "name": "BOTANERO KG GRANEL",
+    "retail_unit_price": 40,
+    "wholesale_unit_price": 40,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "B1",
+    "name": "BOTANERO KG",
+    "retail_unit_price": 60,
+    "wholesale_unit_price": 41,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "B2",
+    "name": "BOTANERO MEDIO",
+    "retail_unit_price": 30,
+    "wholesale_unit_price": 21,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "B3",
+    "name": "BOTANERO CUARTO",
+    "retail_unit_price": 15,
+    "wholesale_unit_price": 11,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "BA",
+    "name": "BOTANERO AJO GRANEL",
+    "retail_unit_price": 42,
+    "wholesale_unit_price": 42,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "BA1",
+    "name": "BOTANERO AJO KILO",
+    "retail_unit_price": 60,
+    "wholesale_unit_price": 42,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "BA2",
+    "name": "BOTANERO AJO MEDIO",
+    "retail_unit_price": 30,
+    "wholesale_unit_price": 21,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "BA3",
+    "name": "BOTANERO AJO CUARTO",
+    "retail_unit_price": 15,
+    "wholesale_unit_price": 11,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "BBK",
+    "name": "SALSA BBK",
+    "retail_unit_price": 61,
+    "wholesale_unit_price": 61,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "C",
+    "name": "CANTINERO KG GRANEL",
+    "retail_unit_price": 40,
+    "wholesale_unit_price": 40,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "C1",
+    "name": "CANTINERO KG",
+    "retail_unit_price": 60,
+    "wholesale_unit_price": 41,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "C100",
+    "name": "COCO 100 GRS",
+    "retail_unit_price": 20,
+    "wholesale_unit_price": 20,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.1,
+    "enabled": true
+  },
+  {
+    "code": "C2",
+    "name": "CANTINERO MEDIO",
+    "retail_unit_price": 30,
+    "wholesale_unit_price": 21,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "C3",
+    "name": "CANTINERO CUARTO",
+    "retail_unit_price": 15,
+    "wholesale_unit_price": 11,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "CA",
+    "name": "CANTINERO AJO KG GRANEL",
+    "retail_unit_price": 42,
+    "wholesale_unit_price": 42,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "CA1",
+    "name": "CANTINERO AJO KG",
+    "retail_unit_price": 60,
+    "wholesale_unit_price": 42,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "CA100",
+    "name": "CANELA DE 100 GMS",
+    "retail_unit_price": 40,
+    "wholesale_unit_price": 40,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.1,
+    "enabled": true
+  },
+  {
+    "code": "CA2",
+    "name": "CANTINERO AJO MEDIO",
+    "retail_unit_price": 30,
+    "wholesale_unit_price": 22,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "CA3",
+    "name": "CANTINERO AJO CUARTO",
+    "retail_unit_price": 15,
+    "wholesale_unit_price": 11,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "CC2",
+    "name": "CREMA DE CACAHUATE MEDIO",
+    "retail_unit_price": 30,
+    "wholesale_unit_price": 30,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "CH",
+    "name": "CHIPOTLE M.GRANEL",
+    "retail_unit_price": 45,
+    "wholesale_unit_price": 45,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "CH1",
+    "name": "CHIPOTLE M KG",
+    "retail_unit_price": 60,
+    "wholesale_unit_price": 45,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "CH100",
+    "name": "CHIPS CAMOTE 100 GMS",
+    "retail_unit_price": 20,
+    "wholesale_unit_price": 12,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.1,
+    "enabled": true
+  },
+  {
+    "code": "CH2",
+    "name": "CHIPOTLE M MEDIO",
+    "retail_unit_price": 30,
+    "wholesale_unit_price": 22,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "CH200",
+    "name": "CHIPS CAMOTE 200 GMS",
+    "retail_unit_price": 40,
+    "wholesale_unit_price": 24,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.2,
+    "enabled": true
+  },
+  {
+    "code": "CH3",
+    "name": "CHIPOTLE M CUARTO",
+    "retail_unit_price": 15,
+    "wholesale_unit_price": 12,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "CHA100",
+    "name": "CHIPS ADOBADA DE 100 GS",
+    "retail_unit_price": 20,
+    "wholesale_unit_price": 12,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.1,
+    "enabled": true
+  },
+  {
+    "code": "CHA2",
+    "name": "CHIPS ADOBADA MEDIO",
+    "retail_unit_price": 60,
+    "wholesale_unit_price": 60,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "CHA200",
+    "name": "CHIPS ADOBADA 200 GS",
+    "retail_unit_price": 40,
+    "wholesale_unit_price": 24,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.2,
+    "enabled": true
+  },
+  {
+    "code": "CHC2",
+    "name": "CHIPS CAMOTE MEDIO",
+    "retail_unit_price": 60,
+    "wholesale_unit_price": 60,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "CHQ100",
+    "name": "CHIPS QUESO JALAPEÑO 100 GS",
+    "retail_unit_price": 20,
+    "wholesale_unit_price": 12,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.1,
+    "enabled": true
+  },
+  {
+    "code": "CHQ2",
+    "name": "CHIPS QUESO JALAPEÑO MEDIO",
+    "retail_unit_price": 60,
+    "wholesale_unit_price": 60,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "CHQ200",
+    "name": "CHIPS QUESO JALAPEÑO 200GS",
+    "retail_unit_price": 40,
+    "wholesale_unit_price": 24,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.2,
+    "enabled": true
+  },
+  {
+    "code": "CHSN",
+    "name": "CHIPS SALSA NEGRA 100 GRS",
+    "retail_unit_price": 20,
+    "wholesale_unit_price": 12,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.1,
+    "enabled": true
+  },
+  {
+    "code": "CHSN2",
+    "name": "CHIPS SALSA NEGRA DE MEDIO",
+    "retail_unit_price": 60,
+    "wholesale_unit_price": 60,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "CM",
+    "name": "CAJA MAZAPAN",
+    "retail_unit_price": 300,
+    "wholesale_unit_price": 280,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "CO3",
+    "name": "COCO CUARTO",
+    "retail_unit_price": 25,
+    "wholesale_unit_price": 25,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "COC1",
+    "name": "COCO KILO",
+    "retail_unit_price": 100,
+    "wholesale_unit_price": 100,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "CR",
+    "name": "CACAHUATE RUNER KG GRANEL",
+    "retail_unit_price": 38,
+    "wholesale_unit_price": 38,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "CS",
+    "name": "CARNE SECA KG.",
+    "retail_unit_price": 1200,
+    "wholesale_unit_price": 1200,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "CS100",
+    "name": "CARNE SECA 100 GRS",
+    "retail_unit_price": 120,
+    "wholesale_unit_price": 120,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.1,
+    "enabled": true
+  },
+  {
+    "code": "CS2",
+    "name": "CARNE SECA MEDIO",
+    "retail_unit_price": 600,
+    "wholesale_unit_price": 600,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "CS250",
+    "name": "CARNE SECA 250G",
+    "retail_unit_price": 300,
+    "wholesale_unit_price": 300,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "CS50",
+    "name": "CARNE SECA 50 GRS",
+    "retail_unit_price": 60,
+    "wholesale_unit_price": 60,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 50,
+    "enabled": true
+  },
+  {
+    "code": "CSN100",
+    "name": "CHIPS CAMOTE SALSA NEGRA",
+    "retail_unit_price": 20,
+    "wholesale_unit_price": 12,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "CUBIERTO",
+    "name": "CUBIERTO DULCE",
+    "retail_unit_price": 17,
+    "wholesale_unit_price": 17,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "DN",
+    "name": "DULCE DE NUEZ",
+    "retail_unit_price": 30,
+    "wholesale_unit_price": 30,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "DT",
+    "name": "DULCE DE TAMARINDO",
+    "retail_unit_price": 15,
+    "wholesale_unit_price": 15,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "E",
+    "name": "ENCHILADO KG GRANEL",
+    "retail_unit_price": 40,
+    "wholesale_unit_price": 40,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "E1",
+    "name": "ENCHILADO KG",
+    "retail_unit_price": 60,
+    "wholesale_unit_price": 41,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "E2",
+    "name": "ENCHILADO MEDIO",
+    "retail_unit_price": 30,
+    "wholesale_unit_price": 21,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "E3",
+    "name": "ENCHILADO CUARTO",
+    "retail_unit_price": 15,
+    "wholesale_unit_price": 11,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "EA",
+    "name": "ESPAÑOL AJO KG GRANEL",
+    "retail_unit_price": 42,
+    "wholesale_unit_price": 42,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "EA1",
+    "name": "ESPAÑOL AJO KG",
+    "retail_unit_price": 60,
+    "wholesale_unit_price": 42,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "EA2",
+    "name": "ESPAÑOL AJO MEDIO",
+    "retail_unit_price": 30,
+    "wholesale_unit_price": 21,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "EA3",
+    "name": "ESPAÑOL AJO CUARTO",
+    "retail_unit_price": 15,
+    "wholesale_unit_price": 12,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "ES",
+    "name": "ESPAÑOL KG GRANEL",
+    "retail_unit_price": 40,
+    "wholesale_unit_price": 40,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "ES1",
+    "name": "ESPAÑOL KG",
+    "retail_unit_price": 60,
+    "wholesale_unit_price": 41,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "ES2",
+    "name": "ESPAÑOL MEDIO",
+    "retail_unit_price": 30,
+    "wholesale_unit_price": 21,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "ES3",
+    "name": "ESPAÑOL CUARTO",
+    "retail_unit_price": 15,
+    "wholesale_unit_price": 11,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "FM",
+    "name": "FRUTOS MIXTOS KILO",
+    "retail_unit_price": 200,
+    "wholesale_unit_price": 175,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "FM3",
+    "name": "FRUTO MIXTO CUARTO",
+    "retail_unit_price": 50,
+    "wholesale_unit_price": 50,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "FR",
+    "name": "FRITURA GRANEL",
+    "retail_unit_price": 68,
+    "wholesale_unit_price": 68,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "FR2",
+    "name": "FRITURA MEDIO",
+    "retail_unit_price": 34,
+    "wholesale_unit_price": 34,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "FR3",
+    "name": "FRITURA DE CUARTO",
+    "retail_unit_price": 17,
+    "wholesale_unit_price": 17,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "G",
+    "name": "GARAPIÑADO GRANEL",
+    "retail_unit_price": 44,
+    "wholesale_unit_price": 44,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "G1",
+    "name": "GARAPIÑADO KG",
+    "retail_unit_price": 60,
+    "wholesale_unit_price": 44,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "G2",
+    "name": "GARAPIÑADO MEDIO",
+    "retail_unit_price": 30,
+    "wholesale_unit_price": 22,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "G3",
+    "name": "GARAPIÑADO CUARTO",
+    "retail_unit_price": 15,
+    "wholesale_unit_price": 11,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "GA",
+    "name": "GAP. AJONJOLI GRANEL",
+    "retail_unit_price": 44,
+    "wholesale_unit_price": 44,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "GA1",
+    "name": "GAR. AJONJOLI KG",
+    "retail_unit_price": 60,
+    "wholesale_unit_price": 44,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "GA2",
+    "name": "GAR. AJONJOLI MEDIO",
+    "retail_unit_price": 30,
+    "wholesale_unit_price": 22,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "GA3",
+    "name": "GAR. AJONJOLI CUARTO",
+    "retail_unit_price": 15,
+    "wholesale_unit_price": 11,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "GAN",
+    "name": "GARBANZO NATURAL",
+    "retail_unit_price": 34,
+    "wholesale_unit_price": 34,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "GAR",
+    "name": "GARBANZO A GRANEL",
+    "retail_unit_price": 80,
+    "wholesale_unit_price": 80,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "GAR2",
+    "name": "GARVANZO MEDIO",
+    "retail_unit_price": 40,
+    "wholesale_unit_price": 40,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "GAR3",
+    "name": "GARBANZO DE CUARTO",
+    "retail_unit_price": 20,
+    "wholesale_unit_price": 20,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "GC",
+    "name": "GAR. COCO GRANEL",
+    "retail_unit_price": 44,
+    "wholesale_unit_price": 44,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "GC1",
+    "name": "GAR. COCO KG",
+    "retail_unit_price": 60,
+    "wholesale_unit_price": 44,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "GC2",
+    "name": "GAR. COC MEDIO",
+    "retail_unit_price": 30,
+    "wholesale_unit_price": 22,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "GC3",
+    "name": "GAR. COCO CUARTO",
+    "retail_unit_price": 15,
+    "wholesale_unit_price": 11,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "GD",
+    "name": "GRANILLO DULCE KG GRANEL",
+    "retail_unit_price": 38,
+    "wholesale_unit_price": 38,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "GD1",
+    "name": "GRANILLO DULCE KILO",
+    "retail_unit_price": 60,
+    "wholesale_unit_price": 38,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "GD2",
+    "name": "GRANILLO DULCE MEDIO",
+    "retail_unit_price": 30,
+    "wholesale_unit_price": 21,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "GD3",
+    "name": "GRANILLO DULCE CUARTO",
+    "retail_unit_price": 15,
+    "wholesale_unit_price": 11,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "GN",
+    "name": "GRANILLO NATURAL GRANEL",
+    "retail_unit_price": 36,
+    "wholesale_unit_price": 36,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "GRA",
+    "name": "GRANZON KG GRANEL",
+    "retail_unit_price": 85,
+    "wholesale_unit_price": 85,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "GS",
+    "name": "GARAPIÑADO SABORES GRANEL",
+    "retail_unit_price": 44,
+    "wholesale_unit_price": 44,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "GS1",
+    "name": "GARAPIÑADO SABORES KILO",
+    "retail_unit_price": 60,
+    "wholesale_unit_price": 44,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "GS2",
+    "name": "GARAPIÑADO SABORES MEDIO",
+    "retail_unit_price": 30,
+    "wholesale_unit_price": 22,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "GS3",
+    "name": "GARAPIÑADO SABORES CUARTO",
+    "retail_unit_price": 15,
+    "wholesale_unit_price": 11,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "HABA",
+    "name": "HABA ENCHILADA KG",
+    "retail_unit_price": 100,
+    "wholesale_unit_price": 100,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "HABA2",
+    "name": "HABA MEDIO",
+    "retail_unit_price": 50,
+    "wholesale_unit_price": 50,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "HABA3",
+    "name": "HABA CUARTO",
+    "retail_unit_price": 25,
+    "wholesale_unit_price": 25,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "HB",
+    "name": "HOT BLUE A GRANEL",
+    "retail_unit_price": 61,
+    "wholesale_unit_price": 61,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "HB1",
+    "name": "HOT BLUE KILO",
+    "retail_unit_price": 63,
+    "wholesale_unit_price": 63,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "HB2",
+    "name": "HOT BLUE MEDIO",
+    "retail_unit_price": 32,
+    "wholesale_unit_price": 32,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "HB3",
+    "name": "HOT BLUE CUARTO",
+    "retail_unit_price": 16,
+    "wholesale_unit_price": 16,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "HBB",
+    "name": "HOT BBQ",
+    "retail_unit_price": 61,
+    "wholesale_unit_price": 61,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "HBB1",
+    "name": "HOT BBQ KILO",
+    "retail_unit_price": 63,
+    "wholesale_unit_price": 63,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "HBB2",
+    "name": "HOT BBQ MEDIO",
+    "retail_unit_price": 32,
+    "wholesale_unit_price": 32,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "HBB3",
+    "name": "HOT BBQ CUARTO",
+    "retail_unit_price": 16,
+    "wholesale_unit_price": 16,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "HC",
+    "name": "HOT CANELA A GRANEL",
+    "retail_unit_price": 61,
+    "wholesale_unit_price": 61,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "HC1",
+    "name": "HOT CANELA KILO",
+    "retail_unit_price": 63,
+    "wholesale_unit_price": 63,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "HC2",
+    "name": "HOT CANELA MEDIO",
+    "retail_unit_price": 32,
+    "wholesale_unit_price": 32,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "HC3",
+    "name": "HOT CANELA CUARTO",
+    "retail_unit_price": 16,
+    "wholesale_unit_price": 16,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "HCH",
+    "name": "HOT CHIPOTLE KG GRANEL",
+    "retail_unit_price": 61,
+    "wholesale_unit_price": 61,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "HCH1",
+    "name": "HOT CHIPOTLE KILO",
+    "retail_unit_price": 63,
+    "wholesale_unit_price": 63,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "HCH2",
+    "name": "HOT CHIPOTLE MEDIO",
+    "retail_unit_price": 32,
+    "wholesale_unit_price": 32,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "HCH3",
+    "name": "HOT CHIPOTLE CUARTO",
+    "retail_unit_price": 16,
+    "wholesale_unit_price": 16,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "HE",
+    "name": "HOT ELOTE",
+    "retail_unit_price": 61,
+    "wholesale_unit_price": 61,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "HE1",
+    "name": "HOT ELOTE KILO",
+    "retail_unit_price": 63,
+    "wholesale_unit_price": 63,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "HE2",
+    "name": "HOT ELOTE MEDIO",
+    "retail_unit_price": 32,
+    "wholesale_unit_price": 32,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "HE3",
+    "name": "HOT ELOTE CUARTO",
+    "retail_unit_price": 16,
+    "wholesale_unit_price": 16,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "HH",
+    "name": "HOT HABANERO",
+    "retail_unit_price": 61,
+    "wholesale_unit_price": 61,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "HH1",
+    "name": "HOT HABANERO KILO",
+    "retail_unit_price": 63,
+    "wholesale_unit_price": 63,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "HH2",
+    "name": "HOT HABANERO MEDIO",
+    "retail_unit_price": 32,
+    "wholesale_unit_price": 32,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "HH3",
+    "name": "HOT HABANERO CUARTO",
+    "retail_unit_price": 16,
+    "wholesale_unit_price": 16,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "HJ",
+    "name": "HOT JALAPEÑO",
+    "retail_unit_price": 61,
+    "wholesale_unit_price": 61,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "HJ1",
+    "name": "HOT JALAPEÑO KILO",
+    "retail_unit_price": 63,
+    "wholesale_unit_price": 63,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "HJ2",
+    "name": "HOT JALAPEÑO MEDIO",
+    "retail_unit_price": 32,
+    "wholesale_unit_price": 32,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "HJ3",
+    "name": "HOT JALAPEÑO CUARTO",
+    "retail_unit_price": 16,
+    "wholesale_unit_price": 16,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "HJQ",
+    "name": "HOT QUESO JALAPEÑO A GRANEL",
+    "retail_unit_price": 61,
+    "wholesale_unit_price": 61,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "HM",
+    "name": "HOT MANGO GRANEL",
+    "retail_unit_price": 61,
+    "wholesale_unit_price": 61,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "HM1",
+    "name": "HOT MANGO KILO",
+    "retail_unit_price": 63,
+    "wholesale_unit_price": 63,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "HM2",
+    "name": "HOT MANGO MEDIO",
+    "retail_unit_price": 32,
+    "wholesale_unit_price": 32,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "HM3",
+    "name": "HOT MANGO CUARTO",
+    "retail_unit_price": 16,
+    "wholesale_unit_price": 16,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "HMI",
+    "name": "HOT MICHELADO GRANEL",
+    "retail_unit_price": 61,
+    "wholesale_unit_price": 61,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "HMI1",
+    "name": "HOT MICHELADO KILO",
+    "retail_unit_price": 63,
+    "wholesale_unit_price": 63,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "HMI2",
+    "name": "HOT MICHELADO MEDIO",
+    "retail_unit_price": 32,
+    "wholesale_unit_price": 32,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "HMI3",
+    "name": "HOT MICHELADO CUARTO",
+    "retail_unit_price": 16,
+    "wholesale_unit_price": 16,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "HN",
+    "name": "HOT NUTS GRANEL",
+    "retail_unit_price": 61,
+    "wholesale_unit_price": 61,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "HN1",
+    "name": "HOT NUTS KILO",
+    "retail_unit_price": 63,
+    "wholesale_unit_price": 63,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "HN2",
+    "name": "HOT NUTS MEDIO",
+    "retail_unit_price": 32,
+    "wholesale_unit_price": 32,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "HN3",
+    "name": "HOT NUTS CUARTO",
+    "retail_unit_price": 16,
+    "wholesale_unit_price": 16,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "HQ",
+    "name": "HOT QUESO GRANEL",
+    "retail_unit_price": 61,
+    "wholesale_unit_price": 61,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "HQ1",
+    "name": "HOT QUESO KILO",
+    "retail_unit_price": 63,
+    "wholesale_unit_price": 63,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "HQ2",
+    "name": "HOT QUESO MEDIO",
+    "retail_unit_price": 32,
+    "wholesale_unit_price": 32,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "HQ3",
+    "name": "HOT QUESO CUARTO",
+    "retail_unit_price": 16,
+    "wholesale_unit_price": 16,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "HQJ",
+    "name": "HOT QUESO JALAPEÑO A GRANEL",
+    "retail_unit_price": 61,
+    "wholesale_unit_price": 61,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "HQJ1",
+    "name": "HOT QUESO JALAPEÑO KILO",
+    "retail_unit_price": 63,
+    "wholesale_unit_price": 63,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "HQJ2",
+    "name": "HOT QUESO JALAPEÑO MEDIO",
+    "retail_unit_price": 32,
+    "wholesale_unit_price": 32,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "HQJ3",
+    "name": "HOT QUESO JALAPEÑO CUARTO",
+    "retail_unit_price": 16,
+    "wholesale_unit_price": 16,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "HSN",
+    "name": "HOT SALSA NEGRA A GRANEL",
+    "retail_unit_price": 61,
+    "wholesale_unit_price": 61,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "HSN1",
+    "name": "HOT SALSA NEGRA KILO",
+    "retail_unit_price": 63,
+    "wholesale_unit_price": 63,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "HSN2",
+    "name": "HOT SALSA NEGRA MEDIO",
+    "retail_unit_price": 32,
+    "wholesale_unit_price": 32,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "HSN3",
+    "name": "HOT SALSA NEGRA CUARTO",
+    "retail_unit_price": 16,
+    "wholesale_unit_price": 16,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "J",
+    "name": "JAPONES KG GRANEL",
+    "retail_unit_price": 56,
+    "wholesale_unit_price": 56,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "J1",
+    "name": "JAPONES KG",
+    "retail_unit_price": 60,
+    "wholesale_unit_price": 58,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "J2",
+    "name": "JAPONES MEDIO",
+    "retail_unit_price": 30,
+    "wholesale_unit_price": 28,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "J3",
+    "name": "JAPONES CUARTO",
+    "retail_unit_price": 15,
+    "wholesale_unit_price": 14,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "JAM",
+    "name": "JAMONCILLO DE LECHE",
+    "retail_unit_price": 25,
+    "wholesale_unit_price": 25,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "KIWI",
+    "name": "KIWI KG",
+    "retail_unit_price": 200,
+    "wholesale_unit_price": 175,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "KIWI3",
+    "name": "KIWI CUARTO",
+    "retail_unit_price": 50,
+    "wholesale_unit_price": 50,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "LENTEJA",
+    "name": "LENTEJA DE CUARTO",
+    "retail_unit_price": 15,
+    "wholesale_unit_price": 15,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "M",
+    "name": "MIXTURA GRANEL",
+    "retail_unit_price": 100,
+    "wholesale_unit_price": 100,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "M2",
+    "name": "MIXTURA MEDIO",
+    "retail_unit_price": 50,
+    "wholesale_unit_price": 50,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "M3",
+    "name": "MIXTURA CUARTO",
+    "retail_unit_price": 25,
+    "wholesale_unit_price": 25,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "MANGO",
+    "name": "MANGO ENCHILADO KG",
+    "retail_unit_price": 200,
+    "wholesale_unit_price": 175,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "MANGO3",
+    "name": "MANGO ENCHILADO CUARTO",
+    "retail_unit_price": 50,
+    "wholesale_unit_price": 50,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "MAZ",
+    "name": "MAZAPAN PIEZA",
+    "retail_unit_price": 15,
+    "wholesale_unit_price": 15,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "MER",
+    "name": "MERMELADA",
+    "retail_unit_price": 130,
+    "wholesale_unit_price": 130,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "MERMELADA",
+    "name": "MERMELADA SABORES",
+    "retail_unit_price": 130,
+    "wholesale_unit_price": 130,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "MF2",
+    "name": "MIXTURA FRUTOS SECOS MEDIO",
+    "retail_unit_price": 100,
+    "wholesale_unit_price": 100,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "MF3",
+    "name": "MIXTURA FRUTOS SECOS CUARTO",
+    "retail_unit_price": 50,
+    "wholesale_unit_price": 50,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "MH",
+    "name": "MITADES HABANERAS GRANEL",
+    "retail_unit_price": 50,
+    "wholesale_unit_price": 50,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "MH1",
+    "name": "MITADES HABANERAS KILO",
+    "retail_unit_price": 60,
+    "wholesale_unit_price": 50,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "MH2",
+    "name": "MITADES HABANERAS MEDIO",
+    "retail_unit_price": 30,
+    "wholesale_unit_price": 25,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "MH3",
+    "name": "MITADES HABANERAS CUARTO",
+    "retail_unit_price": 15,
+    "wholesale_unit_price": 12.5,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "MN",
+    "name": "MANGO NATURAL A GRANEL",
+    "retail_unit_price": 200,
+    "wholesale_unit_price": 175,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "MN3",
+    "name": "MANGO NATURAL CUARTO",
+    "retail_unit_price": 50,
+    "wholesale_unit_price": 50,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "MT",
+    "name": "MITADES TOSTADAS GRANEL",
+    "retail_unit_price": 39,
+    "wholesale_unit_price": 39,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "MT1",
+    "name": "MITADES TOSTADAS KG",
+    "retail_unit_price": 60,
+    "wholesale_unit_price": 41,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "MT2",
+    "name": "MITADES TOSTADAS MEDIO",
+    "retail_unit_price": 30,
+    "wholesale_unit_price": 21,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "MT3",
+    "name": "MITAD TOSTADA CUARTO",
+    "retail_unit_price": 15,
+    "wholesale_unit_price": 11,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "MX",
+    "name": "MIXTO KG GRANEL",
+    "retail_unit_price": 44,
+    "wholesale_unit_price": 44,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "MX1",
+    "name": "MIXTO KG",
+    "retail_unit_price": 60,
+    "wholesale_unit_price": 44,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "MX2",
+    "name": "MIXTO MEDIO",
+    "retail_unit_price": 30,
+    "wholesale_unit_price": 22,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "MX3",
+    "name": "MIXTO CUARTO",
+    "retail_unit_price": 15,
+    "wholesale_unit_price": 11,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "NCH",
+    "name": "NUEZ CON CHOCOLATE KILO",
+    "retail_unit_price": 360,
+    "wholesale_unit_price": 360,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "NG",
+    "name": "NUEZ GARAPIÑADA",
+    "retail_unit_price": 220,
+    "wholesale_unit_price": 220,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "NG2",
+    "name": "NUEZ GARAPIÑADA MEDIO",
+    "retail_unit_price": 110,
+    "wholesale_unit_price": 110,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "NG3",
+    "name": "NUEZ GARAPIÑADA CUARTO",
+    "retail_unit_price": 55,
+    "wholesale_unit_price": 55,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "NGP",
+    "name": "NUEZ GARAPIÑADA PEDACERIA",
+    "retail_unit_price": 180,
+    "wholesale_unit_price": 180,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "NGP2",
+    "name": "NUEZ GARAPIÑADA PED. MEDIO",
+    "retail_unit_price": 90,
+    "wholesale_unit_price": 90,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "NGP3",
+    "name": "NUEZ PEDACERIA GAR. CUARTO",
+    "retail_unit_price": 45,
+    "wholesale_unit_price": 45,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "NI",
+    "name": "NUEZ DE LA INDIA",
+    "retail_unit_price": 250,
+    "wholesale_unit_price": 250,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "NI3",
+    "name": "NUEZ DE LA INDIA CUARTO",
+    "retail_unit_price": 65,
+    "wholesale_unit_price": 63,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "NPN",
+    "name": "NUEZ PEDACERIA NATURAL",
+    "retail_unit_price": 180,
+    "wholesale_unit_price": 180,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "NPN3",
+    "name": "NUEZ PEDACERIA CUARTO",
+    "retail_unit_price": 45,
+    "wholesale_unit_price": 45,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "NU",
+    "name": "NUEZ NATURAL MITAD KG",
+    "retail_unit_price": 220,
+    "wholesale_unit_price": 220,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "NU2",
+    "name": "NUEZ NATURAL MEDIO",
+    "retail_unit_price": 110,
+    "wholesale_unit_price": 110,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "NU3",
+    "name": "NUEZ MITAD CUARTO",
+    "retail_unit_price": 55,
+    "wholesale_unit_price": 55,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "NUC2",
+    "name": "NUEZ CON CASCARA MEDIO",
+    "retail_unit_price": 50,
+    "wholesale_unit_price": 50,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "PAL",
+    "name": "PIPITORIA PIEZA",
+    "retail_unit_price": 6,
+    "wholesale_unit_price": 5.5,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "PAS1",
+    "name": "PASAS KILO",
+    "retail_unit_price": 80,
+    "wholesale_unit_price": 80,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "PC",
+    "name": "PEPITA GARAPIÑADA CALABAZA KG",
+    "retail_unit_price": 220,
+    "wholesale_unit_price": 220,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "PCG3",
+    "name": "PEPITA GARAPIÑADA CUARTO",
+    "retail_unit_price": 55,
+    "wholesale_unit_price": 55,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "PCH",
+    "name": "PALETA CHOCOLATE",
+    "retail_unit_price": 12,
+    "wholesale_unit_price": 12,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "PEG",
+    "name": "PEPITA GARAPIÑADA KG",
+    "retail_unit_price": 80,
+    "wholesale_unit_price": 80,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "PEG2",
+    "name": "PEPITA GIRASOL GARAPIÑADA MEDIO",
+    "retail_unit_price": 40,
+    "wholesale_unit_price": 40,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "PEG3",
+    "name": "PEPITA GIRASOL GARAPIÑADA CUARTO",
+    "retail_unit_price": 20,
+    "wholesale_unit_price": 20,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "PG",
+    "name": "PIPITORIA GRANDE",
+    "retail_unit_price": 15,
+    "wholesale_unit_price": 15,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "PG-A",
+    "name": "PIPITORIA GIGANTE AJONJOLI",
+    "retail_unit_price": 25,
+    "wholesale_unit_price": 25,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "PG-C",
+    "name": "PIPITORIA GDE PEPITA CALABAZA",
+    "retail_unit_price": 25,
+    "wholesale_unit_price": 25,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "PG-N",
+    "name": "PIPITORIA GIGANTE NUEZ",
+    "retail_unit_price": 25,
+    "wholesale_unit_price": 25,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "PG-P",
+    "name": "PIITORIA GIGANTE PEPITA",
+    "retail_unit_price": 25,
+    "wholesale_unit_price": 25,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "PG10",
+    "name": "PAQ GARAPIÑADO 10 PIEZAS",
+    "retail_unit_price": 50,
+    "wholesale_unit_price": 50,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "PGN",
+    "name": "PEPITA GIRASOL NATURAL",
+    "retail_unit_price": 78,
+    "wholesale_unit_price": 78,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "PIÑA",
+    "name": "PIÑA ENCHILADA KG",
+    "retail_unit_price": 200,
+    "wholesale_unit_price": 175,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "PIÑA3",
+    "name": "PIÑA ENCHILADA DE CUARTO",
+    "retail_unit_price": 50,
+    "wholesale_unit_price": 50,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "PIS",
+    "name": "PISTACHE KG GRANEL",
+    "retail_unit_price": 250,
+    "wholesale_unit_price": 240,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "PIS2",
+    "name": "PISTACHE MEDIO",
+    "retail_unit_price": 125,
+    "wholesale_unit_price": 125,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "PIS3",
+    "name": "PISTACHE CUARTO",
+    "retail_unit_price": 65,
+    "wholesale_unit_price": 62.5,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "PM",
+    "name": "PIPITORIA MIXTURA",
+    "retail_unit_price": 9,
+    "wholesale_unit_price": 9,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "PN",
+    "name": "PEPITA NATURAL GRANEL",
+    "retail_unit_price": 220,
+    "wholesale_unit_price": 220,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "PN3",
+    "name": "PEPITA NATURAL CUARTO",
+    "retail_unit_price": 55,
+    "wholesale_unit_price": 55,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "PNA3",
+    "name": "PIÑA NATURAL CUARTO",
+    "retail_unit_price": 50,
+    "wholesale_unit_price": 50,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "PP",
+    "name": "PIPITORIA PEPITA POR PIEZA",
+    "retail_unit_price": 15,
+    "wholesale_unit_price": 15,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "PP10",
+    "name": "PAQUETE PIPITORIA 10 PIEZAS",
+    "retail_unit_price": 60,
+    "wholesale_unit_price": 55,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "PPN",
+    "name": "PIPITORIA NUEZ",
+    "retail_unit_price": 9,
+    "wholesale_unit_price": 9,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "PS",
+    "name": "PEPITA SALADA KG",
+    "retail_unit_price": 220,
+    "wholesale_unit_price": 220,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "PS3",
+    "name": "PEPITA SALADA CUARTO",
+    "retail_unit_price": 55,
+    "wholesale_unit_price": 55,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "PSG",
+    "name": "PEPITA SALADA GIRASOL KILO",
+    "retail_unit_price": 140,
+    "wholesale_unit_price": 140,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "PSG3",
+    "name": "PEPITA SALADA DE GIRASOL CUARTO",
+    "retail_unit_price": 35,
+    "wholesale_unit_price": 35,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "PT",
+    "name": "PEDACERIA TOSTADA",
+    "retail_unit_price": 26,
+    "wholesale_unit_price": 26,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "S",
+    "name": "SALADO KG GRANEL",
+    "retail_unit_price": 40,
+    "wholesale_unit_price": 40,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "S1",
+    "name": "SALADO KG",
+    "retail_unit_price": 60,
+    "wholesale_unit_price": 41,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "S2",
+    "name": "SALADO MEDIO",
+    "retail_unit_price": 30,
+    "wholesale_unit_price": 21,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "S3",
+    "name": "SALADO CUARTO",
+    "retail_unit_price": 15,
+    "wholesale_unit_price": 11,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "SALSA",
+    "name": "SALSA ROJA",
+    "retail_unit_price": 25,
+    "wholesale_unit_price": 25,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "SG",
+    "name": "SEMILLA GIRASOL GRANEL",
+    "retail_unit_price": 60,
+    "wholesale_unit_price": 60,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "SG2",
+    "name": "SEMILLA GIRASOL MEDIO",
+    "retail_unit_price": 30,
+    "wholesale_unit_price": 30,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "SG3",
+    "name": "SEMILLA GIRASOL CUARTO",
+    "retail_unit_price": 15,
+    "wholesale_unit_price": 15,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "SGN",
+    "name": "SEMILLA GIRASOL NATURAL GRANEL",
+    "retail_unit_price": 45,
+    "wholesale_unit_price": 45,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "SM",
+    "name": "SALSA MACHA",
+    "retail_unit_price": 65,
+    "wholesale_unit_price": 65,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0,
+    "enabled": true
+  },
+  {
+    "code": "SN",
+    "name": "SEMILLA NATURAL KG",
+    "retail_unit_price": 120,
+    "wholesale_unit_price": 120,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "SS",
+    "name": "SEMILLA SALADA KG GRANEL",
+    "retail_unit_price": 140,
+    "wholesale_unit_price": 140,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "SS1",
+    "name": "SEMILLA SALADA KG",
+    "retail_unit_price": 140,
+    "wholesale_unit_price": 140,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "SS2",
+    "name": "SEMILLA SALADA MEDIO",
+    "retail_unit_price": 70,
+    "wholesale_unit_price": 70,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "SS3",
+    "name": "SEMILLA SALADA CUARTO",
+    "retail_unit_price": 35,
+    "wholesale_unit_price": 35,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  },
+  {
+    "code": "TC",
+    "name": "TOSTADO CON CASCARA KG GRANEL",
+    "retail_unit_price": 50,
+    "wholesale_unit_price": 40,
+    "unit_type": "KILOGRAM",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "TC2",
+    "name": "TOSTADO CASCARA MEDIO",
+    "retail_unit_price": 25,
+    "wholesale_unit_price": 25,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "TCA",
+    "name": "CANTINERO EN TUBITOS DE KG",
+    "retail_unit_price": 48,
+    "wholesale_unit_price": 48,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "TE",
+    "name": "KG ENCHILADO EN TUBITOS",
+    "retail_unit_price": 48,
+    "wholesale_unit_price": 48,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "TES",
+    "name": "KG ESPAÑOL EN TUBITOS",
+    "retail_unit_price": 48,
+    "wholesale_unit_price": 48,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "TGA",
+    "name": "GAR. AJONJOLI EN TUBITOS KG",
+    "retail_unit_price": 50,
+    "wholesale_unit_price": 50,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "TMX",
+    "name": "KG MIXTO EN TUBITOS",
+    "retail_unit_price": 50,
+    "wholesale_unit_price": 50,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "TS",
+    "name": "SALADO EN TUBITOS KG",
+    "retail_unit_price": 48,
+    "wholesale_unit_price": 48,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 1,
+    "enabled": true
+  },
+  {
+    "code": "TS2",
+    "name": "TOSTADAS MEDIO",
+    "retail_unit_price": 25,
+    "wholesale_unit_price": 25,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.50,
+    "enabled": true
+  },
+  {
+    "code": "TS3",
+    "name": "TOSTADAS CUARTO",
+    "retail_unit_price": 15,
+    "wholesale_unit_price": 15,
+    "unit_type": "UNIT",
+    "kilograms_in_unit": 0.250,
+    "enabled": true
+  }
+]

@@ -1,0 +1,77 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.session_timeout {
+  height: 2px;
+  background-color: gray;
+}
+
+.main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+}
+
+.footer {
+  display: flex;
+  padding: 0.1em 0;
+  border-top: 1px solid black;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer_qr_code_container {
+  border: 3px solid black;
+  padding: 1em;
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.footer_qr_code {
+  padding: 2em;
+  background-color: black;
+}
+
+.footer_qr_code_text {
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-top: 0.5em;
+  max-width: 80%;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.footer_qr_code_button {
+  font-size: 16px;
+  margin-top: 0.5em;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 0.3em;
+}
+
+.hidden {
+  display: none;
+}
+
+.help_text {
+  position: absolute;
+  right: 3em;
+  bottom: 2px;
+  cursor: pointer;
+}
+
+.help_text:hover {
+  text-decoration: underline;
+}

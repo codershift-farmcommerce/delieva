@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid black;
+  padding-top: 1em;
+}
+
+.button_container {
+  margin-top: 1em;
+}
+
+.balance {
+  margin-left: 1em;
+}
+
+.tables_container {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  display: flex;
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "user_email": "admin@example.com",
+    "role_code": "ADMIN"
+  },
+  {
+    "user_email": "cajero@example.com",
+    "role_code": "CASHIER"
+  }
+]

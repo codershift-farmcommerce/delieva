@@ -1,0 +1,54 @@
+.primary_button {
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  background-color: darkgreen;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 0.5em;
+  margin-right: 0.5em;
+}
+
+.secondary_button {
+  margin-right: 0.5em;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 0.5em;
+}
+
+.disabled_button {
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  background-color: gray;
+  color: lightgray;
+  cursor: not-allowed;
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.select {
+  padding: 0.5em;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.input {
+  margin-right: 1em;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.search_input {
+  width: 30%;
+  margin-right: 1em;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  box-sizing: border-box;
+}

@@ -1,0 +1,11 @@
+node_modules
+*.d.ts
+.next/
+.idea/
+out/
+*.log
+proxy/*.js
+src/**/*.js
+*.crt
+*.key
+csr.pem
