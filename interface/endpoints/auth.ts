@@ -3,13 +3,13 @@ import {
   AuthGenerateAuthorizationCodeRQ,
   AuthLoginRQ,
   AuthLogoutRQ,
-} from 'lib/requests/auth'
+} from 'interface/requests/auth'
 import {
   AuthChangePasswordRS,
   AuthGenerateAuthorizationCodeRS,
   AuthLoginRS,
   AuthLogoutRS,
-} from 'lib/responses/auth'
+} from 'interface/responses/auth'
 
 export interface AuthEndpoints {
   path(): 'auth'
