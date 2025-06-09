@@ -3,7 +3,8 @@ version: '3'
 services:
   webapp:
     build:
-      context: ./webapp
+      context: ./
+      dockerfile: webapp.Dockerfile
     container_name: farmcommerce-webapp
     restart: always
     ports:
@@ -21,7 +22,8 @@ services:
       '
   api:
     build:
-      context: ./api
+      context: ./
+      dockerfile: api.Dockerfile
     container_name: farmcommerce-api
     ports:
       - '3003:3003'
