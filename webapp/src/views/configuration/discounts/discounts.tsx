@@ -1,22 +1,22 @@
-import ViewContainer from 'webapp//components/views/container/container'
+import ViewContainer from 'webapp/src/components/views/container/container'
 import React, { useEffect, useRef, useState } from 'react'
-import ViewHeader from 'webapp//components/views/header/header'
-import Table from 'webapp//components/table/table'
+import ViewHeader from 'webapp/src/components/views/header/header'
+import Table from 'webapp/src/components/table/table'
 import {
   DiscountType,
   DiscountWithCustomerAndProduct,
 } from 'interface/entities/discount'
-import { DiscountClient } from 'webapp//api/clients/discount'
+import { DiscountClient } from 'webapp/src/api/clients/discount'
 import styles from './discounts.module.css'
-import viewStyles from 'webapp//views/views.module.css'
-import CustomerSearchBox from 'webapp//components/customer_search_box/customer_search_box'
+import viewStyles from 'webapp/src/views/views.module.css'
+import CustomerSearchBox from 'webapp/src/components/customer_search_box/customer_search_box'
 import { SearchResultItem } from 'interface/entities/common'
 import { Customer } from 'interface/entities/customer'
 import { DiscountAddFailRS } from 'interface/responses/discount'
-import ProductSearchBox from 'webapp//components/product_search_box/product_search_box'
+import ProductSearchBox from 'webapp/src/components/product_search_box/product_search_box'
 import { Product } from 'interface/entities/product'
 import { toast } from 'react-toastify'
-import { formatMonetary } from 'webapp//components/functions/formatting'
+import { formatMonetary } from 'webapp/src/components/functions/formatting'
 import clsx from 'clsx'
 
 const discountClient = new DiscountClient()

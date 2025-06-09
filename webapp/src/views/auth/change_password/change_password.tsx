@@ -1,7 +1,7 @@
 import styles from './change_password.module.css'
 import { useState } from 'react'
 import Router from 'next/router'
-import { AuthClient } from 'webapp//api/clients/auth'
+import { AuthClient } from 'webapp/src/api/clients/auth'
 import { toast } from 'react-toastify'
 
 const authClient = new AuthClient()

@@ -1,12 +1,12 @@
-import ViewContainer from 'webapp//components/views/container/container'
+import ViewContainer from 'webapp/src/components/views/container/container'
 import styles from './customer_credits_global_balance.module.css'
-import ViewHeader from 'webapp//components/views/header/header'
+import ViewHeader from 'webapp/src/components/views/header/header'
 import React, { useEffect, useState } from 'react'
-import viewStyles from 'webapp//views/views.module.css'
-import { CustomerCreditClient } from 'webapp//api/clients/customer_credit'
+import viewStyles from 'webapp/src/views/views.module.css'
+import { CustomerCreditClient } from 'webapp/src/api/clients/customer_credit'
 import { CustomerCredit } from 'interface/entities/customer_credit'
-import Table from 'webapp//components/table/table'
-import { formatMonetary } from 'webapp//components/functions/formatting'
+import Table from 'webapp/src/components/table/table'
+import { formatMonetary } from 'webapp/src/components/functions/formatting'
 
 const customerCreditClient = new CustomerCreditClient()
 

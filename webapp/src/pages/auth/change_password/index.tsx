@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
-import ChangePassword from 'webapp//views/auth/change_password/change_password'
-import Base from 'webapp//pages/base'
+import ChangePassword from 'webapp/src/views/auth/change_password/change_password'
+import Base from 'webapp/src/pages/base'
 import React from 'react'
 
 const Index: NextPage = () => {

@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import ViewContainer from 'webapp//components/views/container/container'
-import ViewHeader from 'webapp//components/views/header/header'
-import viewStyles from 'webapp//views/views.module.css'
-import { AuthClient } from 'webapp//api/clients/auth'
+import ViewContainer from 'webapp/src/components/views/container/container'
+import ViewHeader from 'webapp/src/components/views/header/header'
+import viewStyles from 'webapp/src/views/views.module.css'
+import { AuthClient } from 'webapp/src/api/clients/auth'
 
 const authClient = new AuthClient()
 

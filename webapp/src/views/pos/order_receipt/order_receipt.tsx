@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import moment from 'moment'
 import { PurchaseOrderReceipt } from 'interface/entities/purchase_order'
-import { PurchaseOrderClient } from 'webapp//api/clients/purchase_order'
+import { PurchaseOrderClient } from 'webapp/src/api/clients/purchase_order'
 import styles from './order_receipt.module.css'
-import { formatMonetary } from 'webapp//components/functions/formatting'
-import { FormOfPaymentTranslation } from 'webapp//components/functions/translations'
+import { formatMonetary } from 'webapp/src/components/functions/formatting'
+import { FormOfPaymentTranslation } from 'webapp/src/components/functions/translations'
 import { useReactToPrint } from 'react-to-print'
 
 export type OrderReceiptProps = {

@@ -1,8 +1,8 @@
 import styles from './data_snapshot.module.css'
-import ViewContainer from 'webapp//components/views/container/container'
-import ViewHeader from 'webapp//components/views/header/header'
-import { DataSnapshotClient } from 'webapp//api/clients/data_snapshots'
-import { downloadFile } from 'webapp//components/functions/files'
+import ViewContainer from 'webapp/src/components/views/container/container'
+import ViewHeader from 'webapp/src/components/views/header/header'
+import { DataSnapshotClient } from 'webapp/src/api/clients/data_snapshots'
+import { downloadFile } from 'webapp/src/components/functions/files'
 
 const dataSnapshotClient = new DataSnapshotClient()
 

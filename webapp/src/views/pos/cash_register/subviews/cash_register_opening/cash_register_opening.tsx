@@ -1,11 +1,11 @@
-import ViewContainer from 'webapp//components/views/container/container'
+import ViewContainer from 'webapp/src/components/views/container/container'
 import React, { useEffect } from 'react'
 import { CashRegister } from 'interface/entities/cash_register'
-import { CashRegisterClient } from 'webapp//api/clients/cash_register'
+import { CashRegisterClient } from 'webapp/src/api/clients/cash_register'
 import { toast } from 'react-toastify'
-import viewStyles from 'webapp//views/views.module.css'
+import viewStyles from 'webapp/src/views/views.module.css'
 import styles from './cash_register_opening.module.css'
-import ViewHeader from 'webapp//components/views/header/header'
+import ViewHeader from 'webapp/src/components/views/header/header'
 import Router from 'next/router'
 
 const cashRegisterClient = new CashRegisterClient()

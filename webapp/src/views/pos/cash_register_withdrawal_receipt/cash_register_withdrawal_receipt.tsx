@@ -1,10 +1,10 @@
-import { CashRegisterClient } from 'webapp//api/clients/cash_register'
+import { CashRegisterClient } from 'webapp/src/api/clients/cash_register'
 import React, { useEffect, useState } from 'react'
 import { CashRegisterWithdrawalReceipt } from 'interface/entities/cash_register'
 import { useReactToPrint } from 'react-to-print'
 import styles from './cash_register_withdrawal_receipt.module.css'
 import moment from 'moment/moment'
-import { formatMonetary } from 'webapp//components/functions/formatting'
+import { formatMonetary } from 'webapp/src/components/functions/formatting'
 
 export type CashRegisterWithdrawalReceiptProps = {
   withdrawalId: number | null

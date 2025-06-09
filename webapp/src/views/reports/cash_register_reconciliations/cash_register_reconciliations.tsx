@@ -1,14 +1,14 @@
-import ViewContainer from 'webapp//components/views/container/container'
-import ViewHeader from 'webapp//components/views/header/header'
-import viewStyles from 'webapp//views/views.module.css'
-import { CashRegisterClient } from 'webapp//api/clients/cash_register'
+import ViewContainer from 'webapp/src/components/views/container/container'
+import ViewHeader from 'webapp/src/components/views/header/header'
+import viewStyles from 'webapp/src/views/views.module.css'
+import { CashRegisterClient } from 'webapp/src/api/clients/cash_register'
 import { CashRegister } from 'interface/entities/cash_register'
 import React, { useEffect, useState } from 'react'
 import styles from './cash_register_reconciliations.module.css'
-import Table from 'webapp//components/table/table'
+import Table from 'webapp/src/components/table/table'
 import { CashRegisterReconciliation } from 'interface/entities/cash_register'
 import clsx from 'clsx'
-import ClosedReconciliationReceipt from 'webapp//views/pos/closed_reconciliation_receipt/closed_reconciliation_receipt'
+import ClosedReconciliationReceipt from 'webapp/src/views/pos/closed_reconciliation_receipt/closed_reconciliation_receipt'
 
 const cashRegisterClient = new CashRegisterClient()
 

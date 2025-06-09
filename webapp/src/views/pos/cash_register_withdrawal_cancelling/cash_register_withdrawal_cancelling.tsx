@@ -1,23 +1,23 @@
 import keyBy from 'lodash.keyby'
-import ViewContainer from 'webapp//components/views/container/container'
-import ViewHeader from 'webapp//components/views/header/header'
-import { getCashRegisterName } from 'webapp//components/functions/cash_register'
+import ViewContainer from 'webapp/src/components/views/container/container'
+import ViewHeader from 'webapp/src/components/views/header/header'
+import { getCashRegisterName } from 'webapp/src/components/functions/cash_register'
 import React, { useEffect, useState } from 'react'
 import {
   CashRegister,
   CashRegisterWithdrawalReceipt,
   CashRegisterWithdrawalStatus,
 } from 'interface/entities/cash_register'
-import { CashRegisterClient } from 'webapp//api/clients/cash_register'
-import { CauseClient } from 'webapp//api/clients/cause_client'
-import Table from 'webapp//components/table/table'
-import { formatMonetary } from 'webapp//components/functions/formatting'
-import { CashRegisterWithdrawalStatusTranslation } from 'webapp//components/functions/translations'
-import CauseSearchBox from 'webapp//components/cause_search_box/cause_search_box'
+import { CashRegisterClient } from 'webapp/src/api/clients/cash_register'
+import { CauseClient } from 'webapp/src/api/clients/cause_client'
+import Table from 'webapp/src/components/table/table'
+import { formatMonetary } from 'webapp/src/components/functions/formatting'
+import { CashRegisterWithdrawalStatusTranslation } from 'webapp/src/components/functions/translations'
+import CauseSearchBox from 'webapp/src/components/cause_search_box/cause_search_box'
 import { CauseAction } from 'interface/entities/cause'
 import styles from './cash_register_withdrawal_cancelling.module.css'
 import clsx from 'clsx'
-import viewStyles from 'webapp//views/views.module.css'
+import viewStyles from 'webapp/src/views/views.module.css'
 import { toast } from 'react-toastify'
 import POSITION = toast.POSITION
 
