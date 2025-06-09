@@ -1,7 +1,7 @@
 import React from 'react'
 import type { NextPage } from 'next'
-import CashRegister from 'src/views/pos/cash_register/cash_register'
-import Base from 'src/pages/base'
+import CashRegister from 'webapp//views/pos/cash_register/cash_register'
+import Base from 'webapp//pages/base'
 
 const Index: NextPage = () => {
   return <Base View={<CashRegister />} />

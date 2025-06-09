@@ -1,5 +1,5 @@
 import { DataSnapshotEndpoints } from 'interface/endpoints/data_snapshot'
-import { sendRequest } from 'src/api/request'
+import { sendRequest } from 'webapp//api/request'
 import { DataSnapshotGetInJSONFormatRQ } from 'interface/requests/data_snapshot'
 import { DataSnapshotGetInJSONFormatRS } from 'interface/responses/data_snapshot'
 

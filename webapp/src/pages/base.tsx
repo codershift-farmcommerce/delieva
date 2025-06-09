@@ -4,11 +4,11 @@ import { useIdleTimer } from 'react-idle-timer'
 import 'react-toastify/dist/ReactToastify.css'
 import { useQRCode } from 'next-qrcode'
 import Head from 'next/head'
-import styles from 'src/pages/styles/base.module.css'
-import Home from 'src/views/home/home'
-import Menu from 'src/views/menu/menu'
+import styles from 'webapp//pages/styles/base.module.css'
+import Home from 'webapp/src/views/home/home'
+import Menu from 'webapp/src/views/menu/menu'
 import Router from 'next/router'
-import { logout } from 'src/components/functions/session'
+import { logout } from 'webapp/src/components/functions/session'
 
 export type BaseProps = {
   View: JSX.Element

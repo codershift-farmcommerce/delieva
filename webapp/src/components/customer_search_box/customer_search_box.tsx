@@ -1,6 +1,6 @@
-import { SearchBox } from 'src/components/search_box/search_box'
+import { SearchBox } from 'webapp//components/search_box/search_box'
 import React, { ForwardedRef } from 'react'
-import { CustomerClient } from 'src/api/clients/customer'
+import { CustomerClient } from 'webapp//api/clients/customer'
 import { SearchResultItem } from 'interface/entities/common'
 import { Customer } from 'interface/entities/customer'
 

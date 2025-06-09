@@ -1,8 +1,8 @@
-import { SearchBox } from 'src/components/search_box/search_box'
+import { SearchBox } from 'webapp//components/search_box/search_box'
 import React, { ForwardedRef } from 'react'
 import { SearchResultItem } from 'interface/entities/common'
 import { Cause, CauseAction } from 'interface/entities/cause'
-import { CauseClient } from 'src/api/clients/cause_client'
+import { CauseClient } from 'webapp//api/clients/cause_client'
 
 const cashRegisterWithdrawalCauseClient = new CauseClient()
 

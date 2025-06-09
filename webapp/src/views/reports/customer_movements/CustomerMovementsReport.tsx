@@ -5,7 +5,7 @@ import styles from './customer_movements.module.css'
 import { DatePicker, Button, message } from 'antd'
 import type { RangePickerProps } from 'antd/es/date-picker'
 import type { ButtonProps } from 'antd/es/button'
-import ViewContainer from 'src/components/views/container/container'
+import ViewContainer from 'webapp//components/views/container/container'
 
 const { RangePicker } = DatePicker
 

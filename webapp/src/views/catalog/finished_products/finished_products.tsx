@@ -1,17 +1,17 @@
 import clsx from 'clsx'
 import React, { useEffect, useRef, useState } from 'react'
-import Table from 'src/components/table/table'
-import ViewContainer from 'src/components/views/container/container'
-import ViewHeader from 'src/components/views/header/header'
+import Table from 'webapp//components/table/table'
+import ViewContainer from 'webapp//components/views/container/container'
+import ViewHeader from 'webapp//components/views/header/header'
 import styles from './finished_products.module.css'
-import viewStyles from 'src/views/views.module.css'
+import viewStyles from 'webapp//views/views.module.css'
 import { toast } from 'react-toastify'
 import {
   FinishedProduct,
   FinishedProductUnitType,
 } from 'interface/entities/finished_product'
-import { FinishedProductClient } from 'src/api/clients/finished_product'
-import { FinishedProductUnitTranslation } from 'src/components/functions/translations'
+import { FinishedProductClient } from 'webapp//api/clients/finished_product'
+import { FinishedProductUnitTranslation } from 'webapp//components/functions/translations'
 import {
   FinishedProductAddRQ,
   FinishedProductModifyRQ,

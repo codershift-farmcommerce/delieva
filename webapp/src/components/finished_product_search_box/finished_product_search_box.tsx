@@ -1,8 +1,8 @@
-import { SearchBox } from 'src/components/search_box/search_box'
+import { SearchBox } from 'webapp//components/search_box/search_box'
 import React, { ForwardedRef } from 'react'
 import { SearchResultItem } from 'interface/entities/common'
 import { FinishedProduct } from 'interface/entities/finished_product'
-import { FinishedProductClient } from 'src/api/clients/finished_product'
+import { FinishedProductClient } from 'webapp//api/clients/finished_product'
 
 const finishedProductClient = new FinishedProductClient()
 

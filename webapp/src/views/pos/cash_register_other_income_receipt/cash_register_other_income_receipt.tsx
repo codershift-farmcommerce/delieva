@@ -1,10 +1,10 @@
-import { CashRegisterClient } from 'src/api/clients/cash_register'
+import { CashRegisterClient } from 'webapp//api/clients/cash_register'
 import React, { useEffect, useState } from 'react'
 import { CashRegisterOtherIncomeReceipt } from 'interface/entities/cash_register'
 import { useReactToPrint } from 'react-to-print'
 import styles from './cash_register_other_income_receipt.module.css'
 import moment from 'moment/moment'
-import { formatMonetary } from 'src/components/functions/formatting'
+import { formatMonetary } from 'webapp//components/functions/formatting'
 
 export type CashRegisterOtherIncomeReceiptProps = {
   otherIncomeId: number | null

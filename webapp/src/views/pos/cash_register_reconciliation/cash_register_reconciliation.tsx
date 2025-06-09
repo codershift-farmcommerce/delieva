@@ -1,14 +1,14 @@
-import ViewContainer from 'src/components/views/container/container'
+import ViewContainer from 'webapp//components/views/container/container'
 import {
   CashRegister,
   OpenedCashRegisterReconciliation,
 } from 'interface/entities/cash_register'
 import React, { useEffect, useRef, useState } from 'react'
-import { CashRegisterClient } from 'src/api/clients/cash_register'
-import Table from 'src/components/table/table'
-import { formatMonetary } from 'src/components/functions/formatting'
-import ViewHeader from 'src/components/views/header/header'
-import viewStyles from 'src/views/views.module.css'
+import { CashRegisterClient } from 'webapp//api/clients/cash_register'
+import Table from 'webapp//components/table/table'
+import { formatMonetary } from 'webapp//components/functions/formatting'
+import ViewHeader from 'webapp//components/views/header/header'
+import viewStyles from 'webapp//views/views.module.css'
 import styles from './cash_register_reconciliation.module.css'
 import clsx from 'clsx'
 import { toast } from 'react-toastify'

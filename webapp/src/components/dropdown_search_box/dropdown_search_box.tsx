@@ -1,6 +1,6 @@
 import styles from './dropdown_search_box.module.css'
 import React, { useEffect, useRef, useState } from 'react'
-import { sendRequest } from 'src/api/request'
+import { sendRequest } from 'webapp//api/request'
 import keyBy from 'lodash.keyby'
 
 export type DropdownSearchBoxProps = {

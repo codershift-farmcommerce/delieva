@@ -13,7 +13,7 @@ import {
   UserManagementEnableUserRS,
   UserManagementDisableUserRS,
 } from 'interface/responses/user_management'
-import { sendRequest }from 'src//api/request'
+import { sendRequest }from 'webapp///api/request'
 
 export class UserManagementClient implements UserManagementEndpoints {
   path(): 'user_management' {

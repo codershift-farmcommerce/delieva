@@ -1,15 +1,15 @@
 import keyBy from 'lodash.keyby'
-import ViewContainer from 'src/components/views/container/container'
-import ViewHeader from 'src/components/views/header/header'
+import ViewContainer from 'webapp//components/views/container/container'
+import ViewHeader from 'webapp//components/views/header/header'
 import styles from './users.module.css'
-import Table from 'src/components/table/table'
+import Table from 'webapp//components/table/table'
 import { UserRole, UserWithRoles } from 'interface/entities/user'
 import { useEffect, useRef, useState } from 'react'
-import { UserManagementClient } from 'src/api/clients/user_management'
-import ViewHeaderForm from 'src/components/views/header_form/header_form'
-import UserRoleDropdownSearchBox from 'src/components/user_role_dropdown_search_box/user_role_dropdown_search_box'
+import { UserManagementClient } from 'webapp//api/clients/user_management'
+import ViewHeaderForm from 'webapp//components/views/header_form/header_form'
+import UserRoleDropdownSearchBox from 'webapp//components/user_role_dropdown_search_box/user_role_dropdown_search_box'
 import { toast } from 'react-toastify'
-import ViewBody from 'src/components/views/body/body'
+import ViewBody from 'webapp//components/views/body/body'
 
 const userManagementClient = new UserManagementClient()
 
