@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 import type { NextPage } from 'next'
 import LogRocket from 'logrocket'
 import Base from './base'
-import Home from 'webapp/src/views/home/home'
-import Login from 'webapp/src/views/auth/login/login'
-import { isProd } from 'webapp/src/components/functions/constants'
+import Home from '../views/home/home'
+import Login from '../views/auth/login/login'
+import { isProd } from '../components/functions/constants'
 
 const Index: NextPage = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -16,9 +16,9 @@ const Index: NextPage = () => {
     if (isProd) {
       LogRocket.init('vezxpb/farmcommerce')
     }
-    return <Base View={<Home />} />
+    return <Base View={<Home />} isLoggedIn={isLoggedIn} />
   }
-  return <Base View={<Login />} hideMenu={true} />
+  return <Base View={<Login />} isLoggedIn={isLoggedIn} hideMenu={true} />
 }
 
 export default Index

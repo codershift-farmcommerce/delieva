@@ -1,6 +1,6 @@
-import ViewContainer from 'webapp/src/components/views/container/container'
-import Table from 'webapp/src/components/table/table'
-import { CashRegisterClient } from 'webapp/src/api/clients/cash_register'
+import ViewContainer from 'src/components/views/container/container'
+import Table from 'src/components/table/table'
+import { CashRegisterClient } from 'src/api/clients/cash_register'
 import {
   Cashier,
   CashRegister,
@@ -8,11 +8,11 @@ import {
   CashRegisterQuantityInputType,
 } from 'interface/entities/cash_register'
 import React, { useEffect, useRef, useState } from 'react'
-import ViewHeader from 'webapp/src/components/views/header/header'
+import ViewHeader from 'src/components/views/header/header'
 import clsx from 'clsx'
-import viewStyles from 'webapp/src/views/views.module.css'
+import viewStyles from 'src/views/views.module.css'
 import styles from './cash_registers.module.css'
-import { CashRegisterQuantityInputTypeTranslation } from 'webapp/src/components/functions/translations'
+import { CashRegisterQuantityInputTypeTranslation } from 'src/components/functions/translations'
 
 const cashRegisterClient = new CashRegisterClient()
 

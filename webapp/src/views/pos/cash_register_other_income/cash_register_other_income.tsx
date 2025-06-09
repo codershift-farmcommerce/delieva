@@ -1,24 +1,24 @@
-import ViewContainer from 'webapp/src/components/views/container/container'
-import ViewHeader from 'webapp/src/components/views/header/header'
-import { getCashRegisterName } from 'webapp/src/components/functions/cash_register'
+import ViewContainer from 'src/components/views/container/container'
+import ViewHeader from 'src/components/views/header/header'
+import { getCashRegisterName } from 'src/components/functions/cash_register'
 import React, { useEffect, useState } from 'react'
 import { CashRegister } from 'interface/entities/cash_register'
-import { CashRegisterClient } from 'webapp/src/api/clients/cash_register'
+import { CashRegisterClient } from 'src/api/clients/cash_register'
 import { CauseAction } from 'interface/entities/cause'
-import CauseSearchBox from 'webapp/src/components/cause_search_box/cause_search_box'
+import CauseSearchBox from 'src/components/cause_search_box/cause_search_box'
 import styles from './cash_register_other_income.module.css'
-import viewStyles from 'webapp/src/views/views.module.css'
+import viewStyles from 'src/views/views.module.css'
 import { FormOfPayment } from 'interface/entities/purchase_order'
 import {
   ApiErrorCodeTranslation,
   FormOfPaymentTranslation,
-} from 'webapp/src/components/functions/translations'
+} from 'src/components/functions/translations'
 import { TransferBankAccount } from 'interface/entities/transfer_bank_account'
-import { TransferBankAccountClient } from 'webapp/src/api/clients/transfer_bank_account'
+import { TransferBankAccountClient } from 'src/api/clients/transfer_bank_account'
 import clsx from 'clsx'
 import { toast } from 'react-toastify'
 import POSITION = toast.POSITION
-import { CauseClient } from 'webapp/src/api/clients/cause_client'
+import { CauseClient } from 'src/api/clients/cause_client'
 import CashRegisterOtherIncomeReceipt from '../cash_register_other_income_receipt/cash_register_other_income_receipt'
 
 const cashRegisterClient = new CashRegisterClient()

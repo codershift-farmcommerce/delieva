@@ -1,4 +1,4 @@
-import DropdownSearchBox from 'webapp/src/components/dropdown_search_box/dropdown_search_box'
+import DropdownSearchBox from 'src/components/dropdown_search_box/dropdown_search_box'
 import { UserRole } from 'interface/entities/user'
 
 export type UserRoleDropdownSearchBoxProps = {

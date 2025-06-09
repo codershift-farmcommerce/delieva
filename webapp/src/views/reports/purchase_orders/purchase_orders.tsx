@@ -1,21 +1,21 @@
 import React, { useState } from 'react'
-import ViewContainer from 'webapp/src/components/views/container/container'
-import ViewHeader from 'webapp/src/components/views/header/header'
-import { PurchaseOrderClient } from 'webapp/src/api/clients/purchase_order'
+import ViewContainer from 'src/components/views/container/container'
+import ViewHeader from 'src/components/views/header/header'
+import { PurchaseOrderClient } from 'src/api/clients/purchase_order'
 import styles from './purchase_orders.module.css'
-import Table from 'webapp/src/components/table/table'
+import Table from 'src/components/table/table'
 import {
   FormOfPaymentWithAmount,
   PurchaseOrderReportEntry,
 } from 'interface/entities/purchase_order'
-import { formatMonetary, formatQuantity } from 'webapp/src/components/functions/formatting'
-import viewStyles from 'webapp/src/views/views.module.css'
+import { formatMonetary, formatQuantity } from 'src/components/functions/formatting'
+import viewStyles from 'src/views/views.module.css'
 import clsx from 'clsx'
-import OrderReceipt from 'webapp/src/views/pos/order_receipt/order_receipt'
+import OrderReceipt from 'src/views/pos/order_receipt/order_receipt'
 import {
   FormOfPaymentTranslation,
   PurchaseOrderStatusTranslation,
-} from 'webapp/src/components/functions/translations'
+} from 'src/components/functions/translations'
 
 const purchaseOrderClient = new PurchaseOrderClient()
 

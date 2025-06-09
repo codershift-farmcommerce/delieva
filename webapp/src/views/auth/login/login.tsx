@@ -3,8 +3,8 @@ import styles from './login.module.css'
 import { useEffect, useState } from 'react'
 import Router from 'next/router'
 import crypto from 'crypto'
-import { AuthClient } from 'webapp/src/api/clients/auth'
-import { isProd } from 'webapp/src/components/functions/constants'
+import { AuthClient } from 'src/api/clients/auth'
+import { isProd } from 'src/components/functions/constants'
 const authClient = new AuthClient()
 
 const Login = () => {

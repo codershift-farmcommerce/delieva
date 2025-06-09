@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Customer } from 'interface/entities/customer'
-import { CustomerClient } from 'webapp/src/api/clients/customer'
+import { CustomerClient }from 'src//api/clients/customer'
 
 const customerClient = new CustomerClient()
 

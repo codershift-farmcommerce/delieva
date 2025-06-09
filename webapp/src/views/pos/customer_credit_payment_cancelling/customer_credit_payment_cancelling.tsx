@@ -1,26 +1,26 @@
-import ViewContainer from 'webapp/src/components/views/container/container'
-import ViewHeader from 'webapp/src/components/views/header/header'
-import Table from 'webapp/src/components/table/table'
-import { CustomerCreditClient } from 'webapp/src/api/clients/customer_credit'
+import ViewContainer from 'src/components/views/container/container'
+import ViewHeader from 'src/components/views/header/header'
+import Table from 'src/components/table/table'
+import { CustomerCreditClient } from 'src/api/clients/customer_credit'
 import React, { useEffect, useState } from 'react'
 import {
   CustomerCreditPayment,
   CustomerCreditPaymentStatus,
 } from 'interface/entities/customer_credit'
-import { formatMonetary } from 'webapp/src/components/functions/formatting'
-import { getCashRegisterName } from 'webapp/src/components/functions/cash_register'
+import { formatMonetary } from 'src/components/functions/formatting'
+import { getCashRegisterName } from 'src/components/functions/cash_register'
 import { CashRegister } from 'interface/entities/cash_register'
-import { CashRegisterClient } from 'webapp/src/api/clients/cash_register'
-import CauseSearchBox from 'webapp/src/components/cause_search_box/cause_search_box'
+import { CashRegisterClient } from 'src/api/clients/cash_register'
+import CauseSearchBox from 'src/components/cause_search_box/cause_search_box'
 import { CauseAction } from 'interface/entities/cause'
 import styles from './customer_credit_payment_cancelling.module.css'
-import viewStyles from 'webapp/src/views/views.module.css'
+import viewStyles from 'src/views/views.module.css'
 import clsx from 'clsx'
 import keyBy from 'lodash.keyby'
-import { CauseClient } from 'webapp/src/api/clients/cause_client'
+import { CauseClient } from 'src/api/clients/cause_client'
 import { toast } from 'react-toastify'
 import POSITION = toast.POSITION
-import { CustomerCreditPaymentStatusTranslation } from 'webapp/src/components/functions/translations'
+import { CustomerCreditPaymentStatusTranslation } from 'src/components/functions/translations'
 
 type PaymentsById = { [paymentId: string]: CustomerCreditPayment }
 

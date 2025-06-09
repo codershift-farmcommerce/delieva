@@ -4,20 +4,22 @@ import { useIdleTimer } from 'react-idle-timer'
 import 'react-toastify/dist/ReactToastify.css'
 import { useQRCode } from 'next-qrcode'
 import Head from 'next/head'
-import styles from 'webapp/src/pages/styles/base.module.css'
-import Home from 'webapp/src/views/home/home'
-import Menu from 'webapp/src/views/menu/menu'
+import styles from './styles/base.module.css'
+import Home from '../views/home/home'
+import Menu from '../views/menu/menu'
 import Router from 'next/router'
-import { logout } from 'webapp/src/components/functions/session'
+import { logout } from '../components/functions/session'
+import type { NextPage } from 'next'
 
 export type BaseProps = {
-  View: JSX.Element
+  View: React.ComponentType<any>
+  isLoggedIn: boolean
   hideMenu?: boolean
 }
 
 const SessionTimeoutWhitelist = ['/manufacturing/orders_board', '/']
 
-const Base = (props: BaseProps) => {
+const Base = ({ View, isLoggedIn, hideMenu }: BaseProps): JSX.Element => {
   const [traceId, setTraceId] = useState('')
   const [qrCodeVisible, setQrCodeVisible] = useState(false)
   const [idleToastId, setIdleToastId] = useState<number | string>('')
@@ -69,7 +71,6 @@ const Base = (props: BaseProps) => {
   }, [remaining])
 
   const { Image } = useQRCode()
-  const { View, hideMenu } = props
   const ViewToRender = View || Home
 
   useEffect(() => {
@@ -91,8 +92,9 @@ const Base = (props: BaseProps) => {
       </Head>
 
       {!hideMenu && <Menu />}
-      {/*<div className={styles.session_timeout} style={{ width: '100%' }}></div>*/}
-      <main className={styles.main}>{ViewToRender}</main>
+      <main className={styles.main}>
+        {React.createElement(View)}
+      </main>
 
       <footer className={styles.footer}>
         <div>Codershift &copy; 2025</div>

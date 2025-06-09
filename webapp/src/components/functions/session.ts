@@ -1,5 +1,5 @@
 import Router from 'next/router'
-import { AuthClient } from 'webapp/src/api/clients/auth'
+import { AuthClient }from 'src/api/clients/auth'
 
 const authClient = new AuthClient()
 

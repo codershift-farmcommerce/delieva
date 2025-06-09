@@ -1,7 +1,7 @@
 import styles from './home.module.css'
 import React from 'react'
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.app_description_container}>
