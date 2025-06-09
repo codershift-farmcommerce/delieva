@@ -16,9 +16,9 @@ const Index: NextPage = () => {
     if (isProd) {
       LogRocket.init('vezxpb/farmcommerce')
     }
-    return <Base View={<Home />} isLoggedIn={isLoggedIn} />
+    return <Base View={<Home />} />
   }
-  return <Base View={<Login />} isLoggedIn={isLoggedIn} hideMenu={true} />
+  return <Base View={<Login />} hideMenu={true} />
 }
 
 export default Index
