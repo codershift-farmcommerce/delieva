@@ -1,15 +1,15 @@
 import styles from './menu.module.css'
 import React, { useEffect, useRef, useState } from 'react'
-import { getMenuItems, Menu as MenuType } from './menuItems'
+import { getMenuItems, Menu } from './menuItems'
 import Link from 'next/link'
 import Router, { useRouter } from 'next/router'
-import { UserRole, UserWithRoles } from '@/../../interface/entities/user'
-import { logout } from '@/components/functions/session'
+import { UserRole, UserWithRoles } from 'interface/entities/user'
+import { logout } from 'webapp/src/components/functions/session'
 
-const Menu: React.ComponentType = () => {
+const Menu = () => {
   const [menuSelected, setMenuSelected] = useState('')
   const [user, setUser] = useState({} as UserWithRoles)
-  const [menuItems, setMenuItems] = useState({} as MenuType)
+  const [menuItems, setMenuItems] = useState({} as Menu)
   const menuRef = useRef(null as unknown as HTMLDivElement)
   const router = useRouter()
 
