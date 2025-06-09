@@ -1,4 +1,4 @@
-import { CustomerEndpoints } from 'codershift-farmcommerce-api/endpoints/customer'
+import { CustomerEndpoints } from 'interface/endpoints/customer'
 import {
   CustomerAddRQ,
   CustomerDisableRQ,
@@ -7,15 +7,15 @@ import {
   CustomerListRQ,
   CustomerModifyRQ,
   CustomerSearchRQ,
-} from 'codershift-farmcommerce-api/requests/customer'
+} from 'interface/requests/customer'
 import {
   CustomerAddFailRS,
   CustomerAddSuccessRS,
   CustomerListRS,
   CustomerSearchRS,
-} from 'codershift-farmcommerce-api/responses/customer'
+} from 'interface/responses/customer'
 import { sendRequest } from '../request'
-import { ModifyRS } from 'codershift-farmcommerce-api/responses/common'
+import { ModifyRS } from 'interface/responses/common'
 
 export class CustomerClient implements CustomerEndpoints {
   path(): 'customer' {

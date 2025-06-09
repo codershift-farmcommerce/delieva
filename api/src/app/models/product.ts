@@ -1,4 +1,4 @@
-import { Ctx } from 'src/app/context'
+import { Ctx } from 'api/src/app/context'
 import {
   ProductDisableRS,
   ProductEnableRS,
@@ -7,7 +7,7 @@ import {
   ProductGetUnitPricesForCartRS,
   ProductListRS,
   ProductSearchRS,
-} from 'lib/responses/product'
+} from 'interface/responses/product'
 import {
   ProductAddRQ,
   ProductDisableRQ,
@@ -18,18 +18,18 @@ import {
   ProductListRQ,
   ProductModifyRQ,
   ProductSearchRQ,
-} from 'lib/requests/product'
+} from 'interface/requests/product'
 import {
   ProductUnitPrices,
   ProductFinishedProduct,
   ProductWithFinishedProducts,
-} from 'lib/entities/product'
-import { SystemClient } from 'lib/entities/system'
-import { Cart, CartPriceType } from 'lib/entities/cart'
-import { GeneralPublicCustomer } from 'lib/entities/customer'
-import { AddRS, ModifyRS } from 'lib/responses/common'
+} from 'interface/entities/product'
+import { SystemClient } from 'interface/entities/system'
+import { Cart, CartPriceType } from 'interface/entities/cart'
+import { GeneralPublicCustomer } from 'interface/entities/customer'
+import { AddRS, ModifyRS } from 'interface/responses/common'
 import * as discountModel from './discount'
-import { FinishedProductUnitType } from 'lib/entities/finished_product'
+import { FinishedProductUnitType } from 'interface/entities/finished_product'
 import { getAssignedCashRegister } from './cash_register'
 
 type ProductSQLRow = {

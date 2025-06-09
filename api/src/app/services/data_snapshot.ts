@@ -1,10 +1,10 @@
 import * as Bluebird from 'bluebird'
-import { DataSnapshotEndpoints } from 'lib/endpoints/data_snapshot'
-import { Ctx } from 'src/app/context'
+import { DataSnapshotEndpoints } from 'interface/endpoints/data_snapshot'
+import { Ctx } from 'api/src/app/context'
 import { action } from '../context/decorators/endpoint_actions'
-import { Application } from 'lib'
-import { DataSnapshotGetInJSONFormatRQ } from 'lib/requests/data_snapshot'
-import { DataSnapshotGetInJSONFormatRS } from 'lib/responses/data_snapshot'
+import { Application } from 'interface'
+import { DataSnapshotGetInJSONFormatRQ } from 'interface/requests/data_snapshot'
+import { DataSnapshotGetInJSONFormatRS } from 'interface/responses/data_snapshot'
 import * as archiver from 'archiver'
 
 export class DataSnapshotService implements DataSnapshotEndpoints {

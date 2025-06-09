@@ -1,10 +1,10 @@
 import { Ctx } from '../context'
-import { ClientConfigurationEndpoints } from 'lib/endpoints/client_configuration'
-import { ClientConfigurationListRQ } from 'lib/requests/client_configuration'
-import { ClientConfigurationListRS } from 'lib/responses/client_configuration'
-import { Application } from 'lib'
+import { ClientConfigurationEndpoints } from 'interface/endpoints/client_configuration'
+import { ClientConfigurationListRQ } from 'interface/requests/client_configuration'
+import { ClientConfigurationListRS } from 'interface/responses/client_configuration'
+import { Application } from 'interface'
 import { action } from '../context/decorators/endpoint_actions'
-import * as client_configuration from 'src/app/models/client_configuration'
+import * as client_configuration from 'api/src/app/models/client_configuration'
 
 export class ClientConfigurationService
   implements ClientConfigurationEndpoints

@@ -1,4 +1,4 @@
-import { ProductEndpoints } from 'codershift-farmcommerce-api/endpoints/product'
+import { ProductEndpoints } from 'interface/endpoints/product'
 import { sendRequest } from '../request'
 import {
   ProductListRS,
@@ -10,7 +10,7 @@ import {
   ProductDisableRS,
   ProductEnableRS,
   ProductGetSalesReportRS,
-} from 'codershift-farmcommerce-api/responses/product'
+} from 'interface/responses/product'
 import {
   ProductListRQ,
   ProductGetByCodeRQ,
@@ -21,8 +21,8 @@ import {
   ProductDisableRQ,
   ProductEnableRQ,
   ProductGetSalesReportRQ,
-} from 'codershift-farmcommerce-api/requests/product'
-import { AddRS, ModifyRS } from 'codershift-farmcommerce-api/responses/common'
+} from 'interface/requests/product'
+import { AddRS, ModifyRS } from 'interface/responses/common'
 
 export class ProductClient implements ProductEndpoints {
   path(): 'product' {

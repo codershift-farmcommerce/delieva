@@ -1,5 +1,5 @@
-import { UserRole, UserRoleApplications } from 'codershift-farmcommerce-api/entities/user'
-import { Application } from 'codershift-farmcommerce-api'
+import { UserRole, UserRoleApplications } from 'interface/entities/user'
+import { Application } from 'interface'
 
 type Option = {
   text: string

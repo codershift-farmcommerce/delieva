@@ -1,12 +1,12 @@
-import ViewContainer from 'src/components/views/container/container'
-import Table from 'src/components/table/table'
-import { CustomerClient } from 'src/api/clients/customer'
+import ViewContainer from 'webapp/src/components/views/container/container'
+import Table from 'webapp/src/components/table/table'
+import { CustomerClient } from 'webapp/src/api/clients/customer'
 import React, { useEffect, useRef, useState } from 'react'
-import { Customer } from 'codershift-farmcommerce-api/entities/customer'
-import ViewHeader from 'src/components/views/header/header'
+import { Customer } from 'interface/entities/customer'
+import ViewHeader from 'webapp/src/components/views/header/header'
 import clsx from 'clsx'
 import styles from './customers.module.css'
-import viewStyles from 'src/views/views.module.css'
+import viewStyles from 'webapp/src/views/views.module.css'
 import { toast } from 'react-toastify'
 
 const customerClient = new CustomerClient()

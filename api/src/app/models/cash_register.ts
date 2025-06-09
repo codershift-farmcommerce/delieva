@@ -1,4 +1,4 @@
-import { Ctx } from 'src/app/context'
+import { Ctx } from 'api/src/app/context'
 import {
   CashRegisterAddRQ,
   CashRegisterAssignCashierRQ,
@@ -17,7 +17,7 @@ import {
   CashRegisterReconciliationGetReportRQ,
   CashRegisterUnassignCashierRQ,
   CashRegisterWithdrawRQ,
-} from 'lib/requests/cash_register'
+} from 'interface/requests/cash_register'
 import {
   CashRegisterAddRS,
   CashRegisterAssignCashierRS,
@@ -36,22 +36,22 @@ import {
   CashRegisterReconciliationGetReportRS,
   CashRegisterUnassignCashierRS,
   CashRegisterWithdrawRS,
-} from 'lib/responses/cash_register'
-import { ModifyRS } from 'lib/responses/common'
+} from 'interface/responses/cash_register'
+import { ModifyRS } from 'interface/responses/common'
 import { Knex } from 'knex'
 import {
   FormOfPayment,
   FormOfPaymentWithAmount,
-} from 'lib/entities/purchase_order'
+} from 'interface/entities/purchase_order'
 import {
   CashRegisterQuantityInputType,
   CashRegisterReconciliationState,
   CashRegisterWithdrawalStatus,
   OpenedCashRegisterReconciliation,
-} from 'lib/entities/cash_register'
+} from 'interface/entities/cash_register'
 import * as purchase_order_model from './purchase_order'
 import * as customer_credit_model from './customer_credit'
-import { ApiErrorCode } from 'lib/entities/api_error_code'
+import { ApiErrorCode } from 'interface/entities/api_error_code'
 import Transaction = Knex.Transaction
 
 type RawCashRegister = {

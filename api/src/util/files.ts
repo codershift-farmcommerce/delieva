@@ -1,4 +1,4 @@
-import { Ctx } from 'src/app/context'
+import { Ctx } from 'api/src/app/context'
 
 export function attachFile(ctx: Ctx, filePath: string, fileName: string) {
   ctx.attachment(filePath)

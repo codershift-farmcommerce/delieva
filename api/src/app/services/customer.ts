@@ -1,31 +1,31 @@
 import * as fs from 'node:fs'
 import * as moment from 'moment'
-import { SearchRQ } from 'lib/entities/common'
+import { SearchRQ } from 'interface/entities/common'
 import {
   CustomerAddFailRS,
   CustomerAddSuccessRS,
   CustomerListRS,
   CustomerSearchRS,
   CustomerGetMovementsReportRS,
-} from 'lib/responses/customer'
-import { CustomerGetMovementsReportRQ } from 'lib/requests/customer'
-import { CustomerEndpoints } from 'lib/endpoints/customer'
-import { Ctx } from 'src/app/context'
-import * as customer from 'src/app/models/customer'
+} from 'interface/responses/customer'
+import { CustomerGetMovementsReportRQ } from 'interface/requests/customer'
+import { CustomerEndpoints } from 'interface/endpoints/customer'
+import { Ctx } from 'api/src/app/context'
+import * as customer from 'api/src/app/models/customer'
 import { action } from '../context/decorators/endpoint_actions'
-import { Application } from 'lib'
+import { Application } from 'interface'
 import {
   CustomerAddRQ,
   CustomerDisableRQ,
   CustomerEnableRQ,
   CustomerListRQ,
   CustomerModifyRQ,
-} from 'lib/requests/customer'
-import { ModifyRS } from 'lib/responses/common'
-import * as excel from 'src/util/excel'
-import { FileType } from 'src/util/excel'
+} from 'interface/requests/customer'
+import { ModifyRS } from 'interface/responses/common'
+import * as excel from 'api/src/util/excel'
+import { FileType } from 'api/src/util/excel'
 import { Worksheet } from 'exceljs'
-import { attachFile } from 'src/util/files'
+import { attachFile } from 'api/src/util/files'
 
 export class CustomerService implements CustomerEndpoints {
   private ctx: Ctx

@@ -1,10 +1,10 @@
-import { Ctx } from 'src/app/context'
-import { getClient } from 'setup/db/client'
-import { LogLevel } from 'src/util/logging/logger'
-import { LogType } from 'src/util/logging/logType'
-import { DATABASE, DatabaseTimezone } from 'setup/db/types'
-import { throwApiError } from 'src/app/context/api_error'
-import { ApiErrorCode } from 'lib/entities/api_error_code'
+import { Ctx } from 'api/src/app/context'
+import { getClient } from 'api/setup/db/client'
+import { LogLevel } from 'api/src/util/logging/logger'
+import { LogType } from 'api/src/util/logging/logType'
+import { DATABASE, DatabaseTimezone } from 'api/setup/db/types'
+import { throwApiError } from 'api/src/app/context/api_error'
+import { ApiErrorCode } from 'interface/entities/api_error_code'
 
 export default async (ctx: Ctx, next: Function): Promise<void> => {
   ctx.dbName = ctx.request.headers['x-tenant'] as DATABASE

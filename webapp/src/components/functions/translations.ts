@@ -1,14 +1,14 @@
 import {
   FormOfPayment,
   PurchaseOrderStatus,
-} from 'codershift-farmcommerce-api/entities/purchase_order'
-import { FinishedProductUnitType } from 'codershift-farmcommerce-api/entities/finished_product'
+} from 'interface/entities/purchase_order'
+import { FinishedProductUnitType } from 'interface/entities/finished_product'
 import {
   CashRegisterQuantityInputType,
   CashRegisterWithdrawalStatus,
-} from 'codershift-farmcommerce-api/entities/cash_register'
-import { ApiErrorCode } from 'codershift-farmcommerce-api/entities/api_error_code'
-import { CustomerCreditPaymentStatus } from 'codershift-farmcommerce-api/entities/customer_credit'
+} from 'interface/entities/cash_register'
+import { ApiErrorCode } from 'interface/entities/api_error_code'
+import { CustomerCreditPaymentStatus } from 'interface/entities/customer_credit'
 
 export const ApiErrorCodeTranslation: Partial<Record<ApiErrorCode, string>> = {
   [ApiErrorCode.WithdrawalAmountIsGreaterThanClosingCashBalance]:

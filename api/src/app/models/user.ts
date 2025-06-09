@@ -1,21 +1,21 @@
 import * as bcrypt from 'bcrypt'
-import { Ctx } from 'src/app/context'
-import { UserRole, UserWithRoles } from 'lib/entities/user'
+import { Ctx } from 'api/src/app/context'
+import { UserRole, UserWithRoles } from 'interface/entities/user'
 import {
   UserManagementCreateUserRS,
   UserManagementDisableUserRS,
   UserManagementEnableUserRS,
   UserManagementListUsersRS,
   UserManagementResetUserPasswordRS,
-} from 'lib/responses/user_management'
+} from 'interface/responses/user_management'
 import {
   UserManagementCreateUserRQ,
   UserManagementDisableUserRQ,
   UserManagementEnableUserRQ,
   UserManagementResetUserPasswordRQ,
-} from 'lib/requests/user_management'
-import { AuthChangePasswordRQ } from 'lib/requests/auth'
-import { AuthChangePasswordRS } from 'lib/responses/auth'
+} from 'interface/requests/user_management'
+import { AuthChangePasswordRQ } from 'interface/requests/auth'
+import { AuthChangePasswordRS } from 'interface/responses/auth'
 import { Knex } from 'knex'
 import Transaction = Knex.Transaction
 import { getUserEmailByAuthorizationCodeAndRemoveCode } from './user_authorization_code'

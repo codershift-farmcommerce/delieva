@@ -1,6 +1,6 @@
 import * as path from 'node:path'
 import * as knexLib from 'knex'
-import { getKnexConfig } from 'setup/db/knexfile'
+import { getKnexConfig } from 'api/setup/db/knexfile'
 import { DATABASE } from './types'
 
 const yargs = require('yargs/yargs')

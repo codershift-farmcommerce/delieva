@@ -1,12 +1,12 @@
-import { PurchaseOrderEndpoints } from 'lib/endpoints/purchase_order'
-import { Ctx } from 'src/app/context'
+import { PurchaseOrderEndpoints } from 'interface/endpoints/purchase_order'
+import { Ctx } from 'api/src/app/context'
 import {
   PurchaseOrderGetReceiptRQ,
   PurchaseOrderGetReportRQ,
   PurchaseOrderReturnOrderDetailsRQ,
   PurchaseOrderReturnOrderRQ,
   PurchaseOrderProcessRQ,
-} from 'lib/requests/purchase_order'
+} from 'interface/requests/purchase_order'
 import {
   PurchaseOrderGetReportRS,
   PurchaseOrderProcessSuccessRS,
@@ -14,11 +14,10 @@ import {
   PurchaseOrderGetReceiptRS,
   PurchaseOrderReturnOrderRS,
   PurchaseOrderReturnOrderDetailsRS,
-} from 'lib/responses/purchase_order'
-import * as purchase_order from 'src/app/models/purchase_order'
+} from 'interface/responses/purchase_order'
+import * as purchase_order from 'api/src/app/models/purchase_order'
 import { action } from '../context/decorators/endpoint_actions'
-import { Application } from 'lib'
-import { Promise } from 'bluebird'
+import { Application } from 'interface'
 
 export class PurchaseOrderService implements PurchaseOrderEndpoints {
   private ctx: Ctx

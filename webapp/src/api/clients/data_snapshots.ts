@@ -1,7 +1,7 @@
-import { DataSnapshotEndpoints } from 'codershift-farmcommerce-api/endpoints/data_snapshot'
-import { sendRequest } from 'src/api/request'
-import { DataSnapshotGetInJSONFormatRQ } from 'codershift-farmcommerce-api/requests/data_snapshot'
-import { DataSnapshotGetInJSONFormatRS } from 'codershift-farmcommerce-api/responses/data_snapshot'
+import { DataSnapshotEndpoints } from 'interface/endpoints/data_snapshot'
+import { sendRequest } from 'webapp/src/api/request'
+import { DataSnapshotGetInJSONFormatRQ } from 'interface/requests/data_snapshot'
+import { DataSnapshotGetInJSONFormatRS } from 'interface/responses/data_snapshot'
 
 export class DataSnapshotClient implements DataSnapshotEndpoints {
   path(): 'data_snapshot' {

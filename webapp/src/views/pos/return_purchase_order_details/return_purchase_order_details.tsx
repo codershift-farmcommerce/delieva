@@ -1,23 +1,23 @@
 import keyBy from 'lodash.keyby'
-import ViewHeader from 'src/components/views/header/header'
-import ViewContainer from 'src/components/views/container/container'
-import viewStyles from 'src/views/views.module.css'
+import ViewHeader from 'webapp/src/components/views/header/header'
+import ViewContainer from 'webapp/src/components/views/container/container'
+import viewStyles from 'webapp/src/views/views.module.css'
 import clsx from 'clsx'
 import React, { useEffect, useRef, useState } from 'react'
 import { toast } from 'react-toastify'
 import OrderReceipt from '../order_receipt/order_receipt'
-import { PurchaseOrderClient } from 'src/api/clients/purchase_order'
+import { PurchaseOrderClient } from 'webapp/src/api/clients/purchase_order'
 import {
   PurchaseOrderReceipt,
   PurchaseOrderReceiptDetail,
-} from 'codershift-farmcommerce-api/entities/purchase_order'
-import Table from 'src/components/table/table'
-import { formatMonetary, formatQuantity } from 'src/components/functions/formatting'
-import CauseSearchBox from 'src/components/cause_search_box/cause_search_box'
+} from 'interface/entities/purchase_order'
+import Table from 'webapp/src/components/table/table'
+import { formatMonetary, formatQuantity } from 'webapp/src/components/functions/formatting'
+import CauseSearchBox from 'webapp/src/components/cause_search_box/cause_search_box'
 import styles from './return_purchase_order_details.module.css'
-import { CauseClient } from 'src/api/clients/cause_client'
-import { PurchaseOrderDetailStatusTranslation } from 'src/components/functions/translations'
-import { CauseAction } from 'codershift-farmcommerce-api/entities/cause'
+import { CauseClient } from 'webapp/src/api/clients/cause_client'
+import { PurchaseOrderDetailStatusTranslation } from 'webapp/src/components/functions/translations'
+import { CauseAction } from 'interface/entities/cause'
 
 const purchaseOrderClient = new PurchaseOrderClient()
 const returnedPurchaseOrderCauseClient = new CauseClient()

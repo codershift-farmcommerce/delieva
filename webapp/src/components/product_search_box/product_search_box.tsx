@@ -1,8 +1,8 @@
-import { SearchBox } from 'src/components/search_box/search_box'
+import { SearchBox } from 'webapp/src/components/search_box/search_box'
 import React, { ForwardedRef } from 'react'
-import { ProductClient } from 'src/api/clients/product'
-import { SearchResultItem } from 'codershift-farmcommerce-api/entities/common'
-import { Product } from 'codershift-farmcommerce-api/entities/product'
+import { ProductClient } from 'webapp/src/api/clients/product'
+import { SearchResultItem } from 'interface/entities/common'
+import { Product } from 'interface/entities/product'
 
 const productClient = new ProductClient()
 

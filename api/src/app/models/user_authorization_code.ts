@@ -1,8 +1,8 @@
 import * as bcrypt from 'bcrypt'
-import { AuthGenerateAuthorizationCodeRQ } from 'lib/requests/auth'
-import { AuthGenerateAuthorizationCodeRS } from 'lib/responses/auth'
+import { AuthGenerateAuthorizationCodeRQ } from 'interface/requests/auth'
+import { AuthGenerateAuthorizationCodeRS } from 'interface/responses/auth'
 import knex from 'knex'
-import { Ctx } from 'src/app/context'
+import { Ctx } from 'api/src/app/context'
 
 export async function generateAuthorizationCode(
   ctx: Ctx,

@@ -1,16 +1,8 @@
-import { CauseEndpoints } from 'codershift-farmcommerce-api/endpoints/cause'
-import {
-  CauseAddRQ, CauseFilter,
-  CauseListRQ,
-  CauseSearchRQ,
-} from 'codershift-farmcommerce-api/requests/cause'
-import {
-  CauseAddRS,
-  CauseListRS,
-  CauseSearchRS,
-} from 'codershift-farmcommerce-api/responses/cause'
+import { CauseEndpoints } from 'interface/endpoints/cause'
+import { CauseAddRQ, CauseFilter, CauseListRQ, CauseSearchRQ } from 'interface/requests/cause'
+import { CauseAddRS, CauseListRS, CauseSearchRS } from 'interface/responses/cause'
 import { sendRequest } from '../request'
-import {SearchRQ} from "codershift-farmcommerce-api/entities/common";
+import { SearchRQ } from 'interface/entities/common'
 
 export class CauseClient implements CauseEndpoints {
   path(): 'cause' {

@@ -1,7 +1,7 @@
 import styles from './search_box.module.css'
 import React, { useEffect, useRef, useState } from 'react'
 import useDebounce from '../debounce/debounce'
-import { SearchResultItem, SearchRQ, SearchRS } from 'codershift-farmcommerce-api/entities/common'
+import { SearchResultItem, SearchRQ, SearchRS } from 'interface/entities/common'
 
 export type SearchBoxProps<RQ, RS> = {
   searchEndpoint: (req: SearchRQ<RQ>) => Promise<SearchRS<RS>>

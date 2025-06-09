@@ -1,4 +1,4 @@
-import { CustomerCreditEndpoints } from 'codershift-farmcommerce-api/endpoints/customer_credit'
+import { CustomerCreditEndpoints } from 'interface/endpoints/customer_credit'
 import {
   CustomerCreditAddPaymentRQ,
   CustomerCreditCancelPaymentRQ,
@@ -9,7 +9,7 @@ import {
   CustomerCreditGetPaymentsOfCurrentOpenReconciliationRQ,
   CustomerCreditGetUnpaidPurchaseOrdersRQ,
   CustomerCreditListRQ,
-} from 'codershift-farmcommerce-api/requests/customer_credit'
+} from 'interface/requests/customer_credit'
 import {
   CustomerCreditAddPaymentRS,
   CustomerCreditCancelPaymentRS,
@@ -20,7 +20,7 @@ import {
   CustomerCreditGetPaymentsOfCurrentOpenReconciliationRS,
   CustomerCreditGetUnpaidPurchaseOrdersRS,
   CustomerCreditListRS,
-} from 'codershift-farmcommerce-api/responses/customer_credit'
+} from 'interface/responses/customer_credit'
 import { sendRequest } from '../request'
 
 export class CustomerCreditClient implements CustomerCreditEndpoints {

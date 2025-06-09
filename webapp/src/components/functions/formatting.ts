@@ -1,4 +1,4 @@
-import { FinishedProductUnitType } from 'codershift-farmcommerce-api/entities/finished_product'
+import { FinishedProductUnitType } from 'interface/entities/finished_product'
 
 export const formatMonetary = (val: number | string | undefined) => {
   if (val == undefined || Number.isNaN(val)) {

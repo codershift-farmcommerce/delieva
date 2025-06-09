@@ -1,11 +1,10 @@
-import { TransferBankAccountEndpoints } from 'lib/endpoints/transfer_bank_account'
+import { TransferBankAccountEndpoints } from 'interface/endpoints/transfer_bank_account'
 import { Ctx } from '../context'
-import { Promise } from 'bluebird'
-import { TransferBankAccountListRQ } from 'lib/requests/transfer_bank_account'
-import { TransferBankAccountListRS } from 'lib/responses/transfer_bank_account'
-import * as transferBankAccount from 'src/app/models/transfer_bank_account'
+import { TransferBankAccountListRQ } from 'interface/requests/transfer_bank_account'
+import { TransferBankAccountListRS } from 'interface/responses/transfer_bank_account'
+import * as transferBankAccount from 'api/src/app/models/transfer_bank_account'
 import { action } from '../context/decorators/endpoint_actions'
-import { Application } from '../../../lib'
+import { Application } from 'interface'
 
 export class TransferBankAccountService
   implements TransferBankAccountEndpoints

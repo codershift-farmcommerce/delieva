@@ -1,34 +1,34 @@
 import { toast } from 'react-toastify'
 import clsx from 'clsx'
-import ViewContainer from 'src/components/views/container/container'
-import ViewHeader from 'src/components/views/header/header'
+import ViewContainer from 'webapp/src/components/views/container/container'
+import ViewHeader from 'webapp/src/components/views/header/header'
 import styles from './cash_register.module.css'
-import viewStyles from 'src/views/views.module.css'
-import { ProductUnitPrices, ProductWithFinishedProducts } from 'codershift-farmcommerce-api/entities/product'
-import { FinishedProductUnitType } from 'codershift-farmcommerce-api/entities/finished_product'
-import type { CashRegister as CashRegisterType } from 'codershift-farmcommerce-api/entities/cash_register'
-import { CashRegisterQuantityInputType } from 'codershift-farmcommerce-api/entities/cash_register'
+import viewStyles from 'webapp/src/views/views.module.css'
+import { ProductUnitPrices, ProductWithFinishedProducts } from 'interface/entities/product'
+import { FinishedProductUnitType } from 'interface/entities/finished_product'
+import type { CashRegister as CashRegisterType } from 'interface/entities/cash_register'
+import { CashRegisterQuantityInputType } from 'interface/entities/cash_register'
 import React, { useEffect, useRef, useState } from 'react'
-import Table from 'src/components/table/table'
-import { ProductClient } from 'src/api/clients/product'
-import CustomerSearchBox from 'src/components/customer_search_box/customer_search_box'
-import { PurchaseOrderClient } from 'src/api/clients/purchase_order'
-import { Customer, GeneralPublicCustomer } from 'codershift-farmcommerce-api/entities/customer'
-import { SearchResultItem } from 'codershift-farmcommerce-api/entities/common'
-import { formatMonetary, formatQuantity } from 'src/components/functions/formatting'
-import ProductSearchBox from 'src/components/product_search_box/product_search_box'
+import Table from 'webapp/src/components/table/table'
+import { ProductClient } from 'webapp/src/api/clients/product'
+import CustomerSearchBox from 'webapp/src/components/customer_search_box/customer_search_box'
+import { PurchaseOrderClient } from 'webapp/src/api/clients/purchase_order'
+import { Customer, GeneralPublicCustomer } from 'interface/entities/customer'
+import { SearchResultItem } from 'interface/entities/common'
+import { formatMonetary, formatQuantity } from 'webapp/src/components/functions/formatting'
+import ProductSearchBox from 'webapp/src/components/product_search_box/product_search_box'
 import OrderReceipt from '../order_receipt/order_receipt'
 import {
   FormOfPayment,
   PurchaseOrderReceipt,
-} from 'codershift-farmcommerce-api/entities/purchase_order'
-import { FormOfPaymentTranslation } from 'src/components/functions/translations'
-import { Discount } from 'codershift-farmcommerce-api/entities/discount'
-import { Cart, CartItemDetail, CartItems } from 'codershift-farmcommerce-api/entities/cart'
-import { CashRegisterClient } from 'src/api/clients/cash_register'
+} from 'interface/entities/purchase_order'
+import { FormOfPaymentTranslation } from 'webapp/src/components/functions/translations'
+import { Discount } from 'interface/entities/discount'
+import { Cart, CartItemDetail, CartItems } from 'interface/entities/cart'
+import { CashRegisterClient } from 'webapp/src/api/clients/cash_register'
 import CashRegisterOpening from './subviews/cash_register_opening/cash_register_opening'
-import { TransferBankAccountClient } from 'src/api/clients/transfer_bank_account'
-import { TransferBankAccount } from 'codershift-farmcommerce-api/entities/transfer_bank_account'
+import { TransferBankAccountClient } from 'webapp/src/api/clients/transfer_bank_account'
+import { TransferBankAccount } from 'interface/entities/transfer_bank_account'
 import { getCashRegisterName } from '../../../components/functions/cash_register'
 
 const cashRegisterClient = new CashRegisterClient()
@@ -113,7 +113,7 @@ const CashRegister = () => {
   const handleSelectedCustomer = (resultItem: SearchResultItem<Customer>) => {
     handleClean()
     setSelectedCustomer(resultItem.data)
-    
+
     // Update all products' IEPS state based on new customer's setting
     setProductsWithIeps(prev => {
       const newState = { ...prev }
@@ -122,7 +122,7 @@ const CashRegister = () => {
       })
       return newState
     })
-    
+
     // Also update the cart items
     setCartItems(prev => {
       const newCart = { ...prev }
@@ -182,7 +182,7 @@ const CashRegister = () => {
       acc += productUnitPrices[productCode] * quantity
       return acc
     }, 0)
-    
+
     const tax1 = Object.keys(cartItems).reduce((acc, productCode) => {
       if (productsWithIeps[productCode]) {
         const quantity = cartItems[productCode].quantity
@@ -241,7 +241,7 @@ const CashRegister = () => {
         } as CartItemDetail,
       }
     })
-    
+
     // Initialize IEPS for new product with customer's default
     setProductsWithIeps(prev => ({
       ...prev,

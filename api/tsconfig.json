@@ -19,7 +19,7 @@
     "inlineSources": true,
     "experimentalDecorators": true,
     "strictPropertyInitialization": false,
-    "baseUrl": "./",
+    "baseUrl": "../",
     "allowSyntheticDefaultImports": true
   },
   "ts-node": {

@@ -1,6 +1,6 @@
 import * as Bluebird from 'bluebird'
 import knex, { Knex } from 'knex'
-import { getKnexConfig } from 'setup/db/knexfile'
+import { getKnexConfig } from 'api/setup/db/knexfile'
 import { DATABASE } from './types'
 import ConnectionConfig = Knex.ConnectionConfig
 

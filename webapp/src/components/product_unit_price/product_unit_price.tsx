@@ -1,6 +1,6 @@
 import styles from './product_unit_price.module.css'
 import clsx from 'clsx'
-import { FinishedProductUnitType } from 'codershift-farmcommerce-api/entities/finished_product'
+import { FinishedProductUnitType } from 'interface/entities/finished_product'
 import { formatMonetary } from '../functions/formatting'
 
 export enum AppliedPriceType {

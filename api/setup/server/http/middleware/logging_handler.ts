@@ -1,6 +1,6 @@
 import { Context } from 'koa'
-import * as logger from 'src/util/logging/logger'
-import { AuthLoginRQ } from 'lib/requests/auth'
+import * as logger from 'api/src/util/logging/logger'
+import { AuthLoginRQ } from 'interface/requests/auth'
 
 export default async (ctx: Context, next: Function) => {
   ctx.log = logger.getChildLogger({

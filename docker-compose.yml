@@ -3,7 +3,8 @@ version: '3'
 services:
   webapp:
     build:
-      context: ./webapp
+      context: ./
+      dockerfile: webapp.Dockerfile
     container_name: farmcommerce-webapp
     restart: always
     ports:
@@ -11,7 +12,7 @@ services:
     depends_on:
       - api
     volumes:
-      - ./webapp:/var/app/:rw,cached
+      - ./:/var/app/:rw,cached
     env_file:
       - 'variables.env'
     command: >
@@ -21,7 +22,8 @@ services:
       '
   api:
     build:
-      context: ./api
+      context: ./
+      dockerfile: api.Dockerfile
     container_name: farmcommerce-api
     ports:
       - '3003:3003'
@@ -29,7 +31,7 @@ services:
     depends_on:
       - database
     volumes:
-      - ./api:/var/app/:rw,cached
+      - ./:/var/app/:rw,cached
     env_file:
       - 'variables.env'
     command: >

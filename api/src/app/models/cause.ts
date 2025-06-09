@@ -1,7 +1,7 @@
 import { Ctx } from '../context'
-import { CauseAddRQ, CauseFilter } from 'lib/requests/cause'
-import { CauseAddRS, CauseSearchRS } from 'lib/responses/cause'
-import { SearchRQ } from 'lib/entities/common'
+import { CauseAddRQ, CauseFilter } from 'interface/requests/cause'
+import { CauseAddRS, CauseSearchRS } from 'interface/responses/cause'
+import { SearchRQ } from 'interface/entities/common'
 
 export async function add(ctx: Ctx, req: CauseAddRQ): Promise<CauseAddRS> {
   const results = await ctx
