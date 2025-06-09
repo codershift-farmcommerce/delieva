@@ -6,5 +6,3 @@ import React from 'react'
 const Index: NextPage = () => {
   return <Base View={<ChangePassword />} hideMenu={true} />
 }
-
-export default Index
