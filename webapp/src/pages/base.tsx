@@ -69,6 +69,7 @@ const Base = (props: BaseProps) => {
   }, [remaining])
 
   const { Image } = useQRCode()
+  const { View, hideMenu } = props
   const ViewToRender = View || Home
 
   useEffect(() => {
