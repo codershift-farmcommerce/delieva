@@ -1,5 +1,3 @@
-import './package.json'
-
 export enum Application {
   SYSTEM_MANAGEMENT = 'SYSTEM_MANAGEMENT',
   ADMIN = 'ADMIN',
