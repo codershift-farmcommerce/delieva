@@ -11,7 +11,7 @@ import {
   AuthLoginRS,
   AuthLogoutRS,
 } from 'interface/responses/auth'
-import { sendRequest } from 'webapp/src/api/request'
+import { sendRequest } from '../request'
 
 export class AuthClient implements AuthEndpoints {
   path(): 'auth' {
