@@ -14,14 +14,10 @@ services:
     volumes:
       - ./webapp:/var/app/webapp:rw,cached
       - ./interface:/var/app/interface:rw,cached
+      - /var/app/webapp/node_modules
     env_file:
       - 'variables.env'
-    command: >
-      sh -c '
-      cd /var/app/webapp &&
-      yarn install &&
-      yarn dev
-      '
+    command: yarn dev
   api:
     build:
       context: ./
@@ -33,7 +29,9 @@ services:
     depends_on:
       - database
     volumes:
-      - ./:/var/app/:rw,cached
+      - ./webapp:/var/app/webapp:rw,cached
+      - ./interface:/var/app/interface:rw,cached
+      - /var/app/webapp/node_modules
     env_file:
       - 'variables.env'
     command: >
