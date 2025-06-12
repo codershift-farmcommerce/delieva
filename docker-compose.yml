@@ -12,11 +12,13 @@ services:
     depends_on:
       - api
     volumes:
-      - ./:/var/app/:rw,cached
+      - ./webapp:/var/app/webapp:rw,cached
+      - ./interface:/var/app/interface:rw,cached
     env_file:
       - 'variables.env'
     command: >
       sh -c '
+      cd /var/app/webapp &&
       yarn install &&
       yarn dev
       '
