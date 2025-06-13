@@ -387,6 +387,8 @@ const ClosedReconciliationReceipt = (props: ClosedReconciliationReceiptProps) =>
                         <span>{formatMonetary(creditPayment.amount)}</span>
                         <span> - </span>
                         <span>{creditPayment.customer_name}</span>
+                        <span> - </span>
+                        <span>{transferBankAccount.name}</span>
                       </div>
                     ))}
                   </div>
