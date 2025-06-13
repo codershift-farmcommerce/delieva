@@ -1,6 +1,0 @@
-export enum Application {
-  SYSTEM_MANAGEMENT = 'SYSTEM_MANAGEMENT',
-  ADMIN = 'ADMIN',
-  POS = 'POS',
-  CUSTOMER_CREDIT = 'CUSTOMER_CREDIT',
-}
