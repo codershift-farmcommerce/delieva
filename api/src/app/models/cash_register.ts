@@ -740,7 +740,9 @@ export async function withdrawCash(
     cashRegisterId,
   )
   if (
-    Number(amount) > Number(cashRegisterReconciliation.closing_cash_balance)
+    Number(amount) >
+    Number(cashRegisterReconciliation.opening_cash_balance) +
+      Number(cashRegisterReconciliation.closing_cash_balance)
   ) {
     return {
       success: false,
