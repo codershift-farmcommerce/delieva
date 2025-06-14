@@ -177,14 +177,14 @@ export class CashRegisterService implements CashRegisterEndpoints {
     )
   }
 
-  @action({ forApps: [Application.POS, Application.ADMIN] })
+  @action({ forApps: [Application.POS] })
   async getCashWithdrawalsForCurrentCashierOpenReconciliation(
     req: CashRegisterGetCashWithdrawalsForCurrentCashierOpenReconciliationRQ,
   ): Promise<CashRegisterGetCashWithdrawalsForCurrentCashierOpenReconciliationRS> {
     return await cash_register.getCashWithdrawalsForCurrentCashierOpenReconciliation(this.ctx, req)
   }
 
-  @action({ forApps: [Application.POS, Application.ADMIN] })
+  @action({ forApps: [Application.ADMIN] })
   async getCashWithdrawalsForAllCashiersOpenReconciliation(
     req: CashRegisterGetCashWithdrawalsForAllCashiersOpenReconciliationRQ,
   ): Promise<CashRegisterGetCashWithdrawalsForAllCashiersOpenReconciliationRS> {

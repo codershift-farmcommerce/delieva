@@ -73,9 +73,7 @@ export type CashRegisterCancelCashWithdrawalRQ = {
 
 export type CashRegisterGetCashWithdrawalsOfCurrentOpenReconciliationRQ = {}
 
-export type CashRegisterGetCashWithdrawalsForCurrentCashierOpenReconciliationRQ = {
-  user_email: string
-}
+export type CashRegisterGetCashWithdrawalsForCurrentCashierOpenReconciliationRQ = {}
 
 export type CashRegisterGetOtherIncomeReceiptRQ = {
   other_income_id: number

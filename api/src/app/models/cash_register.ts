@@ -909,7 +909,6 @@ export async function getCashWithdrawalsForCurrentCashierOpenReconciliation(
   ctx: Ctx,
   req: CashRegisterGetCashWithdrawalsForCurrentCashierOpenReconciliationRQ,
 ): Promise<CashRegisterGetCashWithdrawalsForCurrentCashierOpenReconciliationRS> {
-  const { user_email } = req
   const assignedCashRegister = await getAssignedCashRegister(ctx, {})
   const cashRegisterId = assignedCashRegister.cash_register?.id
 
