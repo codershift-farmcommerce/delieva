@@ -102,3 +102,8 @@ export type CashRegisterReconciliationGetReportRS = {
 }
 
 export type CashRegisterCancelCashWithdrawalRS = ModifyRS
+
+export type CashRegisterGetCashWithdrawalsForAllCashiersOpenReconciliationRS = {
+  receipts: CashRegisterWithdrawalReceipt[]
+  cash_register_name: string
+}

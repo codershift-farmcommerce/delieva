@@ -8,6 +8,7 @@ import {
   CashRegisterEnterOtherIncomeRQ,
   CashRegisterGetAssignedCashRegisterRQ,
   CashRegisterGetCashWithdrawalsForCurrentCashierOpenReconciliationRQ,
+  CashRegisterGetCashWithdrawalsForAllCashiersOpenReconciliationRQ,
   CashRegisterGetCashWithdrawalsOfCurrentOpenReconciliationRQ,
   CashRegisterGetClosedReconciliationRQ,
   CashRegisterGetOpenedReconciliationsRQ,
@@ -29,6 +30,7 @@ import {
   CashRegisterEnterOtherIncomeRS,
   CashRegisterGetAssignedCashRegisterRS,
   CashRegisterGetCashWithdrawalsForCurrentCashierOpenReconciliationRS,
+  CashRegisterGetCashWithdrawalsForAllCashiersOpenReconciliationRS,
   CashRegisterGetCashWithdrawalsOfCurrentOpenReconciliationRS,
   CashRegisterGetClosedReconciliationRS,
   CashRegisterGetOpenedReconciliationsRS,
@@ -180,6 +182,13 @@ export class CashRegisterService implements CashRegisterEndpoints {
     req: CashRegisterGetCashWithdrawalsForCurrentCashierOpenReconciliationRQ,
   ): Promise<CashRegisterGetCashWithdrawalsForCurrentCashierOpenReconciliationRS> {
     return await cash_register.getCashWithdrawalsForCurrentCashierOpenReconciliation(this.ctx, req)
+  }
+
+  @action({ forApps: [Application.POS, Application.ADMIN] })
+  async getCashWithdrawalsForAllCashiersOpenReconciliation(
+    req: CashRegisterGetCashWithdrawalsForAllCashiersOpenReconciliationRQ,
+  ): Promise<CashRegisterGetCashWithdrawalsForAllCashiersOpenReconciliationRS> {
+    return await cash_register.getCashWithdrawalsForAllCashiersOpenReconciliation(this.ctx, req.cash_register_ids)
   }
 
   @action({ forApps: [Application.POS, Application.ADMIN] })

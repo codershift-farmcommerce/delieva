@@ -98,6 +98,7 @@ export type CashRegisterWithdrawalReceipt = {
   amount: number
   created_at: string
   status: CashRegisterWithdrawalStatus
+  cash_register_name?: string
 }
 
 export type CashRegisterOtherIncomeReceipt = {

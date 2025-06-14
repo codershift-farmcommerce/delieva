@@ -970,6 +970,84 @@ export async function getCashWithdrawalsForCurrentCashierOpenReconciliation(
   }
 }
 
+export async function getCashWithdrawalsForAllCashiersOpenReconciliation(
+  ctx: Ctx,
+  cashRegisterIds: number[],
+): Promise<CashRegisterGetCashWithdrawalsForCurrentCashierOpenReconciliationRS> {
+  if (!cashRegisterIds.length) {
+    return {
+      receipts: [],
+      cash_register_name: '',
+    }
+  }
+
+  // Get all current open reconciliations for the given cash registers
+  const currentOpenReconciliations = await ctx
+    .knex('cash_register_reconciliation')
+    .select('id', 'cash_register_id')
+    .whereIn('cash_register_id', cashRegisterIds)
+    .andWhere('status', 'OPENED')
+
+  if (!currentOpenReconciliations.length) {
+    return {
+      receipts: [],
+      cash_register_name: '',
+    }
+  }
+
+  // Get all cash register names
+  const cashRegisters = await ctx
+    .knex('cash_register')
+    .select('id', 'name')
+    .whereIn('id', cashRegisterIds)
+
+  if (!cashRegisters.length) {
+    return {
+      receipts: [],
+      cash_register_name: '',
+    }
+  }
+
+  // Create a map of cash register names for easy lookup
+  const cashRegisterNames = new Map(
+    cashRegisters.map(cr => [cr.id, cr.name])
+  )
+
+  // Get all withdrawals for the open reconciliations
+  const receipts = await ctx
+    .knex('cash_register_withdrawal')
+    .select(
+      'cash_register_withdrawal.id',
+      'cause.description AS cause',
+      'cash_register_withdrawal.amount',
+      'cash_register_withdrawal.created_at',
+      'cash_register_withdrawal.status',
+      'cash_register_reconciliation.cash_register_id',
+    )
+    .innerJoin('cause', 'cause.id', 'cash_register_withdrawal.cause_id')
+    .innerJoin(
+      'cash_register_reconciliation',
+      'cash_register_reconciliation.id',
+      'cash_register_withdrawal.cash_register_reconciliation_id'
+    )
+    .whereIn(
+      'cash_register_withdrawal.cash_register_reconciliation_id',
+      currentOpenReconciliations.map(r => r.id)
+    )
+    .orderBy('cash_register_withdrawal.created_at', 'desc')
+
+  // Add cash register name to each receipt
+  const receiptsWithCashRegisterName = receipts.map(receipt => ({
+    ...receipt,
+    cash_register_name: cashRegisterNames.get(receipt.cash_register_id) || '',
+  }))
+
+  return {
+    receipts: receiptsWithCashRegisterName,
+    cash_register_name: cashRegisters.map(cr => cr.name).join(', '),
+  }
+}
+
 export async function enterOtherIncome(
   ctx: Ctx,
   req: CashRegisterEnterOtherIncomeRQ,
