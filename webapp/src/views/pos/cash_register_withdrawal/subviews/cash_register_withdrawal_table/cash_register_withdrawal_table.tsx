@@ -28,7 +28,6 @@ const CashRegisterWithdrawalTable = React.memo(
         <table className={styles.withdrawals_table}>
           <thead>
             <tr>
-              <th>Cajero</th>
               <th>Causa</th>
               <th>Monto</th>
               <th>Fecha</th>
@@ -38,7 +37,6 @@ const CashRegisterWithdrawalTable = React.memo(
           <tbody>
             {(withdrawals ?? []).map(withdrawal => (
               <tr key={withdrawal.id}>
-                <td>{withdrawal.cash_register_name}</td>
                 <td>{withdrawal.cause}</td>
                 <td>{formatCurrency(Number(withdrawal.amount))}</td>
                 <td>{new Date(withdrawal.created_at).toLocaleString()}</td>
