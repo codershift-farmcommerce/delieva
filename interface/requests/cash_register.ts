@@ -83,6 +83,4 @@ export type CashRegisterReconciliationGetReportRQ = {
   cash_register_id: number
 }
 
-export type CashRegisterGetCashWithdrawalsForAllCashiersOpenReconciliationRQ = {
-  cash_register_ids: number[]
-}
+export type CashRegisterGetCashWithdrawalsForAllCashiersOpenReconciliationRQ = {}

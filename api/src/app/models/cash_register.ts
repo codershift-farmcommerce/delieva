@@ -928,18 +928,10 @@ export async function getCashWithdrawalsForAllCashiersOpenReconciliation(
   ctx: Ctx,
   req: CashRegisterGetCashWithdrawalsForAllCashiersOpenReconciliationRQ,
 ): Promise<CashRegisterGetCashWithdrawalsForAllCashiersOpenReconciliationRS> {
-  const { cash_register_ids: cashRegisterIds } = req
-  if (!cashRegisterIds.length) {
-    return {
-      withdrawalsByCashRegister: {},
-    }
-  }
-
   // Get all current open reconciliations for the given cash registers
   const currentOpenReconciliations = await ctx
     .knex('cash_register_reconciliation')
     .select('id', 'cash_register_id')
-    .whereIn('cash_register_id', cashRegisterIds)
     .andWhere('status', 'OPENED')
 
   if (!currentOpenReconciliations.length) {
@@ -947,6 +939,8 @@ export async function getCashWithdrawalsForAllCashiersOpenReconciliation(
       withdrawalsByCashRegister: {},
     }
   }
+
+  const cashRegisterIds = currentOpenReconciliations.map(cr => cr.cash_register_id)
 
   // Get all cash register names
   const cashRegisters = await ctx

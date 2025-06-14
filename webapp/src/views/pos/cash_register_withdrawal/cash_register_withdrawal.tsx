@@ -57,9 +57,7 @@ const CashRegisterWithdrawal = () => {
     try {
       if (isAdmin) {
         const response =
-          await cashRegisterClient.getCashWithdrawalsForAllCashiersOpenReconciliation({
-            cash_register_ids: [cashRegister.id],
-          })
+          await cashRegisterClient.getCashWithdrawalsForAllCashiersOpenReconciliation({})
         setAllCashiersWithdrawals(response.withdrawalsByCashRegister)
       } else {
         const response = await cashRegisterClient.getCashWithdrawalsOfCurrentOpenReconciliation({})
