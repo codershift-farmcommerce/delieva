@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useEffect, useState, PropsWithChildren } from 'react'
 import { Application } from 'interface'
 
 export type User = {
@@ -12,29 +12,65 @@ type UserContextType = {
   setUser: (user: User | null) => void
 }
 
-export const UserContext = createContext<UserContextType>({ user: null, setUser: () => {} })
+const defaultUserContext: UserContextType = {
+  user: null,
+  setUser: () => {}
+}
 
-export const UserProvider = ({ children }: { children: React.ReactNode }) => {
-  const [user, setUser] = useState<User | null>(null)
+export const UserContext = createContext<UserContextType>(defaultUserContext)
+export const useUserContext = () => React.useContext(UserContext)
+
+export const UserProvider: React.FC<PropsWithChildren> = ({ children }) => {
+  const [user, setUser] = useState<User | null>(() => {
+    try {
+      const userData = sessionStorage.getItem('user')
+      return userData ? JSON.parse(userData) : null
+    } catch (error) {
+      console.error('Error loading user:', error)
+      return null
+    }
+  })
 
   useEffect(() => {
-    // Load user from local storage or API
-    const loadUser = async () => {
+    const syncUser = () => {
       try {
         const userData = sessionStorage.getItem('user')
-        if (userData) {
-          setUser(JSON.parse(userData))
-        }
+        setUser(userData ? JSON.parse(userData) : null)
       } catch (error) {
-        console.error('Error loading user:', error)
+        console.error('Error parsing user data:', error)
       }
     }
-    loadUser()
+
+    // Initial sync
+    syncUser()
+
+    // Listen for storage changes in other tabs
+    window.addEventListener('storage', (event) => {
+      if (event.key === 'user') {
+        syncUser()
+      }
+    })
+
+    // Check for session expiry every minute
+    const interval = setInterval(() => {
+      const sessionStart = sessionStorage.getItem('session_start')
+      if (!sessionStart) {
+        setUser(null)
+        return
+      }
+
+      const sessionAge = Date.now() - parseInt(sessionStart)
+      if (sessionAge > 24 * 60 * 60 * 1000) { // 24 hours
+        sessionStorage.clear()
+        setUser(null)
+      }
+    }, 60000)
+
+    return () => {
+      clearInterval(interval)
+    }
   }, [])
 
-  return (
-    <UserContext.Provider value={{ user, setUser }}>
-      {children}
-    </UserContext.Provider>
-  )
+  const value = React.useMemo(() => ({ user, setUser }), [user])
+  return React.createElement(UserContext.Provider, { value }, children)
 }

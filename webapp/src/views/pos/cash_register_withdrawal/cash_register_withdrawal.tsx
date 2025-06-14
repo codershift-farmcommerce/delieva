@@ -59,6 +59,7 @@ const CashRegisterWithdrawal = () => {
 
     setLoadingWithdrawals(true)
     try {
+      debugger
       if (isAdmin) {
         const response = await cashRegisterClient.getCashWithdrawalsForAllCashiersOpenReconciliation({
           cash_register_ids: [cashRegister.id],
@@ -83,7 +84,7 @@ const CashRegisterWithdrawal = () => {
 
   const { user } = useUser()
   const isAdmin = (user as unknown as UserWithRoles)?.roles.includes(UserRole.ADMIN)
-
+debugger
   useEffect(() => {
     getAssignedCashRegister()
   }, [])
