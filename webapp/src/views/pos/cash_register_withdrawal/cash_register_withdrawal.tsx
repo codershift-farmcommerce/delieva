@@ -15,9 +15,8 @@ import { CauseAction } from 'interface/entities/cause'
 import CauseSearchBox from 'webapp/src/components/cause_search_box/cause_search_box'
 import POSITION = toast.POSITION
 import clsx from 'clsx'
-import { useUser } from 'webapp/src/hooks/use_user'
 import { UserRole, UserWithRoles } from 'interface/entities/user'
-import { WithdrawalsByCashRegister } from '../../../../../interface/responses/cash_register'
+import { WithdrawalsByCashRegister } from 'interface/responses/cash_register'
 import CashRegisterWithdrawalTable from './subviews/cash_register_withdrawal_table/cash_register_withdrawal_table'
 
 const cashRegisterClient = new CashRegisterClient()
@@ -25,6 +24,7 @@ const causeClient = new CauseClient()
 
 const CashRegisterWithdrawal = () => {
   const [cashRegister, setCashRegister] = useState<CashRegister | null>(null)
+  const [user, setUser] = useState<UserWithRoles>()
   const [cashRegisterLoaded, setCashRegisterLoaded] = useState(false)
   const [hasOpenedReconciliation, setHasOpenReconciliation] = useState<boolean | null>(null)
   const [amount, setAmount] = useState('')
@@ -33,13 +33,24 @@ const CashRegisterWithdrawal = () => {
   const [printReceipt, setPrintReceipt] = useState(false)
   const [withdrawalIdToPrint, setWithdrawalIdToPrint] = useState<number | null>(null)
   const [processingWithdrawal, setProcessingWithdrawal] = useState(false)
-  const [cashierEmail, setCashierEmail] = useState<string>('')
   const [userWithdrawals, setUserWithdrawals] = useState<CashRegisterWithdrawalReceipt[]>([])
   const [cashRegisterName, setCashRegisterName] = useState('')
   const [allCashiersWithdrawals, setAllCashiersWithdrawals] = useState<WithdrawalsByCashRegister>(
     {},
   )
   const [loadingWithdrawals, setLoadingWithdrawals] = useState(false)
+
+  const getUser = async () => {
+    const user: UserWithRoles = JSON.parse(
+      sessionStorage.getItem('user') ||
+        JSON.stringify({
+          name: '',
+          email: '',
+          roles: [],
+        }),
+    )
+    setUser(user)
+  }
 
   const getAssignedCashRegister = async () => {
     const response = await cashRegisterClient.getAssignedCashRegister({})
@@ -74,10 +85,10 @@ const CashRegisterWithdrawal = () => {
     }
   }
 
-  const { user } = useUser()
   const isAdmin = (user as unknown as UserWithRoles)?.roles.includes(UserRole.ADMIN)
 
   useEffect(() => {
+    getUser()
     getAssignedCashRegister()
   }, [])
 
@@ -230,6 +241,16 @@ const CashRegisterWithdrawal = () => {
             />
           </div>
         ))}
+      {!isAdmin && (
+        <div className={styles.withdrawals_container}>
+          <CashRegisterWithdrawalTable
+            key={cashRegisterName}
+            cashRegisterName={cashRegisterName}
+            withdrawals={userWithdrawals}
+            loading={loadingWithdrawals}
+          />
+        </div>
+      )}
     </ViewContainer>
   )
 }

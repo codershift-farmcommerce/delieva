@@ -36,7 +36,7 @@ const CashRegisterWithdrawalTable = React.memo(
             </tr>
           </thead>
           <tbody>
-            {withdrawals.map(withdrawal => (
+            {(withdrawals ?? []).map(withdrawal => (
               <tr key={withdrawal.id}>
                 <td>{withdrawal.cash_register_name}</td>
                 <td>{withdrawal.cause}</td>
