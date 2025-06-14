@@ -71,7 +71,7 @@ const CashRegisterWithdrawal = () => {
           await cashRegisterClient.getCashWithdrawalsForAllCashiersOpenReconciliation({})
         setAllCashiersWithdrawals(response.withdrawalsByCashRegister)
       } else {
-        const response = await cashRegisterClient.getCashWithdrawalsOfCurrentOpenReconciliation({})
+        const response = await cashRegisterClient.getCashWithdrawalsForCurrentCashierOpenReconciliation({})
         setUserWithdrawals(response.receipts)
         setCashRegisterName(response.cash_register_name)
       }

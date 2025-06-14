@@ -135,12 +135,6 @@ export class CashRegisterClient implements CashRegisterEndpoints {
     return sendRequest(`/${this.path()}/getOtherIncomeReceipt`, req)
   }
 
-  getCashWithdrawalsOfCurrentOpenReconciliation(
-    req: CashRegisterGetCashWithdrawalsOfCurrentOpenReconciliationRQ,
-  ): Promise<CashRegisterGetCashWithdrawalsOfCurrentOpenReconciliationRS> {
-    return sendRequest(`/${this.path()}/getCashWithdrawalsOfCurrentOpenReconciliation`, req)
-  }
-
   getCashWithdrawalsForCurrentCashierOpenReconciliation(
     req: CashRegisterGetCashWithdrawalsForCurrentCashierOpenReconciliationRQ,
   ): Promise<CashRegisterGetCashWithdrawalsForCurrentCashierOpenReconciliationRS> {
