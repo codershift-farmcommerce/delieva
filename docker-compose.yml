@@ -29,7 +29,7 @@ services:
     depends_on:
       - database
     volumes:
-      - ./webapp:/var/app/webapp:rw,cached
+      - ./api:/var/app/api:rw,cached
       - ./interface:/var/app/interface:rw,cached
       - /var/app/webapp/node_modules
     env_file:
