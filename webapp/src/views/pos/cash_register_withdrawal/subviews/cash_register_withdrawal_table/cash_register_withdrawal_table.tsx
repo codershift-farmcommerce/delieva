@@ -5,6 +5,7 @@ import styles from '../../cash_register_withdrawal.module.css'
 
 
 type Props = {
+  cashRegisterName: string
   withdrawals: CashRegisterWithdrawalReceipt[]
   loading: boolean
 }

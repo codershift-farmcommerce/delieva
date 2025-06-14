@@ -2,11 +2,7 @@ import ViewContainer from 'webapp/src/components/views/container/container'
 import { getCashRegisterName } from 'webapp/src/components/functions/cash_register'
 import React, { useEffect, useState } from 'react'
 
-import {
-  CashRegister,
-  CashRegisterWithdrawalReceipt,
-  CashRegisterWithdrawalStatus,
-} from 'interface/entities/cash_register'
+import { CashRegister, CashRegisterWithdrawalReceipt } from 'interface/entities/cash_register'
 import { CashRegisterClient } from 'webapp/src/api/clients/cash_register'
 import styles from './cash_register_withdrawal.module.css'
 import ViewHeader from 'webapp/src/components/views/header/header'
@@ -21,6 +17,8 @@ import POSITION = toast.POSITION
 import clsx from 'clsx'
 import { useUser } from 'webapp/src/hooks/use_user'
 import { UserRole, UserWithRoles } from 'interface/entities/user'
+import { WithdrawalsByCashRegister } from '../../../../../interface/responses/cash_register'
+import CashRegisterWithdrawalTable from './subviews/cash_register_withdrawal_table/cash_register_withdrawal_table'
 
 const cashRegisterClient = new CashRegisterClient()
 const causeClient = new CauseClient()
@@ -35,15 +33,13 @@ const CashRegisterWithdrawal = () => {
   const [printReceipt, setPrintReceipt] = useState(false)
   const [withdrawalIdToPrint, setWithdrawalIdToPrint] = useState<number | null>(null)
   const [processingWithdrawal, setProcessingWithdrawal] = useState(false)
-  const [isCanceling, setIsCanceling] = useState(false)
+  const [cashierEmail, setCashierEmail] = useState<string>('')
   const [userWithdrawals, setUserWithdrawals] = useState<CashRegisterWithdrawalReceipt[]>([])
   const [cashRegisterName, setCashRegisterName] = useState('')
+  const [allCashiersWithdrawals, setAllCashiersWithdrawals] = useState<WithdrawalsByCashRegister>(
+    {},
+  )
   const [loadingWithdrawals, setLoadingWithdrawals] = useState(false)
-  const [cashierEmail, setCashierEmail] = useState<string>('')
-  const [allCashiersWithdrawals, setAllCashiersWithdrawals] = useState<
-    CashRegisterWithdrawalReceipt[]
-  >([])
-  const [loadingAllWithdrawals, setLoadingAllWithdrawals] = useState(false)
 
   const getAssignedCashRegister = async () => {
     const response = await cashRegisterClient.getAssignedCashRegister({})
@@ -64,8 +60,7 @@ const CashRegisterWithdrawal = () => {
           await cashRegisterClient.getCashWithdrawalsForAllCashiersOpenReconciliation({
             cash_register_ids: [cashRegister.id],
           })
-        setUserWithdrawals(response.receipts)
-        setAllCashiersWithdrawals(response.receipts)
+        setAllCashiersWithdrawals(response.withdrawalsByCashRegister)
       } else {
         const response = await cashRegisterClient.getCashWithdrawalsOfCurrentOpenReconciliation({})
         setUserWithdrawals(response.receipts)
@@ -78,7 +73,6 @@ const CashRegisterWithdrawal = () => {
       })
     } finally {
       setLoadingWithdrawals(false)
-      setLoadingAllWithdrawals(false)
     }
   }
 
@@ -94,31 +88,6 @@ const CashRegisterWithdrawal = () => {
       getWithdrawals()
     }
   }, [cashRegister, hasOpenedReconciliation, isAdmin])
-
-  const handleCancelWithdrawal = async (withdrawalId: number) => {
-    const authCode = prompt('Por favor ingrese el código de autorización:')
-    if (!authCode) return
-
-    setIsCanceling(true)
-    try {
-      await cashRegisterClient.cancelCashWithdrawal({
-        withdrawal_id: withdrawalId,
-        user_authorization_code: authCode,
-        cause_id: 1, // TODO: Get from API or config
-      })
-      await getWithdrawals()
-      toast.success('Retiro cancelado exitosamente', {
-        position: POSITION.TOP_LEFT,
-      })
-    } catch (error) {
-      console.error('Error canceling withdrawal', error)
-      toast.error('Error al cancelar el retiro', {
-        position: POSITION.TOP_LEFT,
-      })
-    } finally {
-      setIsCanceling(false)
-    }
-  }
 
   const handleWithdrawal = async () => {
     setProcessingWithdrawal(true)
@@ -161,10 +130,7 @@ const CashRegisterWithdrawal = () => {
         setCauseDescription('')
         setWithdrawalIdToPrint(response.id)
         setPrintReceipt(true)
-        // Refresh the user withdrawals list
-        if (cashierEmail) {
-          getWithdrawals()
-        }
+        getWithdrawals()
       } else {
         const message = ApiErrorCodeTranslation[response.errorCode] || 'Error al retirar efectivo'
         toast.error(message, {
@@ -182,24 +148,6 @@ const CashRegisterWithdrawal = () => {
 
   const handleAfterPrint = () => {
     setPrintReceipt(false)
-  }
-
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString)
-    return date.toLocaleString('es-MX', {
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-      hour: '2-digit',
-      minute: '2-digit',
-    })
-  }
-
-  const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('es-MX', {
-      style: 'currency',
-      currency: 'MXN',
-    }).format(amount)
   }
 
   if (!cashRegisterLoaded) {
@@ -267,83 +215,21 @@ const CashRegisterWithdrawal = () => {
         </div>
       </div>
 
-      {!isAdmin && (
-        <div className={styles.withdrawals_container}>
-          <h3>Retiros de efectivo de {cashRegisterName}</h3>
-          {loadingWithdrawals ? (
-            <div>Cargando retiros...</div>
-          ) : userWithdrawals?.length > 0 ? (
-            <table className={styles.withdrawals_table}>
-              <thead>
-                <tr>
-                  <th>Fecha</th>
-                  <th>Causa</th>
-                  <th>Monto</th>
-                  <th>Estado</th>
-                </tr>
-              </thead>
-              <tbody>
-                {userWithdrawals.map(withdrawal => (
-                  <tr key={withdrawal.id}>
-                    <td>{formatDate(withdrawal.created_at)}</td>
-                    <td>{withdrawal.cause}</td>
-                    <td>{formatCurrency(withdrawal.amount)}</td>
-                    <td>
-                      {withdrawal.status === CashRegisterWithdrawalStatus.PROCESSED
-                        ? 'Procesado'
-                        : 'Cancelado'}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          ) : (
-            <div>No hay retiros registrados para este usuario en la reconciliación actual.</div>
-          )}
-        </div>
-      )}
-
       <CashRegisterWithdrawalReceiptPrint
         print={printReceipt}
         withdrawalId={withdrawalIdToPrint}
         onAfterPrint={handleAfterPrint}
       />
 
-      {isAdmin && (
-        <div className={viewStyles.section}>
-          <h2>Retiros de todos los cajeros</h2>
-          {loadingAllWithdrawals ? (
-            <p>Cargando retiros...</p>
-          ) : (
-            <table className={styles.withdrawals_table}>
-              <thead>
-                <tr>
-                  <th>Cajero</th>
-                  <th>Causa</th>
-                  <th>Monto</th>
-                  <th>Fecha</th>
-                  <th>Estado</th>
-                </tr>
-              </thead>
-              <tbody>
-                {allCashiersWithdrawals.map(withdrawal => (
-                  <tr key={withdrawal.id}>
-                    <td>{withdrawal.cash_register_name}</td>
-                    <td>{withdrawal.cause}</td>
-                    <td>{formatCurrency(Number(withdrawal.amount))}</td>
-                    <td>{new Date(withdrawal.created_at).toLocaleString()}</td>
-                    <td>
-                      {withdrawal.status === CashRegisterWithdrawalStatus.PROCESSED
-                        ? 'Procesado'
-                        : 'Cancelado'}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          )}
-        </div>
-      )}
+      {isAdmin &&
+        (Object.keys(allCashiersWithdrawals) || []).map(cashRegisterName => (
+          <CashRegisterWithdrawalTable
+            key={cashRegisterName}
+            cashRegisterName={cashRegisterName}
+            withdrawals={allCashiersWithdrawals[cashRegisterName]}
+            loading={loadingWithdrawals}
+          />
+        ))}
     </ViewContainer>
   )
 }

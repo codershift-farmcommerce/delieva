@@ -9,7 +9,7 @@ import {
 } from '../entities/cash_register'
 import { ApiErrorCode } from '../entities/api_error_code'
 import { CashRegisterGetCashWithdrawalsOfCurrentOpenReconciliationRQ } from '../requests/cash_register'
-import {ModifyRS} from "./common";
+import { ModifyRS } from './common'
 
 export type CashRegisterAddRS = {
   success: boolean
@@ -76,9 +76,7 @@ export type CashRegisterEnterOtherIncomeFailRS = {
   errorCode: ApiErrorCode
 }
 
-export type CashRegisterWithdrawRS =
-  | CashRegisterWithdrawSuccessRS
-  | CashRegisterWithdrawFailRS
+export type CashRegisterWithdrawRS = CashRegisterWithdrawSuccessRS | CashRegisterWithdrawFailRS
 
 export type CashRegisterEnterOtherIncomeRS =
   | CashRegisterEnterOtherIncomeSuccessRS
@@ -104,8 +102,10 @@ export type CashRegisterReconciliationGetReportRS = {
 
 export type CashRegisterCancelCashWithdrawalRS = ModifyRS
 
+export type WithdrawalsByCashRegister = {
+  [cashRegisterName: string]: CashRegisterWithdrawalReceipt[]
+}
+
 export type CashRegisterGetCashWithdrawalsForAllCashiersOpenReconciliationRS = {
-  withdrawalsByCashRegister?: {
-    [cashRegisterName: string]: CashRegisterWithdrawalReceipt[]
-  }
+  withdrawalsByCashRegister: WithdrawalsByCashRegister
 }
