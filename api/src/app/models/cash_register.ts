@@ -17,7 +17,7 @@ import {
   CashRegisterReconciliationGetReportRQ,
   CashRegisterUnassignCashierRQ,
   CashRegisterWithdrawRQ,
-  CashRegisterGetCashWithdrawalsByUserRQ,
+  CashRegisterGetCashWithdrawalsForCurrentCashierOpenReconciliationRQ,
 } from 'interface/requests/cash_register'
 import {
   CashRegisterAddRS,
@@ -37,7 +37,7 @@ import {
   CashRegisterReconciliationGetReportRS,
   CashRegisterUnassignCashierRS,
   CashRegisterWithdrawRS,
-  CashRegisterGetCashWithdrawalsByUserRS,
+  CashRegisterGetCashWithdrawalsForCurrentCashierOpenReconciliationRS,
 } from 'interface/responses/cash_register'
 import { ModifyRS } from 'interface/responses/common'
 import { Knex } from 'knex'
@@ -905,10 +905,10 @@ export async function getCashWithdrawalsOfCurrentOpenReconciliation(
   }
 }
 
-export async function getCashWithdrawalsByUser(
+export async function getCashWithdrawalsForCurrentCashierOpenReconciliation(
   ctx: Ctx,
-  req: CashRegisterGetCashWithdrawalsByUserRQ,
-): Promise<CashRegisterGetCashWithdrawalsByUserRS> {
+  req: CashRegisterGetCashWithdrawalsForCurrentCashierOpenReconciliationRQ,
+): Promise<CashRegisterGetCashWithdrawalsForCurrentCashierOpenReconciliationRS> {
   const { user_email } = req
   const assignedCashRegister = await getAssignedCashRegister(ctx, {})
   const cashRegisterId = assignedCashRegister.cash_register?.id
@@ -916,7 +916,7 @@ export async function getCashWithdrawalsByUser(
   if (!cashRegisterId) {
     return {
       receipts: [],
-      user_name: '',
+      cash_register_name: '',
     }
   }
 
@@ -930,21 +930,21 @@ export async function getCashWithdrawalsByUser(
   if (!currentOpenReconciliation) {
     return {
       receipts: [],
-      user_name: '',
+      cash_register_name: '',
     }
   }
 
-  // Get the user name
-  const user = await ctx
-    .knex('users')
+  // Get the cash register name
+  const cashRegister = await ctx
+    .knex('cash_register')
     .select('name')
-    .where('email', user_email)
+    .where('id', cashRegisterId)
     .first()
 
-  if (!user) {
+  if (!cashRegister) {
     return {
       receipts: [],
-      user_name: '',
+      cash_register_name: '',
     }
   }
 
@@ -962,12 +962,11 @@ export async function getCashWithdrawalsByUser(
       'cash_register_withdrawal.cash_register_reconciliation_id',
       currentOpenReconciliation.id,
     )
-    .andWhere('cash_register_withdrawal.created_by_user_email', user_email)
     .orderBy('cash_register_withdrawal.created_at', 'desc')
 
   return {
     receipts,
-    user_name: user.name,
+    cash_register_name: cashRegister.name,
   }
 }
 

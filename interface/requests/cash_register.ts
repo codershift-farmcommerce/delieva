@@ -73,7 +73,7 @@ export type CashRegisterCancelCashWithdrawalRQ = {
 
 export type CashRegisterGetCashWithdrawalsOfCurrentOpenReconciliationRQ = {}
 
-export type CashRegisterGetCashWithdrawalsByUserRQ = {
+export type CashRegisterGetCashWithdrawalsForCurrentCashierOpenReconciliationRQ = {
   user_email: string
 }
 

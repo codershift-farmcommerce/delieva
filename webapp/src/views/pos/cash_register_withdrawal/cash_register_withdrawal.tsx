@@ -29,7 +29,7 @@ const CashRegisterWithdrawal = () => {
   const [withdrawalIdToPrint, setWithdrawalIdToPrint] = useState<number | null>(null)
   const [processingWithdrawal, setProcessingWithdrawal] = useState(false)
   const [userWithdrawals, setUserWithdrawals] = useState<CashRegisterWithdrawalReceipt[]>([])
-  const [userName, setUserName] = useState<string>('')
+  const [cashRegisterName, setCashRegisterName] = useState('')
   const [loadingWithdrawals, setLoadingWithdrawals] = useState(false)
   const [cashierEmail, setCashierEmail] = useState<string>('')
 
@@ -51,7 +51,7 @@ const CashRegisterWithdrawal = () => {
               openedReconciliations.opened_reconciliations[response.cash_register.id]) {
             const reconciliation = openedReconciliations.opened_reconciliations[response.cash_register.id]
             setCashierEmail(reconciliation.cashier_user_email)
-            setUserName(reconciliation.cashier_user_name)
+            setCashRegisterName(reconciliation.cashier_user_name)
             
             // Once we have the cashier email, get their withdrawals
             await getUserWithdrawals(reconciliation.cashier_user_email)
@@ -69,12 +69,12 @@ const CashRegisterWithdrawal = () => {
     
     setLoadingWithdrawals(true)
     try {
-      const response = await cashRegisterClient.getCashWithdrawalsByUser({
+      const response = await cashRegisterClient.getCashWithdrawalsForCurrentCashierOpenReconciliation({
         user_email: email
       })
       setUserWithdrawals(response.receipts)
-      if (response.user_name) {
-        setUserName(response.user_name)
+      if (response.cash_register_name) {
+        setCashRegisterName(response.cash_register_name)
       }
     } catch (error) {
       console.error('Error getting user withdrawals', error)
@@ -241,7 +241,7 @@ const CashRegisterWithdrawal = () => {
 
       {/* User Withdrawals Table */}
       <div className={styles.withdrawals_container}>
-        <h3>Retiros de efectivo de {userName}</h3>
+        <h3>Retiros de efectivo de {cashRegisterName}</h3>
         {loadingWithdrawals ? (
           <div>Cargando retiros...</div>
         ) : userWithdrawals?.length > 0 ? (
