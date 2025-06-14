@@ -223,12 +223,14 @@ const CashRegisterWithdrawal = () => {
 
       {isAdmin &&
         (Object.keys(allCashiersWithdrawals) || []).map(cashRegisterName => (
-          <CashRegisterWithdrawalTable
-            key={cashRegisterName}
-            cashRegisterName={cashRegisterName}
-            withdrawals={allCashiersWithdrawals[cashRegisterName]}
-            loading={loadingWithdrawals}
-          />
+          <div className={styles.withdrawals_container}>
+            <CashRegisterWithdrawalTable
+              key={cashRegisterName}
+              cashRegisterName={cashRegisterName}
+              withdrawals={allCashiersWithdrawals[cashRegisterName]}
+              loading={loadingWithdrawals}
+            />
+          </div>
         ))}
     </ViewContainer>
   )
