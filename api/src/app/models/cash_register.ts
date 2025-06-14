@@ -1036,15 +1036,26 @@ export async function getCashWithdrawalsForAllCashiersOpenReconciliation(
     )
     .orderBy('cash_register_withdrawal.created_at', 'desc')
 
-  // Add cash register name to each receipt
+  // Add cash register name to each receipt and group by cash register
   const receiptsWithCashRegisterName = receipts.map(receipt => ({
     ...receipt,
     cash_register_name: cashRegisterNames.get(receipt.cash_register_id) || '',
   }))
 
+  // Group withdrawals by cash register name
+  const withdrawalsByCashRegister = receiptsWithCashRegisterName.reduce((acc, receipt) => {
+    const cashRegisterName = receipt.cash_register_name
+    if (!acc[cashRegisterName]) {
+      acc[cashRegisterName] = []
+    }
+    acc[cashRegisterName].push(receipt)
+    return acc
+  }, {} as { [key: string]: typeof receiptsWithCashRegisterName })
+
   return {
     receipts: receiptsWithCashRegisterName,
     cash_register_name: cashRegisters.map(cr => cr.name).join(', '),
+    withdrawalsByCashRegister,
   }
 }
 

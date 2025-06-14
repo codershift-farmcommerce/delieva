@@ -1,5 +1,5 @@
 import 'webapp/src/pages/styles/globals.css'
-import { ContextProvider } from '../context'
+import { ContextProvider } from 'webapp/src/context'
 import type { AppProps } from 'next/app'
 
 function MyApp({ Component, pageProps }: AppProps) {

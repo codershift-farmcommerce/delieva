@@ -1,5 +1,6 @@
 import ViewContainer from 'webapp/src/components/views/container/container'
 import { getCashRegisterName } from 'webapp/src/components/functions/cash_register'
+import Table from 'webapp/src/components/table/table'
 import React, { useEffect, useState } from 'react'
 import {
   CashRegister,
@@ -34,6 +35,7 @@ const CashRegisterWithdrawal = () => {
   const [printReceipt, setPrintReceipt] = useState(false)
   const [withdrawalIdToPrint, setWithdrawalIdToPrint] = useState<number | null>(null)
   const [processingWithdrawal, setProcessingWithdrawal] = useState(false)
+  const [isCanceling, setIsCanceling] = useState(false)
   const [userWithdrawals, setUserWithdrawals] = useState<CashRegisterWithdrawalReceipt[]>([])
   const [cashRegisterName, setCashRegisterName] = useState('')
   const [loadingWithdrawals, setLoadingWithdrawals] = useState(false)
@@ -52,35 +54,29 @@ const CashRegisterWithdrawal = () => {
     setCashRegisterLoaded(true)
   }
 
-  const getUserWithdrawals = async () => {
+  const getWithdrawals = async () => {
+    if (!cashRegister) return
+
     setLoadingWithdrawals(true)
     try {
-      const response = await cashRegisterClient.getCashWithdrawalsOfCurrentOpenReconciliation({})
-      setUserWithdrawals(response.receipts)
-      // setCashRegisterName(response.cash_register_name)
+      if (isAdmin) {
+        const response = await cashRegisterClient.getCashWithdrawalsForAllCashiersOpenReconciliation({
+          cash_register_ids: [cashRegister.id],
+        })
+        setUserWithdrawals(response.receipts)
+        setAllCashiersWithdrawals(response.receipts)
+      } else {
+        const response = await cashRegisterClient.getCashWithdrawalsOfCurrentOpenReconciliation({})
+        setUserWithdrawals(response.receipts)
+        setCashRegisterName(response.cash_register_name)
+      }
     } catch (error) {
-      console.error('Error getting user withdrawals', error)
-      toast.error('Error al obtener los retiros del usuario', {
+      console.error('Error getting withdrawals', error)
+      toast.error('Error al obtener los retiros', {
         position: POSITION.TOP_LEFT,
       })
     } finally {
       setLoadingWithdrawals(false)
-    }
-  }
-
-  const getAllCashiersWithdrawals = async () => {
-    setLoadingAllWithdrawals(true)
-    try {
-      const response = await cashRegisterClient.getCashWithdrawalsForAllCashiersOpenReconciliation({
-        cash_register_ids: [cashRegister?.id || 0],
-      })
-      setAllCashiersWithdrawals(response.receipts)
-    } catch (error) {
-      console.error('Error getting all cashiers withdrawals', error)
-      toast.error('Error al obtener los retiros de todos los cajeros', {
-        position: POSITION.TOP_LEFT,
-      })
-    } finally {
       setLoadingAllWithdrawals(false)
     }
   }
@@ -94,12 +90,36 @@ const CashRegisterWithdrawal = () => {
 
   useEffect(() => {
     if (cashRegister && hasOpenedReconciliation) {
-      getUserWithdrawals()
-      if (isAdmin) {
-        getAllCashiersWithdrawals()
-      }
+      getWithdrawals()
     }
   }, [cashRegister, hasOpenedReconciliation, isAdmin])
+
+
+
+  const handleCancelWithdrawal = async (withdrawalId: number) => {
+    const authCode = prompt('Por favor ingrese el código de autorización:')
+    if (!authCode) return
+
+    setIsCanceling(true)
+    try {
+      await cashRegisterClient.cancelCashWithdrawal({
+        withdrawal_id: withdrawalId,
+        user_authorization_code: authCode,
+        cause_id: 1 // TODO: Get from API or config
+      })
+      await getWithdrawals()
+      toast.success('Retiro cancelado exitosamente', {
+        position: POSITION.TOP_LEFT,
+      })
+    } catch (error) {
+      console.error('Error canceling withdrawal', error)
+      toast.error('Error al cancelar el retiro', {
+        position: POSITION.TOP_LEFT,
+      })
+    } finally {
+      setIsCanceling(false)
+    }
+  }
 
   const handleWithdrawal = async () => {
     setProcessingWithdrawal(true)
@@ -144,7 +164,7 @@ const CashRegisterWithdrawal = () => {
         setPrintReceipt(true)
         // Refresh the user withdrawals list
         if (cashierEmail) {
-          getUserWithdrawals()
+          getWithdrawals()
         }
       } else {
         const message = ApiErrorCodeTranslation[response.errorCode] || 'Error al retirar efectivo'
@@ -295,7 +315,7 @@ const CashRegisterWithdrawal = () => {
           {loadingAllWithdrawals ? (
             <p>Cargando retiros...</p>
           ) : (
-            <table className={styles.withdrawalsTable}>
+            <table className={styles.withdrawals_table}>
               <thead>
                 <tr>
                   <th>Cajero</th>
@@ -310,7 +330,7 @@ const CashRegisterWithdrawal = () => {
                   <tr key={withdrawal.id}>
                     <td>{withdrawal.cash_register_name}</td>
                     <td>{withdrawal.cause}</td>
-                    <td>${withdrawal.amount.toFixed(2)}</td>
+                    <td>{formatCurrency(Number(withdrawal.amount))}</td>
                     <td>{new Date(withdrawal.created_at).toLocaleString()}</td>
                     <td>
                       {withdrawal.status === CashRegisterWithdrawalStatus.PROCESSED

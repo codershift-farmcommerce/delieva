@@ -1,5 +1,6 @@
 import styles from './table.module.css'
 import { Property } from 'csstype'
+import React from 'react'
 
 export type TableCell = {
   value?: string | number
@@ -23,7 +24,7 @@ export type TableProps = {
   rows: TableRow[]
   onSelectedRow: (id: string) => void
 }
-const Table = (props: TableProps) => {
+function Table(props: TableProps) {
   const { tableTitle, columnNames, rows, selectedRowId, onSelectedRow } = props
   const shouldRender = true
 
