@@ -88,6 +88,7 @@ export type CashRegisterGetWithdrawCashReceiptRS = CashRegisterWithdrawalReceipt
 
 export type CashRegisterGetCashWithdrawalsOfCurrentOpenReconciliationRS = {
   receipts: CashRegisterWithdrawalReceipt[]
+  cash_register_name: string
 }
 
 export type CashRegisterGetCashWithdrawalsForCurrentCashierOpenReconciliationRS = {

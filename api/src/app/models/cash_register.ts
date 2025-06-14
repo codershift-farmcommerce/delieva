@@ -868,6 +868,7 @@ export async function getCashWithdrawalsOfCurrentOpenReconciliation(
   if (!cashRegisterId) {
     return {
       receipts: [],
+      cash_register_name: '',
     }
   }
 
@@ -881,6 +882,7 @@ export async function getCashWithdrawalsOfCurrentOpenReconciliation(
   if (!currentOpenReconciliation) {
     return {
       receipts: [],
+      cash_register_name: '',
     }
   }
 
@@ -902,6 +904,7 @@ export async function getCashWithdrawalsOfCurrentOpenReconciliation(
 
   return {
     receipts,
+    cash_register_name: assignedCashRegister.cash_register?.name,
   }
 }
 
@@ -1008,9 +1011,7 @@ export async function getCashWithdrawalsForAllCashiersOpenReconciliation(
   }
 
   // Create a map of cash register names for easy lookup
-  const cashRegisterNames = new Map(
-    cashRegisters.map(cr => [cr.id, cr.name])
-  )
+  const cashRegisterNames = new Map(cashRegisters.map(cr => [cr.id, cr.name]))
 
   // Get all withdrawals for the open reconciliations
   const receipts = await ctx
@@ -1027,11 +1028,11 @@ export async function getCashWithdrawalsForAllCashiersOpenReconciliation(
     .innerJoin(
       'cash_register_reconciliation',
       'cash_register_reconciliation.id',
-      'cash_register_withdrawal.cash_register_reconciliation_id'
+      'cash_register_withdrawal.cash_register_reconciliation_id',
     )
     .whereIn(
       'cash_register_withdrawal.cash_register_reconciliation_id',
-      currentOpenReconciliations.map(r => r.id)
+      currentOpenReconciliations.map(r => r.id),
     )
     .orderBy('cash_register_withdrawal.created_at', 'desc')
 
