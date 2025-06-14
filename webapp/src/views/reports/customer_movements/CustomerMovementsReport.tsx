@@ -22,8 +22,8 @@ const CustomerMovementsReport: React.FC<CustomerMovementsReportProps> = () => {
 
     try {
       await downloadCustomerMovementsReport({
-        start_date: dateRange[0].format('YYYY-MM-DD'),
-        end_date: dateRange[1].format('YYYY-MM-DD'),
+        start_date: dateRange[0].format('DD-MM-YYYY'),
+        end_date: dateRange[1].format('DD-MM-YYYY'),
       })
     } catch (error: any) {
       message.error('Error al descargar el reporte')
@@ -36,7 +36,7 @@ const CustomerMovementsReport: React.FC<CustomerMovementsReportProps> = () => {
     }
   }
 
-  return React.createElement(ViewContainer, { title: 'Movimientos de Clientes', children: 
+  return React.createElement(ViewContainer, { title: 'Movimientos de Clientes', children:
     React.createElement('div', { className: styles.container },
       React.createElement('div', null,
         React.createElement('label', { className: styles.label }, 'Rango de fechas:'),

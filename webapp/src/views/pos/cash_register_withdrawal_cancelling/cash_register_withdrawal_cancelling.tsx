@@ -2,7 +2,7 @@ import keyBy from 'lodash.keyby'
 import ViewContainer from 'webapp/src/components/views/container/container'
 import ViewHeader from 'webapp/src/components/views/header/header'
 import { getCashRegisterName } from 'webapp/src/components/functions/cash_register'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, ComponentType } from 'react'
 import {
   CashRegister,
   CashRegisterWithdrawalReceipt,
@@ -10,7 +10,7 @@ import {
 } from 'interface/entities/cash_register'
 import { CashRegisterClient } from 'webapp/src/api/clients/cash_register'
 import { CauseClient } from 'webapp/src/api/clients/cause_client'
-import Table from 'webapp/src/components/table/table'
+import Table, { TableCell, TableRow } from 'webapp/src/components/table/table'
 import { formatMonetary } from 'webapp/src/components/functions/formatting'
 import { CashRegisterWithdrawalStatusTranslation } from 'webapp/src/components/functions/translations'
 import CauseSearchBox from 'webapp/src/components/cause_search_box/cause_search_box'
@@ -20,19 +20,20 @@ import clsx from 'clsx'
 import viewStyles from 'webapp/src/views/views.module.css'
 import { toast } from 'react-toastify'
 import POSITION = toast.POSITION
+import { WithdrawalsByCashRegister } from '../../../../../interface/responses/cash_register'
 
 const cashRegisterClient = new CashRegisterClient()
 const causeClient = new CauseClient()
 
 type WithdrawalsById = { [withdrawalId: string]: CashRegisterWithdrawalReceipt }
 
-const CashRegisterOtherIncome = () => {
+const CashRegisterOtherIncome: ComponentType = () => {
   const [cashRegister, setCashRegister] = useState<CashRegister | null>(null)
   const [cashRegisterLoaded, setCashRegisterLoaded] = useState(false)
   const [hasOpenedReconciliation, setHasOpenReconciliation] = useState<boolean | null>(null)
-  const [cashRegisterWithdrawals, setCashRegisterWithdrawals] = useState<
-    CashRegisterWithdrawalReceipt[]
-  >([])
+  const [cashRegisterWithdrawals, setCashRegisterWithdrawals] = useState<WithdrawalsByCashRegister>(
+    {},
+  )
   const [withdrawalsById, setWithdrawalsById] = useState<WithdrawalsById>({})
   const [causeId, setCauseId] = useState('')
   const [causeDescription, setCauseDescription] = useState('')
@@ -49,9 +50,11 @@ const CashRegisterOtherIncome = () => {
   }
 
   const getCashRegisterWithdrawals = async () => {
-    const response = await cashRegisterClient.getCashWithdrawalsOfCurrentOpenReconciliation({})
-    setCashRegisterWithdrawals(response.receipts)
-    setWithdrawalsById(keyBy(response.receipts, 'id'))
+    const response = await cashRegisterClient.getCashWithdrawalsForAllCashiersOpenReconciliation({})
+    setCashRegisterWithdrawals(response.withdrawalsByCashRegister)
+    // Create a map of all withdrawals by ID
+    const allWithdrawals = Object.values(response.withdrawalsByCashRegister).flat()
+    setWithdrawalsById(keyBy(allWithdrawals, 'id'))
   }
 
   useEffect(() => {
@@ -120,38 +123,38 @@ const CashRegisterOtherIncome = () => {
     return <div>La caja no ha sido abierta.</div>
   }
 
-  const withdrawalRows = cashRegisterWithdrawals
-    ? cashRegisterWithdrawals.map(w => {
-        return {
-          id: String(w.id),
-          cells: [
-            {
-              value: w.created_at,
-            },
-            {
-              value: formatMonetary(w.amount),
-            },
-            {
-              value: w.cause,
-            },
-            {
-              value: CashRegisterWithdrawalStatusTranslation[w.status],
-            },
-          ],
-        }
-      })
-    : []
+  const tableData = Object.values(cashRegisterWithdrawals ?? {}).flat().map(withdrawal => {
+    return {
+      id: String(withdrawal.id),
+      cells: [
+        {
+          value: '',
+        },
+        {
+          value: withdrawal.created_at,
+        },
+        {
+          value: formatMonetary(withdrawal.amount),
+        },
+        {
+          value: withdrawal.cause,
+        },
+        {
+          value: CashRegisterWithdrawalStatusTranslation[withdrawal.status],
+        },
+      ],
+    }
+  })
 
+  const selectedWithdrawal = selectedWithdrawalId ? withdrawalsById[selectedWithdrawalId] : null
   const enableCancelWithdrawalButton =
-    selectedWithdrawalId &&
-    withdrawalsById[selectedWithdrawalId].status === CashRegisterWithdrawalStatus.PROCESSED &&
+    selectedWithdrawal &&
+    selectedWithdrawal.status === CashRegisterWithdrawalStatus.PROCESSED &&
     causeDescription &&
     authorizationCode
 
   return (
-    <ViewContainer
-      title={`Cancelación de Retiro de Efectivo - ${getCashRegisterName(cashRegister)}`}
-    >
+    <ViewContainer title={`Cancelación de Retiro de Efectivo - ${getCashRegisterName(cashRegister)}`}>
       <ViewHeader flexDirection={'column'}>
         <div>
           <div>
@@ -187,12 +190,15 @@ const CashRegisterOtherIncome = () => {
       </ViewHeader>
       <div>
         <Table
-          selectedRowId={String(selectedWithdrawalId)}
-          columnNames={['Fecha', 'Cantidad', 'Causa', 'Estado']}
-          rows={withdrawalRows}
-          onSelectedRow={id => {
+          columnNames={['', 'Fecha', 'Monto', 'Causa', 'Estado']}
+          rows={tableData.map(row => ({
+            id: row.id,
+            cells: row.cells.map(cell => ({ value: cell.value })),
+          }))}
+          onSelectedRow={(id: string) => {
             setSelectedWithdrawalId(Number(id))
           }}
+          selectedRowId={String(selectedWithdrawalId)}
         />
       </div>
     </ViewContainer>
