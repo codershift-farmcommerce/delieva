@@ -2,7 +2,7 @@ import keyBy from 'lodash.keyby'
 import ViewContainer from 'webapp/src/components/views/container/container'
 import ViewHeader from 'webapp/src/components/views/header/header'
 import { getCashRegisterName } from 'webapp/src/components/functions/cash_register'
-import React, { useEffect, useState, ComponentType } from 'react'
+import React, { useEffect, useState, FC } from 'react'
 import {
   CashRegister,
   CashRegisterWithdrawalReceipt,
@@ -10,7 +10,7 @@ import {
 } from 'interface/entities/cash_register'
 import { CashRegisterClient } from 'webapp/src/api/clients/cash_register'
 import { CauseClient } from 'webapp/src/api/clients/cause_client'
-import Table, { TableCell, TableRow } from 'webapp/src/components/table/table'
+import Table from 'webapp/src/components/table/table'
 import { formatMonetary } from 'webapp/src/components/functions/formatting'
 import { CashRegisterWithdrawalStatusTranslation } from 'webapp/src/components/functions/translations'
 import CauseSearchBox from 'webapp/src/components/cause_search_box/cause_search_box'
@@ -27,7 +27,7 @@ const causeClient = new CauseClient()
 
 type WithdrawalsById = { [withdrawalId: string]: CashRegisterWithdrawalReceipt }
 
-const CashRegisterOtherIncome: ComponentType = () => {
+const CashRegisterOtherIncome: FC = (): JSX.Element => {
   const [cashRegister, setCashRegister] = useState<CashRegister | null>(null)
   const [cashRegisterLoaded, setCashRegisterLoaded] = useState(false)
   const [hasOpenedReconciliation, setHasOpenReconciliation] = useState<boolean | null>(null)
@@ -128,7 +128,7 @@ const CashRegisterOtherIncome: ComponentType = () => {
       id: String(withdrawal.id),
       cells: [
         {
-          value: '',
+          value: withdrawal.cash_register_name,
         },
         {
           value: withdrawal.created_at,
@@ -190,7 +190,7 @@ const CashRegisterOtherIncome: ComponentType = () => {
       </ViewHeader>
       <div>
         <Table
-          columnNames={['', 'Fecha', 'Monto', 'Causa', 'Estado']}
+          columnNames={['Caja', 'Fecha', 'Monto', 'Causa', 'Estado']}
           rows={tableData.map(row => ({
             id: row.id,
             cells: row.cells.map(cell => ({ value: cell.value })),
