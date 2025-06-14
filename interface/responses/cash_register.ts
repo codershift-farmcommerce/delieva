@@ -94,9 +94,6 @@ export type CashRegisterGetCashWithdrawalsOfCurrentOpenReconciliationRS = {
 export type CashRegisterGetCashWithdrawalsForCurrentCashierOpenReconciliationRS = {
   receipts: CashRegisterWithdrawalReceipt[]
   cash_register_name: string
-  withdrawalsByCashRegister?: {
-    [cashRegisterName: string]: CashRegisterWithdrawalReceipt[]
-  }
 }
 
 export type CashRegisterGetOtherIncomeReceiptRS = CashRegisterOtherIncomeReceipt
@@ -108,6 +105,7 @@ export type CashRegisterReconciliationGetReportRS = {
 export type CashRegisterCancelCashWithdrawalRS = ModifyRS
 
 export type CashRegisterGetCashWithdrawalsForAllCashiersOpenReconciliationRS = {
-  receipts: CashRegisterWithdrawalReceipt[]
-  cash_register_name: string
+  withdrawalsByCashRegister?: {
+    [cashRegisterName: string]: CashRegisterWithdrawalReceipt[]
+  }
 }

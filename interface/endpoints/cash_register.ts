@@ -96,10 +96,6 @@ export interface CashRegisterEndpoints {
     req: CashRegisterGetWithdrawCashReceiptRQ,
   ): Promise<CashRegisterGetWithdrawCashReceiptRS>
 
-  getCashWithdrawalsOfCurrentOpenReconciliation(
-    req: CashRegisterGetCashWithdrawalsOfCurrentOpenReconciliationRQ,
-  ): Promise<CashRegisterGetCashWithdrawalsOfCurrentOpenReconciliationRS>
-
   getCashWithdrawalsForCurrentCashierOpenReconciliation(
     req: CashRegisterGetCashWithdrawalsForCurrentCashierOpenReconciliationRQ,
   ): Promise<CashRegisterGetCashWithdrawalsForCurrentCashierOpenReconciliationRS>

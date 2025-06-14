@@ -18,6 +18,7 @@ import {
   CashRegisterUnassignCashierRQ,
   CashRegisterWithdrawRQ,
   CashRegisterGetCashWithdrawalsForCurrentCashierOpenReconciliationRQ,
+  CashRegisterGetCashWithdrawalsForAllCashiersOpenReconciliationRQ,
 } from 'interface/requests/cash_register'
 import {
   CashRegisterAddRS,
@@ -38,6 +39,7 @@ import {
   CashRegisterUnassignCashierRS,
   CashRegisterWithdrawRS,
   CashRegisterGetCashWithdrawalsForCurrentCashierOpenReconciliationRS,
+  CashRegisterGetCashWithdrawalsForAllCashiersOpenReconciliationRS,
 } from 'interface/responses/cash_register'
 import { ModifyRS } from 'interface/responses/common'
 import { Knex } from 'knex'
@@ -858,56 +860,6 @@ export async function getWithdrawCashReceipt(
   }
 }
 
-export async function getCashWithdrawalsOfCurrentOpenReconciliation(
-  ctx: Ctx,
-  req: CashRegisterGetCashWithdrawalsOfCurrentOpenReconciliationRQ,
-): Promise<CashRegisterGetCashWithdrawalsOfCurrentOpenReconciliationRS> {
-  const assignedCashRegister = await getAssignedCashRegister(ctx, {})
-  const cashRegisterId = assignedCashRegister.cash_register?.id
-
-  if (!cashRegisterId) {
-    return {
-      receipts: [],
-      cash_register_name: '',
-    }
-  }
-
-  const currentOpenReconciliation = await ctx
-    .knex('cash_register_reconciliation')
-    .select('id')
-    .where('cash_register_id', cashRegisterId)
-    .andWhere('status', 'OPENED')
-    .first()
-
-  if (!currentOpenReconciliation) {
-    return {
-      receipts: [],
-      cash_register_name: '',
-    }
-  }
-
-  const receipts = await ctx
-    .knex('cash_register_withdrawal')
-    .select(
-      'cash_register_withdrawal.id',
-      'cause.description AS cause',
-      'cash_register_withdrawal.amount',
-      'cash_register_withdrawal.created_at',
-      'cash_register_withdrawal.status',
-    )
-    .innerJoin('cause', 'cause.id', 'cash_register_withdrawal.cause_id')
-    .where(
-      'cash_register_withdrawal.cash_register_reconciliation_id',
-      currentOpenReconciliation.id,
-    )
-    .orderBy('cash_register_withdrawal.created_at', 'desc')
-
-  return {
-    receipts,
-    cash_register_name: assignedCashRegister.cash_register?.name,
-  }
-}
-
 export async function getCashWithdrawalsForCurrentCashierOpenReconciliation(
   ctx: Ctx,
   req: CashRegisterGetCashWithdrawalsForCurrentCashierOpenReconciliationRQ,
@@ -974,12 +926,12 @@ export async function getCashWithdrawalsForCurrentCashierOpenReconciliation(
 
 export async function getCashWithdrawalsForAllCashiersOpenReconciliation(
   ctx: Ctx,
-  cashRegisterIds: number[],
-): Promise<CashRegisterGetCashWithdrawalsForCurrentCashierOpenReconciliationRS> {
+  req: CashRegisterGetCashWithdrawalsForAllCashiersOpenReconciliationRQ,
+): Promise<CashRegisterGetCashWithdrawalsForAllCashiersOpenReconciliationRS> {
+  const { cash_register_ids: cashRegisterIds } = req
   if (!cashRegisterIds.length) {
     return {
-      receipts: [],
-      cash_register_name: '',
+      withdrawalsByCashRegister: {},
     }
   }
 
@@ -992,8 +944,7 @@ export async function getCashWithdrawalsForAllCashiersOpenReconciliation(
 
   if (!currentOpenReconciliations.length) {
     return {
-      receipts: [],
-      cash_register_name: '',
+      withdrawalsByCashRegister: {},
     }
   }
 
@@ -1005,8 +956,7 @@ export async function getCashWithdrawalsForAllCashiersOpenReconciliation(
 
   if (!cashRegisters.length) {
     return {
-      receipts: [],
-      cash_register_name: '',
+      withdrawalsByCashRegister: {},
     }
   }
 
@@ -1043,18 +993,19 @@ export async function getCashWithdrawalsForAllCashiersOpenReconciliation(
   }))
 
   // Group withdrawals by cash register name
-  const withdrawalsByCashRegister = receiptsWithCashRegisterName.reduce((acc, receipt) => {
-    const cashRegisterName = receipt.cash_register_name
-    if (!acc[cashRegisterName]) {
-      acc[cashRegisterName] = []
-    }
-    acc[cashRegisterName].push(receipt)
-    return acc
-  }, {} as { [key: string]: typeof receiptsWithCashRegisterName })
+  const withdrawalsByCashRegister = receiptsWithCashRegisterName.reduce(
+    (acc, receipt) => {
+      const cashRegisterName = receipt.cash_register_name
+      if (!acc[cashRegisterName]) {
+        acc[cashRegisterName] = []
+      }
+      acc[cashRegisterName].push(receipt)
+      return acc
+    },
+    {} as { [key: string]: typeof receiptsWithCashRegisterName },
+  )
 
   return {
-    receipts: receiptsWithCashRegisterName,
-    cash_register_name: cashRegisters.map(cr => cr.name).join(', '),
     withdrawalsByCashRegister,
   }
 }

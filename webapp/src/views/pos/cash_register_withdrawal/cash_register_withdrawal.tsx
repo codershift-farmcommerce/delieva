@@ -1,7 +1,7 @@
 import ViewContainer from 'webapp/src/components/views/container/container'
 import { getCashRegisterName } from 'webapp/src/components/functions/cash_register'
-import Table from 'webapp/src/components/table/table'
 import React, { useEffect, useState } from 'react'
+
 import {
   CashRegister,
   CashRegisterWithdrawalReceipt,
@@ -59,11 +59,11 @@ const CashRegisterWithdrawal = () => {
 
     setLoadingWithdrawals(true)
     try {
-      debugger
       if (isAdmin) {
-        const response = await cashRegisterClient.getCashWithdrawalsForAllCashiersOpenReconciliation({
-          cash_register_ids: [cashRegister.id],
-        })
+        const response =
+          await cashRegisterClient.getCashWithdrawalsForAllCashiersOpenReconciliation({
+            cash_register_ids: [cashRegister.id],
+          })
         setUserWithdrawals(response.receipts)
         setAllCashiersWithdrawals(response.receipts)
       } else {
@@ -84,7 +84,7 @@ const CashRegisterWithdrawal = () => {
 
   const { user } = useUser()
   const isAdmin = (user as unknown as UserWithRoles)?.roles.includes(UserRole.ADMIN)
-debugger
+
   useEffect(() => {
     getAssignedCashRegister()
   }, [])
@@ -95,8 +95,6 @@ debugger
     }
   }, [cashRegister, hasOpenedReconciliation, isAdmin])
 
-
-
   const handleCancelWithdrawal = async (withdrawalId: number) => {
     const authCode = prompt('Por favor ingrese el código de autorización:')
     if (!authCode) return
@@ -106,7 +104,7 @@ debugger
       await cashRegisterClient.cancelCashWithdrawal({
         withdrawal_id: withdrawalId,
         user_authorization_code: authCode,
-        cause_id: 1 // TODO: Get from API or config
+        cause_id: 1, // TODO: Get from API or config
       })
       await getWithdrawals()
       toast.success('Retiro cancelado exitosamente', {
@@ -269,40 +267,41 @@ debugger
         </div>
       </div>
 
-      {/* User Withdrawals Table */}
-      <div className={styles.withdrawals_container}>
-        <h3>Retiros de efectivo de {cashRegisterName}</h3>
-        {loadingWithdrawals ? (
-          <div>Cargando retiros...</div>
-        ) : userWithdrawals?.length > 0 ? (
-          <table className={styles.withdrawals_table}>
-            <thead>
-              <tr>
-                <th>Fecha</th>
-                <th>Causa</th>
-                <th>Monto</th>
-                <th>Estado</th>
-              </tr>
-            </thead>
-            <tbody>
-              {userWithdrawals.map(withdrawal => (
-                <tr key={withdrawal.id}>
-                  <td>{formatDate(withdrawal.created_at)}</td>
-                  <td>{withdrawal.cause}</td>
-                  <td>{formatCurrency(withdrawal.amount)}</td>
-                  <td>
-                    {withdrawal.status === CashRegisterWithdrawalStatus.PROCESSED
-                      ? 'Procesado'
-                      : 'Cancelado'}
-                  </td>
+      {!isAdmin && (
+        <div className={styles.withdrawals_container}>
+          <h3>Retiros de efectivo de {cashRegisterName}</h3>
+          {loadingWithdrawals ? (
+            <div>Cargando retiros...</div>
+          ) : userWithdrawals?.length > 0 ? (
+            <table className={styles.withdrawals_table}>
+              <thead>
+                <tr>
+                  <th>Fecha</th>
+                  <th>Causa</th>
+                  <th>Monto</th>
+                  <th>Estado</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        ) : (
-          <div>No hay retiros registrados para este usuario en la reconciliación actual.</div>
-        )}
-      </div>
+              </thead>
+              <tbody>
+                {userWithdrawals.map(withdrawal => (
+                  <tr key={withdrawal.id}>
+                    <td>{formatDate(withdrawal.created_at)}</td>
+                    <td>{withdrawal.cause}</td>
+                    <td>{formatCurrency(withdrawal.amount)}</td>
+                    <td>
+                      {withdrawal.status === CashRegisterWithdrawalStatus.PROCESSED
+                        ? 'Procesado'
+                        : 'Cancelado'}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ) : (
+            <div>No hay retiros registrados para este usuario en la reconciliación actual.</div>
+          )}
+        </div>
+      )}
 
       <CashRegisterWithdrawalReceiptPrint
         print={printReceipt}
