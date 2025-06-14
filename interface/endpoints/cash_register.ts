@@ -18,6 +18,7 @@ import {
   CashRegisterGetOtherIncomeReceiptRQ,
   CashRegisterGetCashWithdrawalsOfCurrentOpenReconciliationRQ,
   CashRegisterCancelCashWithdrawalRQ,
+  CashRegisterGetCashWithdrawalsByUserRQ,
 } from '../requests/cash_register'
 import {
   CashRegisterAddRS,
@@ -38,6 +39,7 @@ import {
   CashRegisterReconciliationGetReportRS,
   CashRegisterUnassignCashierRS,
   CashRegisterWithdrawRS,
+  CashRegisterGetCashWithdrawalsByUserRS,
 } from '../responses/cash_register'
 import { ModifyRS } from '../responses/common'
 
@@ -95,6 +97,10 @@ export interface CashRegisterEndpoints {
   getCashWithdrawalsOfCurrentOpenReconciliation(
     req: CashRegisterGetCashWithdrawalsOfCurrentOpenReconciliationRQ,
   ): Promise<CashRegisterGetCashWithdrawalsOfCurrentOpenReconciliationRS>
+
+  getCashWithdrawalsByUser(
+    req: CashRegisterGetCashWithdrawalsByUserRQ,
+  ): Promise<CashRegisterGetCashWithdrawalsByUserRS>
 
   cancelCashWithdrawal(
     req: CashRegisterCancelCashWithdrawalRQ,

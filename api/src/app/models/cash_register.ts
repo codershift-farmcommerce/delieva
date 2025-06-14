@@ -17,6 +17,7 @@ import {
   CashRegisterReconciliationGetReportRQ,
   CashRegisterUnassignCashierRQ,
   CashRegisterWithdrawRQ,
+  CashRegisterGetCashWithdrawalsByUserRQ,
 } from 'interface/requests/cash_register'
 import {
   CashRegisterAddRS,
@@ -36,6 +37,7 @@ import {
   CashRegisterReconciliationGetReportRS,
   CashRegisterUnassignCashierRS,
   CashRegisterWithdrawRS,
+  CashRegisterGetCashWithdrawalsByUserRS,
 } from 'interface/responses/cash_register'
 import { ModifyRS } from 'interface/responses/common'
 import { Knex } from 'knex'
@@ -861,37 +863,111 @@ export async function getCashWithdrawalsOfCurrentOpenReconciliation(
   req: CashRegisterGetCashWithdrawalsOfCurrentOpenReconciliationRQ,
 ): Promise<CashRegisterGetCashWithdrawalsOfCurrentOpenReconciliationRS> {
   const assignedCashRegister = await getAssignedCashRegister(ctx, {})
-  const reconciliation = await getOpenedReconciliation(
-    ctx,
-    assignedCashRegister.cash_register.id,
-  )
+  const cashRegisterId = assignedCashRegister.cash_register?.id
 
-  const result = await ctx
+  if (!cashRegisterId) {
+    return {
+      receipts: [],
+    }
+  }
+
+  const currentOpenReconciliation = await ctx
+    .knex('cash_register_reconciliation')
+    .select('id')
+    .where('cash_register_id', cashRegisterId)
+    .andWhere('status', 'OPENED')
+    .first()
+
+  if (!currentOpenReconciliation) {
+    return {
+      receipts: [],
+    }
+  }
+
+  const receipts = await ctx
     .knex('cash_register_withdrawal')
-    .innerJoin('cause', 'cash_register_withdrawal.cause_id', 'cause.id')
     .select(
-      'cash_register_withdrawal.id AS id',
-      'cause.description AS withdrawal_cause',
-      'amount',
+      'cash_register_withdrawal.id',
+      'cause.description AS cause',
+      'cash_register_withdrawal.amount',
       'cash_register_withdrawal.created_at',
       'cash_register_withdrawal.status',
     )
+    .innerJoin('cause', 'cause.id', 'cash_register_withdrawal.cause_id')
     .where(
-      'cash_register_withdrawal.cash_register_reconciliation_id',
-      reconciliation.id,
+      'cash_register_withdrawal.reconciliation_id',
+      currentOpenReconciliation.id,
     )
-    .orderBy('created_at', 'desc')
-
-  const cashWithdrawalReceipts = result.map(r => ({
-    id: r.id,
-    cause: r.withdrawal_cause,
-    amount: Number(r.amount),
-    created_at: r.created_at,
-    status: r.status,
-  }))
+    .orderBy('cash_register_withdrawal.created_at', 'desc')
 
   return {
-    receipts: cashWithdrawalReceipts,
+    receipts,
+  }
+}
+
+export async function getCashWithdrawalsByUser(
+  ctx: Ctx,
+  req: CashRegisterGetCashWithdrawalsByUserRQ,
+): Promise<CashRegisterGetCashWithdrawalsByUserRS> {
+  const { user_email } = req
+  const assignedCashRegister = await getAssignedCashRegister(ctx, {})
+  const cashRegisterId = assignedCashRegister.cash_register?.id
+
+  if (!cashRegisterId) {
+    return {
+      receipts: [],
+      user_name: '',
+    }
+  }
+
+  const currentOpenReconciliation = await ctx
+    .knex('cash_register_reconciliation')
+    .select('id')
+    .where('cash_register_id', cashRegisterId)
+    .andWhere('status', 'OPENED')
+    .first()
+
+  if (!currentOpenReconciliation) {
+    return {
+      receipts: [],
+      user_name: '',
+    }
+  }
+
+  // Get the user name
+  const user = await ctx
+    .knex('users')
+    .select('name')
+    .where('email', user_email)
+    .first()
+
+  if (!user) {
+    return {
+      receipts: [],
+      user_name: '',
+    }
+  }
+
+  const receipts = await ctx
+    .knex('cash_register_withdrawal')
+    .select(
+      'cash_register_withdrawal.id',
+      'cause.description AS cause',
+      'cash_register_withdrawal.amount',
+      'cash_register_withdrawal.created_at',
+      'cash_register_withdrawal.status',
+    )
+    .innerJoin('cause', 'cause.id', 'cash_register_withdrawal.cause_id')
+    .where(
+      'cash_register_withdrawal.reconciliation_id',
+      currentOpenReconciliation.id,
+    )
+    .andWhere('cash_register_withdrawal.created_by_user_email', user_email)
+    .orderBy('cash_register_withdrawal.created_at', 'desc')
+
+  return {
+    receipts,
+    user_name: user.name,
   }
 }
 

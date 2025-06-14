@@ -1,14 +1,14 @@
 import ViewContainer from 'webapp/src/components/views/container/container'
 import { getCashRegisterName } from 'webapp/src/components/functions/cash_register'
 import React, { useEffect, useState } from 'react'
-import { CashRegister } from 'interface/entities/cash_register'
+import { CashRegister, CashRegisterWithdrawalReceipt, CashRegisterWithdrawalStatus } from 'interface/entities/cash_register'
 import { CashRegisterClient } from 'webapp/src/api/clients/cash_register'
 import styles from './cash_register_withdrawal.module.css'
 import ViewHeader from 'webapp/src/components/views/header/header'
 import viewStyles from 'webapp/src/views/views.module.css'
 import { toast } from 'react-toastify'
 import { CauseClient } from 'webapp/src/api/clients/cause_client'
-import CashRegisterWithdrawalReceipt from '../cash_register_withdrawal_receipt/cash_register_withdrawal_receipt'
+import CashRegisterWithdrawalReceiptPrint from '../cash_register_withdrawal_receipt/cash_register_withdrawal_receipt'
 import { ApiErrorCodeTranslation } from 'webapp/src/components/functions/translations'
 import { CauseAction } from 'interface/entities/cause'
 import CauseSearchBox from 'webapp/src/components/cause_search_box/cause_search_box'
@@ -28,14 +28,62 @@ const CashRegisterWithdrawal = () => {
   const [printReceipt, setPrintReceipt] = useState(false)
   const [withdrawalIdToPrint, setWithdrawalIdToPrint] = useState<number | null>(null)
   const [processingWithdrawal, setProcessingWithdrawal] = useState(false)
+  const [userWithdrawals, setUserWithdrawals] = useState<CashRegisterWithdrawalReceipt[]>([])
+  const [userName, setUserName] = useState<string>('')
+  const [loadingWithdrawals, setLoadingWithdrawals] = useState(false)
+  const [cashierEmail, setCashierEmail] = useState<string>('')
 
   const getAssignedCashRegister = async () => {
     const response = await cashRegisterClient.getAssignedCashRegister({})
     if (response.cash_register) {
       setCashRegister(response.cash_register)
       setHasOpenReconciliation(response.has_open_reconciliation)
+      
+      // Get the current reconciliation details if open
+      if (response.has_open_reconciliation) {
+        try {
+          // Get the opened reconciliation to find the cashier email
+          const openedReconciliations = await cashRegisterClient.getOpenedReconciliations({
+            cash_register_ids: [response.cash_register.id]
+          })
+          
+          if (openedReconciliations.opened_reconciliations && 
+              openedReconciliations.opened_reconciliations[response.cash_register.id]) {
+            const reconciliation = openedReconciliations.opened_reconciliations[response.cash_register.id]
+            setCashierEmail(reconciliation.cashier_user_email)
+            setUserName(reconciliation.cashier_user_name)
+            
+            // Once we have the cashier email, get their withdrawals
+            await getUserWithdrawals(reconciliation.cashier_user_email)
+          }
+        } catch (error) {
+          console.error('Error getting opened reconciliation details', error)
+        }
+      }
     }
     setCashRegisterLoaded(true)
+  }
+
+  const getUserWithdrawals = async (email: string) => {
+    if (!email) return
+    
+    setLoadingWithdrawals(true)
+    try {
+      const response = await cashRegisterClient.getCashWithdrawalsByUser({
+        user_email: email
+      })
+      setUserWithdrawals(response.receipts)
+      if (response.user_name) {
+        setUserName(response.user_name)
+      }
+    } catch (error) {
+      console.error('Error getting user withdrawals', error)
+      toast.error('Error al obtener los retiros del usuario', {
+        position: POSITION.TOP_LEFT,
+      })
+    } finally {
+      setLoadingWithdrawals(false)
+    }
   }
 
   useEffect(() => {
@@ -85,6 +133,10 @@ const CashRegisterWithdrawal = () => {
         setCauseDescription('')
         setWithdrawalIdToPrint(response.id)
         setPrintReceipt(true)
+        // Refresh the user withdrawals list
+        if (cashierEmail) {
+          getUserWithdrawals(cashierEmail)
+        }
       } else {
         const message = ApiErrorCodeTranslation[response.errorCode] || 'Error al retirar efectivo'
         toast.error(message, {
@@ -102,6 +154,24 @@ const CashRegisterWithdrawal = () => {
 
   const handleAfterPrint = () => {
     setPrintReceipt(false)
+  }
+
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString)
+    return date.toLocaleString('es-MX', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+    })
+  }
+
+  const formatCurrency = (amount: number) => {
+    return new Intl.NumberFormat('es-MX', {
+      style: 'currency',
+      currency: 'MXN',
+    }).format(amount)
   }
 
   if (!cashRegisterLoaded) {
@@ -168,7 +238,43 @@ const CashRegisterWithdrawal = () => {
           </ViewHeader>
         </div>
       </div>
-      <CashRegisterWithdrawalReceipt
+
+      {/* User Withdrawals Table */}
+      <div className={styles.withdrawals_container}>
+        <h3>Retiros de efectivo de {userName}</h3>
+        {loadingWithdrawals ? (
+          <div>Cargando retiros...</div>
+        ) : userWithdrawals.length > 0 ? (
+          <table className={styles.withdrawals_table}>
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Causa</th>
+                <th>Monto</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              {userWithdrawals.map(withdrawal => (
+                <tr key={withdrawal.id}>
+                  <td>{formatDate(withdrawal.created_at)}</td>
+                  <td>{withdrawal.cause}</td>
+                  <td>{formatCurrency(withdrawal.amount)}</td>
+                  <td>
+                    {withdrawal.status === CashRegisterWithdrawalStatus.PROCESSED
+                      ? 'Procesado'
+                      : 'Cancelado'}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <div>No hay retiros registrados para este usuario en la reconciliación actual.</div>
+        )}
+      </div>
+
+      <CashRegisterWithdrawalReceiptPrint
         print={printReceipt}
         withdrawalId={withdrawalIdToPrint}
         onAfterPrint={handleAfterPrint}

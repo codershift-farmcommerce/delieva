@@ -7,6 +7,7 @@ import {
   CashRegisterEnterOtherIncomeRQ,
   CashRegisterGetAssignedCashRegisterRQ,
   CashRegisterGetCashWithdrawalsOfCurrentOpenReconciliationRQ,
+  CashRegisterGetCashWithdrawalsByUserRQ,
   CashRegisterGetClosedReconciliationRQ,
   CashRegisterGetOpenedReconciliationsRQ,
   CashRegisterGetOtherIncomeReceiptRQ,
@@ -27,6 +28,7 @@ import {
   CashRegisterEnterOtherIncomeRS,
   CashRegisterGetAssignedCashRegisterRS,
   CashRegisterGetCashWithdrawalsOfCurrentOpenReconciliationRS,
+  CashRegisterGetCashWithdrawalsByUserRS,
   CashRegisterGetClosedReconciliationRS,
   CashRegisterGetOpenedReconciliationsRS,
   CashRegisterGetWithdrawCashReceiptRS,
@@ -135,6 +137,12 @@ export class CashRegisterClient implements CashRegisterEndpoints {
     req: CashRegisterGetCashWithdrawalsOfCurrentOpenReconciliationRQ,
   ): Promise<CashRegisterGetCashWithdrawalsOfCurrentOpenReconciliationRS> {
     return sendRequest('/cash_register/getCashWithdrawalsOfCurrentOpenReconciliation', req)
+  }
+
+  getCashWithdrawalsByUser(
+    req: CashRegisterGetCashWithdrawalsByUserRQ,
+  ): Promise<CashRegisterGetCashWithdrawalsByUserRS> {
+    return sendRequest('/cash_register/getCashWithdrawalsByUser', req)
   }
 
   cancelCashWithdrawal(req: CashRegisterCancelCashWithdrawalRQ): Promise<ModifyRS> {

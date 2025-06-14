@@ -90,6 +90,11 @@ export type CashRegisterGetCashWithdrawalsOfCurrentOpenReconciliationRS = {
   receipts: CashRegisterWithdrawalReceipt[]
 }
 
+export type CashRegisterGetCashWithdrawalsByUserRS = {
+  receipts: CashRegisterWithdrawalReceipt[]
+  user_name: string
+}
+
 export type CashRegisterGetOtherIncomeReceiptRS = CashRegisterOtherIncomeReceipt
 
 export type CashRegisterReconciliationGetReportRS = {

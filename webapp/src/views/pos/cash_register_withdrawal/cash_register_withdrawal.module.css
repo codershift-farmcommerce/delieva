@@ -8,3 +8,35 @@
 .form_field {
   margin-top: 1em;
 }
+
+.withdrawals_container {
+  margin-top: 2em;
+  padding: 1em;
+  border-top: 1px solid #ddd;
+}
+
+.withdrawals_table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1em;
+}
+
+.withdrawals_table th,
+.withdrawals_table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.withdrawals_table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.withdrawals_table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.withdrawals_table tr:hover {
+  background-color: #f1f1f1;
+}
