@@ -244,7 +244,7 @@ const CashRegisterWithdrawal = () => {
         <h3>Retiros de efectivo de {userName}</h3>
         {loadingWithdrawals ? (
           <div>Cargando retiros...</div>
-        ) : userWithdrawals.length > 0 ? (
+        ) : userWithdrawals?.length > 0 ? (
           <table className={styles.withdrawals_table}>
             <thead>
               <tr>

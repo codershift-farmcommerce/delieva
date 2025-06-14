@@ -895,7 +895,7 @@ export async function getCashWithdrawalsOfCurrentOpenReconciliation(
     )
     .innerJoin('cause', 'cause.id', 'cash_register_withdrawal.cause_id')
     .where(
-      'cash_register_withdrawal.reconciliation_id',
+      'cash_register_withdrawal.cash_register_reconciliation_id',
       currentOpenReconciliation.id,
     )
     .orderBy('cash_register_withdrawal.created_at', 'desc')
@@ -959,7 +959,7 @@ export async function getCashWithdrawalsByUser(
     )
     .innerJoin('cause', 'cause.id', 'cash_register_withdrawal.cause_id')
     .where(
-      'cash_register_withdrawal.reconciliation_id',
+      'cash_register_withdrawal.cash_register_reconciliation_id',
       currentOpenReconciliation.id,
     )
     .andWhere('cash_register_withdrawal.created_by_user_email', user_email)
