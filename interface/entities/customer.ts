@@ -9,6 +9,12 @@ export type Customer = {
   enabled: boolean
 }
 
+export interface CustomerGetMovementsReportRQ {
+  start_date: string
+  end_date: string
+  customer_id?: string
+}
+
 export type CustomerMovementEntry = {
   date: string
   customer_name: string

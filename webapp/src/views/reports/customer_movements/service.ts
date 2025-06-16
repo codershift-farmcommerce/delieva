@@ -3,6 +3,7 @@ import { CustomerClient } from '../../../api/clients/customer'
 export interface CustomerMovementsReportRequest {
   start_date: string
   end_date: string
+  customer_id?: string
 }
 
 export async function downloadCustomerMovementsReport(req: CustomerMovementsReportRequest) {

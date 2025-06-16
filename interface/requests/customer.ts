@@ -19,6 +19,7 @@ export type CustomerListRQ = {
 export type CustomerGetMovementsReportRQ = {
   start_date: string
   end_date: string
+  customer_id?: string
 }
 
 export type CustomerModifyRQ = {

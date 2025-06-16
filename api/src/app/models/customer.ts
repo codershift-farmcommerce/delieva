@@ -209,7 +209,7 @@ export async function getMovementsReport(
   ctx: Ctx,
   req: CustomerGetMovementsReportRQ,
 ): Promise<{ entries: { [p: string]: CustomerMovementEntry[] } }> {
-  const { start_date, end_date } = req
+  const { start_date, end_date, customer_id } = req
 
   // Get purchases
   const purchases = await ctx.knex.raw(
@@ -225,9 +225,10 @@ export async function getMovementsReport(
     INNER JOIN customer c ON c.id = po.customer_id
     LEFT JOIN customer_credit cc ON cc.customer_id = c.id
     WHERE po.created_at BETWEEN ? AND ?
+    ${customer_id ? 'AND c.id = ?' : ''}
     ORDER BY po.created_at
     `,
-    [start_date, end_date],
+    customer_id ? [start_date, end_date, customer_id] : [start_date, end_date],
   )
 
   // Get payments
@@ -246,9 +247,10 @@ export async function getMovementsReport(
     INNER JOIN customer c ON c.id = cc.customer_id
     LEFT JOIN transfer_bank_account tba ON tba.id = ccp.transfer_bank_account_id
     WHERE ccp.created_at BETWEEN ? AND ?
+    ${customer_id ? 'AND c.id = ?' : ''}
     ORDER BY ccp.created_at
     `,
-    [start_date, end_date],
+    customer_id ? [start_date, end_date, customer_id] : [start_date, end_date],
   )
 
   // Combine and sort movements
