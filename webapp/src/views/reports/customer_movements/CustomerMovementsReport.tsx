@@ -42,7 +42,8 @@ const CustomerMovementsReport: React.FC<CustomerMovementsReportProps> = () => {
         React.createElement('label', { className: styles.label }, 'Rango de fechas:'),
         React.createElement<RangePickerProps>(RangePicker, {
           className: styles.datePicker,
-          onChange: handleDateRangeChange
+          onChange: handleDateRangeChange,
+          format: 'DD-MM-YYYY'
         })
       ),
       React.createElement<ButtonProps>(Button, {

@@ -172,12 +172,20 @@ export class CustomerService implements CustomerEndpoints {
         row.getCell(2).value = entry.description
         row.getCell(4).value = entry.bank_account_name || '' // Bank account name
         if (entry.movement_type === 'PURCHASE') {
-          row.getCell(5).value = entry.amount // Column E for purchase total
-          row.getCell(6).value = 0 // Column F for credit payment
+          const cellE = row.getCell(5)
+          cellE.value = entry.amount // Column E for purchase total
+          cellE.numFmt = '#,##0.00'
+          const cellF = row.getCell(6)
+          cellF.value = 0 // Column F for credit payment
+          cellF.numFmt = '#,##0.00'
           totalPurchases += Number(entry.amount)
         } else {
-          row.getCell(5).value = 0 // Column E for purchase total
-          row.getCell(6).value = entry.amount // Column F for credit payment
+          const cellE = row.getCell(5)
+          cellE.value = 0 // Column E for purchase total
+          cellE.numFmt = '#,##0.00'
+          const cellF = row.getCell(6)
+          cellF.value = entry.amount // Column F for credit payment
+          cellF.numFmt = '#,##0.00'
           totalPayments += Number(entry.amount)
         }
         row.getCell(7).value = entry.balance // Column G for credits balance
