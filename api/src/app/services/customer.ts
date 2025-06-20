@@ -6,7 +6,6 @@ import {
   CustomerAddSuccessRS,
   CustomerListRS,
   CustomerSearchRS,
-  CustomerGetMovementsReportRS,
 } from 'interface/responses/customer'
 import { CustomerGetMovementsReportRQ } from 'interface/requests/customer'
 import { CustomerEndpoints } from 'interface/endpoints/customer'
@@ -22,9 +21,6 @@ import {
   CustomerModifyRQ,
 } from 'interface/requests/customer'
 import { ModifyRS } from 'interface/responses/common'
-import * as excel from 'api/src/util/excel'
-import { FileType } from 'api/src/util/excel'
-import { Worksheet } from 'exceljs'
 import { attachFile } from 'api/src/util/files'
 
 export class CustomerService implements CustomerEndpoints {
@@ -142,9 +138,9 @@ export class CustomerService implements CustomerEndpoints {
       { width: 15 }, // Date
       { width: 30 }, // Customer / Concept
       { width: 20 }, // Description
-      { width: 20 }, // Venta
-      { width: 15 }, // Amount
-      { width: 15 }, // Balance
+      { width: 20, style: { numFmt: '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)' } }, // Total
+      { width: 20, style: { numFmt: '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)' } }, // Payment
+      { width: 20, style: { numFmt: '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)' } }, // Balance
     ]
 
     // Add data starting from row 11
@@ -173,22 +169,24 @@ export class CustomerService implements CustomerEndpoints {
         row.getCell(4).value = entry.bank_account_name || '' // Bank account name
         if (entry.movement_type === 'PURCHASE') {
           const cellE = row.getCell(5)
-          cellE.value = entry.amount // Column E for purchase total
-          cellE.numFmt = '#,##0.00'
+          cellE.value = Number(entry.amount) // Column E for purchase total
+          cellE.numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
           const cellF = row.getCell(6)
           cellF.value = 0 // Column F for credit payment
-          cellF.numFmt = '#,##0.00'
+          cellF.numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
           totalPurchases += Number(entry.amount)
         } else {
           const cellE = row.getCell(5)
           cellE.value = 0 // Column E for purchase total
-          cellE.numFmt = '#,##0.00'
+          cellE.numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
           const cellF = row.getCell(6)
-          cellF.value = entry.amount // Column F for credit payment
-          cellF.numFmt = '#,##0.00'
+          cellF.value = Number(entry.amount) // Column F for credit payment
+          cellF.numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
           totalPayments += Number(entry.amount)
         }
-        row.getCell(7).value = entry.balance // Column G for credits balance
+        const balanceCell = row.getCell(7)
+        balanceCell.value = Number(entry.balance) // Column G for credits balance
+        balanceCell.numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
         lastBalance = entry.balance
         row.commit()
         currentRow++
@@ -197,9 +195,17 @@ export class CustomerService implements CustomerEndpoints {
       // Add totals row for this customer
       const totalsRow = worksheet.getRow(currentRow)
       totalsRow.getCell(2).value = 'Totales'
-      totalsRow.getCell(5).value = totalPurchases
-      totalsRow.getCell(6).value = totalPayments
-      totalsRow.getCell(7).value = lastBalance
+      const totalPurchasesCell = totalsRow.getCell(5)
+      totalPurchasesCell.value = Number(totalPurchases)
+      totalPurchasesCell.numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
+
+      const totalPaymentsCell = totalsRow.getCell(6)
+      totalPaymentsCell.value = Number(totalPayments)
+      totalPaymentsCell.numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
+
+      const lastBalanceCell = totalsRow.getCell(7)
+      lastBalanceCell.value = Number(lastBalance)
+      lastBalanceCell.numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
       // Style the totals row
       totalsRow.font = { bold: true }
       totalsRow.commit()
