@@ -73,38 +73,38 @@ export class CustomerService implements CustomerEndpoints {
     worksheet.getCell('A1').value = 'AUXILIAR MOVIMIENTOS DE CLIENTES'
     worksheet.getCell('A1').font = { bold: false, size: 14 }
     worksheet.getCell('A1').alignment = { horizontal: 'center' }
-    worksheet.mergeCells('A1:F1')
+    worksheet.mergeCells('A1:G1')
 
     worksheet.getCell('A2').value = 'AUXILIAR DE MOVIMIENTOS'
     worksheet.getCell('A2').font = { bold: false, size: 12 }
     worksheet.getCell('A2').alignment = { horizontal: 'center' }
-    worksheet.mergeCells('A2:F2')
+    worksheet.mergeCells('A2:G2')
 
     worksheet.getCell('A3').value = 'DOMICILIO FISCAL'
     worksheet.getCell('A3').font = { bold: true, size: 12 }
     worksheet.getCell('A3').alignment = { horizontal: 'center' }
-    worksheet.mergeCells('A3:F3')
+    worksheet.mergeCells('A3:G3')
 
     worksheet.getCell('A4').value =
       'CALLE ANGELINA 113, LAS PUENTES, MEOQUI, CHIH.'
     worksheet.getCell('A4').font = { size: 12 }
     worksheet.getCell('A4').alignment = { horizontal: 'center' }
-    worksheet.mergeCells('A4:F4')
+    worksheet.mergeCells('A4:G4')
 
     worksheet.getCell('A5').value = 'RFC OEGE550225LC0'
     worksheet.getCell('A5').font = { size: 12 }
     worksheet.getCell('A5').alignment = { horizontal: 'center' }
-    worksheet.mergeCells('A5:F5')
+    worksheet.mergeCells('A5:G5')
 
     worksheet.getCell('A6').value = 'AUXILIAR DE MOVIMIENTOS'
     worksheet.getCell('A6').font = { bold: false, size: 12 }
     worksheet.getCell('A6').alignment = { horizontal: 'center' }
-    worksheet.mergeCells('A6:F6')
+    worksheet.mergeCells('A6:G6')
 
     worksheet.getCell('A7').value = 'CLIENTES'
     worksheet.getCell('A7').font = { bold: true, size: 12 }
     worksheet.getCell('A7').alignment = { horizontal: 'center' }
-    worksheet.mergeCells('A7:F7')
+    worksheet.mergeCells('A7:G7')
 
     // Add date range in Spanish
     moment.locale('es')
@@ -118,7 +118,7 @@ export class CustomerService implements CustomerEndpoints {
     worksheet.getCell('A8').value = dateRange
     worksheet.getCell('A8').font = { bold: false }
     worksheet.getCell('A8').alignment = { horizontal: 'center' }
-    worksheet.mergeCells('A8:F8')
+    worksheet.mergeCells('A8:G8')
 
     // Add headers
     const headers = worksheet.getRow(10)
@@ -138,7 +138,8 @@ export class CustomerService implements CustomerEndpoints {
       { width: 15 }, // Date
       { width: 30 }, // Customer / Concept
       { width: 20 }, // Description
-      { width: 20, style: { numFmt: '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)' } }, // Total
+      { width: 20 }, // Bank
+      { width: 20, style: { numFmt: '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)' } }, // Sell
       { width: 20, style: { numFmt: '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)' } }, // Payment
       { width: 20, style: { numFmt: '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)' } }, // Balance
     ]
