@@ -1,5 +1,5 @@
 import {
-  FinishedProduct,
+  FinishedProduct, FinishedProductUnitType,
   FinishedProductWithQuantity,
   ProductFinishedProduct,
 } from './finished_product'
@@ -26,8 +26,10 @@ export type PurchaseOrderReceiptDetail = {
   product_name: string
   quantity: string
   unit_price: string
+  unit_type: FinishedProductUnitType
   discount: string
   detail_total: string
+  weight: number
   finished_products: ProductFinishedProduct[]
   status: PurchaseOrderDetailStatus
 }

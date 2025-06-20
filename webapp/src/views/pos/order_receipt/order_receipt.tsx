@@ -3,7 +3,7 @@ import moment from 'moment'
 import { PurchaseOrderReceipt } from 'interface/entities/purchase_order'
 import { PurchaseOrderClient } from 'webapp/src/api/clients/purchase_order'
 import styles from './order_receipt.module.css'
-import { formatMonetary } from 'webapp/src/components/functions/formatting'
+import { formatMonetary, formatQuantity } from 'webapp/src/components/functions/formatting'
 import { FormOfPaymentTranslation } from 'webapp/src/components/functions/translations'
 import { useReactToPrint } from 'react-to-print'
 
@@ -131,6 +131,23 @@ const OrderReceipt = (props: OrderReceiptProps) => {
               }, 0)}
             </div>
           </div>
+          {orderReceipt?.detail.some(item => item.unit_type === 'KILOGRAM') && (
+            <div className={styles.subtotals_item_container}>
+              <div>Kilogramos vendidos:</div>
+              <div>
+                {formatMonetary(
+                  orderReceipt?.detail
+                    .reduce((acc, val) => {
+                      if (val.unit_type === 'KILOGRAM') {
+                        acc += Number(val.quantity) * (val.weight || 0)
+                      }
+                      return acc
+                    }, 0)
+                    .toFixed(2),
+                ).replace('$', '')}
+              </div>
+            </div>
+          )}
         </div>
       </div>
       <div>Gracias por su compra!. Regrese pronto...</div>

@@ -94,7 +94,7 @@ export async function process(
     const cartItem = items[productCode]
     const unitPrice = productUnitPrices[productCode]
     const itemTotal = unitPrice * cartItem.quantity
-    
+
     subtotal += itemTotal
     if (cartItem.should_add_ieps) {
       tax1 += itemTotal * 0.08
@@ -262,6 +262,7 @@ export async function getReceipt(
       purchase_order_detail.discount,
       purchase_order_detail.detail_total,
       purchase_order_detail.status AS status,
+      finished_product.unit_type AS unit_type,
       (
         SELECT JSON_AGG(JSON_BUILD_OBJECT(
           'code', finished_product.code,
@@ -272,9 +273,15 @@ export async function getReceipt(
         FROM product_finished_product
             INNER JOIN finished_product ON finished_product.code = product_finished_product.finished_product_code
         WHERE product_finished_product.product_code = purchase_order_detail.product_code
-      ) as finished_products
+      ) as finished_products,
+      purchase_order_detail.quantity * (select sum(product_finished_product.unit_quantity)
+       FROM product_finished_product
+            INNER JOIN finished_product ON finished_product.code = product_finished_product.finished_product_code
+        WHERE product_finished_product.product_code = purchase_order_detail.product_code) AS weight
     FROM purchase_order_detail
     INNER JOIN product ON product.code = purchase_order_detail.product_code
+    INNER JOIN product_finished_product ON product_finished_product.product_code = product.code
+    INNER JOIN finished_product ON finished_product.code = product_finished_product.finished_product_code
     WHERE purchase_order_detail.purchase_order_id = :order_id;
     `,
     { order_id },
