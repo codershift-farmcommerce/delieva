@@ -73,38 +73,38 @@ export class CustomerService implements CustomerEndpoints {
     worksheet.getCell('A1').value = 'AUXILIAR MOVIMIENTOS DE CLIENTES'
     worksheet.getCell('A1').font = { bold: false, size: 14 }
     worksheet.getCell('A1').alignment = { horizontal: 'center' }
-    worksheet.mergeCells('A1:G1')
+    worksheet.mergeCells('A1:H1')
 
     worksheet.getCell('A2').value = 'AUXILIAR DE MOVIMIENTOS'
     worksheet.getCell('A2').font = { bold: false, size: 12 }
     worksheet.getCell('A2').alignment = { horizontal: 'center' }
-    worksheet.mergeCells('A2:G2')
+    worksheet.mergeCells('A2:H2')
 
     worksheet.getCell('A3').value = 'DOMICILIO FISCAL'
     worksheet.getCell('A3').font = { bold: true, size: 12 }
     worksheet.getCell('A3').alignment = { horizontal: 'center' }
-    worksheet.mergeCells('A3:G3')
+    worksheet.mergeCells('A3:H3')
 
     worksheet.getCell('A4').value =
       'CALLE ANGELINA 113, LAS PUENTES, MEOQUI, CHIH.'
     worksheet.getCell('A4').font = { size: 12 }
     worksheet.getCell('A4').alignment = { horizontal: 'center' }
-    worksheet.mergeCells('A4:G4')
+    worksheet.mergeCells('A4:H4')
 
     worksheet.getCell('A5').value = 'RFC OEGE550225LC0'
     worksheet.getCell('A5').font = { size: 12 }
     worksheet.getCell('A5').alignment = { horizontal: 'center' }
-    worksheet.mergeCells('A5:G5')
+    worksheet.mergeCells('A5:H5')
 
     worksheet.getCell('A6').value = 'AUXILIAR DE MOVIMIENTOS'
     worksheet.getCell('A6').font = { bold: false, size: 12 }
     worksheet.getCell('A6').alignment = { horizontal: 'center' }
-    worksheet.mergeCells('A6:G6')
+    worksheet.mergeCells('A6:H6')
 
     worksheet.getCell('A7').value = 'CLIENTES'
     worksheet.getCell('A7').font = { bold: true, size: 12 }
     worksheet.getCell('A7').alignment = { horizontal: 'center' }
-    worksheet.mergeCells('A7:G7')
+    worksheet.mergeCells('A7:H7')
 
     // Add date range in Spanish
     moment.locale('es')
@@ -118,7 +118,7 @@ export class CustomerService implements CustomerEndpoints {
     worksheet.getCell('A8').value = dateRange
     worksheet.getCell('A8').font = { bold: false }
     worksheet.getCell('A8').alignment = { horizontal: 'center' }
-    worksheet.mergeCells('A8:G8')
+    worksheet.mergeCells('A8:H8')
 
     // Add headers
     const headers = worksheet.getRow(10)
@@ -128,6 +128,7 @@ export class CustomerService implements CustomerEndpoints {
       'Descripción',
       'Banco',
       'Total Compra',
+      'Saldo Anterior',
       'Abono',
       'Saldo',
     ]
@@ -139,9 +140,22 @@ export class CustomerService implements CustomerEndpoints {
       { width: 30 }, // Customer / Concept
       { width: 20 }, // Description
       { width: 20 }, // Bank
-      { width: 20, style: { numFmt: '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)' } }, // Sell
-      { width: 20, style: { numFmt: '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)' } }, // Payment
-      { width: 20, style: { numFmt: '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)' } }, // Balance
+      {
+        width: 20,
+        style: { numFmt: '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)' },
+      }, // Sell
+      {
+        width: 20,
+        style: { numFmt: '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)' },
+      }, // Previous Balance
+      {
+        width: 20,
+        style: { numFmt: '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)' },
+      }, // Payment
+      {
+        width: 20,
+        style: { numFmt: '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)' },
+      }, // New Balance
     ]
 
     // Add data starting from row 11
@@ -173,22 +187,33 @@ export class CustomerService implements CustomerEndpoints {
           cellE.value = Number(entry.amount) // Column E for purchase total
           cellE.numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
           const cellF = row.getCell(6)
-          cellF.value = 0 // Column F for credit payment
-          cellF.numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
+          cellF.value = ''
+          const cellG = row.getCell(7)
+          cellG.value = ''
+          const cellH = row.getCell(8)
+          cellH.value = ''
           totalPurchases += Number(entry.amount)
         } else {
           const cellE = row.getCell(5)
-          cellE.value = 0 // Column E for purchase total
-          cellE.numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
+          cellE.value = ''
+
           const cellF = row.getCell(6)
-          cellF.value = Number(entry.amount) // Column F for credit payment
+          cellF.value = Number(entry.previous_balance) // Column F for credit payment
           cellF.numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
+
+          const cellG = row.getCell(7)
+          cellG.value = Number(entry.amount) // Column F for credit payment
+          cellG.numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
+
+          const cellH = row.getCell(8)
+          cellH.value = Number(entry.new_balance) // Column F for credit payment
+          cellH.numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
+
+          lastBalance = entry.new_balance
+
           totalPayments += Number(entry.amount)
         }
-        const balanceCell = row.getCell(7)
-        balanceCell.value = Number(entry.balance) // Column G for credits balance
-        balanceCell.numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
-        lastBalance = entry.balance
+
         row.commit()
         currentRow++
       }
@@ -198,15 +223,18 @@ export class CustomerService implements CustomerEndpoints {
       totalsRow.getCell(2).value = 'Totales'
       const totalPurchasesCell = totalsRow.getCell(5)
       totalPurchasesCell.value = Number(totalPurchases)
-      totalPurchasesCell.numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
+      totalPurchasesCell.numFmt =
+        '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
 
       const totalPaymentsCell = totalsRow.getCell(6)
       totalPaymentsCell.value = Number(totalPayments)
-      totalPaymentsCell.numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
+      totalPaymentsCell.numFmt =
+        '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
 
       const lastBalanceCell = totalsRow.getCell(7)
       lastBalanceCell.value = Number(lastBalance)
-      lastBalanceCell.numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
+      lastBalanceCell.numFmt =
+        '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
       // Style the totals row
       totalsRow.font = { bold: true }
       totalsRow.commit()

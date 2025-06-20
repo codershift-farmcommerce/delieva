@@ -220,7 +220,8 @@ export async function getMovementsReport(
       CONCAT('NOTA ', po.id) as description,
       po.total as amount,
       c.name as customer_name,
-      cc.credits_total - cc.payments_total as balance
+      null as previous_balance,
+      null as new_balance
     FROM purchase_order po
     INNER JOIN customer c ON c.id = po.customer_id
     LEFT JOIN customer_credit cc ON cc.customer_id = c.id
@@ -241,7 +242,8 @@ export async function getMovementsReport(
       ccp.amount as amount,
       c.name as customer_name,
       tba.name as bank_account_name,
-      cc.credits_total - cc.payments_total as balance
+      ccp.previous_balance as previous_balance,
+      ccp.new_balance as new_balance
     FROM customer_credit_payment ccp
     INNER JOIN customer_credit cc ON cc.id = ccp.customer_credit_id
     INNER JOIN customer c ON c.id = cc.customer_id
@@ -266,7 +268,8 @@ export async function getMovementsReport(
     description: m.description,
     amount: m.amount,
     bank_account_name: m.bank_account_name,
-    balance: m.balance || 0,
+    previous_balance: m.previous_balance || 0,
+    new_balance: m.new_balance || 0,
   }))
 
   // Group entries by customer

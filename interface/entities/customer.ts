@@ -21,8 +21,9 @@ export type CustomerMovementEntry = {
   movement_type: 'PURCHASE' | 'PAYMENT'
   description: string
   amount: number
-  balance: number
   bank_account_name?: string
+  previous_balance: number
+  new_balance: number
 }
 
 export const GeneralPublicCustomer: Customer = {
