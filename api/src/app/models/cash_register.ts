@@ -1028,6 +1028,7 @@ export async function enterOtherIncome(
           amount,
           transfer_bank_account_id: transfer_bank_account_id,
           cash_register_reconciliation_id: cashRegisterReconciliation.id,
+          form_of_payment,
         })
         .returning('id')
       otherIncomeId = response[0].id
