@@ -209,7 +209,14 @@ export async function getMovementsReport(
   ctx: Ctx,
   req: CustomerGetMovementsReportRQ,
 ): Promise<{ entries: { [p: string]: CustomerMovementEntry[] } }> {
-  const { start_date, end_date, customer_id } = req
+  // Convert dates from DD-MM-YYYY to YYYY-MM-DD
+  const formatDate = (dateStr: string) => {
+    const [day, month, year] = dateStr.split('-')
+    return `${year}-${month}-${day}`
+  }
+  const start_date = formatDate(req.start_date)
+  const end_date = formatDate(req.end_date)
+  const { customer_id } = req
 
   // Get purchases
   const purchases = await ctx.knex.raw(

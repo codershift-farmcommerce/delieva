@@ -226,12 +226,12 @@ export class CustomerService implements CustomerEndpoints {
       totalPurchasesCell.numFmt =
         '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
 
-      const totalPaymentsCell = totalsRow.getCell(6)
+      const totalPaymentsCell = totalsRow.getCell(7)
       totalPaymentsCell.value = Number(totalPayments)
       totalPaymentsCell.numFmt =
         '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
 
-      const lastBalanceCell = totalsRow.getCell(7)
+      const lastBalanceCell = totalsRow.getCell(8)
       lastBalanceCell.value = Number(lastBalance)
       lastBalanceCell.numFmt =
         '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
