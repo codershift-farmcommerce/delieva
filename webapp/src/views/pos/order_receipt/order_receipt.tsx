@@ -139,7 +139,7 @@ const OrderReceipt = (props: OrderReceiptProps) => {
                   orderReceipt?.detail
                     .reduce((acc, val) => {
                       if (val.unit_type === 'KILOGRAM') {
-                        acc += Number(val.quantity) * (val.weight || 0)
+                        acc += Number(val.weight) || 0
                       }
                       return acc
                     }, 0)

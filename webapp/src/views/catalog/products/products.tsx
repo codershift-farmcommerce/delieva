@@ -288,10 +288,10 @@ const Products = () => {
               value: formatMonetary(product.retail_unit_price),
             },
             {
-              value: FinishedProductUnitTranslation[finishedProduct.unit_type],
+              value: finishedProduct.unit_quantity,
             },
             {
-              value: finishedProduct.unit_quantity,
+              value: FinishedProductUnitTranslation[finishedProduct.unit_type],
             },
             {
               value: product.finished_products
@@ -585,8 +585,8 @@ const Products = () => {
           'Nombre',
           'Precio Mayoreo',
           'Precio Menudeo',
+          'Cantidad por Unidad',
           'Tipo de Unidad',
-          'KG por Unidad',
           'Producto Terminado',
           'Estado',
         ]}
