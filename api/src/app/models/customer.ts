@@ -226,7 +226,7 @@ export async function getMovementsReport(
     FROM purchase_order po
     INNER JOIN customer c ON c.id = po.customer_id
     LEFT JOIN customer_credit cc ON cc.customer_id = c.id
-    WHERE po.created_at BETWEEN ? AND ?
+    WHERE (po.created_at AT TIME ZONE 'America/Chihuahua')::date BETWEEN ? AND ?
     ${customer_id ? 'AND c.id = ?' : ''}
     ORDER BY po.created_at
     `,
