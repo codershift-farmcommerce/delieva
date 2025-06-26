@@ -24,8 +24,8 @@ const CustomerMovementsReport: React.FC<CustomerMovementsReportProps> = () => {
 
     try {
       await downloadCustomerMovementsReport({
-        start_date: dateRange[0].format('DD-MM-YYYY'),
-        end_date: dateRange[1].format('DD-MM-YYYY'),
+        start_date: dateRange[0].format('YYYY-MM-DD'),
+        end_date: dateRange[1].format('YYYY-MM-DD'),
         customer_id: selectedCustomerId
       })
     } catch (error: any) {

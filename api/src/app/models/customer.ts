@@ -209,13 +209,7 @@ export async function getMovementsReport(
   ctx: Ctx,
   req: CustomerGetMovementsReportRQ,
 ): Promise<{ entries: { [p: string]: CustomerMovementEntry[] } }> {
-  // Convert dates from DD-MM-YYYY to YYYY-MM-DD
-  const formatDate = (dateStr: string) => {
-    const [day, month, year] = dateStr.split('-')
-    return `${year}-${month}-${day}`
-  }
-  const start_date = formatDate(req.start_date)
-  const end_date = formatDate(req.end_date)
+  const { start_date, end_date } = req
   const { customer_id } = req
 
   // Get purchases
@@ -268,7 +262,7 @@ export async function getMovementsReport(
   )
 
   // Map movements to entries with balance from customer_credit
-  const entries = movements.map((m) => ({
+  const entries = movements.map(m => ({
     date: m.date,
     customer_name: m.customer_name,
     movement_type: m.movement_type,
@@ -280,7 +274,9 @@ export async function getMovementsReport(
   }))
 
   // Group entries by customer
-  const groupedByCustomer = entries.reduce<{ [key: string]: CustomerMovementEntry[] }>((acc, entry) => {
+  const groupedByCustomer = entries.reduce<{
+    [key: string]: CustomerMovementEntry[]
+  }>((acc, entry) => {
     if (!acc[entry.customer_name]) {
       acc[entry.customer_name] = []
     }
