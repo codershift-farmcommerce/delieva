@@ -77,6 +77,7 @@ export class FinishedProductService implements FinishedProductEndpoints {
           row.getCell(6).value =
             Number(entry.total_sales) / Number(entry.quantity)
           row.getCell(7).value = entry.cash_register_name
+          row.getCell(8).value = entry.customer_name || '-'
 
           row.getCell(4).numFmt = '0.00'
           row.getCell(5).numFmt = '0.00'
