@@ -104,6 +104,9 @@ const FinishedProductSalesReport = () => {
             {
               value: entry.cash_register_name,
             },
+            {
+              value: entry.customer_name || '-',
+            },
           ],
         }
       })
@@ -146,10 +149,10 @@ const FinishedProductSalesReport = () => {
             </button>
             <button
               className={clsx({
-                [viewStyles.secondary_button]: report.length > 0,
-                [viewStyles.disabled_button]: report.length === 0,
+                [viewStyles.secondary_button]: report?.length > 0,
+                [viewStyles.disabled_button]: report?.length === 0,
               })}
-              disabled={report.length === 0}
+              disabled={report?.length === 0}
               onClick={getReportAsExcelSheet}
             >
               Exportar a excel
@@ -169,6 +172,7 @@ const FinishedProductSalesReport = () => {
             'Total Efectivo',
             'Costo x Unidad',
             'Caja',
+            'Cliente',
           ]}
           rows={reportMasterRows}
           onSelectedRow={handleSelectRow}

@@ -27,4 +27,5 @@ export type FinishedProductSalesReportEntry = {
   quantity: number
   total_sales: number
   cash_register_name: number
+  customer_name: string
 }

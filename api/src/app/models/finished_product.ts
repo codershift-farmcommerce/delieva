@@ -28,6 +28,7 @@ type FinishedProductSalesReportSQLRow = {
   quantity: string
   total_sales: string
   cash_register_name: string
+  customer_name: string
 }
 
 export async function add(ctx: Ctx, req: FinishedProductAddRQ): Promise<AddRS> {
@@ -136,16 +137,18 @@ export async function getSalesReport(
             finished_product.unit_type AS finished_product_unit_type,
             SUM(purchase_order_detail.quantity * product_finished_product.unit_quantity) AS quantity,
             SUM(purchase_order_detail.quantity * purchase_order_detail.unit_price) AS total_sales,
-            cash_register.name AS cash_register_name
+            cash_register.name AS cash_register_name,
+            customer.name AS customer_name
         FROM purchase_order_detail
                  INNER JOIN product ON purchase_order_detail.product_code = product.code
                  INNER JOIN purchase_order ON purchase_order_detail.purchase_order_id = purchase_order.id
                  INNER JOIN product_finished_product ON product.code = product_finished_product.product_code
                  INNER JOIN finished_product ON finished_product.code = product_finished_product.finished_product_code
                  INNER JOIN cash_register ON purchase_order.cash_register_id = cash_register.id
+                 LEFT JOIN customer ON purchase_order.customer_id = customer.id
         WHERE (purchase_order.created_at AT TIME ZONE 'America/Chihuahua')::date BETWEEN :start_date AND :end_date
         AND purchase_order.status != 'RETURNED'
-        GROUP BY (purchase_order.created_at AT TIME ZONE 'America/Chihuahua')::date, finished_product.code, finished_product.name, finished_product.unit_type, cash_register.name
+        GROUP BY (purchase_order.created_at AT TIME ZONE 'America/Chihuahua')::date, finished_product.code, finished_product.name, finished_product.unit_type, cash_register.name, customer.name
         ORDER BY (purchase_order.created_at AT TIME ZONE 'America/Chihuahua')::date, finished_product.code;
     `,
     {
@@ -162,6 +165,7 @@ export async function getSalesReport(
       quantity: r.quantity,
       total_sales: r.total_sales,
       cash_register_name: r.cash_register_name,
+      customer_name: r.customer_name,
     }),
   )
 
