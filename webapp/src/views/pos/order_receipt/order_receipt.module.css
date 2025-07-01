@@ -104,6 +104,10 @@
   width: 100%;
 }
 
+.small_subtotal {
+  font-size: 0.9em;
+}
+
 .subtotals_footer_container {
     margin-top: 1em;
 }
