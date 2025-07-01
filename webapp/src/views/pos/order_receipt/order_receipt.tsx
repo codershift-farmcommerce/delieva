@@ -78,33 +78,92 @@ const OrderReceipt = (props: OrderReceiptProps) => {
         <div className={styles.product_list_header_item_import}>Importe</div>
       </div>
       <div>-----------------------------------</div>
-      {orderReceipt?.detail
-        ?.slice()
-        .sort((a, b) => {
-          // Sort by has_ieps property - items with IEPS first
-          if (a.has_ieps && !b.has_ieps) return -1;
-          if (!a.has_ieps && b.has_ieps) return 1;
-          return 0;
-        })
-        .map((detail, index) => (
-          <div key={index} className={styles.product_list_header_container}>
-            <div className={styles.product_list_item_quantity}>{detail.quantity}</div>
-            <div className={styles.product_list_item_description}>{detail.product_name}</div>
-            <div className={styles.product_list_item_price}>
-              {formatMonetary(Number(detail.unit_price))}
-            </div>
-            <div className={styles.product_list_item_import}>
-              {formatMonetary(Number(detail.detail_total))}
+      {/* Products without IEPS */}
+      {orderReceipt?.detail?.some(d => !d.has_ieps) && (
+        <>
+          <div className={styles.section_header}>Productos sin IEPS</div>
+          {orderReceipt?.detail
+            ?.filter(d => !d.has_ieps)
+            .map((detail, index) => (
+              <div key={index} className={styles.product_list_header_container}>
+                <div className={styles.product_list_item_quantity}>{detail.quantity}</div>
+                <div className={styles.product_list_item_description}>{detail.product_name}</div>
+                <div className={styles.product_list_item_price}>
+                  {formatMonetary(Number(detail.unit_price))}
+                </div>
+                <div className={styles.product_list_item_import}>
+                  {formatMonetary(Number(detail.detail_total))}
+                </div>
+              </div>
+            ))}
+          <div className={styles.subtotals_item_container}>
+            <div>Subtotal sin IEPS:</div>
+            <div>
+              {formatMonetary(
+                orderReceipt?.detail
+                  ?.filter(d => !d.has_ieps)
+                  .reduce((acc, val) => acc + Number(val.detail_total), 0) ?? 0
+              )}
             </div>
           </div>
-        ))}
+          <div>-----------------------------------</div>
+        </>
+      )}
+
+      {/* Products with IEPS */}
+      {orderReceipt?.detail?.some(d => d.has_ieps) && (
+        <>
+          <div className={styles.section_header}>Productos con IEPS</div>
+          {orderReceipt?.detail
+            ?.filter(d => d.has_ieps)
+            .map((detail, index) => (
+              <div key={index} className={styles.product_list_header_container}>
+                <div className={styles.product_list_item_quantity}>{detail.quantity}</div>
+                <div className={styles.product_list_item_description}>{detail.product_name}</div>
+                <div className={styles.product_list_item_price}>
+                  {formatMonetary(Number(detail.unit_price))}
+                </div>
+                <div className={styles.product_list_item_import}>
+                  {formatMonetary(Number(detail.detail_total))}
+                </div>
+              </div>
+            ))}
+          <div className={styles.subtotals_item_container}>
+            <div>Subtotal con IEPS:</div>
+            <div>
+              {formatMonetary(
+                orderReceipt?.detail
+                  ?.filter(d => d.has_ieps)
+                  .reduce((acc, val) => acc + Number(val.detail_total), 0) ?? 0
+              )}
+            </div>
+          </div>
+          <div>-----------------------------------</div>
+        </>
+      )}
       <div className={styles.subtotals_container}>
         <div className={styles.subtotals_item_container}>
-          <div>Subtotal:</div>
-          <div>{formatMonetary(Number(orderReceipt?.subtotal))}</div>
+          <div>Subtotal sin IEPS:</div>
+          <div>
+            {formatMonetary(
+              orderReceipt?.detail
+                ?.filter(d => !d.has_ieps)
+                .reduce((acc, val) => acc + Number(val.detail_total), 0) ?? 0
+            )}
+          </div>
         </div>
         <div className={styles.subtotals_item_container}>
-          <div>IEPS:</div>
+          <div>Subtotal con IEPS:</div>
+          <div>
+            {formatMonetary(
+              orderReceipt?.detail
+                ?.filter(d => d.has_ieps)
+                .reduce((acc, val) => acc + Number(val.detail_total), 0) ?? 0
+            )}
+          </div>
+        </div>
+        <div className={styles.subtotals_item_container}>
+          <div>IEPS (8%):</div>
           <div>{formatMonetary(Number(orderReceipt?.tax1))}</div>
         </div>
         <div className={styles.subtotals_item_container}>
