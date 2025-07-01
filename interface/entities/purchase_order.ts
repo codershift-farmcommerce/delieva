@@ -32,6 +32,7 @@ export type PurchaseOrderReceiptDetail = {
   weight: number
   finished_products: ProductFinishedProduct[]
   status: PurchaseOrderDetailStatus
+  has_ieps: boolean
 }
 
 export enum PurchaseOrderDetailStatus {

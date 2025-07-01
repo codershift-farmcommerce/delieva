@@ -78,18 +78,26 @@ const OrderReceipt = (props: OrderReceiptProps) => {
         <div className={styles.product_list_header_item_import}>Importe</div>
       </div>
       <div>-----------------------------------</div>
-      {orderReceipt?.detail?.map((detail, index) => (
-        <div key={index} className={styles.product_list_header_container}>
-          <div className={styles.product_list_item_quantity}>{detail.quantity}</div>
-          <div className={styles.product_list_item_description}>{detail.product_name}</div>
-          <div className={styles.product_list_item_price}>
-            {formatMonetary(Number(detail.unit_price))}
+      {orderReceipt?.detail
+        ?.slice()
+        .sort((a, b) => {
+          // Sort by has_ieps property - items with IEPS first
+          if (a.has_ieps && !b.has_ieps) return -1;
+          if (!a.has_ieps && b.has_ieps) return 1;
+          return 0;
+        })
+        .map((detail, index) => (
+          <div key={index} className={styles.product_list_header_container}>
+            <div className={styles.product_list_item_quantity}>{detail.quantity}</div>
+            <div className={styles.product_list_item_description}>{detail.product_name}</div>
+            <div className={styles.product_list_item_price}>
+              {formatMonetary(Number(detail.unit_price))}
+            </div>
+            <div className={styles.product_list_item_import}>
+              {formatMonetary(Number(detail.detail_total))}
+            </div>
           </div>
-          <div className={styles.product_list_item_import}>
-            {formatMonetary(Number(detail.detail_total))}
-          </div>
-        </div>
-      ))}
+        ))}
       <div className={styles.subtotals_container}>
         <div className={styles.subtotals_item_container}>
           <div>Subtotal:</div>

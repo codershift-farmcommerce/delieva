@@ -263,6 +263,7 @@ export async function getReceipt(
       purchase_order_detail.discount,
       purchase_order_detail.detail_total,
       purchase_order_detail.status AS status,
+      purchase_order_detail.has_ieps AS has_ieps,
       finished_product.unit_type AS unit_type,
       (
         SELECT JSON_AGG(JSON_BUILD_OBJECT(
