@@ -177,6 +177,7 @@ export async function process(
           unit_price: unitPrice,
           discount: 0,
           detail_total: detailTotal,
+          has_ieps: cartItem.should_add_ieps,
         })
       }
 
