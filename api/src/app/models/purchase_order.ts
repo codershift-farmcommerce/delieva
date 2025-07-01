@@ -59,6 +59,7 @@ type PurchaseOrderReportSQLRow = {
   cash_register_name: string
   customer: PurchaseOrderCustomerSQLRow
   discount: number
+  tax1: number
   total: number
   form_of_payments: FormOfPaymentWithAmount[]
   purchase_order_detail: PurchaseOrderDetailSQLRow
@@ -393,6 +394,7 @@ export async function getReport(
         ) AS customer,
     purchase_order.discount AS
     discount,
+    purchase_order.tax1 AS tax1,
     purchase_order.total AS total,
     purchase_order.status AS status,
     (SELECT JSON_AGG(JSON_BUILD_OBJECT(
@@ -435,6 +437,7 @@ export async function getReport(
       cash_register_name: row.cash_register_name,
       customer: row.customer,
       discount: row.discount,
+      tax1: row.tax1,
       total: row.total,
       form_of_payments: row.form_of_payments,
       detail: row.purchase_order_detail,

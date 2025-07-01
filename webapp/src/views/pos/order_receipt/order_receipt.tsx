@@ -105,7 +105,7 @@ const OrderReceipt = (props: OrderReceiptProps) => {
               {formatMonetary(
                 orderReceipt?.detail
                   ?.filter(d => !d.has_ieps)
-                  .reduce((acc, val) => acc + Number(val.detail_total), 0) ?? 0
+                  .reduce((acc, val) => acc + Number(val.detail_total), 0) ?? 0,
               )}
             </div>
           </div>
@@ -130,55 +130,44 @@ const OrderReceipt = (props: OrderReceiptProps) => {
                 </div>
               </div>
             ))}
-          <div className={`${styles.subtotals_item_container} ${styles.small_subtotal}`}>
-            <div>SUBTOTAL:</div>
-            <div>
-              {formatMonetary(
-                orderReceipt?.detail
-                  ?.filter(d => d.has_ieps)
-                  .reduce((acc, val) => acc + Number(val.detail_total), 0) ?? 0
-              )}
-            </div>
-          </div>
-          <div className={`${styles.subtotals_item_container} ${styles.small_subtotal}`}>
-            <div>IEPS:</div>
-            <div>
-              {formatMonetary(
-                (orderReceipt?.detail
-                  ?.filter(d => d.has_ieps)
-                  .reduce((acc, val) => acc + Number(val.detail_total), 0) ?? 0) * 0.08
-              )}
-            </div>
-          </div>
-          <div className={`${styles.subtotals_item_container} ${styles.small_subtotal}`}>
-            <div>TOTAL:</div>
-            <div>
-              {formatMonetary(
-                (orderReceipt?.detail
-                  ?.filter(d => d.has_ieps)
-                  .reduce((acc, val) => acc + Number(val.detail_total), 0) ?? 0) * 1.08
-              )}
-            </div>
-          </div>
-          <div>-----------------------------------</div>
-          <div className={`${styles.subtotals_item_container} ${styles.small_subtotal}`}>
-            <div>TOTAL DE LA NOTA:</div>
-            <div>
-              {formatMonetary(
-                // Total for products without IEPS
-                (orderReceipt?.detail
-                  ?.filter(d => !d.has_ieps)
-                  .reduce((acc, val) => acc + Number(val.detail_total), 0) ?? 0) +
-                // Total for products with IEPS including IEPS tax
-                (orderReceipt?.detail
-                  ?.filter(d => d.has_ieps)
-                  .reduce((acc, val) => acc + Number(val.detail_total), 0) ?? 0) * 1.08
-              )}
-            </div>
-          </div>
           <div>-----------------------------------</div>
         </>
       )}
+      <div className={`${styles.subtotals_item_container} ${styles.small_subtotal}`}>
+        <div>SUBTOTAL:</div>
+        <div>
+          {formatMonetary(
+            orderReceipt?.detail
+              ?.filter(d => d.has_ieps)
+              .reduce((acc, val) => acc + Number(val.detail_total), 0) ?? 0,
+          )}
+        </div>
+      </div>
+      <div className={`${styles.subtotals_item_container} ${styles.small_subtotal}`}>
+        <div>IEPS:</div>
+        <div>{formatMonetary(Number(orderReceipt?.tax1))}</div>
+      </div>
+      <div className={`${styles.subtotals_item_container} ${styles.small_subtotal}`}>
+        <div>TOTAL:</div>
+        <div>{formatMonetary(orderReceipt?.total ?? 0)}</div>
+      </div>
+      <div className={`${styles.subtotals_item_container} ${styles.small_subtotal}`}>
+        <div>TOTAL DE LA NOTA:</div>
+        <div>
+          {formatMonetary(
+            // Total for products without IEPS
+            (orderReceipt?.detail
+              ?.filter(d => !d.has_ieps)
+              .reduce((acc, val) => acc + Number(val.detail_total), 0) ?? 0) +
+              // Total for products with IEPS including IEPS tax
+              (orderReceipt?.detail
+                ?.filter(d => d.has_ieps)
+                .reduce((acc, val) => acc + Number(val.detail_total), 0) ?? 0) +
+              Number(orderReceipt?.tax1 ?? 0),
+          )}
+        </div>
+      </div>
+      <div>-----------------------------------</div>
       <div className={styles.subtotals_container}>
         {orderReceipt?.form_of_payments?.length === 1 && (
           <div className={styles.subtotals_item_container}>

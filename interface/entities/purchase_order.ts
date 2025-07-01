@@ -61,6 +61,7 @@ export type PurchaseOrderReportEntry = {
   form_of_payments: FormOfPaymentWithAmount[]
   detail: PurchaseOrderReportEntryDetail[]
   status: PurchaseOrderStatus
+  tax1: number
 }
 
 export type PurchaseOrderReportEntryDetail = {
