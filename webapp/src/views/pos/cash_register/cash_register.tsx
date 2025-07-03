@@ -18,10 +18,7 @@ import { SearchResultItem } from 'interface/entities/common'
 import { formatMonetary, formatQuantity } from 'webapp/src/components/functions/formatting'
 import ProductSearchBox from 'webapp/src/components/product_search_box/product_search_box'
 import OrderReceipt from '../order_receipt/order_receipt'
-import {
-  FormOfPayment,
-  PurchaseOrderReceipt,
-} from 'interface/entities/purchase_order'
+import { FormOfPayment, PurchaseOrderReceipt } from 'interface/entities/purchase_order'
 import { FormOfPaymentTranslation } from 'webapp/src/components/functions/translations'
 import { Discount } from 'interface/entities/discount'
 import { Cart, CartItemDetail, CartItems } from 'interface/entities/cart'
@@ -29,8 +26,8 @@ import { CashRegisterClient } from 'webapp/src/api/clients/cash_register'
 import CashRegisterOpening from './subviews/cash_register_opening/cash_register_opening'
 import { TransferBankAccountClient } from 'webapp/src/api/clients/transfer_bank_account'
 import { TransferBankAccount } from 'interface/entities/transfer_bank_account'
-import { getCashRegisterName } from '../../../components/functions/cash_register'
-import { Notes } from '../../../components/notes'
+import { getCashRegisterName } from 'webapp/src/components/functions/cash_register'
+import { Notes } from 'webapp/src/components/notes/notes'
 
 const cashRegisterClient = new CashRegisterClient()
 const productClient = new ProductClient()
@@ -52,7 +49,7 @@ const CashRegister = (): JSX.Element => {
   const [notes, setNotes] = useState('')
   const [cartItems, setCartItems] = useState<CartItems>({})
   const [productUnitPrices, setProductUnitPrices] = useState<ProductUnitPrices>({})
-  const [productsWithIeps, setProductsWithIeps] = useState<{[key: string]: boolean}>({})
+  const [productsWithIeps, setProductsWithIeps] = useState<{ [key: string]: boolean }>({})
   const [total, setTotal] = useState(0)
   const [tax1, setTax1] = useState(0)
   const [subtotal, setSubtotal] = useState(0)
@@ -132,7 +129,7 @@ const CashRegister = (): JSX.Element => {
         newCart[productCode] = {
           ...prev[productCode],
           should_add_ieps: resultItem.data.should_add_ieps,
-          unit_type: prev[productCode].unit_type
+          unit_type: prev[productCode].unit_type,
         } as CartItemDetail
       })
       return newCart
@@ -239,7 +236,8 @@ const CashRegister = (): JSX.Element => {
           wholesale_unit_price: productToAdd.wholesale_unit_price,
           retail_unit_price: productToAdd?.retail_unit_price,
           should_add_ieps: selectedCustomer?.should_add_ieps || false,
-          unit_type: productToAdd.finished_products?.[0]?.unit_type || FinishedProductUnitType.PIECE,
+          unit_type:
+            productToAdd.finished_products?.[0]?.unit_type || FinishedProductUnitType.PIECE,
         } as CartItemDetail,
       }
     })
@@ -247,7 +245,7 @@ const CashRegister = (): JSX.Element => {
     // Initialize IEPS for new product with customer's default
     setProductsWithIeps(prev => ({
       ...prev,
-      [productToAdd.code]: selectedCustomer?.should_add_ieps || false
+      [productToAdd.code]: selectedCustomer?.should_add_ieps || false,
     }))
     setProductCodeInput('')
     if (cashRegister?.quantity_input_type === CashRegisterQuantityInputType.PRODUCT_SCAN) {
@@ -347,19 +345,19 @@ const CashRegister = (): JSX.Element => {
               <input
                 type="checkbox"
                 checked={productsWithIeps[productCode] || false}
-                onClick={(e) => e.stopPropagation()}
-                onChange={(e) => {
+                onClick={e => e.stopPropagation()}
+                onChange={e => {
                   setProductsWithIeps(prev => ({
                     ...prev,
-                    [productCode]: e.target.checked
+                    [productCode]: e.target.checked,
                   }))
                   // Update the cart item
                   setCartItems(prev => ({
                     ...prev,
                     [productCode]: {
                       ...prev[productCode],
-                      should_add_ieps: e.target.checked
-                    }
+                      should_add_ieps: e.target.checked,
+                    },
                   }))
                 }}
               />
@@ -608,7 +606,7 @@ const CashRegister = (): JSX.Element => {
                     onChange={e => onProductInputChanged(e.target.value.toUpperCase())}
                     value={productCodeInput}
                     ref={productInputRef}
-                    placeholder={"Código del producto"}
+                    placeholder={'Código del producto'}
                   />
                   <div>
                     <ProductSearchBox
@@ -620,13 +618,6 @@ const CashRegister = (): JSX.Element => {
                       clearAfterSelection={true}
                     />
                   </div>
-
-                </div>
-                <div className={styles.cashier_item}>
-                  <Notes
-                    value={notes}
-                    onChange={setNotes}
-                  />
                 </div>
                 <div className={styles.cashier_item}>
                   <label className={styles.input_label}>Agregar IEPS</label>
@@ -680,70 +671,77 @@ const CashRegister = (): JSX.Element => {
               </button>
             </div>
           </div>
-          <div className={styles.totals_container}>
+          <div>
             <div>
-              <label>Subtotal:</label> <span>{formatMonetary(subtotal)}</span>
+              <Notes value={notes} onChange={setNotes} />
             </div>
-            <div>
-              <label>IEPS:</label> <span>{formatMonetary(tax1)}</span>
-            </div>
-            <div className={styles.totals_container_item}>
-              <label>Total:</label> <span className={styles.total}>{formatMonetary(total)}</span>
-            </div>
-
-            {Array.from({ length: selectedFormOfPayments.length }).map((_, index) => {
-              return (
-                <div className={styles.form_of_payment_container}>
-                  <div
-                    className={styles.remove_form_of_payment_link}
-                    title={'Eliminar forma de pago'}
-                    onClick={handleDecreaseFormOfPaymentCount}
-                  >
-                    {index > 0 && index === selectedFormOfPayments.length - 1 ? 'x' : ''}
-                  </div>
-                  <div className={styles.form_of_payment_item}>
-                    <select
-                      className={viewStyles.select}
-                      onChange={event => handleFormOfPaymentChange(index, event.target.value)}
-                    >
-                      {getFormOfPaymentOptions(selectedFormOfPayments[index])}
-                    </select>
-                  </div>
-                  <div className={styles.form_of_payment_item}>
-                    <input
-                      hidden={
-                        selectedFormOfPayments.length === 1 &&
-                        selectedFormOfPayments[0] !== FormOfPayment.CASH
-                      }
-                      className={styles.payment_amount_input}
-                      value={formOfPaymentAmounts[index]}
-                      placeholder={'$ Introduzca monto'}
-                      onChange={event => handleFormOfPaymentAmountChange(index, event.target.value)}
-                      ref={formOfPaymentAmountRef}
-                    />
-                  </div>
-                </div>
-              )
-            })}
-            <div
-              className={styles.add_form_of_payment_link}
-              onClick={handleIncreaseFormOfPaymentCount}
-            >
-              + Agregar forma de pago
-            </div>
-            <div className={styles.purchase_order_button_container}>
-              <button
-                onClick={handleProcessOrder}
-                className={clsx({
-                  [viewStyles.primary_button]: enableProcessButton,
-                  [viewStyles.disabled_button]: !enableProcessButton,
-                })}
-                disabled={!enableProcessButton}
-              >
-                {processingOrder ? 'Procesando...' : 'Procesar Orden'}
-              </button>
+            <div className={styles.totals_container}>
+              <div>
+                <label>Subtotal:</label> <span>{formatMonetary(subtotal)}</span>
+              </div>
+              <div>
+                <label>IEPS:</label> <span>{formatMonetary(tax1)}</span>
+              </div>
               <div className={styles.totals_container_item}>
-                <label>Cambio:</label> <span>{formatMonetary(orderReceipt?.change)}</span>
+                <label>Total:</label> <span className={styles.total}>{formatMonetary(total)}</span>
+              </div>
+
+              {Array.from({ length: selectedFormOfPayments.length }).map((_, index) => {
+                return (
+                  <div className={styles.form_of_payment_container}>
+                    <div
+                      className={styles.remove_form_of_payment_link}
+                      title={'Eliminar forma de pago'}
+                      onClick={handleDecreaseFormOfPaymentCount}
+                    >
+                      {index > 0 && index === selectedFormOfPayments.length - 1 ? 'x' : ''}
+                    </div>
+                    <div className={styles.form_of_payment_item}>
+                      <select
+                        className={viewStyles.select}
+                        onChange={event => handleFormOfPaymentChange(index, event.target.value)}
+                      >
+                        {getFormOfPaymentOptions(selectedFormOfPayments[index])}
+                      </select>
+                    </div>
+                    <div className={styles.form_of_payment_item}>
+                      <input
+                        hidden={
+                          selectedFormOfPayments.length === 1 &&
+                          selectedFormOfPayments[0] !== FormOfPayment.CASH
+                        }
+                        className={styles.payment_amount_input}
+                        value={formOfPaymentAmounts[index]}
+                        placeholder={'$ Introduzca monto'}
+                        onChange={event =>
+                          handleFormOfPaymentAmountChange(index, event.target.value)
+                        }
+                        ref={formOfPaymentAmountRef}
+                      />
+                    </div>
+                  </div>
+                )
+              })}
+              <div
+                className={styles.add_form_of_payment_link}
+                onClick={handleIncreaseFormOfPaymentCount}
+              >
+                + Agregar forma de pago
+              </div>
+              <div className={styles.purchase_order_button_container}>
+                <button
+                  onClick={handleProcessOrder}
+                  className={clsx({
+                    [viewStyles.primary_button]: enableProcessButton,
+                    [viewStyles.disabled_button]: !enableProcessButton,
+                  })}
+                  disabled={!enableProcessButton}
+                >
+                  {processingOrder ? 'Procesando...' : 'Procesar Orden'}
+                </button>
+                <div className={styles.totals_container_item}>
+                  <label>Cambio:</label> <span>{formatMonetary(orderReceipt?.change)}</span>
+                </div>
               </div>
             </div>
           </div>
