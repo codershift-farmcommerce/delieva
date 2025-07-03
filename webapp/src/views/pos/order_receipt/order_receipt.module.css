@@ -104,6 +104,15 @@
   width: 100%;
 }
 
+.note_container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1em;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
 .small_subtotal {
   font-size: 0.9em;
 }

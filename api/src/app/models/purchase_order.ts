@@ -16,7 +16,9 @@ import {
 } from 'interface/responses/purchase_order'
 import { BarcodeType, generateBarcode } from 'api/src/util/barcode'
 import * as customerCreditModel from './customer_credit'
+import * as userModel from 'api/src/app/models/user'
 import * as customerModel from './customer'
+import * as noteModel from 'api/src/app/models/note'
 import { getUnitPricesForCart } from './product'
 import * as transfer_bank_account_model from './transfer_bank_account'
 import {
@@ -290,6 +292,8 @@ export async function getReceipt(
     { order_id },
   )
 
+  const purchaseOrderNote = await noteModel.getNoteForPurchaseOrder(ctx, order_id)
+
   const formOfPaymentsResult = await ctx.knex.raw(
     `
      SELECT
@@ -346,6 +350,7 @@ export async function getReceipt(
     detail: sortedDetail,
     change,
     fop_amount,
+    note: purchaseOrderNote,
   }
 
   return {

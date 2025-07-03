@@ -18,6 +18,7 @@ export type PurchaseOrderReceipt = {
   form_of_payments: FormOfPaymentWithAmount[]
   detail: PurchaseOrderReceiptDetail[]
   created_at: string
+  note: string
 }
 
 export type PurchaseOrderReceiptDetail = {

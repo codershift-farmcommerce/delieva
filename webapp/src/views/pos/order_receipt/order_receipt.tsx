@@ -156,7 +156,7 @@ const OrderReceipt = (props: OrderReceiptProps) => {
                 (orderReceipt?.detail
                   ?.filter(d => d.has_ieps)
                   .reduce((acc, val) => acc + Number(val.detail_total), 0) ?? 0) +
-                Number(orderReceipt?.tax1 ?? 0)
+                  Number(orderReceipt?.tax1 ?? 0),
               )}
             </div>
           </div>
@@ -225,6 +225,9 @@ const OrderReceipt = (props: OrderReceiptProps) => {
               </div>
             </div>
           )}
+          <div className={styles.note_container}>
+            {'>>'}&nbsp;{orderReceipt?.note}
+          </div>
         </div>
       </div>
       <div>Gracias por su compra! Regrese pronto...</div>
