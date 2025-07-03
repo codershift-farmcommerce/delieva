@@ -30,6 +30,7 @@ import CashRegisterOpening from './subviews/cash_register_opening/cash_register_
 import { TransferBankAccountClient } from 'webapp/src/api/clients/transfer_bank_account'
 import { TransferBankAccount } from 'interface/entities/transfer_bank_account'
 import { getCashRegisterName } from '../../../components/functions/cash_register'
+import { Notes } from '../../../components/notes'
 
 const cashRegisterClient = new CashRegisterClient()
 const productClient = new ProductClient()
@@ -40,7 +41,7 @@ type ProductDiscount = {
   [product_code: string]: Discount | null
 }
 
-const CashRegister = () => {
+const CashRegister = (): JSX.Element => {
   const [cashRegister, setCashRegister] = useState<CashRegisterType | null>(null)
   const [hasOpenReconciliation, setHasOpenReconciliation] = useState(false)
   const [cashRegisterLoaded, setCashRegisterLoaded] = useState(false)
@@ -48,6 +49,7 @@ const CashRegister = () => {
   const [productCodeInput, setProductCodeInput] = useState('')
   const [discountsByProduct, setDiscountsByProduct] = useState<ProductDiscount>()
   const [quantity, setQuantity] = useState('1')
+  const [notes, setNotes] = useState('')
   const [cartItems, setCartItems] = useState<CartItems>({})
   const [productUnitPrices, setProductUnitPrices] = useState<ProductUnitPrices>({})
   const [productsWithIeps, setProductsWithIeps] = useState<{[key: string]: boolean}>({})
@@ -618,6 +620,13 @@ const CashRegister = () => {
                       clearAfterSelection={true}
                     />
                   </div>
+
+                </div>
+                <div className={styles.cashier_item}>
+                  <Notes
+                    value={notes}
+                    onChange={setNotes}
+                  />
                 </div>
                 <div className={styles.cashier_item}>
                   <label className={styles.input_label}>Agregar IEPS</label>
