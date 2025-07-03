@@ -13,7 +13,8 @@ import { RawMaterialService } from 'api/src/app/services/raw_material'
 import { TransferBankAccountService } from 'api/src/app/services/transfer_bank_account'
 import { ClientConfigurationService } from 'api/src/app/services/client_configuration'
 import { FinishedProductService } from 'api/src/app/services/finished_product'
-import { Cause } from 'api/src/app/services/cause'
+import { CauseService } from 'api/src/app/services/cause'
+import { NoteService } from 'api/src/app/services/note'
 
 // Activate action decorators
 new AuthService()
@@ -29,7 +30,8 @@ new RawMaterialService()
 new TransferBankAccountService()
 new ClientConfigurationService()
 new FinishedProductService()
-new Cause()
+new CauseService()
+new NoteService()
 
 const httpServer = new HttpServer(getActions())
 

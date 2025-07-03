@@ -1,7 +1,7 @@
 import { Knex } from 'knex';
 
 export async function up(knex: Knex): Promise<void> {
-    await knex.schema.createTable('notes', (table) => {
+    await knex.schema.createTable('note', (table) => {
         table.bigIncrements('id').primary();
         table.string('entity_type', 255).notNullable();
         table.bigint('entity_id').notNullable();
@@ -15,10 +15,10 @@ export async function up(knex: Knex): Promise<void> {
 
     // Add check constraint for allowed characters
     return knex.raw(
-      "ALTER TABLE notes ADD CONSTRAINT value_alphanumeric_check CHECK (value ~ '^[a-zA-Z0-9ñÑ\s]+$')"
+      "ALTER TABLE note ADD CONSTRAINT value_alphanumeric_check CHECK (value ~ '^[a-zA-Z0-9ñÑ\\s]*$')"
     );
 }
 
 export async function down(knex: Knex): Promise<void> {
-    return knex.schema.dropTable('notes');
+    return knex.schema.dropTable('note');
 }

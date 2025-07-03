@@ -7,8 +7,12 @@ export interface Note {
   updated_at: string
 }
 
+export enum NoteEntityType {
+  PURCHASE_ORDER = 'purchase_order',
+}
+
 export interface AddNoteRequest {
-  entity_type: string
+  entity_type: NoteEntityType
   entity_id: number
   value: string
 }

@@ -12,8 +12,9 @@ import { action } from 'api/src/app/context/decorators/endpoint_actions'
 import { Application } from 'interface'
 import * as cause from '../models/cause'
 
-export class Cause implements CauseEndpoints {
+export class CauseService implements CauseEndpoints {
   private ctx: Ctx
+
   path(): 'cause' {
     return 'cause'
   }

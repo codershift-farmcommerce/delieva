@@ -28,11 +28,14 @@ import { TransferBankAccountClient } from 'webapp/src/api/clients/transfer_bank_
 import { TransferBankAccount } from 'interface/entities/transfer_bank_account'
 import { getCashRegisterName } from 'webapp/src/components/functions/cash_register'
 import { Notes } from 'webapp/src/components/notes/notes'
+import { NoteClient } from 'webapp/src/api/clients/note'
+import { NoteEntityType } from '../../../../../interface/entities/note'
 
 const cashRegisterClient = new CashRegisterClient()
 const productClient = new ProductClient()
 const purchaseOrderClient = new PurchaseOrderClient()
 const transferBankAccountClient = new TransferBankAccountClient()
+const noteClient = new NoteClient()
 
 type ProductDiscount = {
   [product_code: string]: Discount | null
@@ -443,6 +446,14 @@ const CashRegister = (): JSX.Element => {
         setTotal(0)
         setSelectedFormOfPayments([FormOfPayment.CASH])
         setFormOfPaymentAmounts([''])
+        if (notes.length) {
+          await noteClient.addNote({
+            entity_id: result.order_id,
+            entity_type: NoteEntityType.PURCHASE_ORDER,
+            value: notes,
+          })
+          setNotes('')
+        }
         await getOrderReceipt(result.order_id)
       } else {
         toast.dark('Ocurrió un error al procesar la orden')
