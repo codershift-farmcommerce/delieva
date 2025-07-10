@@ -221,13 +221,25 @@ export async function getMovementsReport(
       CONCAT('NOTA ', po.id) as description,
       po.total as amount,
       c.name as customer_name,
+      string_agg(
+        CASE 
+          WHEN pop.form_of_payment = 'CASH' THEN 'Efectivo'
+          WHEN pop.form_of_payment = 'CREDIT' THEN 'Crédito'
+          WHEN pop.form_of_payment = 'TRANSFER' THEN CONCAT('Transferencia (', tba.name, ')')
+          ELSE pop.form_of_payment
+        END,
+        ', '
+      ) as payment_method,
       null as previous_balance,
       null as new_balance
     FROM purchase_order po
     INNER JOIN customer c ON c.id = po.customer_id
     LEFT JOIN customer_credit cc ON cc.customer_id = c.id
+    LEFT JOIN purchase_order_payment pop ON pop.purchase_order_id = po.id
+    LEFT JOIN transfer_bank_account tba ON tba.id = pop.transfer_bank_account_id
     WHERE (po.created_at AT TIME ZONE 'America/Chihuahua')::date BETWEEN ? AND ?
     ${customer_id ? 'AND c.id = ?' : ''}
+    GROUP BY po.id, po.created_at, po.total, c.name
     ORDER BY po.created_at
     `,
     customer_id ? [start_date, end_date, customer_id] : [start_date, end_date],
@@ -242,6 +254,7 @@ export async function getMovementsReport(
       CONCAT('ABONO ', ccp.id) as description,
       ccp.amount as amount,
       c.name as customer_name,
+      '' as payment_method,
       tba.name as bank_account_name,
       ccp.previous_balance as previous_balance,
       ccp.new_balance as new_balance
@@ -268,6 +281,7 @@ export async function getMovementsReport(
     movement_type: m.movement_type,
     description: m.description,
     amount: m.amount,
+    payment_method: m.payment_method,
     bank_account_name: m.bank_account_name,
     previous_balance: m.previous_balance || 0,
     new_balance: m.new_balance || 0,

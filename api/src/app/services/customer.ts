@@ -126,7 +126,7 @@ export class CustomerService implements CustomerEndpoints {
       'Fecha',
       'Cliente/Concepto',
       'Descripción',
-      'Banco',
+      'Forma de Pago/Banco',
       'Total Compra',
       'Saldo Anterior',
       'Abono',
@@ -181,8 +181,9 @@ export class CustomerService implements CustomerEndpoints {
         const row = worksheet.getRow(currentRow)
         row.getCell(1).value = entry.date
         row.getCell(2).value = entry.description
-        row.getCell(4).value = entry.bank_account_name || '' // Bank account name
+
         if (entry.movement_type === 'PURCHASE') {
+          row.getCell(4).value = entry.payment_method
           const cellE = row.getCell(5)
           cellE.value = Number(entry.amount) // Column E for purchase total
           cellE.numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
@@ -194,6 +195,7 @@ export class CustomerService implements CustomerEndpoints {
           cellH.value = ''
           totalPurchases += Number(entry.amount)
         } else {
+          row.getCell(4).value = entry.bank_account_name || '' // Bank account name
           const cellE = row.getCell(5)
           cellE.value = ''
 
