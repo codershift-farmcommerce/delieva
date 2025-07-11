@@ -3,3 +3,5 @@ node_modules
 .yarn
 webapp/node_modules
 webapp/.next
+interface/node_modules
+*.log
