@@ -2,7 +2,9 @@ version: '3'
 
 services:
   webapp:
-    tmpfs: /tmp
+    tmpfs:
+      - /tmp
+      - /usr/local/share/.cache/yarn/v6
     command: >
       sh -c '
       yarn install &&
@@ -12,7 +14,7 @@ services:
   api:
     tmpfs:
       - /tmp
-      - /usr/local/share/.cache/yarn
+      - /usr/local/share/.cache/yarn/v6
       - /root/.npm/_logs
       - /root/.npm/_cacache
     ports:
