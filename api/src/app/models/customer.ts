@@ -254,7 +254,11 @@ export async function getMovementsReport(
       CONCAT('ABONO ', ccp.id) as description,
       ccp.amount as amount,
       c.name as customer_name,
-      '' as payment_method,
+      CASE 
+        WHEN ccp.form_of_payment = 'CASH' THEN 'Efectivo'
+        WHEN ccp.form_of_payment = 'CREDIT' THEN 'Crédito'
+        WHEN ccp.form_of_payment = 'TRANSFER' THEN CONCAT('Transferencia (', tba.name, ')')
+      END as payment_method,
       tba.name as bank_account_name,
       ccp.previous_balance as previous_balance,
       ccp.new_balance as new_balance
