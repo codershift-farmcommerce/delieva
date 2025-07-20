@@ -104,20 +104,6 @@ export class CustomerService implements CustomerEndpoints {
     worksheet.getCell('A5').alignment = { horizontal: 'center' }
     worksheet.mergeCells('A5:H5')
 
-    // Add headers
-    const headers = worksheet.getRow(7)
-    headers.values = [
-      'Fecha',
-      'Cliente/Concepto',
-      'Descripción',
-      'Forma de Pago/Banco',
-      'Total Compra',
-      'Saldo Anterior',
-      'Abono',
-      'Saldo',
-    ]
-    worksheet.getRow(7).font = { bold: true }
-
     // Set column widths
     worksheet.columns = [
       { width: 15 }, // Date
@@ -142,9 +128,9 @@ export class CustomerService implements CustomerEndpoints {
       }, // New Balance
     ]
 
-    // Add data starting from row 8
+    // Add data starting from row 7
     const reportCustomerNames = Object.keys(report.entries)
-    let currentRow = 8
+    let currentRow = 7
 
     for (const customerName of reportCustomerNames) {
       // Add customer name row
@@ -153,6 +139,22 @@ export class CustomerService implements CustomerEndpoints {
       customerRow.getCell(2).font = { bold: true }
       customerRow.getCell(2).alignment = { horizontal: 'center' }
       customerRow.commit()
+      currentRow++
+
+      // Add headers for this customer
+      const customerHeaders = worksheet.getRow(currentRow)
+      customerHeaders.values = [
+        'Fecha',
+        'Cliente/Concepto',
+        'Descripción',
+        'Forma de Pago/Banco',
+        'Total Compra',
+        'Saldo Anterior',
+        'Abono',
+        'Saldo',
+      ]
+      customerHeaders.font = { bold: true }
+      customerHeaders.commit()
       currentRow++
 
       // Add customer entries
