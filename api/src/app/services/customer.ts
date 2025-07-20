@@ -69,42 +69,26 @@ export class CustomerService implements CustomerEndpoints {
     const workbook = new Excel.Workbook()
     const worksheet = workbook.addWorksheet('Customer Movements')
 
-    // Add title, subtitle and fiscal address
+    // Add title
     worksheet.getCell('A1').value = 'AUXILIAR MOVIMIENTOS DE CLIENTES'
     worksheet.getCell('A1').font = { bold: false, size: 14 }
     worksheet.getCell('A1').alignment = { horizontal: 'center' }
     worksheet.mergeCells('A1:H1')
 
-    worksheet.getCell('A2').value = 'AUXILIAR DE MOVIMIENTOS'
-    worksheet.getCell('A2').font = { bold: false, size: 12 }
+    worksheet.getCell('A2').value = 'DOMICILIO FISCAL'
+    worksheet.getCell('A2').font = { bold: true, size: 12 }
     worksheet.getCell('A2').alignment = { horizontal: 'center' }
     worksheet.mergeCells('A2:H2')
 
-    worksheet.getCell('A3').value = 'DOMICILIO FISCAL'
-    worksheet.getCell('A3').font = { bold: true, size: 12 }
+    worksheet.getCell('A3').value = 'CALLE ANGELINA 113, LAS PUENTES, MEOQUI, CHIH.'
+    worksheet.getCell('A3').font = { size: 12 }
     worksheet.getCell('A3').alignment = { horizontal: 'center' }
     worksheet.mergeCells('A3:H3')
 
-    worksheet.getCell('A4').value =
-      'CALLE ANGELINA 113, LAS PUENTES, MEOQUI, CHIH.'
+    worksheet.getCell('A4').value = 'RFC OEGE550225LC0'
     worksheet.getCell('A4').font = { size: 12 }
     worksheet.getCell('A4').alignment = { horizontal: 'center' }
     worksheet.mergeCells('A4:H4')
-
-    worksheet.getCell('A5').value = 'RFC OEGE550225LC0'
-    worksheet.getCell('A5').font = { size: 12 }
-    worksheet.getCell('A5').alignment = { horizontal: 'center' }
-    worksheet.mergeCells('A5:H5')
-
-    worksheet.getCell('A6').value = 'AUXILIAR DE MOVIMIENTOS'
-    worksheet.getCell('A6').font = { bold: false, size: 12 }
-    worksheet.getCell('A6').alignment = { horizontal: 'center' }
-    worksheet.mergeCells('A6:H6')
-
-    worksheet.getCell('A7').value = 'CLIENTES'
-    worksheet.getCell('A7').font = { bold: true, size: 12 }
-    worksheet.getCell('A7').alignment = { horizontal: 'center' }
-    worksheet.mergeCells('A7:H7')
 
     // Add date range in Spanish
     moment.locale('es')
@@ -115,13 +99,13 @@ export class CustomerService implements CustomerEndpoints {
       .toUpperCase()} AL ${endDate.format('DD')} DE ${endDate
       .format('MMMM')
       .toUpperCase()}`
-    worksheet.getCell('A8').value = dateRange
-    worksheet.getCell('A8').font = { bold: false }
-    worksheet.getCell('A8').alignment = { horizontal: 'center' }
-    worksheet.mergeCells('A8:H8')
+    worksheet.getCell('A5').value = dateRange
+    worksheet.getCell('A5').font = { bold: false }
+    worksheet.getCell('A5').alignment = { horizontal: 'center' }
+    worksheet.mergeCells('A5:H5')
 
     // Add headers
-    const headers = worksheet.getRow(10)
+    const headers = worksheet.getRow(7)
     headers.values = [
       'Fecha',
       'Cliente/Concepto',
@@ -132,7 +116,7 @@ export class CustomerService implements CustomerEndpoints {
       'Abono',
       'Saldo',
     ]
-    worksheet.getRow(10).font = { bold: true }
+    worksheet.getRow(7).font = { bold: true }
 
     // Set column widths
     worksheet.columns = [
@@ -158,9 +142,9 @@ export class CustomerService implements CustomerEndpoints {
       }, // New Balance
     ]
 
-    // Add data starting from row 11
+    // Add data starting from row 8
     const reportCustomerNames = Object.keys(report.entries)
-    let currentRow = 11
+    let currentRow = 8
 
     for (const customerName of reportCustomerNames) {
       // Add customer name row

@@ -4,6 +4,11 @@ import * as yargs from 'yargs'
 import { getClient } from '../setup/db/client'
 import { DATABASE } from '../setup/db/types'
 
+const customerInitBalance: { [customerId: number]: number } = {
+  [69]: 2869.5,
+  [117]: 112060.24,
+}
+
 async function showCreditPurchaseOrders(trx: any, customerId: number) {
   const orders = await trx('credit_purchase_order')
     .where('customer_id', customerId)
@@ -96,10 +101,21 @@ async function initializeCreditPurchaseOrders(trx: any, customerId: number) {
       continue
     }
 
+    let paymentAmount = Number(payment.amount)
+    if (customerInitBalance[customerId] > 0) {
+      if (customerInitBalance[customerId] >= paymentAmount) {
+        customerInitBalance[customerId] =
+          customerInitBalance[customerId] - paymentAmount
+        continue
+      } else {
+        paymentAmount = paymentAmount - customerInitBalance[customerId]
+        customerInitBalance[customerId] = 0
+      }
+    }
+
     let remainder = 0
     let newPaid = 0
     let newStatus = 'PENDING'
-    const paymentAmount = Number(payment.amount)
     const paidPlusNewPaymentAmount =
       paymentAmount + Number(topCreditPurchase.paid)
 
