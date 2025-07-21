@@ -230,8 +230,7 @@ export async function getMovementsReport(
         END,
         ', '
       ) as payment_method,
-      null as previous_balance,
-      null as new_balance
+
     FROM purchase_order po
     INNER JOIN customer c ON c.id = po.customer_id
     LEFT JOIN customer_credit cc ON cc.customer_id = c.id
@@ -259,9 +258,7 @@ export async function getMovementsReport(
         WHEN ccp.form_of_payment = 'CREDIT' THEN 'Crédito'
         WHEN ccp.form_of_payment = 'TRANSFER' THEN CONCAT('Transferencia (', tba.name, ')')
       END as payment_method,
-      tba.name as bank_account_name,
-      ccp.previous_balance as previous_balance,
-      ccp.new_balance as new_balance
+      tba.name as bank_account_name
     FROM customer_credit_payment ccp
     INNER JOIN customer_credit cc ON cc.id = ccp.customer_credit_id
     INNER JOIN customer c ON c.id = cc.customer_id
@@ -278,18 +275,25 @@ export async function getMovementsReport(
     (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
   )
 
-  // Map movements to entries with balance from customer_credit
-  const entries = movements.map(m => ({
-    date: m.date,
-    customer_name: m.customer_name,
-    movement_type: m.movement_type,
-    description: m.description,
-    amount: m.amount,
-    payment_method: m.payment_method,
-    bank_account_name: m.bank_account_name,
-    previous_balance: m.previous_balance || 0,
-    new_balance: m.new_balance || 0,
-  }))
+  // Map movements to entries and calculate running balance
+  let currentBalance = 0
+  const entries = movements.map(m => {
+    if (m.movement_type === 'PURCHASE') {
+      currentBalance += Number(m.amount)
+    } else {
+      currentBalance -= Number(m.amount)
+    }
+    return {
+      date: m.date,
+      customer_name: m.customer_name,
+      movement_type: m.movement_type,
+      description: m.description,
+      amount: m.amount,
+      payment_method: m.payment_method,
+      bank_account_name: m.bank_account_name,
+      new_balance: currentBalance,
+    }
+  })
 
   // Group entries by customer
   const groupedByCustomer = entries.reduce<{
