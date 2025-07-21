@@ -73,22 +73,22 @@ export class CustomerService implements CustomerEndpoints {
     worksheet.getCell('A1').value = 'AUXILIAR MOVIMIENTOS DE CLIENTES'
     worksheet.getCell('A1').font = { bold: false, size: 14 }
     worksheet.getCell('A1').alignment = { horizontal: 'center' }
-    worksheet.mergeCells('A1:H1')
+    worksheet.mergeCells('A1:G1')
 
     worksheet.getCell('A2').value = 'DOMICILIO FISCAL'
     worksheet.getCell('A2').font = { bold: true, size: 12 }
     worksheet.getCell('A2').alignment = { horizontal: 'center' }
-    worksheet.mergeCells('A2:H2')
+    worksheet.mergeCells('A2:G2')
 
     worksheet.getCell('A3').value = 'CALLE ANGELINA 113, LAS PUENTES, MEOQUI, CHIH.'
     worksheet.getCell('A3').font = { size: 12 }
     worksheet.getCell('A3').alignment = { horizontal: 'center' }
-    worksheet.mergeCells('A3:H3')
+    worksheet.mergeCells('A3:G3')
 
     worksheet.getCell('A4').value = 'RFC OEGE550225LC0'
     worksheet.getCell('A4').font = { size: 12 }
     worksheet.getCell('A4').alignment = { horizontal: 'center' }
-    worksheet.mergeCells('A4:H4')
+    worksheet.mergeCells('A4:G4')
 
     // Add date range in Spanish
     moment.locale('es')
@@ -102,7 +102,7 @@ export class CustomerService implements CustomerEndpoints {
     worksheet.getCell('A5').value = dateRange
     worksheet.getCell('A5').font = { bold: false }
     worksheet.getCell('A5').alignment = { horizontal: 'center' }
-    worksheet.mergeCells('A5:H5')
+    worksheet.mergeCells('A5:G5')
 
     // Set column widths
     worksheet.columns = [
@@ -114,10 +114,6 @@ export class CustomerService implements CustomerEndpoints {
         width: 20,
         style: { numFmt: '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)' },
       }, // Sell
-      {
-        width: 20,
-        style: { numFmt: '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)' },
-      }, // Previous Balance
       {
         width: 20,
         style: { numFmt: '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)' },
@@ -149,7 +145,6 @@ export class CustomerService implements CustomerEndpoints {
         'Descripción',
         'Forma de Pago/Banco',
         'Total Compra',
-        'Saldo Anterior',
         'Abono',
         'Saldo',
       ]
@@ -176,24 +171,18 @@ export class CustomerService implements CustomerEndpoints {
           cellF.value = ''
           const cellG = row.getCell(7)
           cellG.value = ''
-          const cellH = row.getCell(8)
-          cellH.value = ''
           totalPurchases += Number(entry.amount)
         } else {
           const cellE = row.getCell(5)
           cellE.value = ''
 
           const cellF = row.getCell(6)
-          cellF.value = Number(entry.previous_balance) // Column F for credit payment
+          cellF.value = Number(entry.amount) // Column F for credit payment
           cellF.numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
 
           const cellG = row.getCell(7)
-          cellG.value = Number(entry.amount) // Column F for credit payment
+          cellG.value = Number(entry.new_balance) // Column G for new balance
           cellG.numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
-
-          const cellH = row.getCell(8)
-          cellH.value = Number(entry.new_balance) // Column F for credit payment
-          cellH.numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
 
           lastBalance = entry.new_balance
 
@@ -212,12 +201,12 @@ export class CustomerService implements CustomerEndpoints {
       totalPurchasesCell.numFmt =
         '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
 
-      const totalPaymentsCell = totalsRow.getCell(7)
+      const totalPaymentsCell = totalsRow.getCell(6)
       totalPaymentsCell.value = Number(totalPayments)
       totalPaymentsCell.numFmt =
         '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
 
-      const lastBalanceCell = totalsRow.getCell(8)
+      const lastBalanceCell = totalsRow.getCell(7)
       lastBalanceCell.value = Number(lastBalance)
       lastBalanceCell.numFmt =
         '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
