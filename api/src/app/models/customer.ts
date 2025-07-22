@@ -283,7 +283,7 @@ export async function getMovementsReport(
       FROM customer_credit cc
       INNER JOIN customer_credit_payment ccp ON ccp.customer_credit_id = cc.id
       WHERE (ccp.created_at AT TIME ZONE 'America/Chihuahua')::date < ?
-        AND cc.customer_id = ANY(ARRAY[${customerIds.map((_, i) => `?`).join(', ')}])
+        AND cc.customer_id = ANY(?::int[])
     )
     SELECT 
       customer_id,
@@ -291,7 +291,7 @@ export async function getMovementsReport(
     FROM RankedPayments
     WHERE rn = 1
     `,
-    [start_date, ...customerIds]
+    [start_date, `{${customerIds.join(',')}}`]
   )
 
   // Create a map of customer ID to initial balance
@@ -322,6 +322,7 @@ export async function getMovementsReport(
       amount: m.amount,
       payment_method: m.payment_method,
       bank_account_name: m.bank_account_name,
+      initial_balance: customerInitialBalances[customerId],
       new_balance: balancesByCustomer[customerId],
     }
   })

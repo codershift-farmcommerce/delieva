@@ -23,6 +23,7 @@ export type CustomerMovementEntry = {
   amount: number
   payment_method: string
   bank_account_name?: string
+  initial_balance: number
   new_balance: number
 }
 
