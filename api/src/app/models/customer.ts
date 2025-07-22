@@ -229,8 +229,7 @@ export async function getMovementsReport(
           ELSE pop.form_of_payment
         END,
         ', '
-      ) as payment_method,
-
+      ) as payment_method
     FROM purchase_order po
     INNER JOIN customer c ON c.id = po.customer_id
     LEFT JOIN customer_credit cc ON cc.customer_id = c.id
