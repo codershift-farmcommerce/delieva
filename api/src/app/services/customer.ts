@@ -234,9 +234,11 @@ export class CustomerService implements CustomerEndpoints {
       globalTotalsRow.getCell(4).value = 'TOTAL DE CLIENTE'
       globalTotalsRow.getCell(5).value = customerEntries.customerGlobalTotalPurchases
       globalTotalsRow.getCell(6).value = customerEntries.customerGlobalTotalCreditPayments
+      globalTotalsRow.getCell(7).value = customerEntries.customerGlobalTotalCreditBalance
       globalTotalsRow.font = { bold: true }
       globalTotalsRow.getCell(5).numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
       globalTotalsRow.getCell(6).numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
+      globalTotalsRow.getCell(7).numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
       globalTotalsRow.commit()
       currentRow++
 

@@ -213,6 +213,7 @@ export type CustomerMovementReportInfo = {
     movements: CustomerMovementEntry[]
     customerGlobalTotalPurchases: number
     customerGlobalTotalCreditPayments: number
+    customerGlobalTotalCreditBalance: number
   }
 }
 
@@ -228,6 +229,21 @@ export async function getMovementsReport(
 ): Promise<CustomerMovementsReportResponse> {
   const { start_date, end_date } = req
   const { customer_id } = req
+
+  // Get global credit balance per customer
+  const globalCreditBalances = await ctx.knex.raw(
+    `
+    SELECT 
+      c.id as customer_id,
+      c.name as customer_name,
+      GREATEST(SUM(cc.credits_total) - SUM(cc.payments_total), 0) as credit_balance
+    FROM customer_credit cc
+    INNER JOIN customer c ON c.id = cc.customer_id
+    WHERE c.id != ?
+    GROUP BY c.id, c.name
+    `,
+    [GeneralPublicCustomer.id],
+  )
 
   // Get global total credit payments per customer
   const globalCreditPayments = await ctx.knex.raw(
@@ -421,13 +437,23 @@ export async function getMovementsReport(
     {}
   )
 
+  // Create map for global credit balances by customer name
+  const globalCreditBalancesByCustomer = globalCreditBalances.rows.reduce(
+    (acc: { [key: string]: number }, row: { customer_name: string; credit_balance: string }) => {
+      acc[row.customer_name] = Number(row.credit_balance)
+      return acc
+    },
+    {}
+  )
+
   const customerReportInfo = Object.keys(entriesGroupedByCustomerName).reduce(
     (acc, customerName) => {
       const entry = entriesGroupedByCustomerName[customerName]
       acc[customerName] = {
         movements: entry,
-        customerGlobalTotalPurchases: globalPurchasesByCustomer[customerName] || 0,
-        customerGlobalTotalCreditPayments: globalCreditPaymentsByCustomer[customerName] || 0,
+        customerGlobalTotalPurchases: globalPurchasesByCustomer[customerName] ?? 0,
+        customerGlobalTotalCreditPayments: globalCreditPaymentsByCustomer[customerName] ?? 0,
+        customerGlobalTotalCreditBalance: globalCreditBalancesByCustomer[customerName] ?? 0,
       }
       return acc
     },
