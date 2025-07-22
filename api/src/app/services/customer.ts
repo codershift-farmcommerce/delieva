@@ -249,6 +249,19 @@ export class CustomerService implements CustomerEndpoints {
       currentRow++
     }
 
+    // Add general totals row at the bottom
+    currentRow += 2 // Add some spacing
+    const generalTotalsRow = worksheet.getRow(currentRow)
+    generalTotalsRow.getCell(4).value = 'TOTAL GENERAL DE CLIENTES'
+    generalTotalsRow.getCell(5).value = report.globalTotalPurchases
+    generalTotalsRow.getCell(6).value = report.globalTotalCreditPayments
+    generalTotalsRow.getCell(7).value = report.globalTotalCreditBalance
+    generalTotalsRow.font = { bold: true }
+    generalTotalsRow.getCell(5).numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
+    generalTotalsRow.getCell(6).numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
+    generalTotalsRow.getCell(7).numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
+    generalTotalsRow.commit()
+
     // Save file
     const outputFilePath = `/tmp/customer_movements_${req.start_date}-${req.end_date}.xlsx`
     await workbook.xlsx.writeFile(outputFilePath)

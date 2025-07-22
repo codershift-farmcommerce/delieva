@@ -221,6 +221,7 @@ export type CustomerMovementsReportResponse = {
   customerReportInfo: CustomerMovementReportInfo
   globalTotalPurchases: number
   globalTotalCreditPayments: number
+  globalTotalCreditBalance: number
 }
 
 export async function getMovementsReport(
@@ -460,9 +461,26 @@ export async function getMovementsReport(
     {} as CustomerMovementReportInfo,
   )
 
+  // Calculate global totals across all customers
+  const globalTotalPurchases = globalPurchases.rows.reduce(
+    (total: number, row: { total_purchases: string }) => total + Number(row.total_purchases),
+    0
+  )
+
+  const globalTotalCreditPayments = globalCreditPayments.rows.reduce(
+    (total: number, row: { total_credit_payments: string }) => total + Number(row.total_credit_payments),
+    0
+  )
+
+  const globalTotalCreditBalance = globalCreditBalances.rows.reduce(
+    (total: number, row: { credit_balance: string }) => total + Number(row.credit_balance),
+    0
+  )
+
   return {
     customerReportInfo,
-    globalTotalPurchases: 0,
-    globalTotalCreditPayments: 0,
+    globalTotalPurchases,
+    globalTotalCreditPayments,
+    globalTotalCreditBalance,
   }
 }
