@@ -249,8 +249,21 @@ export class CustomerService implements CustomerEndpoints {
       currentRow++
     }
 
-    // Add general totals row at the bottom
+    // Add period totals row at the bottom
     currentRow += 2 // Add some spacing
+    const periodTotalsRow = worksheet.getRow(currentRow)
+    periodTotalsRow.getCell(4).value = 'TOTAL GENERAL DE CLIENTES POR PERIODO'
+    periodTotalsRow.getCell(5).value = report.inDateRangeTotalPurchases
+    periodTotalsRow.getCell(6).value = report.inDateRangeTotalCreditPayments
+    periodTotalsRow.font = { bold: true }
+    periodTotalsRow.getCell(5).numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
+    periodTotalsRow.getCell(6).numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
+    periodTotalsRow.commit()
+
+    // Add empty row for separation
+    currentRow++
+
+    // Add general totals row
     const generalTotalsRow = worksheet.getRow(currentRow)
     generalTotalsRow.getCell(4).value = 'TOTAL GENERAL DE CLIENTES'
     generalTotalsRow.getCell(5).value = report.globalTotalPurchases

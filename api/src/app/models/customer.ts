@@ -219,6 +219,8 @@ export type CustomerMovementReportInfo = {
 
 export type CustomerMovementsReportResponse = {
   customerReportInfo: CustomerMovementReportInfo
+  inDateRangeTotalPurchases: number
+  inDateRangeTotalCreditPayments: number
   globalTotalPurchases: number
   globalTotalCreditPayments: number
   globalTotalCreditBalance: number
@@ -230,6 +232,34 @@ export async function getMovementsReport(
 ): Promise<CustomerMovementsReportResponse> {
   const { start_date, end_date } = req
   const { customer_id } = req
+
+  // Get in-date-range totals
+  const inDateRangeTotals = await ctx.knex.raw(
+    `
+    SELECT
+      SUM(CASE WHEN movement_type = 'PURCHASE' THEN amount ELSE 0 END) as total_purchases,
+      SUM(CASE WHEN movement_type = 'PAYMENT' THEN amount ELSE 0 END) as total_credit_payments
+    FROM (
+      SELECT
+        'PURCHASE' as movement_type,
+        po.total as amount
+      FROM purchase_order po
+      INNER JOIN customer c ON c.id = po.customer_id
+      WHERE (po.created_at AT TIME ZONE 'America/Chihuahua')::date BETWEEN ? AND ?
+        AND c.id != ?
+      UNION ALL
+      SELECT
+        'PAYMENT' as movement_type,
+        ccp.amount
+      FROM customer_credit_payment ccp
+      INNER JOIN customer_credit cc ON cc.id = ccp.customer_credit_id
+      INNER JOIN customer c ON c.id = cc.customer_id
+      WHERE (ccp.created_at AT TIME ZONE 'America/Chihuahua')::date BETWEEN ? AND ?
+        AND c.id != ?
+    ) movements
+    `,
+    [start_date, end_date, GeneralPublicCustomer.id, start_date, end_date, GeneralPublicCustomer.id],
+  )
 
   // Get global credit balance per customer
   const globalCreditBalances = await ctx.knex.raw(
@@ -477,8 +507,14 @@ export async function getMovementsReport(
     0
   )
 
+  // Extract in-date-range totals
+  const inDateRangeTotalPurchases = Number(inDateRangeTotals.rows[0]?.total_purchases ?? 0)
+  const inDateRangeTotalCreditPayments = Number(inDateRangeTotals.rows[0]?.total_credit_payments ?? 0)
+
   return {
     customerReportInfo,
+    inDateRangeTotalPurchases,
+    inDateRangeTotalCreditPayments,
     globalTotalPurchases,
     globalTotalCreditPayments,
     globalTotalCreditBalance,
