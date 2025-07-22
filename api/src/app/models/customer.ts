@@ -229,6 +229,37 @@ export async function getMovementsReport(
   const { start_date, end_date } = req
   const { customer_id } = req
 
+  // Get global total credit payments per customer
+  const globalCreditPayments = await ctx.knex.raw(
+    `
+    SELECT 
+      c.id as customer_id,
+      c.name as customer_name,
+      SUM(ccp.amount) as total_credit_payments
+    FROM customer_credit_payment ccp
+    INNER JOIN customer_credit cc ON cc.id = ccp.customer_credit_id
+    INNER JOIN customer c ON c.id = cc.customer_id
+    WHERE c.id != ?
+    GROUP BY c.id, c.name
+    `,
+    [GeneralPublicCustomer.id],
+  )
+
+  // Get global total purchases per customer
+  const globalPurchases = await ctx.knex.raw(
+    `
+    SELECT 
+      c.id as customer_id,
+      c.name as customer_name,
+      SUM(po.total) as total_purchases
+    FROM purchase_order po
+    INNER JOIN customer c ON c.id = po.customer_id
+    WHERE c.id != ?
+    GROUP BY c.id, c.name
+    `,
+    [GeneralPublicCustomer.id],
+  )
+
   // Get purchases
   const purchases = await ctx.knex.raw(
     `
@@ -373,13 +404,30 @@ export async function getMovementsReport(
     return acc
   }, {})
 
+  // Create maps for global totals by customer name
+  const globalPurchasesByCustomer = globalPurchases.rows.reduce(
+    (acc: { [key: string]: number }, row: { customer_name: string; total_purchases: string }) => {
+      acc[row.customer_name] = Number(row.total_purchases)
+      return acc
+    },
+    {}
+  )
+
+  const globalCreditPaymentsByCustomer = globalCreditPayments.rows.reduce(
+    (acc: { [key: string]: number }, row: { customer_name: string; total_credit_payments: string }) => {
+      acc[row.customer_name] = Number(row.total_credit_payments)
+      return acc
+    },
+    {}
+  )
+
   const customerReportInfo = Object.keys(entriesGroupedByCustomerName).reduce(
     (acc, customerName) => {
       const entry = entriesGroupedByCustomerName[customerName]
       acc[customerName] = {
         movements: entry,
-        customerGlobalTotalPurchases: 0,
-        customerGlobalTotalCreditPayments: 0,
+        customerGlobalTotalPurchases: globalPurchasesByCustomer[customerName] || 0,
+        customerGlobalTotalCreditPayments: globalCreditPaymentsByCustomer[customerName] || 0,
       }
       return acc
     },
