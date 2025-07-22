@@ -229,6 +229,17 @@ export class CustomerService implements CustomerEndpoints {
       totalsRow.commit()
       currentRow++
 
+      // Add global totals row
+      const globalTotalsRow = worksheet.getRow(currentRow)
+      globalTotalsRow.getCell(4).value = 'TOTAL DE CLIENTE'
+      globalTotalsRow.getCell(5).value = customerEntries.customerGlobalTotalPurchases
+      globalTotalsRow.getCell(6).value = customerEntries.customerGlobalTotalCreditPayments
+      globalTotalsRow.font = { bold: true }
+      globalTotalsRow.getCell(5).numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
+      globalTotalsRow.getCell(6).numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
+      globalTotalsRow.commit()
+      currentRow++
+
       // Add empty row after totals
       currentRow++
 
