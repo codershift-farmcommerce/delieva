@@ -15,7 +15,7 @@ import {
   CustomerSearchRS,
   CustomerGetMovementsReportRS,
 } from 'interface/responses/customer'
-import { CustomerMovementEntry } from 'interface/entities/customer'
+import { CustomerMovementEntry, GeneralPublicCustomer } from 'interface/entities/customer'
 import { ModifyRS } from 'interface/responses/common'
 
 type CustomerSQLRow = {
@@ -237,11 +237,13 @@ export async function getMovementsReport(
     LEFT JOIN purchase_order_payment pop ON pop.purchase_order_id = po.id
     LEFT JOIN transfer_bank_account tba ON tba.id = pop.transfer_bank_account_id
     WHERE (po.created_at AT TIME ZONE 'America/Chihuahua')::date BETWEEN ? AND ?
-    ${customer_id ? 'AND c.id = ?' : ''}
+    ${customer_id ? 'AND c.id = ?' : 'AND c.id != ?'}
     GROUP BY c.id, po.id, po.created_at, po.total, c.name
     ORDER BY po.created_at
     `,
-    customer_id ? [start_date, end_date, customer_id] : [start_date, end_date],
+    customer_id
+      ? [start_date, end_date, customer_id]
+      : [start_date, end_date, GeneralPublicCustomer.id],
   )
 
   // Get payments
@@ -272,7 +274,9 @@ export async function getMovementsReport(
   )
 
   // Get unique customer IDs from the movements
-  const customerIds = [...new Set([...purchases.rows, ...payments.rows].map(m => m.customer_id))]
+  const customerIds = [
+    ...new Set([...purchases.rows, ...payments.rows].map(m => m.customer_id)),
+  ]
 
   // Get initial balances for each customer
   const initialBalances = await ctx.knex.raw(
@@ -293,14 +297,20 @@ export async function getMovementsReport(
     FROM RankedPayments
     WHERE rn = 1
     `,
-    [start_date, `{${customerIds.join(',')}}`]
+    [start_date, `{${customerIds.join(',')}}`],
   )
 
   // Create a map of customer ID to initial balance
-  const customerInitialBalances = initialBalances.rows.reduce((acc: { [key: number]: number }, row: { customer_id: number; initial_balance: string }) => {
-    acc[row.customer_id] = Number(row.initial_balance)
-    return acc
-  }, {} as { [key: number]: number })
+  const customerInitialBalances = initialBalances.rows.reduce(
+    (
+      acc: { [key: number]: number },
+      row: { customer_id: number; initial_balance: string },
+    ) => {
+      acc[row.customer_id] = Number(row.initial_balance)
+      return acc
+    },
+    {} as { [key: number]: number },
+  )
 
   // Combine and sort movements
   const movements = [...purchases.rows, ...payments.rows].sort(
@@ -308,13 +318,17 @@ export async function getMovementsReport(
   )
 
   // Map movements to entries and calculate running balance per customer
-  const balancesByCustomer: { [key: number]: number } = {...customerInitialBalances}
+  const balancesByCustomer: { [key: number]: number } = {
+    ...customerInitialBalances,
+  }
   const entries = movements.map(m => {
     const customerId = m.customer_id
     if (m.movement_type === 'PURCHASE') {
-      balancesByCustomer[customerId] = (balancesByCustomer[customerId] || 0) + Number(m.amount)
+      balancesByCustomer[customerId] =
+        (balancesByCustomer[customerId] || 0) + Number(m.amount)
     } else {
-      balancesByCustomer[customerId] = (balancesByCustomer[customerId] || 0) - Number(m.amount)
+      balancesByCustomer[customerId] =
+        (balancesByCustomer[customerId] || 0) - Number(m.amount)
     }
     return {
       date: m.date,
@@ -328,7 +342,6 @@ export async function getMovementsReport(
       new_balance: balancesByCustomer[customerId],
     }
   })
-
 
   // Group entries by customer
   const groupedByCustomer = entries.reduce<{
