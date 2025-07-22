@@ -207,25 +207,21 @@ export class CustomerService implements CustomerEndpoints {
         currentRow++
       }
 
-      // Add totals row for this customer
+      // Add empty row
+      currentRow++
+
+      // Add totals row
       const totalsRow = worksheet.getRow(currentRow)
-      totalsRow.getCell(2).value = 'Totales'
-      const totalPurchasesCell = totalsRow.getCell(5)
-      totalPurchasesCell.value = Number(totalPurchases)
-      totalPurchasesCell.numFmt =
-        '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
-
-      const totalPaymentsCell = totalsRow.getCell(6)
-      totalPaymentsCell.value = Number(totalPayments)
-      totalPaymentsCell.numFmt =
-        '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
-
-      const lastBalanceCell = totalsRow.getCell(7)
-      lastBalanceCell.value = Number(lastBalance)
-      lastBalanceCell.numFmt =
-        '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
-      // Style the totals row
+      totalsRow.getCell(4).value = 'TOTAL'
+      totalsRow.getCell(5).value = totalPurchases
+      totalsRow.getCell(6).value = totalPayments
+  
       totalsRow.font = { bold: true }
+      totalsRow.getCell(5).numFmt =
+        '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
+      totalsRow.getCell(6).numFmt =
+        '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
+
       totalsRow.commit()
       currentRow++
 
