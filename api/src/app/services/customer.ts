@@ -80,7 +80,8 @@ export class CustomerService implements CustomerEndpoints {
     worksheet.getCell('A2').alignment = { horizontal: 'center' }
     worksheet.mergeCells('A2:G2')
 
-    worksheet.getCell('A3').value = 'CALLE ANGELINA 113, LAS PUENTES, MEOQUI, CHIH.'
+    worksheet.getCell('A3').value =
+      'CALLE ANGELINA 113, LAS PUENTES, MEOQUI, CHIH.'
     worksheet.getCell('A3').font = { size: 12 }
     worksheet.getCell('A3').alignment = { horizontal: 'center' }
     worksheet.mergeCells('A3:G3')
@@ -125,7 +126,7 @@ export class CustomerService implements CustomerEndpoints {
     ]
 
     // Add data starting from row 7
-    const reportCustomerNames = Object.keys(report.entries)
+    const reportCustomerNames = Object.keys(report.customerReportInfo)
     let currentRow = 7
 
     for (const customerName of reportCustomerNames) {
@@ -152,14 +153,17 @@ export class CustomerService implements CustomerEndpoints {
       customerHeaders.commit()
       currentRow++
 
-      const customerEntries = report.entries[customerName]
+      const customerEntries = report.customerReportInfo[customerName]
 
       // Add initial balance row
       const initialBalanceRow = worksheet.getRow(currentRow)
       initialBalanceRow.getCell(2).value = 'Saldo Anterior'
       const initialBalanceCell = initialBalanceRow.getCell(7)
-      initialBalanceCell.value = Number(customerEntries[0]?.initial_balance || 0)
-      initialBalanceCell.numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
+      initialBalanceCell.value = Number(
+        customerEntries.movements[0]?.initial_balance || 0,
+      )
+      initialBalanceCell.numFmt =
+        '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
       initialBalanceRow.font = { bold: true }
       initialBalanceRow.commit()
       currentRow++
@@ -169,7 +173,7 @@ export class CustomerService implements CustomerEndpoints {
       let totalPayments = 0
       let lastBalance = 0
 
-      for (const entry of customerEntries) {
+      for (const entry of customerEntries.movements) {
         const row = worksheet.getRow(currentRow)
         row.getCell(1).value = entry.date
         row.getCell(2).value = entry.description
@@ -215,7 +219,7 @@ export class CustomerService implements CustomerEndpoints {
       totalsRow.getCell(4).value = 'TOTAL'
       totalsRow.getCell(5).value = totalPurchases
       totalsRow.getCell(6).value = totalPayments
-  
+
       totalsRow.font = { bold: true }
       totalsRow.getCell(5).numFmt =
         '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'

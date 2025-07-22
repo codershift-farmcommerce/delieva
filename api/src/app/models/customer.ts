@@ -15,7 +15,10 @@ import {
   CustomerSearchRS,
   CustomerGetMovementsReportRS,
 } from 'interface/responses/customer'
-import { CustomerMovementEntry, GeneralPublicCustomer } from 'interface/entities/customer'
+import {
+  CustomerMovementEntry,
+  GeneralPublicCustomer,
+} from 'interface/entities/customer'
 import { ModifyRS } from 'interface/responses/common'
 
 type CustomerSQLRow = {
@@ -205,10 +208,24 @@ export async function disable(
   }
 }
 
+export type CustomerMovementReportInfo = {
+  [customerName: string]: {
+    movements: CustomerMovementEntry[]
+    customerGlobalTotalPurchases: number
+    customerGlobalTotalCreditPayments: number
+  }
+}
+
+export type CustomerMovementsReportResponse = {
+  customerReportInfo: CustomerMovementReportInfo
+  globalTotalPurchases: number
+  globalTotalCreditPayments: number
+}
+
 export async function getMovementsReport(
   ctx: Ctx,
   req: CustomerGetMovementsReportRQ,
-): Promise<{ entries: { [p: string]: CustomerMovementEntry[] } }> {
+): Promise<CustomerMovementsReportResponse> {
   const { start_date, end_date } = req
   const { customer_id } = req
 
@@ -326,7 +343,8 @@ export async function getMovementsReport(
     const customerId = m.customer_id
     if (m.movement_type === 'PURCHASE') {
       balancesByCustomer[customerId] =
-        (balancesByCustomer[customerId] || 0) + Number(m.credit_payment_amount ?? 0)
+        (balancesByCustomer[customerId] || 0) +
+        Number(m.credit_payment_amount ?? 0)
     } else {
       balancesByCustomer[customerId] =
         (balancesByCustomer[customerId] || 0) - Number(m.amount)
@@ -345,7 +363,7 @@ export async function getMovementsReport(
   })
 
   // Group entries by customer
-  const groupedByCustomer = entries.reduce<{
+  const entriesGroupedByCustomerName = entries.reduce<{
     [key: string]: CustomerMovementEntry[]
   }>((acc, entry) => {
     if (!acc[entry.customer_name]) {
@@ -355,7 +373,22 @@ export async function getMovementsReport(
     return acc
   }, {})
 
+  const customerReportInfo = Object.keys(entriesGroupedByCustomerName).reduce(
+    (acc, customerName) => {
+      const entry = entriesGroupedByCustomerName[customerName]
+      acc[customerName] = {
+        movements: entry,
+        customerGlobalTotalPurchases: 0,
+        customerGlobalTotalCreditPayments: 0,
+      }
+      return acc
+    },
+    {} as CustomerMovementReportInfo,
+  )
+
   return {
-    entries: groupedByCustomer,
+    customerReportInfo,
+    globalTotalPurchases: 0,
+    globalTotalCreditPayments: 0,
   }
 }
