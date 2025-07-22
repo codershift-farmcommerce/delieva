@@ -269,18 +269,50 @@ export async function getMovementsReport(
     customer_id ? [start_date, end_date, customer_id] : [start_date, end_date],
   )
 
+  // Get unique customer IDs from the movements
+  const customerIds = [...new Set([...purchases.rows, ...payments.rows].map(m => m.customer_id))]
+
+  // Get initial balances for each customer
+  const initialBalances = await ctx.knex.raw(
+    `
+    WITH RankedPayments AS (
+      SELECT 
+        cc.customer_id,
+        ccp.new_balance as initial_balance,
+        ROW_NUMBER() OVER (PARTITION BY cc.customer_id ORDER BY ccp.created_at DESC) as rn
+      FROM customer_credit cc
+      INNER JOIN customer_credit_payment ccp ON ccp.customer_credit_id = cc.id
+      WHERE (ccp.created_at AT TIME ZONE 'America/Chihuahua')::date < ?
+        AND cc.customer_id = ANY(ARRAY[${customerIds.map((_, i) => `?`).join(', ')}])
+    )
+    SELECT 
+      customer_id,
+      COALESCE(initial_balance, 0) as initial_balance
+    FROM RankedPayments
+    WHERE rn = 1
+    `,
+    [start_date, ...customerIds]
+  )
+
+  // Create a map of customer ID to initial balance
+  const customerInitialBalances = initialBalances.rows.reduce((acc: { [key: number]: number }, row: { customer_id: number; initial_balance: string }) => {
+    acc[row.customer_id] = Number(row.initial_balance)
+    return acc
+  }, {} as { [key: number]: number })
+
   // Combine and sort movements
   const movements = [...purchases.rows, ...payments.rows].sort(
     (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
   )
 
-  // Map movements to entries and calculate running balance
-  let currentBalance = 0
+  // Map movements to entries and calculate running balance per customer
+  const balancesByCustomer: { [key: number]: number } = {...customerInitialBalances}
   const entries = movements.map(m => {
+    const customerId = m.customer_id
     if (m.movement_type === 'PURCHASE') {
-      currentBalance += Number(m.amount)
+      balancesByCustomer[customerId] = (balancesByCustomer[customerId] || 0) + Number(m.amount)
     } else {
-      currentBalance -= Number(m.amount)
+      balancesByCustomer[customerId] = (balancesByCustomer[customerId] || 0) - Number(m.amount)
     }
     return {
       date: m.date,
@@ -290,9 +322,10 @@ export async function getMovementsReport(
       amount: m.amount,
       payment_method: m.payment_method,
       bank_account_name: m.bank_account_name,
-      new_balance: currentBalance,
+      new_balance: balancesByCustomer[customerId],
     }
   })
+
 
   // Group entries by customer
   const groupedByCustomer = entries.reduce<{
