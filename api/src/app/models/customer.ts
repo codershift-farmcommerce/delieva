@@ -222,6 +222,7 @@ export async function getMovementsReport(
       CONCAT('NOTA ', po.id) as description,
       po.total as amount,
       c.name as customer_name,
+      SUM(CASE WHEN pop.form_of_payment = 'CREDIT' THEN pop.amount ELSE 0 END) as credit_payment_amount,
       string_agg(
         CASE 
           WHEN pop.form_of_payment = 'CASH' THEN 'Efectivo'
@@ -325,7 +326,7 @@ export async function getMovementsReport(
     const customerId = m.customer_id
     if (m.movement_type === 'PURCHASE') {
       balancesByCustomer[customerId] =
-        (balancesByCustomer[customerId] || 0) + Number(m.amount)
+        (balancesByCustomer[customerId] || 0) + Number(m.credit_payment_amount ?? 0)
     } else {
       balancesByCustomer[customerId] =
         (balancesByCustomer[customerId] || 0) - Number(m.amount)
