@@ -156,7 +156,7 @@ export class CustomerService implements CustomerEndpoints {
 
       // Add initial balance row
       const initialBalanceRow = worksheet.getRow(currentRow)
-      initialBalanceRow.getCell(2).value = 'Saldo Inicial'
+      initialBalanceRow.getCell(2).value = 'Saldo Anterior'
       const initialBalanceCell = initialBalanceRow.getCell(7)
       initialBalanceCell.value = Number(customerEntries[0]?.initial_balance || 0)
       initialBalanceCell.numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
@@ -180,8 +180,11 @@ export class CustomerService implements CustomerEndpoints {
           cellE.numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
           const cellF = row.getCell(6)
           cellF.value = ''
+
           const cellG = row.getCell(7)
-          cellG.value = ''
+          cellG.value = Number(entry.new_balance) // Column G for new balance
+          cellG.numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
+
           totalPurchases += Number(entry.amount)
         } else {
           const cellE = row.getCell(5)
