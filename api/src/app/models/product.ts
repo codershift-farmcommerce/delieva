@@ -410,6 +410,9 @@ const UnitPriceTypeFn: Partial<
   >
 > = {
   [SystemClient.DELIEVA]: async (ctx: Ctx, customerId, cart, products) => {
+    if (customerId == GeneralPublicCustomer.id) {
+      return CartPriceType.RETAIL
+    }
     const assignedCashRegister = await getAssignedCashRegister(ctx, {})
     const totalKG = Object.keys(cart.items).reduce((acc, productCode) => {
       const cartItem = cart.items[productCode]
