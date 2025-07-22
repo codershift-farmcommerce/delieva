@@ -152,12 +152,23 @@ export class CustomerService implements CustomerEndpoints {
       customerHeaders.commit()
       currentRow++
 
+      const customerEntries = report.entries[customerName]
+
+      // Add initial balance row
+      const initialBalanceRow = worksheet.getRow(currentRow)
+      initialBalanceRow.getCell(2).value = 'Saldo Inicial'
+      const initialBalanceCell = initialBalanceRow.getCell(7)
+      initialBalanceCell.value = Number(customerEntries[0]?.initial_balance || 0)
+      initialBalanceCell.numFmt = '_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'
+      initialBalanceRow.font = { bold: true }
+      initialBalanceRow.commit()
+      currentRow++
+
       // Add customer entries
       let totalPurchases = 0
       let totalPayments = 0
       let lastBalance = 0
 
-      const customerEntries = report.entries[customerName]
       for (const entry of customerEntries) {
         const row = worksheet.getRow(currentRow)
         row.getCell(1).value = entry.date

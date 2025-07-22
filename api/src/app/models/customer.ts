@@ -216,6 +216,7 @@ export async function getMovementsReport(
   const purchases = await ctx.knex.raw(
     `
     SELECT 
+      c.id as customer_id,
       po.created_at as date,
       'PURCHASE' as movement_type,
       CONCAT('NOTA ', po.id) as description,
@@ -237,7 +238,7 @@ export async function getMovementsReport(
     LEFT JOIN transfer_bank_account tba ON tba.id = pop.transfer_bank_account_id
     WHERE (po.created_at AT TIME ZONE 'America/Chihuahua')::date BETWEEN ? AND ?
     ${customer_id ? 'AND c.id = ?' : ''}
-    GROUP BY po.id, po.created_at, po.total, c.name
+    GROUP BY c.id, po.id, po.created_at, po.total, c.name
     ORDER BY po.created_at
     `,
     customer_id ? [start_date, end_date, customer_id] : [start_date, end_date],
@@ -247,6 +248,7 @@ export async function getMovementsReport(
   const payments = await ctx.knex.raw(
     `
     SELECT 
+      c.id as customer_id,
       ccp.created_at as date,
       'PAYMENT' as movement_type,
       CONCAT('ABONO ', ccp.id) as description,
