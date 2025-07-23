@@ -247,6 +247,7 @@ export async function getMovementsReport(
       INNER JOIN customer c ON c.id = po.customer_id
       WHERE (po.created_at AT TIME ZONE 'America/Chihuahua')::date BETWEEN ? AND ?
         AND c.id != ?
+        AND po.status = 'PROCESSED'
       UNION ALL
       SELECT
         'PAYMENT' as movement_type,
@@ -302,6 +303,7 @@ export async function getMovementsReport(
     FROM purchase_order po
     INNER JOIN customer c ON c.id = po.customer_id
     WHERE c.id != ?
+    AND po.status = 'PROCESSED'
     GROUP BY c.id, c.name
     `,
     [GeneralPublicCustomer.id],
@@ -333,6 +335,7 @@ export async function getMovementsReport(
     LEFT JOIN purchase_order_payment pop ON pop.purchase_order_id = po.id
     LEFT JOIN transfer_bank_account tba ON tba.id = pop.transfer_bank_account_id
     WHERE (po.created_at AT TIME ZONE 'America/Chihuahua')::date BETWEEN ? AND ?
+    AND po.status = 'PROCESSED'
     ${customer_id ? 'AND c.id = ?' : 'AND c.id != ?'}
     GROUP BY c.id, po.id, po.created_at, po.total, c.name
     ORDER BY po.created_at
