@@ -19,13 +19,25 @@ export type TableRow = {
 
 export type TableProps = {
   tableTitle?: string | null
-  selectedRowId: string
+  /**
+   * @deprecated. Use selectedRowIds instead.
+   */
+  selectedRowId?: string
+  selectedRowIds: string[]
   columnNames: string[]
   rows: TableRow[]
-  onSelectedRow: (id: string) => void
+  onSelectedRow: (
+    id: string,
+    modifierKeys?: { ctrlKey: boolean; metaKey: boolean; shiftKey: boolean },
+  ) => void
 }
+
 function Table(props: TableProps) {
-  const { tableTitle, columnNames, rows, selectedRowId, onSelectedRow } = props
+  const { tableTitle, columnNames, rows, selectedRowId, selectedRowIds, onSelectedRow } = props
+  let rowId = selectedRowId
+  if (selectedRowIds?.length === 1) {
+    rowId = selectedRowIds[0]
+  }
   const shouldRender = true
 
   return shouldRender ? (
@@ -49,11 +61,18 @@ function Table(props: TableProps) {
               <tr
                 key={row.id}
                 className={
-                  selectedRowId === row.id
+                  rowId === row.id || selectedRowIds.includes(row.id)
                     ? styles.table_row + ' ' + styles.table_row_selected
                     : styles.table_row
                 }
-                onClick={() => onSelectedRow(row.id)}
+                onClick={event => {
+                  const modifierKeys = {
+                    ctrlKey: event.ctrlKey,
+                    metaKey: event.metaKey, // cmd key on Mac
+                    shiftKey: event.shiftKey,
+                  }
+                  onSelectedRow(row.id, modifierKeys)
+                }}
                 onMouseOver={() => {}}
               >
                 {row.cells.map((cell, index) => {
@@ -66,7 +85,7 @@ function Table(props: TableProps) {
                         background: cell.background || 'none',
                         color: cell.color || 'black',
                         textAlign: cell.textAlign || 'left',
-                        fontWeight: cell.fontWeight || 'normal'
+                        fontWeight: cell.fontWeight || 'normal',
                       }}
                     >
                       {cell.value ?? cell.element}

@@ -2,10 +2,7 @@ import ViewContainer from 'webapp/src/components/views/container/container'
 import React, { useEffect, useRef, useState } from 'react'
 import ViewHeader from 'webapp/src/components/views/header/header'
 import Table from 'webapp/src/components/table/table'
-import {
-  DiscountType,
-  DiscountWithCustomerAndProduct,
-} from 'interface/entities/discount'
+import { DiscountType, DiscountWithCustomerAndProduct } from 'interface/entities/discount'
 import { DiscountClient } from 'webapp/src/api/clients/discount'
 import styles from './discounts.module.css'
 import viewStyles from 'webapp/src/views/views.module.css'
@@ -45,7 +42,7 @@ const Discounts = () => {
   const [modifiedDiscountFlatAmount, setModifiedDiscountFlatAmount] = useState('')
   const [newFixedPrice, setNewFixedPrice] = useState('')
   const [modifiedFixedPrice, setModifiedFixedPrice] = useState('')
-  const [selectedDiscountId, setSelectedDiscountId] = useState<string | null>()
+  const [selectedDiscountsIds, setSelectedDiscountsIds] = useState<number[]>([])
   const [customerNameForDiscountModification, setCustomerNameForDiscountModification] =
     useState<string>('')
   const [productNameForDiscountModification, setProductNameForDiscountModification] =
@@ -180,9 +177,10 @@ const Discounts = () => {
 
   const handleSubmitModifyDiscount = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    if (!selectedDiscountId) {
+    if (!selectedDiscountsIds || selectedDiscountsIds.length > 1) {
       return
     }
+    const selectedDiscountId = selectedDiscountsIds[0]
     let discountPercentage = Number(modifiedDiscountPercentage.replace('%', ''))
     if (modifiedSelectedDiscountType === DiscountType.PERCENTAGE) {
       if (!modifiedDiscountPercentage || isNaN(discountPercentage)) {
@@ -240,7 +238,7 @@ const Discounts = () => {
   const handleEnableAdd = () => {
     setAddEnabled(true)
     handleCancelModify()
-    setSelectedDiscountId(null)
+    setSelectedDiscountsIds([])
     setNewDiscountPercentage('')
     setNewDiscountFlatAmount('')
     setNewFixedPrice('')
@@ -253,6 +251,10 @@ const Discounts = () => {
   }
 
   const handleEnableModify = () => {
+    if (!selectedDiscountsIds || selectedDiscountsIds.length > 1) {
+      return
+    }
+    const selectedDiscountId = selectedDiscountsIds[0]
     setModifyEnabled(true)
     const discount = discountsById[selectedDiscountId ?? '']
     setCustomerNameForDiscountModification(discount.customer_name)
@@ -264,20 +266,36 @@ const Discounts = () => {
   }
 
   const handleDeleteDiscount = async () => {
-    if (!selectedDiscountId) {
+    if (!selectedDiscountsIds || selectedDiscountsIds.length < 1) {
       return
     }
-    if (!confirm('Desea eliminar el descuento?')) {
+    const confirmText =
+      selectedDiscountsIds.length === 1
+        ? 'Desea eliminar el descuento?'
+        : 'Desea eliminar los descuentos?'
+    if (!confirm(confirmText)) {
       return
     }
-    const response = await discountClient.delete({
-      id: Number(selectedDiscountId),
-    })
-    if ((response as DiscountAddFailRS).error) {
-      const errorResponse = response as DiscountAddFailRS
-      console.error(errorResponse.error)
-      toast.error('Ocurrió un error al eliminar el descuento')
-      return
+    if (selectedDiscountsIds.length === 1) {
+      const response = await discountClient.delete({
+        id: Number(selectedDiscountsIds),
+      })
+      if ((response as DiscountAddFailRS).error) {
+        const errorResponse = response as DiscountAddFailRS
+        console.error(errorResponse.error)
+        toast.error('Ocurrió un error al eliminar el descuento')
+        return
+      }
+    } else {
+      const response = await discountClient.deleteMany({
+        ids: selectedDiscountsIds,
+      })
+      if ((response as DiscountAddFailRS).error) {
+        const errorResponse = response as DiscountAddFailRS
+        console.error(errorResponse.error)
+        toast.error('Ocurrió un error al eliminar los descuentos')
+        return
+      }
     }
     setModifyEnabled(false)
     setSelectedProduct(null)
@@ -355,13 +373,28 @@ const Discounts = () => {
     }, 50)
   }
 
-  const handleSelectedDiscount = (id: string) => {
-    if (id === selectedDiscountId) {
-      setSelectedDiscountId(null)
+  const handleSelectedDiscount = (
+    id: string,
+    modifierKeys?: { ctrlKey: boolean; metaKey: boolean; shiftKey: boolean },
+  ) => {
+    const isMultiSelect = modifierKeys?.ctrlKey || modifierKeys?.metaKey
+    if (isMultiSelect) {
+      setSelectedDiscountsIds((prevSelectedDiscountsIds: number[]) => {
+        if (prevSelectedDiscountsIds.includes(Number(id))) {
+          return prevSelectedDiscountsIds.filter(selectedId => selectedId !== Number(id))
+        } else {
+          return [...prevSelectedDiscountsIds, Number(id)]
+        }
+      })
     } else {
-      setSelectedDiscountId(id)
-      handleCancelModify()
-      handleCancelAdd()
+      const selectedDiscountId = selectedDiscountsIds[0]
+      if (id === String(selectedDiscountId)) {
+        setSelectedDiscountsIds([])
+      } else {
+        setSelectedDiscountsIds([Number(id)])
+        handleCancelModify()
+        handleCancelAdd()
+      }
     }
   }
 
@@ -446,22 +479,32 @@ const Discounts = () => {
             Agregar nuevo descuento
           </button>
           <button
-            disabled={addEnabled || modifyEnabled || !selectedDiscountId}
+            disabled={
+              addEnabled ||
+              modifyEnabled ||
+              !selectedDiscountsIds ||
+              selectedDiscountsIds.length != 1
+            }
             className={clsx(styles.header_button, {
-              [styles.header_button_disabled]: !selectedDiscountId,
+              [styles.header_button_disabled]: !selectedDiscountsIds,
             })}
             onClick={handleEnableModify}
           >
             Modificar descuento
           </button>
           <button
-            disabled={addEnabled || modifyEnabled || !selectedDiscountId}
+            disabled={
+              addEnabled ||
+              modifyEnabled ||
+              !selectedDiscountsIds ||
+              selectedDiscountsIds.length < 1
+            }
             className={clsx(styles.header_button, {
-              [styles.header_button_disabled]: !selectedDiscountId,
+              [styles.header_button_disabled]: !selectedDiscountsIds,
             })}
             onClick={handleDeleteDiscount}
           >
-            Eliminar descuento
+            {selectedDiscountsIds?.length === 1 ? 'Eliminar descuento' : 'Eliminar descuentos'}
           </button>
           <button
             disabled={!selectedCustomerForSearch}
@@ -635,7 +678,7 @@ const Discounts = () => {
       </ViewHeader>
       <div className={styles.table_container}>
         <Table
-          selectedRowId={selectedDiscountId ?? ''}
+          selectedRowIds={selectedDiscountsIds.map(id => String(id))}
           columnNames={[
             'Cliente',
             'Producto',

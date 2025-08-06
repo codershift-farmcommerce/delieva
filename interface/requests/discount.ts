@@ -26,6 +26,10 @@ export type DiscountDeleteRQ = {
   id: number
 }
 
+export type DiscountDeleteManyRQ = {
+  ids: number[]
+}
+
 export type DiscountGetForCustomerAndProductRQ = {
   customer_id: number
   product_code: string

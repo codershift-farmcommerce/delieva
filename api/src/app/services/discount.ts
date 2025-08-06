@@ -1,7 +1,7 @@
 import { DiscountEndpoints } from 'interface/endpoints/discount'
 import {
   DiscountAddRQ,
-  DiscountDeleteRQ,
+  DiscountDeleteManyRQ, DiscountDeleteRQ,
   DiscountGetForCustomerAndProductRQ,
   DiscountGetForCustomerAndProductsRQ,
   DiscountListRQ,
@@ -48,6 +48,13 @@ export class DiscountServices implements DiscountEndpoints {
     req: DiscountDeleteRQ,
   ): Promise<DiscountDeleteSuccessRS | DiscountDeleteFailRS> {
     return discount.deleteDiscount(this.ctx, req)
+  }
+
+  @action({ forApps: [Application.ADMIN] })
+  deleteMany(
+    req: DiscountDeleteManyRQ,
+  ): Promise<DiscountDeleteSuccessRS | DiscountDeleteFailRS> {
+    return discount.deleteDiscounts(this.ctx, req)
   }
 
   @action({ forApps: [Application.ADMIN, Application.POS] })

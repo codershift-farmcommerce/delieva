@@ -1,6 +1,6 @@
 import { DiscountEndpoints } from 'interface/endpoints/discount'
 import {
-  DiscountAddRQ,
+  DiscountAddRQ, DiscountDeleteManyRQ,
   DiscountDeleteRQ,
   DiscountGetForCustomerAndProductRQ,
   DiscountGetForCustomerAndProductsRQ,
@@ -37,6 +37,10 @@ export class DiscountClient implements DiscountEndpoints {
 
   delete(req: DiscountDeleteRQ): Promise<DiscountDeleteSuccessRS | DiscountDeleteFailRS> {
     return sendRequest('/discount/delete', req)
+  }
+
+  deleteMany(req: DiscountDeleteManyRQ): Promise<DiscountDeleteSuccessRS | DiscountDeleteFailRS> {
+    return sendRequest('/discount/deleteMany', req)
   }
 
   getForCustomerAndProduct(

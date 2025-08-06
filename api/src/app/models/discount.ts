@@ -8,7 +8,7 @@ import {
   DiscountListRS,
 } from 'interface/responses/discount'
 import {
-  DiscountAddRQ,
+  DiscountAddRQ, DiscountDeleteManyRQ,
   DiscountDeleteRQ,
   DiscountGetForCustomerAndProductRQ,
   DiscountGetForCustomerAndProductsRQ,
@@ -136,6 +136,24 @@ export async function deleteDiscount(
   const { id } = req
   try {
     await ctx.knex('discount').where('id', id).delete()
+    return {
+      success: true,
+    }
+  } catch (err: any) {
+    return {
+      success: false,
+      error: err.message,
+    }
+  }
+}
+
+export async function deleteDiscounts(
+  ctx: Ctx,
+  req: DiscountDeleteManyRQ,
+): Promise<DiscountDeleteSuccessRS | DiscountDeleteFailRS> {
+  const { ids } = req
+  try {
+    await ctx.knex('discount').whereIn('id', ids).delete()
     return {
       success: true,
     }
