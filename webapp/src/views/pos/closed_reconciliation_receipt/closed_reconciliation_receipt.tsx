@@ -235,7 +235,7 @@ const ClosedReconciliationReceipt = (props: ClosedReconciliationReceiptProps) =>
         }, 0)
     : 0
 
-  const openingCashBalance = closedReconciliationReceipt?.opening_cash_balance ?? 0
+  const openingCashBalance = Number(closedReconciliationReceipt?.opening_cash_balance) ?? 0
   const salesTotal = cashPurchaseOrdersTotal + transferPurchasesTotal + creditPurchaseOrdersTotal
 
   const totalCash =

@@ -23,7 +23,7 @@ export type TableProps = {
    * @deprecated. Use selectedRowIds instead.
    */
   selectedRowId?: string
-  selectedRowIds: string[]
+  selectedRowIds?: string[]
   columnNames: string[]
   rows: TableRow[]
   onSelectedRow: (
@@ -61,7 +61,7 @@ function Table(props: TableProps) {
               <tr
                 key={row.id}
                 className={
-                  rowId === row.id || selectedRowIds.includes(row.id)
+                  rowId === row.id || selectedRowIds?.includes(row.id)
                     ? styles.table_row + ' ' + styles.table_row_selected
                     : styles.table_row
                 }
