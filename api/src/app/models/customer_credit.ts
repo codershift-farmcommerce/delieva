@@ -5,6 +5,7 @@ import {
   CustomerCreditGetCustomerCreditPurchaseOrdersReportRQ,
   CustomerCreditGetForCustomerRQ,
   CustomerCreditGetPaymentReceiptRQ,
+  CustomerCreditGetPaymentRQ,
   CustomerCreditGetPaymentsByCustomerRQ,
   CustomerCreditGetPaymentsOfCurrentOpenReconciliationRQ,
   CustomerCreditGetUnpaidPurchaseOrdersRQ,
@@ -16,6 +17,7 @@ import {
   CustomerCreditGetCustomerCreditPurchaseOrdersReportRS,
   CustomerCreditGetForCustomerRS,
   CustomerCreditGetPaymentReceiptRS,
+  CustomerCreditGetPaymentRS,
   CustomerCreditGetPaymentsGetByCustomerRS,
   CustomerCreditGetPaymentsOfCurrentOpenReconciliationRS,
   CustomerCreditGetUnpaidPurchaseOrdersRS,
@@ -741,5 +743,35 @@ export async function getPaymentsOfCurrentOpenReconciliation(
 
   return {
     payments: result.rows,
+  }
+}
+
+export async function getPayment(
+  ctx: Ctx,
+  req: CustomerCreditGetPaymentRQ,
+): Promise<CustomerCreditGetPaymentRS> {
+  const { id } = req
+  const result = await ctx.knex.raw(
+    `
+      SELECT 
+        ccp.id, 
+        c.name AS customer_name,
+        ccp.previous_balance,
+        ccp.amount AS payment_amount,
+        ccp.new_balance,
+        ccp.created_at,
+        ccp.status
+      FROM customer_credit_payment ccp
+        INNER JOIN customer_credit cc ON cc.id = ccp.customer_credit_id
+        INNER JOIN customer c ON cc.customer_id = c.id
+      WHERE ccp.id = :paymentId
+  `,
+    {
+      paymentId: id,
+    },
+  )
+
+  return {
+    payment: result.rows?.[0] ?? null,
   }
 }

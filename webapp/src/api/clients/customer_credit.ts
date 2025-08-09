@@ -5,6 +5,7 @@ import {
   CustomerCreditGetCustomerCreditPurchaseOrdersReportRQ,
   CustomerCreditGetForCustomerRQ,
   CustomerCreditGetPaymentReceiptRQ,
+  CustomerCreditGetPaymentRQ,
   CustomerCreditGetPaymentsByCustomerRQ,
   CustomerCreditGetPaymentsOfCurrentOpenReconciliationRQ,
   CustomerCreditGetUnpaidPurchaseOrdersRQ,
@@ -16,6 +17,7 @@ import {
   CustomerCreditGetCustomerCreditPurchaseOrdersReportRS,
   CustomerCreditGetForCustomerRS,
   CustomerCreditGetPaymentReceiptRS,
+  CustomerCreditGetPaymentRS,
   CustomerCreditGetPaymentsGetByCustomerRS,
   CustomerCreditGetPaymentsOfCurrentOpenReconciliationRS,
   CustomerCreditGetUnpaidPurchaseOrdersRS,
@@ -78,5 +80,9 @@ export class CustomerCreditClient implements CustomerCreditEndpoints {
 
   cancelPayment(req: CustomerCreditCancelPaymentRQ): Promise<CustomerCreditCancelPaymentRS> {
     return sendRequest('/customer_credit/cancelPayment', req)
+  }
+
+  getPayment(req: CustomerCreditGetPaymentRQ): Promise<CustomerCreditGetPaymentRS> {
+    return sendRequest('/customer_credit/getPayment', req)
   }
 }

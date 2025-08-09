@@ -6,7 +6,7 @@ import {
   CustomerCreditCancelPaymentRQ,
   CustomerCreditGetCustomerCreditPurchaseOrdersReportRQ,
   CustomerCreditGetForCustomerRQ,
-  CustomerCreditGetPaymentReceiptRQ,
+  CustomerCreditGetPaymentReceiptRQ, CustomerCreditGetPaymentRQ,
   CustomerCreditGetPaymentsByCustomerRQ,
   CustomerCreditGetPaymentsOfCurrentOpenReconciliationRQ,
   CustomerCreditGetUnpaidPurchaseOrdersRQ,
@@ -17,7 +17,7 @@ import {
   CustomerCreditCancelPaymentRS,
   CustomerCreditGetCustomerCreditPurchaseOrdersReportRS,
   CustomerCreditGetForCustomerRS,
-  CustomerCreditGetPaymentReceiptRS,
+  CustomerCreditGetPaymentReceiptRS, CustomerCreditGetPaymentRS,
   CustomerCreditGetPaymentsGetByCustomerRS,
   CustomerCreditGetPaymentsOfCurrentOpenReconciliationRS,
   CustomerCreditGetUnpaidPurchaseOrdersRS,
@@ -177,5 +177,12 @@ export class CustomerCreditService implements CustomerCreditEndpoints {
     req: CustomerCreditGetPaymentsOfCurrentOpenReconciliationRQ,
   ): Promise<CustomerCreditGetPaymentsOfCurrentOpenReconciliationRS> {
     return customer_credit.getPaymentsOfCurrentOpenReconciliation(this.ctx, req)
+  }
+
+  @action({ forApps: [Application.POS, Application.ADMIN] })
+  async getPayment(
+    req: CustomerCreditGetPaymentRQ,
+  ): Promise<CustomerCreditGetPaymentRS> {
+    return customer_credit.getPayment(this.ctx, req)
   }
 }

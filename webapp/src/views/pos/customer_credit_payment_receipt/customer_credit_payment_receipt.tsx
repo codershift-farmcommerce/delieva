@@ -33,10 +33,10 @@ const CustomerCreditPaymentReceipt = (props: CustomerCreditPaymentReceiptProps) 
   }
 
   useEffect(() => {
-    if (creditPaymentId && print) {
+    if (creditPaymentId) {
       getPaymentReceipt().catch(console.error)
     }
-  }, [creditPaymentId, print])
+  }, [creditPaymentId])
 
   useEffect(() => {
     if (paymentReceipt && print) {

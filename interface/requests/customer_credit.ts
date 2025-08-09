@@ -17,6 +17,10 @@ export type CustomerCreditCancelPaymentRQ = {
   cause_id: number
 }
 
+export type CustomerCreditGetPaymentRQ = {
+  id: number
+}
+
 export type CustomerCreditGetPaymentReceiptRQ = {
   customer_credit_payment_id: number
 }

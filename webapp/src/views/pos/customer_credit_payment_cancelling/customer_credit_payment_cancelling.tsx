@@ -2,7 +2,7 @@ import ViewContainer from 'webapp/src/components/views/container/container'
 import ViewHeader from 'webapp/src/components/views/header/header'
 import Table from 'webapp/src/components/table/table'
 import { CustomerCreditClient } from 'webapp/src/api/clients/customer_credit'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import {
   CustomerCreditPayment,
   CustomerCreditPaymentStatus,
@@ -21,6 +21,7 @@ import { CauseClient } from 'webapp/src/api/clients/cause_client'
 import { toast } from 'react-toastify'
 import POSITION = toast.POSITION
 import { CustomerCreditPaymentStatusTranslation } from 'webapp/src/components/functions/translations'
+import CustomerCreditPaymentReceipt from '../customer_credit_payment_receipt/customer_credit_payment_receipt'
 
 type PaymentsById = { [paymentId: string]: CustomerCreditPayment }
 
@@ -29,6 +30,9 @@ const cashRegisterClient = new CashRegisterClient()
 const causeClient = new CauseClient()
 
 const CustomerCreditPaymentCancelling = () => {
+  const [paymentIdInput, setPaymentIdInput] = useState<string>('')
+  const [paymentId, setPaymentId] = useState<number | null>(null)
+  const [enableSearchButton, setEnableSearchButton] = useState<boolean>(false)
   const [cashRegister, setCashRegister] = useState<CashRegister | null>(null)
   const [customerCreditPayments, setCustomerCreditPayments] = useState<CustomerCreditPayment[]>([])
   const [customerCreditPaymentsById, setCustomerCreditPaymentsById] = useState<PaymentsById>({})
@@ -38,6 +42,12 @@ const CustomerCreditPaymentCancelling = () => {
   const [causeDescription, setCauseDescription] = useState('')
   const [authorizationCode, setAuthorizationCode] = useState('')
   const [selectedPaymentId, setSelectedPaymentId] = useState<number | null>(null)
+
+  const paymentIdRef = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    paymentIdRef.current?.focus()
+  }, [])
 
   const getAssignedCashRegister = async () => {
     const response = await cashRegisterClient.getAssignedCashRegister({})
@@ -61,6 +71,31 @@ const CustomerCreditPaymentCancelling = () => {
       console.error('Error getting assigned customer credit payments', err)
     })
   }, [])
+
+  const onPaymentIdChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPaymentId(null)
+    setPaymentIdInput(e.target.value)
+    setEnableSearchButton(e.target.value.length > 0)
+  }
+
+  const getCreditPayment = async () => {
+    const paymentIdNumber = parseInt(paymentIdInput)
+    if (isNaN(paymentIdNumber)) {
+      toast('Ingrese un número de orden válido', { type: 'error' })
+      return
+    }
+    const response = await customerCreditClient.getPayment({
+      id: paymentIdNumber,
+    })
+
+    if (response.payment) {
+      setCustomerCreditPayments([response.payment])
+      setCustomerCreditPaymentsById(keyBy([response.payment], 'id'))
+    }
+
+    setSelectedPaymentId(paymentIdNumber)
+    setEnableSearchButton(false)
+  }
 
   const cancelPayment = async () => {
     if (!selectedPaymentId) {
@@ -89,6 +124,7 @@ const CustomerCreditPaymentCancelling = () => {
     }
     setCauseDescription('')
     setAuthorizationCode('')
+    setPaymentIdInput('')
   }
 
   const handleAuthorizationCodeChange = (e: any) => {
@@ -140,7 +176,7 @@ const CustomerCreditPaymentCancelling = () => {
 
   const enableCancelPaymentButton =
     selectedPaymentId &&
-    customerCreditPaymentsById[selectedPaymentId].status ===
+    customerCreditPaymentsById?.[selectedPaymentId]?.status ===
       CustomerCreditPaymentStatus.PROCESSED &&
     causeDescription &&
     authorizationCode
@@ -151,6 +187,24 @@ const CustomerCreditPaymentCancelling = () => {
         <div>
           {' '}
           <div>
+            <label>Pago #: </label>
+            <input
+              ref={paymentIdRef}
+              value={paymentIdInput}
+              className={viewStyles.input}
+              onChange={onPaymentIdChange}
+              type="text"
+            />
+            <button
+              onClick={getCreditPayment}
+              disabled={!enableSearchButton}
+              className={clsx({
+                [viewStyles.secondary_button]: enableSearchButton,
+                [viewStyles.disabled_button]: !enableSearchButton,
+              })}
+            >
+              Buscar
+            </button>
             <CauseSearchBox
               onCauseSelected={resultItem => {
                 setCauseId(String(resultItem.id))
@@ -185,12 +239,18 @@ const CustomerCreditPaymentCancelling = () => {
       <div>
         <Table
           selectedRowId={String(selectedPaymentId)}
-          columnNames={['Pago #','Fecha', 'Cliente', 'Monto', 'Estado']}
+          columnNames={['Pago #', 'Fecha', 'Cliente', 'Monto', 'Estado']}
           rows={rows}
           onSelectedRow={id => {
             setSelectedPaymentId(Number(id))
+            setPaymentIdInput(id)
           }}
         />
+      </div>
+      <div>
+        {selectedPaymentId && (
+          <CustomerCreditPaymentReceipt creditPaymentId={selectedPaymentId} print={false} />
+        )}
       </div>
     </ViewContainer>
   )

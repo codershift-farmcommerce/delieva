@@ -56,3 +56,7 @@ export type CustomerCreditGetCustomerCreditPurchaseOrdersReportRS = {
 export type CustomerCreditGetPaymentsOfCurrentOpenReconciliationRS = {
   payments: CustomerCreditPayment[]
 }
+
+export type CustomerCreditGetPaymentRS = {
+  payment: CustomerCreditPayment | null
+}
