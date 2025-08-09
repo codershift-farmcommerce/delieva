@@ -119,6 +119,9 @@ const CustomerCreditPaymentCancelling = () => {
           id: String(payment.id),
           cells: [
             {
+              value: payment.id,
+            },
+            {
               value: payment.created_at,
             },
             {
@@ -182,7 +185,7 @@ const CustomerCreditPaymentCancelling = () => {
       <div>
         <Table
           selectedRowId={String(selectedPaymentId)}
-          columnNames={['Fecha', 'Cliente', 'Monto', 'Estado']}
+          columnNames={['Pago #','Fecha', 'Cliente', 'Monto', 'Estado']}
           rows={rows}
           onSelectedRow={id => {
             setSelectedPaymentId(Number(id))
