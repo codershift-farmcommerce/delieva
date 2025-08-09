@@ -19,6 +19,7 @@ export type CustomerCreditPaymentReceipt = {
 
 export type CustomerCreditPaymentForReconciliationReceipt = {
   cash_credit_payments: CustomerCreditPaymentAmount[]
+  canceled_cash_credit_payments: CustomerCreditPaymentAmount[]
   credit_payments_by_transfer_bank_account: CustomerCreditPaymentForBankAccount
   total: number
 }

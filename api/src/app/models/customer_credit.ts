@@ -234,10 +234,19 @@ export async function cancelPayment(
           id: customer_credit_payment_id,
         })
 
+      const currentOpenReconciliation = await trx(
+        'cash_register_reconciliation',
+      )
+        .select('id')
+        .where('cash_register_id', cashRegisterId)
+        .andWhere('status', 'OPENED')
+        .first()
+
       await trx('canceled_customer_credit_payment').insert({
         customer_credit_payment_id: customer_credit_payment_id,
         cause_id,
         authorized_by: authorizedByUserEmail,
+        cash_register_reconciliation_id: Number(currentOpenReconciliation.id),
       })
 
       await trx('customer_credit')
@@ -509,6 +518,9 @@ export async function getForReconciliationReceipt(
     FormOfPayment.CASH,
   )
 
+  const canceledCashCreditPayments =
+    await getCanceledCashPaymentsForReconciliationReceipt(ctx, reconciliationId)
+
   const { transfer_bank_accounts } = await transfer_bank_account_model.list(
     ctx,
     {
@@ -555,6 +567,7 @@ export async function getForReconciliationReceipt(
 
   return {
     cash_credit_payments: cashCreditPayments,
+    canceled_cash_credit_payments: canceledCashCreditPayments,
     credit_payments_by_transfer_bank_account: creditPaymentsForBankAccounts,
     total,
   }
@@ -584,6 +597,29 @@ async function getForReconciliationReceiptByFormOfPayment(
         ${bankAccountFilter};
     `,
     { reconciliationId, formOfPayment, transferBankAccountId },
+  )
+
+  return result.rows
+}
+async function getCanceledCashPaymentsForReconciliationReceipt(
+  ctx: Ctx,
+  reconciliationId: number,
+) {
+  const result = await ctx.knex.raw(
+    `
+        SELECT
+          customer_credit_payment.id AS customer_credit_payment_id,
+          customer.name AS customer_name,
+          customer_credit_payment.amount AS amount
+        FROM customer_credit_payment
+        INNER JOIN public.canceled_customer_credit_payment on customer_credit_payment.id = canceled_customer_credit_payment.customer_credit_payment_id
+        INNER JOIN public.customer_credit on customer_credit.id = customer_credit_payment.customer_credit_id
+        INNER JOIN public.customer on customer.id = customer_credit.customer_id
+        WHERE form_of_payment = 'CASH'
+        AND canceled_customer_credit_payment.cash_register_reconciliation_id = :reconciliationId
+        AND customer_credit_payment.status = 'CANCELED';
+    `,
+    { reconciliationId },
   )
 
   return result.rows
