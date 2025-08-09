@@ -235,6 +235,14 @@ const ClosedReconciliationReceipt = (props: ClosedReconciliationReceiptProps) =>
         }, 0)
     : 0
 
+  const canceledCashCustomerCreditPayments = (
+    closedReconciliationReceipt?.customer_credit_payments_receipt?.canceled_cash_credit_payments ??
+    []
+  ).reduce((acc, val) => {
+    acc += val.amount
+    return acc
+  }, 0)
+
   const openingCashBalance = Number(closedReconciliationReceipt?.opening_cash_balance) ?? 0
   const salesTotal = cashPurchaseOrdersTotal + transferPurchasesTotal + creditPurchaseOrdersTotal
 
@@ -242,6 +250,7 @@ const ClosedReconciliationReceipt = (props: ClosedReconciliationReceiptProps) =>
     openingCashBalance +
     salesTotal +
     otherIncomeTotalCash +
+    canceledCashCustomerCreditPayments +
     cashCustomerCreditPaymentsTotal -
     withdrawalsTotal -
     transferPurchasesTotal -
@@ -352,6 +361,12 @@ const ClosedReconciliationReceipt = (props: ClosedReconciliationReceiptProps) =>
             <b>- Pagos de Créditos Efectivo: </b>
             <b>{formatMonetary(cashCustomerCreditPaymentsTotal)}</b>
           </div>
+          {canceledCashCustomerCreditPayments && (
+            <div>
+              <b>- Cancelaciones de Pagos de Créditos en Efectivo: </b>
+              <b>{formatMonetary(canceledCashCustomerCreditPayments)}</b>
+            </div>
+          )}
           {hasCashCreditPayments && (
             <>
               <div className={styles.purchase_orders_receipts_container}>
