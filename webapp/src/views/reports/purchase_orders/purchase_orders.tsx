@@ -31,6 +31,7 @@ const PurchaseOrdersReport = () => {
   const [printReceipt, setPrintReceipt] = useState(false)
   const [filteredPurchaseOrdersByCustomer, setFilteredPurchaseOrdersByCustomer] =
     useState<IndexedReport>({})
+  const [canGetReport, setCanGetReport] = useState(true)
 
   const customerInputRef = React.useRef<HTMLInputElement>(null)
 
@@ -45,14 +46,17 @@ const PurchaseOrdersReport = () => {
     }, {} as IndexedReport)
     setReport(indexedReport)
     setFilteredPurchaseOrdersByCustomer(indexedReport)
+    setCanGetReport(false)
   }
 
   const handleStartDateChange = (date: string) => {
     setStartDate(new Date(date))
+    setCanGetReport(true)
   }
 
   const handleEndDateChange = (date: string) => {
     setEndDate(new Date(date))
+    setCanGetReport(true)
   }
 
   const handleGetReport = async () => {
@@ -179,7 +183,14 @@ const PurchaseOrdersReport = () => {
             />
           </div>
           <div className={styles.header_button_container}>
-            <button className={viewStyles.primary_button} onClick={handleGetReport}>
+            <button
+              className={clsx({
+                [viewStyles.primary_button]: canGetReport,
+                [viewStyles.disabled_button]: !canGetReport,
+              })}
+              disabled={!canGetReport}
+              onClick={handleGetReport}
+            >
               Obtener reporte
             </button>
             <button
