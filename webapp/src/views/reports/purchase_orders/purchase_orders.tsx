@@ -16,6 +16,7 @@ import {
   FormOfPaymentTranslation,
   PurchaseOrderStatusTranslation,
 } from 'webapp/src/components/functions/translations'
+import Spinner from '../../../components/spinner/spinner'
 
 const purchaseOrderClient = new PurchaseOrderClient()
 
@@ -31,12 +32,14 @@ const PurchaseOrdersReport = () => {
   const [printReceipt, setPrintReceipt] = useState(false)
   const [filteredPurchaseOrdersByCustomer, setFilteredPurchaseOrdersByCustomer] =
     useState<IndexedReport>({})
+  const [isLoading, setIsLoading] = useState(false)
   const [canGetReport, setCanGetReport] = useState(true)
 
   const customerInputRef = React.useRef<HTMLInputElement>(null)
 
   const getReport = async () => {
     setCanGetReport(false)
+    setIsLoading(true)
     const response = await purchaseOrderClient.getReport({
       start_date: startDate,
       end_date: endDate,
@@ -47,6 +50,7 @@ const PurchaseOrdersReport = () => {
     }, {} as IndexedReport)
     setReport(indexedReport)
     setFilteredPurchaseOrdersByCustomer(indexedReport)
+    setIsLoading(false)
   }
 
   const handleStartDateChange = (date: string) => {
@@ -215,20 +219,24 @@ const PurchaseOrdersReport = () => {
           </div>
         </div>
       </ViewHeader>
-      <div className={styles.tables_container}>
-        <Table
-          selectedRowId={selectedMasterRowId}
-          columnNames={['ID', 'Fecha', 'Caja', 'Cliente', 'Total', 'Forma de Pago', 'Estado']}
-          rows={reportMasterRows}
-          onSelectedRow={handleSelectMasterRow}
-        />
-        <Table
-          selectedRowId={''}
-          columnNames={['Código', 'Descripción', 'Precio Unitario', 'Cantidad', 'Importe']}
-          rows={reportDetailRows}
-          onSelectedRow={() => {}}
-        />
-      </div>
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <div className={styles.tables_container}>
+          <Table
+            selectedRowId={selectedMasterRowId}
+            columnNames={['ID', 'Fecha', 'Caja', 'Cliente', 'Total', 'Forma de Pago', 'Estado']}
+            rows={reportMasterRows}
+            onSelectedRow={handleSelectMasterRow}
+          />
+          <Table
+            selectedRowId={''}
+            columnNames={['Código', 'Descripción', 'Precio Unitario', 'Cantidad', 'Importe']}
+            rows={reportDetailRows}
+            onSelectedRow={() => {}}
+          />
+        </div>
+      )}
       <div className={styles.receipt_container}>
         <OrderReceipt
           print={printReceipt}
