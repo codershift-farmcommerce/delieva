@@ -24,12 +24,12 @@ const ProductSalesReport = () => {
   const [canGetReport, setCanGetReport] = useState(true)
 
   const getReport = async () => {
+    setCanGetReport(false)
     const response = await productClient.getSalesReport({
       start_date: startDate,
       end_date: endDate,
     })
     setReport(response.entries)
-    setCanGetReport(false)
   }
 
   const getReportAsExcelSheet = async () => {

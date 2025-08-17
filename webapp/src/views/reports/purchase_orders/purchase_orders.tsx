@@ -36,6 +36,7 @@ const PurchaseOrdersReport = () => {
   const customerInputRef = React.useRef<HTMLInputElement>(null)
 
   const getReport = async () => {
+    setCanGetReport(false)
     const response = await purchaseOrderClient.getReport({
       start_date: startDate,
       end_date: endDate,
@@ -46,7 +47,6 @@ const PurchaseOrdersReport = () => {
     }, {} as IndexedReport)
     setReport(indexedReport)
     setFilteredPurchaseOrdersByCustomer(indexedReport)
-    setCanGetReport(false)
   }
 
   const handleStartDateChange = (date: string) => {
