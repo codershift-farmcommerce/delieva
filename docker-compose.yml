@@ -32,6 +32,8 @@ services:
       - ./api:/var/app/api:rw,cached
       - ./interface:/var/app/interface:rw,cached
       - /var/app/webapp/node_modules
+    environment:
+      - NODE_OPTIONS=--max-old-space-size=4096
     env_file:
       - 'variables.env'
     command: >
