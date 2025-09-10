@@ -3,17 +3,17 @@ import { Ctx } from 'api/src/app/context'
 import {
   PurchaseOrderGetReceiptRQ,
   PurchaseOrderGetReportRQ,
+  PurchaseOrderProcessRQ,
   PurchaseOrderReturnOrderDetailsRQ,
   PurchaseOrderReturnOrderRQ,
-  PurchaseOrderProcessRQ,
 } from 'interface/requests/purchase_order'
 import {
-  PurchaseOrderGetReportRS,
-  PurchaseOrderProcessSuccessRS,
-  PurchaseOrderProcessFailRS,
   PurchaseOrderGetReceiptRS,
-  PurchaseOrderReturnOrderRS,
+  PurchaseOrderGetReportRS,
+  PurchaseOrderProcessFailRS,
+  PurchaseOrderProcessSuccessRS,
   PurchaseOrderReturnOrderDetailsRS,
+  PurchaseOrderReturnOrderRS,
 } from 'interface/responses/purchase_order'
 import * as purchase_order from 'api/src/app/models/purchase_order'
 import { action } from '../context/decorators/endpoint_actions'
@@ -39,7 +39,7 @@ export class PurchaseOrderService implements PurchaseOrderEndpoints {
     return purchase_order.getReceipt(this.ctx, req)
   }
 
-  @action({ forApp: Application.ADMIN })
+  @action({ forApps: [Application.ADMIN, Application.POS] })
   getReport(req: PurchaseOrderGetReportRQ): Promise<PurchaseOrderGetReportRS> {
     return purchase_order.getReport(this.ctx, req)
   }

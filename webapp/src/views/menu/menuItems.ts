@@ -107,7 +107,7 @@ const menu: Menu = {
       {
         text: 'Órdenes de Compra',
         href: '/reports/purchase_orders',
-        application: Application.ADMIN,
+        application: Application.POS,
       },
       {
         text: 'Cortes de Caja',

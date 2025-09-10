@@ -6,6 +6,17 @@
   display: inline-block;
 }
 
+.spinner-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner-gif {
+  display: block;
+  object-fit: contain;
+}
+
 .spinner-small {
   width: 16px;
   height: 16px;
