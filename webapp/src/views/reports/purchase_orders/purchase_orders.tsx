@@ -30,12 +30,13 @@ const PurchaseOrdersReport = () => {
   const [report, setReport] = useState<IndexedReport>({})
   const [selectedMasterRowId, setSelectedMasterRowId] = useState('')
   const [printReceipt, setPrintReceipt] = useState(false)
-  const [filteredPurchaseOrdersByCustomer, setFilteredPurchaseOrdersByCustomer] =
-    useState<IndexedReport>({})
+  const [filteredPurchaseOrders, setFilteredPurchaseOrders] = useState<IndexedReport>({})
   const [isLoading, setIsLoading] = useState(false)
   const [canGetReport, setCanGetReport] = useState(true)
 
   const customerInputRef = React.useRef<HTMLInputElement>(null)
+  const totalInputRef = React.useRef<HTMLInputElement>(null)
+  const orderIdInputRef = React.useRef<HTMLInputElement>(null)
 
   const getReport = async () => {
     setCanGetReport(false)
@@ -49,7 +50,7 @@ const PurchaseOrdersReport = () => {
       return acc
     }, {} as IndexedReport)
     setReport(indexedReport)
-    setFilteredPurchaseOrdersByCustomer(indexedReport)
+    setFilteredPurchaseOrders(indexedReport)
     setIsLoading(false)
   }
 
@@ -82,17 +83,29 @@ const PurchaseOrdersReport = () => {
     return formOfPaymentString
   }
 
-  const handleCustomerQueryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const filter = event.target.value
-    setFilteredPurchaseOrdersByCustomer(() => {
-      if (filter === '') {
+  const handleFilterTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const customer = customerInputRef?.current?.value ?? ''
+    const total = totalInputRef?.current?.value ?? ''
+    const orderId = orderIdInputRef?.current?.value ?? ''
+    setFilteredPurchaseOrders(() => {
+      if (customer === '' && orderId === '') {
         return report
       }
 
       return Object.keys(report)
         .filter(key => {
           const entry = report[key]
-          return entry.customer.name.toLowerCase().includes(filter.toLowerCase())
+          let filteredEntry = true
+          if (customer) {
+            filteredEntry = entry.customer.name.toLowerCase().includes(customer.toLowerCase())
+          }
+          if (total) {
+            filteredEntry = String(entry.total) === String(total)
+          }
+          if (orderId) {
+            filteredEntry = String(entry.order_id) === String(orderId)
+          }
+          return filteredEntry
         })
         .reduce((acc, key) => {
           acc[key] = report[key]
@@ -101,7 +114,7 @@ const PurchaseOrdersReport = () => {
     })
   }
 
-  const reportMasterRows = Object.keys(filteredPurchaseOrdersByCustomer).map(key => {
+  const reportMasterRows = Object.keys(filteredPurchaseOrders).map(key => {
     const entry = report[key]
 
     const formOfPaymentString = Array.from(
@@ -214,7 +227,25 @@ const PurchaseOrdersReport = () => {
               ref={customerInputRef}
               type={'text'}
               className={viewStyles.input}
-              onChange={handleCustomerQueryChange}
+              onChange={handleFilterTextChange}
+            />
+          </div>
+          <div>
+            <label className={styles.client_label}>Total:</label>
+            <input
+              ref={totalInputRef}
+              type={'text'}
+              className={viewStyles.input}
+              onChange={handleFilterTextChange}
+            />
+          </div>
+          <div>
+            <label className={styles.client_label}>Folio:</label>
+            <input
+              ref={orderIdInputRef}
+              type={'text'}
+              className={viewStyles.input}
+              onChange={handleFilterTextChange}
             />
           </div>
         </div>
