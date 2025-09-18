@@ -88,7 +88,7 @@ const PurchaseOrdersReport = () => {
     const total = totalInputRef?.current?.value ?? ''
     const orderId = orderIdInputRef?.current?.value ?? ''
     setFilteredPurchaseOrders(() => {
-      if (customer === '' && orderId === '') {
+      if (customer === '' && orderId === '' && total === '') {
         return report
       }
 
@@ -100,7 +100,7 @@ const PurchaseOrdersReport = () => {
             filteredEntry = entry.customer.name.toLowerCase().includes(customer.toLowerCase())
           }
           if (total) {
-            filteredEntry = String(entry.total) === String(total)
+            filteredEntry = String(entry.total).includes(String(total))
           }
           if (orderId) {
             filteredEntry = String(entry.order_id) === String(orderId)
