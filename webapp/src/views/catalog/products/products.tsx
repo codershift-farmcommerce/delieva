@@ -30,7 +30,9 @@ const Products = () => {
     useState<FinishedProduct | null>(null)
   const [addingProductCode, setAddingProductCode] = useState<string | null>(null)
   const [addingProductName, setAddingProductName] = useState<string | null>(null)
-  const [addingProductWholesaleUnitPrice, setAddingProductWholesaleUnitPrice] = useState<string>('')
+  const [addingProductWholesale10KGUnitPrice, setAddingProductWholesale10KGUnitPrice] = useState<string>('')
+  const [addingProductWholesale20KGUnitPrice, setAddingProductWholesale20KGUnitPrice] = useState<string>('')
+  const [addingProductWholesale100KGUnitPrice, setAddingProductWholesale100KGUnitPrice] = useState<string>('')
   const [addingProductRetailUnitPrice, setAddingProductRetailUnitPrice] = useState<string>('')
   const [addingProductQuantityInUnit, setAddingProductQuantityInUnit] = useState<string>('')
   const [modifyingFinishedProduct, setModifyingFinishedProduct] = useState<FinishedProduct | null>(
@@ -38,7 +40,11 @@ const Products = () => {
   )
   const [modifyingProductCode, setModifyingProductCode] = useState<string | null>(null)
   const [modifyingProductName, setModifyingProductName] = useState<string>('')
-  const [modifyingProductWholesaleUnitPrice, setModifyingProductWholesaleUnitPrice] =
+  const [modifyingProductWholesale10KGUnitPrice, setModifyingProductWholesale10KGUnitPrice] =
+    useState<string>('')
+  const [modifyingProductWholesale20KGUnitPrice, setModifyingProductWholesale20KGUnitPrice] =
+    useState<string>('')
+  const [modifyingProductWholesale100KGUnitPrice, setModifyingProductWholesale100KGUnitPrice] =
     useState<string>('')
   const [modifyingProductRetailUnitPrice, setModifyingProductRetailUnitPrice] = useState<string>('')
   const [modifyingProductQuantityInUnit, setModifyingProductQuantityInUnit] = useState<string>('')
@@ -85,7 +91,9 @@ const Products = () => {
     setSelectedProduct(product)
     setModifyingProductCode(product?.code ?? null)
     setModifyingProductName(product?.name ?? '')
-    setModifyingProductWholesaleUnitPrice(String(product?.wholesale_unit_price ?? ''))
+    setModifyingProductWholesale10KGUnitPrice(String(product?.wholesale_unit_price ?? ''))
+    setModifyingProductWholesale20KGUnitPrice(String(product?.wholesale_20k_unit_price ?? ''))
+    setModifyingProductWholesale100KGUnitPrice(String(product?.wholesale_100k_unit_price ?? ''))
     setModifyingProductRetailUnitPrice(String(product?.retail_unit_price ?? ''))
     setModifyingProductQuantityInUnit(String(product?.finished_products[0]?.unit_quantity ?? ''))
   }
@@ -95,7 +103,9 @@ const Products = () => {
     setSelectedProduct(null)
     setAddingProductCode('')
     setAddingProductName('')
-    setAddingProductWholesaleUnitPrice('')
+    setAddingProductWholesale10KGUnitPrice('')
+    setAddingProductWholesale20KGUnitPrice('')
+    setAddingProductWholesale100KGUnitPrice('')
     setAddingProductRetailUnitPrice('')
     setAddingProductQuantityInUnit('')
     setTimeout(() => {
@@ -139,7 +149,9 @@ const Products = () => {
     setAddFormEnabled(false)
     setAddingProductCode('')
     setAddingProductName('')
-    setAddingProductWholesaleUnitPrice('')
+    setAddingProductWholesale10KGUnitPrice('')
+    setAddingProductWholesale20KGUnitPrice('')
+    setAddingProductWholesale100KGUnitPrice('')
     setAddingProductRetailUnitPrice('')
     setAddingProductQuantityInUnit('')
   }
@@ -158,14 +170,24 @@ const Products = () => {
       toast.error('Error!. Favor de indicar un nombre de producto.')
       return
     }
-    const wholesaleUnitPriceNumber = Number(addingProductWholesaleUnitPrice)
-    if (isNaN(wholesaleUnitPriceNumber)) {
-      toast.error('Error!. Precio unitario de mayoreo incorrecto.')
-      return
-    }
     const retailUnitPriceNumber = Number(addingProductRetailUnitPrice)
     if (isNaN(retailUnitPriceNumber)) {
       toast.error('Error!. Precio unitario de menudeo incorrecto.')
+      return
+    }
+    const wholesale10KGUnitPriceNumber = Number(addingProductWholesale10KGUnitPrice)
+    if (isNaN(wholesale10KGUnitPriceNumber)) {
+      toast.error('Error!. Precio unitario de mayoreo 10KG incorrecto.')
+      return
+    }
+    const wholesale20KGUnitPriceNumber = Number(addingProductWholesale20KGUnitPrice)
+    if (isNaN(wholesale20KGUnitPriceNumber)) {
+      toast.error('Error!. Precio unitario de mayoreo 20KG incorrecto.')
+      return
+    }
+    const wholesale100KGUnitPriceNumber = Number(addingProductWholesale100KGUnitPrice)
+    if (isNaN(wholesale100KGUnitPriceNumber)) {
+      toast.error('Error!. Precio unitario de mayoreo 100KG incorrecto.')
       return
     }
     if (!addingProductQuantityInUnit) {
@@ -186,7 +208,9 @@ const Products = () => {
           unit_quantity: quantityInUnit,
         },
       ],
-      wholesale_unit_price: wholesaleUnitPriceNumber,
+      wholesale_unit_price: wholesale10KGUnitPriceNumber,
+      wholesale_20k_unit_price: wholesale20KGUnitPriceNumber,
+      wholesale_100k_unit_price: wholesale100KGUnitPriceNumber,
       retail_unit_price: retailUnitPriceNumber,
     }
     const result = await productClient.add(product)
@@ -213,14 +237,24 @@ const Products = () => {
       toast.error('Error!. Favor de indicar un nombre de producto.')
       return
     }
-    const wholesaleUnitPriceNumber = Number(modifyingProductWholesaleUnitPrice)
-    if (isNaN(wholesaleUnitPriceNumber)) {
-      toast.error('Error!. Precio unitario de mayoreo incorrecto.')
-      return
-    }
     const retailUnitPriceNumber = Number(modifyingProductRetailUnitPrice)
     if (isNaN(retailUnitPriceNumber)) {
       toast.error('Error!. Precio unitario de menudeo incorrecto.')
+      return
+    }
+    const wholesale10KGUnitPriceNumber = Number(modifyingProductWholesale10KGUnitPrice)
+    if (isNaN(wholesale10KGUnitPriceNumber)) {
+      toast.error('Error!. Precio unitario de mayoreo 10KG incorrecto.')
+      return
+    }
+    const wholesale20KGUnitPriceNumber = Number(modifyingProductWholesale20KGUnitPrice)
+    if (isNaN(wholesale20KGUnitPriceNumber)) {
+      toast.error('Error!. Precio unitario de mayoreo 20KG incorrecto.')
+      return
+    }
+    const wholesale100KGUnitPriceNumber = Number(modifyingProductWholesale100KGUnitPrice)
+    if (isNaN(wholesale100KGUnitPriceNumber)) {
+      toast.error('Error!. Precio unitario de mayoreo 100KG incorrecto.')
       return
     }
     if (!modifyingProductQuantityInUnit) {
@@ -253,7 +287,9 @@ const Products = () => {
       code: modifyingProductCode,
       name: modifyingProductName,
       finished_products: finishedProduct,
-      wholesale_unit_price: wholesaleUnitPriceNumber,
+      wholesale_unit_price: wholesale10KGUnitPriceNumber,
+      wholesale_unit_price_20_kg: wholesale20KGUnitPriceNumber,
+      wholesale_unit_price_100_kg: wholesale100KGUnitPriceNumber,
       retail_unit_price: retailUnitPriceNumber,
     }
     const result = await productClient.modify(product)
@@ -282,10 +318,16 @@ const Products = () => {
               value: product.name,
             },
             {
+              value: formatMonetary(product.retail_unit_price),
+            },
+            {
               value: formatMonetary(product.wholesale_unit_price),
             },
             {
-              value: formatMonetary(product.retail_unit_price),
+              value: product.wholesale_20k_unit_price ? formatMonetary(product.wholesale_20k_unit_price) : '',
+            },
+            {
+              value: product.wholesale_100k_unit_price ? formatMonetary(product.wholesale_100k_unit_price) : '',
             },
             {
               value: finishedProduct.unit_quantity,
@@ -416,32 +458,57 @@ const Products = () => {
                 </div>
                 <div className={styles.form_container_input_container}>
                   <label className={styles.form_container_input_label}>
-                    {`Precio Mayoreo ${
-                      selectedProduct?.finished_products[0]?.unit_type ===
-                      FinishedProductUnitType.KILOGRAM
-                        ? '(por KG)'
-                        : ''
-                    }`}
-                  </label>
-                  <input
-                    className={styles.form_container_input}
-                    value={addingProductWholesaleUnitPrice ?? ''}
-                    onChange={event => setAddingProductWholesaleUnitPrice(event.target.value)}
-                  />
-                </div>
-                <div className={styles.form_container_input_container}>
-                  <label className={styles.form_container_input_label}>
-                    {`Precio Menudeo ${
-                      selectedProduct?.finished_products[0]?.unit_type ===
-                      FinishedProductUnitType.KILOGRAM
-                        ? '(por KG)'
-                        : ''
-                    }`}
+                    {'Precio Menudeo'}
                   </label>
                   <input
                     className={styles.form_container_input}
                     value={addingProductRetailUnitPrice ?? ''}
                     onChange={event => setAddingProductRetailUnitPrice(event.target.value)}
+                  />
+                </div>
+                <div className={styles.form_container_input_container}>
+                  <label className={styles.form_container_input_label}>
+                    {`Precio Mayoreo ${
+                      selectedProduct?.finished_products[0]?.unit_type ===
+                      FinishedProductUnitType.KILOGRAM
+                        ? '(mínimo 10 KG)'
+                        : ''
+                    }`}
+                  </label>
+                  <input
+                    className={styles.form_container_input}
+                    value={addingProductWholesale10KGUnitPrice ?? ''}
+                    onChange={event => setAddingProductWholesale10KGUnitPrice(event.target.value)}
+                  />
+                </div>
+                <div className={styles.form_container_input_container}>
+                  <label className={styles.form_container_input_label}>
+                    {`Precio Mayoreo ${
+                      selectedProduct?.finished_products[0]?.unit_type ===
+                      FinishedProductUnitType.KILOGRAM
+                        ? '(mínimo 20 KG)'
+                        : ''
+                    }`}
+                  </label>
+                  <input
+                    className={styles.form_container_input}
+                    value={addingProductWholesale20KGUnitPrice ?? ''}
+                    onChange={event => setAddingProductWholesale20KGUnitPrice(event.target.value)}
+                  />
+                </div>
+                <div className={styles.form_container_input_container}>
+                  <label className={styles.form_container_input_label}>
+                    {`Precio Mayoreo ${
+                      selectedProduct?.finished_products[0]?.unit_type ===
+                      FinishedProductUnitType.KILOGRAM
+                        ? '(mínimo 100 KG)'
+                        : ''
+                    }`}
+                  </label>
+                  <input
+                    className={styles.form_container_input}
+                    value={addingProductWholesale100KGUnitPrice ?? ''}
+                    onChange={event => setAddingProductWholesale100KGUnitPrice(event.target.value)}
                   />
                 </div>
                 <div className={styles.form_container_input_container}>
@@ -464,11 +531,11 @@ const Products = () => {
                     {' '}
                     {addingProductFinishedProduct
                       ? `${
-                          modifyingFinishedProduct?.unit_type
-                            ? FinishedProductUnitTranslation[modifyingFinishedProduct?.unit_type] +
-                              's'
-                            : ''
-                        } `
+                        modifyingFinishedProduct?.unit_type
+                          ? FinishedProductUnitTranslation[modifyingFinishedProduct?.unit_type] +
+                          's'
+                          : ''
+                      } `
                       : ''}
                   </span>
                 </div>
@@ -502,33 +569,60 @@ const Products = () => {
                 </div>
                 <div className={styles.form_container_input_container}>
                   <label className={styles.form_container_input_label}>
-                    {' '}
-                    {`Precio Mayoreo ${
-                      selectedProduct?.finished_products[0]?.unit_type ===
-                      FinishedProductUnitType.KILOGRAM
-                        ? '(por KG)'
-                        : ''
-                    }`}
-                  </label>
-                  <input
-                    className={styles.form_container_input}
-                    value={modifyingProductWholesaleUnitPrice ?? ''}
-                    onChange={event => setModifyingProductWholesaleUnitPrice(event.target.value)}
-                  />
-                </div>
-                <div className={styles.form_container_input_container}>
-                  <label className={styles.form_container_input_label}>
-                    {`Precio Menudeo ${
-                      selectedProduct?.finished_products[0]?.unit_type ===
-                      FinishedProductUnitType.KILOGRAM
-                        ? '(por KG)'
-                        : ''
-                    }`}
+                    {'Precio Menudeo'}
                   </label>
                   <input
                     className={styles.form_container_input}
                     value={modifyingProductRetailUnitPrice ?? ''}
                     onChange={event => setModifyingProductRetailUnitPrice(event.target.value)}
+                  />
+                </div>
+                <div className={styles.form_container_input_container}>
+                  <label className={styles.form_container_input_label}>
+                    {' '}
+                    {`Precio Mayoreo ${
+                      selectedProduct?.finished_products[0]?.unit_type ===
+                      FinishedProductUnitType.KILOGRAM
+                        ? '(mínimo 10KG)'
+                        : ''
+                    }`}
+                  </label>
+                  <input
+                    className={styles.form_container_input}
+                    value={modifyingProductWholesale10KGUnitPrice ?? ''}
+                    onChange={event => setModifyingProductWholesale10KGUnitPrice(event.target.value)}
+                  />
+                </div>
+                <div className={styles.form_container_input_container}>
+                  <label className={styles.form_container_input_label}>
+                    {' '}
+                    {`Precio Mayoreo ${
+                      selectedProduct?.finished_products[0]?.unit_type ===
+                      FinishedProductUnitType.KILOGRAM
+                        ? '(mínimo 20KG)'
+                        : ''
+                    }`}
+                  </label>
+                  <input
+                    className={styles.form_container_input}
+                    value={modifyingProductWholesale20KGUnitPrice ?? ''}
+                    onChange={event => setModifyingProductWholesale20KGUnitPrice(event.target.value)}
+                  />
+                </div>
+                <div className={styles.form_container_input_container}>
+                  <label className={styles.form_container_input_label}>
+                    {' '}
+                    {`Precio Mayoreo ${
+                      selectedProduct?.finished_products[0]?.unit_type ===
+                      FinishedProductUnitType.KILOGRAM
+                        ? '(mínimo 100KG)'
+                        : ''
+                    }`}
+                  </label>
+                  <input
+                    className={styles.form_container_input}
+                    value={modifyingProductWholesale100KGUnitPrice ?? ''}
+                    onChange={event => setModifyingProductWholesale100KGUnitPrice(event.target.value)}
                   />
                 </div>
                 <div className={styles.form_container_input_container}>
@@ -552,18 +646,18 @@ const Products = () => {
                     {' '}
                     {modifyingFinishedProduct
                       ? `${
-                          modifyingFinishedProduct?.unit_type
-                            ? FinishedProductUnitTranslation[modifyingFinishedProduct?.unit_type] +
-                              's'
-                            : ''
-                        }`
+                        modifyingFinishedProduct?.unit_type
+                          ? FinishedProductUnitTranslation[modifyingFinishedProduct?.unit_type] +
+                          's'
+                          : ''
+                      }`
                       : `${
+                        selectedProduct?.finished_products[0]?.unit_type
+                          ? FinishedProductUnitTranslation[
                           selectedProduct?.finished_products[0]?.unit_type
-                            ? FinishedProductUnitTranslation[
-                                selectedProduct?.finished_products[0]?.unit_type
-                              ] + 's'
-                            : ''
-                        }`}
+                          ] + 's'
+                          : ''
+                      }`}
                   </span>
                 </div>
               </div>
@@ -583,8 +677,10 @@ const Products = () => {
           '#',
           'Código',
           'Nombre',
-          'Precio Mayoreo',
           'Precio Menudeo',
+          'Precio Mayoreo (10kg)',
+          'Precio Mayoreo (20kg)',
+          'Precio Mayoreo (100kg)',
           'Cantidad por Unidad',
           'Tipo de Unidad',
           'Producto Terminado',
