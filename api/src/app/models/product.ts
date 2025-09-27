@@ -37,6 +37,8 @@ type ProductSQLRow = {
   name: string
   finished_products: ProductFinishedProduct[]
   wholesale_unit_price: string
+  wholesale_20k_unit_price: string
+  wholesale_100k_unit_price: string
   retail_unit_price: string
   enabled: boolean
 }
@@ -67,6 +69,8 @@ export async function search(
       'code',
       'name',
       'wholesale_unit_price',
+      'wholesale_20k_unit_price',
+      'wholesale_100k_unit_price',
       'retail_unit_price',
       'enabled',
     )
@@ -86,6 +90,8 @@ export async function search(
       code: r.code,
       name: r.name,
       wholesale_unit_price: Number(r.wholesale_unit_price),
+      wholesale_20k_unit_price: r.wholesale_20k_unit_price ? Number(r.wholesale_20k_unit_price) : null,
+      wholesale_100k_unit_price: r.wholesale_100k_unit_price ? Number(r.wholesale_100k_unit_price) : null,
       retail_unit_price: Number(r.retail_unit_price),
       enabled: r.enabled,
     },
@@ -102,6 +108,8 @@ export async function add(ctx: Ctx, req: ProductAddRQ): Promise<AddRS> {
     name,
     finished_products,
     wholesale_unit_price,
+    wholesale_20k_unit_price,
+    wholesale_100k_unit_price,
     retail_unit_price,
   } = req
 
@@ -120,6 +128,8 @@ export async function add(ctx: Ctx, req: ProductAddRQ): Promise<AddRS> {
         code,
         name,
         wholesale_unit_price,
+        wholesale_20k_unit_price,
+        wholesale_100k_unit_price,
         retail_unit_price,
       })
       await trx('product_finished_product').insert(
@@ -153,6 +163,8 @@ export async function getByCode(
       'code',
       'name',
       'wholesale_unit_price',
+      'wholesale_20k_unit_price',
+      'wholesale_100k_unit_price',
       'retail_unit_price',
       'enabled',
     )
@@ -171,6 +183,8 @@ export async function getByCode(
       code: result.code,
       name: result.name,
       wholesale_unit_price: Number(result.wholesale_unit_price),
+      wholesale_20k_unit_price: result.wholesale_20k_unit_price ? Number(result.wholesale_20k_unit_price) : null,
+      wholesale_100k_unit_price: result.wholesale_100k_unit_price ? Number(result.wholesale_100k_unit_price) : null,
       retail_unit_price: Number(result.retail_unit_price),
       enabled: result.enabled,
     },
@@ -187,6 +201,8 @@ export async function getKeyedByCodes(
       'product.code AS code',
       'product.name AS name',
       'wholesale_unit_price',
+      'wholesale_20k_unit_price',
+      'wholesale_100k_unit_price',
       'retail_unit_price',
       ctx.knex.raw(
         `(SELECT JSON_AGG(JSON_BUILD_OBJECT(
@@ -209,6 +225,8 @@ export async function getKeyedByCodes(
       code: r.code,
       name: r.name,
       wholesale_unit_price: Number(r.wholesale_unit_price),
+      wholesale_20k_unit_price: r.wholesale_20k_unit_price ? Number(r.wholesale_20k_unit_price) : null,
+      wholesale_100k_unit_price: r.wholesale_100k_unit_price ? Number(r.wholesale_100k_unit_price) : null,
       retail_unit_price: Number(r.retail_unit_price),
       finished_products: r.finished_products ?? [],
     }
@@ -248,6 +266,8 @@ export async function list(
            ) AS finished_products`,
       ),
       'wholesale_unit_price',
+      'wholesale_20k_unit_price',
+      'wholesale_100k_unit_price',
       'retail_unit_price',
       'enabled',
     )
@@ -257,6 +277,8 @@ export async function list(
       'product.code',
       'product.name',
       'wholesale_unit_price',
+      'wholesale_20k_unit_price',
+      'wholesale_100k_unit_price',
       'retail_unit_price',
       'enabled',
     )
@@ -279,6 +301,8 @@ export async function list(
       name: productResult.name,
       finished_products: productResult.finished_products ?? [],
       wholesale_unit_price: Number(productResult.wholesale_unit_price),
+      wholesale_20k_unit_price: productResult.wholesale_20k_unit_price ? Number(productResult.wholesale_20k_unit_price) : null,
+      wholesale_100k_unit_price: productResult.wholesale_100k_unit_price ? Number(productResult.wholesale_100k_unit_price) : null,
       retail_unit_price: Number(productResult.retail_unit_price),
       enabled: productResult.enabled,
     })),
@@ -289,13 +313,15 @@ export async function modify(
   ctx: Ctx,
   req: ProductModifyRQ,
 ): Promise<ModifyRS> {
-  const { code, name, wholesale_unit_price, retail_unit_price } = req
+  const { code, name, wholesale_unit_price, wholesale_20k_unit_price, wholesale_100k_unit_price, retail_unit_price } = req
 
   await ctx.knex.transaction(async trx => {
     await trx('product')
       .update({
         name,
         wholesale_unit_price,
+        wholesale_20k_unit_price,
+        wholesale_100k_unit_price,
         retail_unit_price,
       })
       .where('code', code)

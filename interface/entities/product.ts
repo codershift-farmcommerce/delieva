@@ -4,6 +4,8 @@ export type Product = {
   code: string
   name: string
   wholesale_unit_price: number
+  wholesale_20k_unit_price: number | null
+  wholesale_100k_unit_price: number | null
   retail_unit_price: number
   enabled: boolean
 }

@@ -12,6 +12,8 @@ export type ProductAddRQ = {
   name: string
   finished_products: Array<FinishedProductWithQuantity>
   wholesale_unit_price: number
+  wholesale_20k_unit_price?: number | null
+  wholesale_100k_unit_price?: number | null
   retail_unit_price: number
 }
 
@@ -29,6 +31,8 @@ export type ProductModifyRQ = {
   name: string
   finished_products: Array<FinishedProductWithQuantity>
   wholesale_unit_price: number
+  wholesale_20k_unit_price?: number | null
+  wholesale_100k_unit_price?: number | null
   retail_unit_price: number
 }
 
