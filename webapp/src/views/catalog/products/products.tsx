@@ -288,8 +288,8 @@ const Products = () => {
       name: modifyingProductName,
       finished_products: finishedProduct,
       wholesale_unit_price: wholesale10KGUnitPriceNumber,
-      wholesale_unit_price_20_kg: wholesale20KGUnitPriceNumber,
-      wholesale_unit_price_100_kg: wholesale100KGUnitPriceNumber,
+      wholesale_20k_unit_price: wholesale20KGUnitPriceNumber,
+      wholesale_100k_unit_price: wholesale100KGUnitPriceNumber,
       retail_unit_price: retailUnitPriceNumber,
     }
     const result = await productClient.modify(product)

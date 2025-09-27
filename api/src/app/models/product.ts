@@ -90,8 +90,12 @@ export async function search(
       code: r.code,
       name: r.name,
       wholesale_unit_price: Number(r.wholesale_unit_price),
-      wholesale_20k_unit_price: r.wholesale_20k_unit_price ? Number(r.wholesale_20k_unit_price) : null,
-      wholesale_100k_unit_price: r.wholesale_100k_unit_price ? Number(r.wholesale_100k_unit_price) : null,
+      wholesale_20k_unit_price: r.wholesale_20k_unit_price
+        ? Number(r.wholesale_20k_unit_price)
+        : null,
+      wholesale_100k_unit_price: r.wholesale_100k_unit_price
+        ? Number(r.wholesale_100k_unit_price)
+        : null,
       retail_unit_price: Number(r.retail_unit_price),
       enabled: r.enabled,
     },
@@ -183,8 +187,12 @@ export async function getByCode(
       code: result.code,
       name: result.name,
       wholesale_unit_price: Number(result.wholesale_unit_price),
-      wholesale_20k_unit_price: result.wholesale_20k_unit_price ? Number(result.wholesale_20k_unit_price) : null,
-      wholesale_100k_unit_price: result.wholesale_100k_unit_price ? Number(result.wholesale_100k_unit_price) : null,
+      wholesale_20k_unit_price: result.wholesale_20k_unit_price
+        ? Number(result.wholesale_20k_unit_price)
+        : null,
+      wholesale_100k_unit_price: result.wholesale_100k_unit_price
+        ? Number(result.wholesale_100k_unit_price)
+        : null,
       retail_unit_price: Number(result.retail_unit_price),
       enabled: result.enabled,
     },
@@ -225,8 +233,12 @@ export async function getKeyedByCodes(
       code: r.code,
       name: r.name,
       wholesale_unit_price: Number(r.wholesale_unit_price),
-      wholesale_20k_unit_price: r.wholesale_20k_unit_price ? Number(r.wholesale_20k_unit_price) : null,
-      wholesale_100k_unit_price: r.wholesale_100k_unit_price ? Number(r.wholesale_100k_unit_price) : null,
+      wholesale_20k_unit_price: r.wholesale_20k_unit_price
+        ? Number(r.wholesale_20k_unit_price)
+        : null,
+      wholesale_100k_unit_price: r.wholesale_100k_unit_price
+        ? Number(r.wholesale_100k_unit_price)
+        : null,
       retail_unit_price: Number(r.retail_unit_price),
       finished_products: r.finished_products ?? [],
     }
@@ -301,8 +313,12 @@ export async function list(
       name: productResult.name,
       finished_products: productResult.finished_products ?? [],
       wholesale_unit_price: Number(productResult.wholesale_unit_price),
-      wholesale_20k_unit_price: productResult.wholesale_20k_unit_price ? Number(productResult.wholesale_20k_unit_price) : null,
-      wholesale_100k_unit_price: productResult.wholesale_100k_unit_price ? Number(productResult.wholesale_100k_unit_price) : null,
+      wholesale_20k_unit_price: productResult.wholesale_20k_unit_price
+        ? Number(productResult.wholesale_20k_unit_price)
+        : null,
+      wholesale_100k_unit_price: productResult.wholesale_100k_unit_price
+        ? Number(productResult.wholesale_100k_unit_price)
+        : null,
       retail_unit_price: Number(productResult.retail_unit_price),
       enabled: productResult.enabled,
     })),
@@ -313,28 +329,42 @@ export async function modify(
   ctx: Ctx,
   req: ProductModifyRQ,
 ): Promise<ModifyRS> {
-  const { code, name, wholesale_unit_price, wholesale_20k_unit_price, wholesale_100k_unit_price, retail_unit_price } = req
+  const {
+    code,
+    name,
+    wholesale_unit_price,
+    wholesale_20k_unit_price,
+    wholesale_100k_unit_price,
+    retail_unit_price,
+  } = req
 
-  await ctx.knex.transaction(async trx => {
-    await trx('product')
-      .update({
-        name,
-        wholesale_unit_price,
-        wholesale_20k_unit_price,
-        wholesale_100k_unit_price,
-        retail_unit_price,
-      })
-      .where('code', code)
+  try {
+    await ctx.knex.transaction(async trx => {
+      await trx('product')
+        .update({
+          name,
+          wholesale_unit_price,
+          wholesale_20k_unit_price,
+          wholesale_100k_unit_price,
+          retail_unit_price,
+        })
+        .where('code', code)
 
-    await trx('product_finished_product').delete().where('product_code', code)
-    await trx('product_finished_product').insert(
-      req.finished_products.map(finished_product => ({
-        product_code: code,
-        finished_product_code: finished_product.finished_product_code,
-        unit_quantity: finished_product.unit_quantity,
-      })),
-    )
-  })
+      await trx('product_finished_product').delete().where('product_code', code)
+      await trx('product_finished_product').insert(
+        req.finished_products.map(finished_product => ({
+          product_code: code,
+          finished_product_code: finished_product.finished_product_code,
+          unit_quantity: finished_product.unit_quantity,
+        })),
+      )
+    })
+  } catch (e) {
+    return {
+      success: false,
+      error: (e as Error).message,
+    }
+  }
 
   return {
     success: true,
