@@ -120,7 +120,7 @@ const Customers = () => {
 
   const handleSelectedCustomer = (id: string) => {
     const customer = customers?.find(customer => String(customer.id) === id)
-    if ((customer === selectedCustomer && !modifyFormEnabled)) {
+    if (customer === selectedCustomer && !modifyFormEnabled) {
       setSelectedCustomer(null)
       return
     }
@@ -360,6 +360,15 @@ const Customers = () => {
                     onChange={event => setAddingCustomerShouldAddIEPS(event.target.checked)}
                   />
                 </div>
+                <div className={styles.form_container_input_container}>
+                  <label className={styles.form_container_input_label}>Precio Mayoreo</label>
+                  <select className={viewStyles.select}>
+                    <option value="">Dependiendo del peso en la venta</option>
+                    <option value="10KG">Fijo a 10KG</option>
+                    <option value="20KG">Fijo a 20KG</option>
+                    <option value="100KG">Fijo a 100KG</option>
+                  </select>
+                </div>
                 <div className={styles.form_container_buttons}>
                   <button className={viewStyles.primary_button} onClick={onAddCustomer}>
                     Guardar
@@ -427,6 +436,15 @@ const Customers = () => {
                     checked={modifyingCustomerShouldAddIEPS}
                     onChange={event => setModifyingCustomerShouldAddIEPS(event.target.checked)}
                   />
+                </div>
+                <div className={styles.form_container_input_container}>
+                  <label className={styles.form_container_input_label}>Precio Mayoreo</label>
+                  <select className={viewStyles.select}>
+                    <option value="">Dependiendo del peso en la venta</option>
+                    <option value="10KG">Fijo a 10KG</option>
+                    <option value="20KG">Fijo a 20KG</option>
+                    <option value="100KG">Fijo a 100KG</option>
+                  </select>
                 </div>
                 <div className={styles.form_container_buttons}>
                   <button className={viewStyles.primary_button} onClick={onModifyCustomer}>
