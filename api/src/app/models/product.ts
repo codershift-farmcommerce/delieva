@@ -20,8 +20,8 @@ import {
   ProductSearchRQ,
 } from 'interface/requests/product'
 import {
-  ProductUnitPrices,
   ProductFinishedProduct,
+  ProductUnitPrices,
   ProductWithFinishedProducts,
 } from 'interface/entities/product'
 import { SystemClient } from 'interface/entities/system'
@@ -30,9 +30,9 @@ import { GeneralPublicCustomer } from 'interface/entities/customer'
 import { AddRS, ModifyRS } from 'interface/responses/common'
 import * as discountModel from './discount'
 import * as customerModel from './customer'
+import { CustomerSQLRow } from './customer'
 import { FinishedProductUnitType } from 'interface/entities/finished_product'
 import { getAssignedCashRegister } from './cash_register'
-import { CustomerSQLRow } from './customer'
 
 type ProductSQLRow = {
   code: string
@@ -471,6 +471,17 @@ const UnitPriceTypeFn: Partial<
     if (customer.id == GeneralPublicCustomer.id) {
       return CartPriceType.RETAIL
     }
+    if (customer.fixed_wholesale_price_kg) {
+      if (customer.fixed_wholesale_price_kg == 10) {
+        return CartPriceType.WHOLESALE_10KG
+      }
+      if (customer.fixed_wholesale_price_kg == 20) {
+        return CartPriceType.WHOLESALE_20KG
+      }
+      if (customer.fixed_wholesale_price_kg == 100) {
+        return CartPriceType.WHOLESALE_100KG
+      }
+    }
     const assignedCashRegister = await getAssignedCashRegister(ctx, {})
     const totalKG = Object.keys(cart.items).reduce((acc, productCode) => {
       const cartItem = cart.items[productCode]
@@ -488,15 +499,43 @@ const UnitPriceTypeFn: Partial<
       return acc + kilograms * cartItem.quantity
     }, 0)
 
-    if (
-      totalKG <
-      (assignedCashRegister.cash_register.apply_wholesale_price_after_x_kg ||
-        10)
-    ) {
-      return CartPriceType.RETAIL
+    if (totalKG > 100) {
+      return CartPriceType.WHOLESALE_100KG
     }
-    return CartPriceType.WHOLESALE
+    if (totalKG > 20) {
+      return CartPriceType.WHOLESALE_20KG
+    }
+    if (totalKG > 10) {
+      return CartPriceType.WHOLESALE_10KG
+    }
+
+    return CartPriceType.RETAIL
   },
+}
+
+function getProductUnitPrice(
+  cartPriceType: CartPriceType,
+  product: ProductWithFinishedProducts,
+) {
+  if (cartPriceType === CartPriceType.WHOLESALE_100KG) {
+    return (
+      product.wholesale_100k_unit_price ??
+      product.wholesale_20k_unit_price ??
+      product.wholesale_unit_price ??
+      product.retail_unit_price
+    )
+  }
+  if (cartPriceType === CartPriceType.WHOLESALE_20KG) {
+    return (
+      product.wholesale_20k_unit_price ??
+      product.wholesale_unit_price ??
+      product.retail_unit_price
+    )
+  }
+  if (cartPriceType === CartPriceType.WHOLESALE_10KG) {
+    return product.wholesale_unit_price ?? product.retail_unit_price
+  }
+  return product.retail_unit_price
 }
 
 export async function getUnitPricesForCart(
@@ -528,10 +567,7 @@ export async function getUnitPricesForCart(
     if (discountsByProducts?.[productCode]?.fixed_price) {
       acc[product.code] = discountsByProducts[productCode].fixed_price
     } else {
-      acc[product.code] =
-        unitPriceType === CartPriceType.WHOLESALE
-          ? product.wholesale_unit_price
-          : product.retail_unit_price
+      acc[product.code] = getProductUnitPrice(unitPriceType, product)
 
       if (discountsByProducts?.[productCode]?.discount_percentage) {
         acc[product.code] =

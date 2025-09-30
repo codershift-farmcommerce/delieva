@@ -18,6 +18,8 @@ export type CartItemDetail = {
 }
 
 export enum CartPriceType {
-  WHOLESALE = 'WHOLESALE',
+  WHOLESALE_10KG = 'WHOLESALE_10KG',
+  WHOLESALE_20KG = 'WHOLESALE_20KG',
+  WHOLESALE_100KG = 'WHOLESALE_100KG',
   RETAIL = 'RETAIL',
 }
