@@ -9,6 +9,7 @@ export type CustomerAddRQ = {
   city: string
   email: string
   should_add_ieps: boolean
+  fixed_wholesale_price_kg: number | null
 }
 
 export type CustomerListRQ = {
@@ -30,6 +31,7 @@ export type CustomerModifyRQ = {
   city: string
   email: string
   should_add_ieps: boolean
+  fixed_wholesale_price_kg: number | null
 }
 
 export type CustomerEnableRQ = {

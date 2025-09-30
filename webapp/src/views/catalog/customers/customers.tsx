@@ -22,6 +22,9 @@ const Customers = () => {
   const [addingCustomerCity, setAddingCustomerCity] = useState<string | null>(null)
   const [addingCustomerPhoneNumber, setAddingCustomerPhoneNumber] = useState<string | null>(null)
   const [addingCustomerShouldAddIEPS, setAddingCustomerShouldAddIEPS] = useState<boolean>(false)
+  const [addingCustomerFixedWholesalePriceKG, setAddingCustomerFixedWholesalePriceKG] = useState<
+    number | null
+  >(null)
 
   const [modifyFormEnabled, setModifyFormEnabled] = useState(false)
   const [modifyingCustomerEmail, setModifyingCustomerEmail] = useState<string | null>(null)
@@ -33,6 +36,8 @@ const Customers = () => {
   )
   const [modifyingCustomerShouldAddIEPS, setModifyingCustomerShouldAddIEPS] =
     useState<boolean>(false)
+  const [modifyingCustomerFixedWholesalePriceKG, setModifyingCustomerFixedWholesalePriceKG] =
+    useState<number | null>(null)
 
   const searchCustomerInputRef = useRef<HTMLInputElement>(null)
   const addingCustomerNameInputRef = useRef<HTMLInputElement>(null)
@@ -149,6 +154,7 @@ const Customers = () => {
       city: addingCustomerCity ?? '',
       phone_number: addingCustomerPhoneNumber ?? '',
       should_add_ieps: addingCustomerShouldAddIEPS,
+      fixed_wholesale_price_kg: addingCustomerFixedWholesalePriceKG ?? null,
     })
 
     if (response.success) {
@@ -172,6 +178,7 @@ const Customers = () => {
       city: modifyingCustomerCity ?? '',
       phone_number: modifyingCustomerPhoneNumber ?? '',
       should_add_ieps: modifyingCustomerShouldAddIEPS,
+      fixed_wholesale_price_kg: modifyingCustomerFixedWholesalePriceKG ?? null,
     })
 
     if (response.success) {
