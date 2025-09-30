@@ -321,7 +321,7 @@ async function updateCreditPurchaseOrderWithTrx(
         updated_at: ctx.knex.fn.now(),
       })
       .where('id', topCreditPurchase.id)
-
+debugger
     while (remainder > 0) {
       const topCreditPurchase = await trx('credit_purchase_order')
         .select('id', 'total', 'paid')
@@ -409,6 +409,7 @@ async function revertCreditPurchaseOrderWithTrx(
           newStatus = 'PENDING'
         } else {
           newPaid = Number(paymentAmountMinusRemainder)
+          remainder = 0
         }
 
         await trx('credit_purchase_order')
