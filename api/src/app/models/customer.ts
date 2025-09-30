@@ -21,7 +21,7 @@ import {
 } from 'interface/entities/customer'
 import { ModifyRS } from 'interface/responses/common'
 
-type CustomerSQLRow = {
+export type CustomerSQLRow = {
   id: number
   name: string
   phone_number: string

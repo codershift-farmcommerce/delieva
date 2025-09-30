@@ -29,8 +29,10 @@ import { Cart, CartPriceType } from 'interface/entities/cart'
 import { GeneralPublicCustomer } from 'interface/entities/customer'
 import { AddRS, ModifyRS } from 'interface/responses/common'
 import * as discountModel from './discount'
+import * as customerModel from './customer'
 import { FinishedProductUnitType } from 'interface/entities/finished_product'
 import { getAssignedCashRegister } from './cash_register'
+import { CustomerSQLRow } from './customer'
 
 type ProductSQLRow = {
   code: string
@@ -459,14 +461,14 @@ const UnitPriceTypeFn: Partial<
     SystemClient,
     (
       ctx: Ctx,
-      customerId: number,
+      customer: CustomerSQLRow,
       cart: Cart,
       products: KeyedProduct,
     ) => Promise<CartPriceType>
   >
 > = {
-  [SystemClient.DELIEVA]: async (ctx: Ctx, customerId, cart, products) => {
-    if (customerId == GeneralPublicCustomer.id) {
+  [SystemClient.DELIEVA]: async (ctx: Ctx, customer, cart, products) => {
+    if (customer.id == GeneralPublicCustomer.id) {
       return CartPriceType.RETAIL
     }
     const assignedCashRegister = await getAssignedCashRegister(ctx, {})
@@ -506,8 +508,12 @@ export async function getUnitPricesForCart(
   const productCodes = Object.keys(cart.items)
 
   const products = await getKeyedByCodes(ctx, productCodes)
+  const customer = await customerModel.get(ctx, customer_id)
+  if (!customer) {
+    throw new Error('Customer not found')
+  }
   let unitPriceType = unitPriceTypeFn
-    ? await unitPriceTypeFn(ctx, customer_id, cart, products)
+    ? await unitPriceTypeFn(ctx, customer, cart, products)
     : CartPriceType.RETAIL
 
   const discountsByProducts = (
