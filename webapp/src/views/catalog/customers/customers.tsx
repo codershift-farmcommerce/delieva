@@ -232,6 +232,10 @@ const Customers = () => {
             {
               value: customer.should_add_ieps ? 'Sí' : 'No',
             },
+            {
+              value:
+                `${customer.fixed_wholesale_price_kg} KG` ?? 'Dependiendo del peso en la venta',
+            },
           ],
         }
       })
@@ -388,9 +392,9 @@ const Customers = () => {
                     onChange={event => handleChangeAddingCustomerFixedWholesalePriceKG(event)}
                   >
                     <option value="">Dependiendo del peso en la venta</option>
-                    <option value="10KG">Fijo a 10KG</option>
-                    <option value="20KG">Fijo a 20KG</option>
-                    <option value="100KG">Fijo a 100KG</option>
+                    <option value="10">Fijo a 10KG</option>
+                    <option value="20">Fijo a 20KG</option>
+                    <option value="100">Fijo a 100KG</option>
                   </select>
                 </div>
                 <div className={styles.form_container_buttons}>
@@ -468,9 +472,9 @@ const Customers = () => {
                     onChange={event => handleChangeModifyingCustomerFixedWholesalePriceKG(event)}
                   >
                     <option value="">Dependiendo del peso en la venta</option>
-                    <option value="10KG">Fijo a 10KG</option>
-                    <option value="20KG">Fijo a 20KG</option>
-                    <option value="100KG">Fijo a 100KG</option>
+                    <option value="10">Fijo a 10KG</option>
+                    <option value="20">Fijo a 20KG</option>
+                    <option value="100">Fijo a 100KG</option>
                   </select>
                 </div>
                 <div className={styles.form_container_buttons}>
@@ -498,6 +502,7 @@ const Customers = () => {
             'Teléfono',
             'Email',
             'IEPS',
+            'Precio Mayoreo',
           ]}
           rows={customersForTable}
           onSelectedRow={handleSelectedCustomer}

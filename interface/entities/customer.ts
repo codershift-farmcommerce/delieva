@@ -6,6 +6,7 @@ export type Customer = {
   phone_number: string
   email: string
   should_add_ieps: boolean
+  fixed_wholesale_price_kg: number | null
   enabled: boolean
 }
 
@@ -36,4 +37,5 @@ export const GeneralPublicCustomer: Customer = {
   email: '',
   should_add_ieps: false,
   enabled: true,
+  fixed_wholesale_price_kg: null,
 }

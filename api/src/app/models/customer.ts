@@ -30,6 +30,7 @@ type CustomerSQLRow = {
   email: string
   should_add_ieps: boolean
   enabled: boolean
+  fixed_wholesale_price_kg: number | null
 }
 
 export async function add(
@@ -83,6 +84,7 @@ export async function search(
       'email',
       'should_add_ieps',
       'enabled',
+      'fixed_wholesale_price_kg',
     )
     .whereILike('name', `%${query}%`)
     .orWhereILike('email', `%${query}%`)
@@ -102,6 +104,7 @@ export async function search(
         email: r.email,
         should_add_ieps: r.should_add_ieps,
         enabled: r.enabled,
+        fixed_wholesale_price_kg: r.fixed_wholesale_price_kg,
       },
     }))
     .filter(r => r.data.enabled)
@@ -131,6 +134,7 @@ export async function list(
       'email',
       'should_add_ieps',
       'enabled',
+      'fixed_wholesale_price_kg',
     )
     .whereILike('name', `%${query}%`)
     .orWhereILike('email', `%${query}%`)
@@ -147,6 +151,7 @@ export async function list(
     email: r.email,
     should_add_ieps: r.should_add_ieps,
     enabled: r.enabled,
+    fixed_wholesale_price_kg: r.fixed_wholesale_price_kg,
   }))
 
   return {
