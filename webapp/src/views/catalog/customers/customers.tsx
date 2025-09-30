@@ -146,6 +146,20 @@ const Customers = () => {
     setModifyFormEnabled(false)
   }
 
+  const handleChangeAddingCustomerFixedWholesalePriceKG = (
+    event: React.ChangeEvent<HTMLSelectElement>,
+  ) => {
+    const value = Number(event.target.value) ?? null
+    setAddingCustomerFixedWholesalePriceKG(value)
+  }
+
+  const handleChangeModifyingCustomerFixedWholesalePriceKG = (
+    event: React.ChangeEvent<HTMLSelectElement>,
+  ) => {
+    const value = Number(event.target.value) ?? null
+    setModifyingCustomerFixedWholesalePriceKG(value)
+  }
+
   const onAddCustomer = async () => {
     const response = await customerClient.add({
       email: addingCustomerEmail ?? '',
@@ -369,7 +383,10 @@ const Customers = () => {
                 </div>
                 <div className={styles.form_container_input_container}>
                   <label className={styles.form_container_input_label}>Precio Mayoreo</label>
-                  <select className={viewStyles.select}>
+                  <select
+                    className={viewStyles.select}
+                    onChange={event => handleChangeAddingCustomerFixedWholesalePriceKG(event)}
+                  >
                     <option value="">Dependiendo del peso en la venta</option>
                     <option value="10KG">Fijo a 10KG</option>
                     <option value="20KG">Fijo a 20KG</option>
@@ -446,7 +463,10 @@ const Customers = () => {
                 </div>
                 <div className={styles.form_container_input_container}>
                   <label className={styles.form_container_input_label}>Precio Mayoreo</label>
-                  <select className={viewStyles.select}>
+                  <select
+                    className={viewStyles.select}
+                    onChange={event => handleChangeModifyingCustomerFixedWholesalePriceKG(event)}
+                  >
                     <option value="">Dependiendo del peso en la venta</option>
                     <option value="10KG">Fijo a 10KG</option>
                     <option value="20KG">Fijo a 20KG</option>
