@@ -136,6 +136,7 @@ const Customers = () => {
     setModifyingCustomerCity(customer?.city ?? null)
     setModifyingCustomerPhoneNumber(customer?.phone_number ?? null)
     setModifyingCustomerShouldAddIEPS(customer?.should_add_ieps ?? false)
+    setModifyingCustomerFixedWholesalePriceKG(customer?.fixed_wholesale_price_kg ?? null)
   }
 
   const onDisableAddForm = () => {
@@ -233,8 +234,9 @@ const Customers = () => {
               value: customer.should_add_ieps ? 'Sí' : 'No',
             },
             {
-              value:
-                `${customer.fixed_wholesale_price_kg} KG` ?? 'Dependiendo del peso en la venta',
+              value: customer.fixed_wholesale_price_kg
+                ? `${customer.fixed_wholesale_price_kg} KG`
+                : 'Dependiendo del peso en la venta',
             },
           ],
         }
@@ -472,9 +474,15 @@ const Customers = () => {
                     onChange={event => handleChangeModifyingCustomerFixedWholesalePriceKG(event)}
                   >
                     <option value="">Dependiendo del peso en la venta</option>
-                    <option value="10">Fijo a 10KG</option>
-                    <option value="20">Fijo a 20KG</option>
-                    <option value="100">Fijo a 100KG</option>
+                    <option value="10" selected={modifyingCustomerFixedWholesalePriceKG == 10}>
+                      Fijo a 10KG
+                    </option>
+                    <option value="20" selected={modifyingCustomerFixedWholesalePriceKG == 20}>
+                      Fijo a 20KG
+                    </option>
+                    <option value="100" selected={modifyingCustomerFixedWholesalePriceKG == 100}>
+                      Fijo a 100KG
+                    </option>
                   </select>
                 </div>
                 <div className={styles.form_container_buttons}>
