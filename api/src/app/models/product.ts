@@ -505,7 +505,7 @@ const UnitPriceTypeFn: Partial<
     if (totalKG > 20) {
       return CartPriceType.WHOLESALE_20KG
     }
-    if (totalKG > 10) {
+    if (totalKG > 10 && customer.include_10kg_wholesale_price) {
       return CartPriceType.WHOLESALE_10KG
     }
 

@@ -31,6 +31,7 @@ export type CustomerSQLRow = {
   should_add_ieps: boolean
   enabled: boolean
   fixed_wholesale_price_kg: number | null
+  include_10kg_wholesale_price: boolean
 }
 
 export async function add(
