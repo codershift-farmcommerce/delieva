@@ -36,7 +36,15 @@ export async function add(
   ctx: Ctx,
   req: CustomerAddRQ,
 ): Promise<CustomerAddSuccessRS | CustomerAddFailRS> {
-  const { name, phone_number, address, city, email, should_add_ieps } = req
+  const {
+    name,
+    phone_number,
+    address,
+    city,
+    email,
+    should_add_ieps,
+    fixed_wholesale_price_kg,
+  } = req
   try {
     await ctx.knex('customer').insert({
       name,
@@ -45,6 +53,7 @@ export async function add(
       city,
       email,
       should_add_ieps,
+      fixed_wholesale_price_kg,
     })
 
     return {
@@ -150,7 +159,16 @@ export async function modify(
   ctx: Ctx,
   req: CustomerModifyRQ,
 ): Promise<ModifyRS> {
-  const { id, name, phone_number, address, city, email, should_add_ieps } = req
+  const {
+    id,
+    name,
+    phone_number,
+    address,
+    city,
+    email,
+    should_add_ieps,
+    fixed_wholesale_price_kg,
+  } = req
   try {
     await ctx.knex('customer').where('id', id).update({
       name,
@@ -159,6 +177,7 @@ export async function modify(
       city,
       email,
       should_add_ieps,
+      fixed_wholesale_price_kg,
     })
     return { success: true }
   } catch (e) {
@@ -261,7 +280,14 @@ export async function getMovementsReport(
         AND c.enabled IS TRUE
     ) movements
     `,
-    [start_date, end_date, GeneralPublicCustomer.id, start_date, end_date, GeneralPublicCustomer.id],
+    [
+      start_date,
+      end_date,
+      GeneralPublicCustomer.id,
+      start_date,
+      end_date,
+      GeneralPublicCustomer.id,
+    ],
   )
 
   // Get global credit balance per customer
@@ -463,28 +489,37 @@ export async function getMovementsReport(
 
   // Create maps for global totals by customer name
   const globalPurchasesByCustomer = globalPurchases.rows.reduce(
-    (acc: { [key: string]: number }, row: { customer_name: string; total_purchases: string }) => {
+    (
+      acc: { [key: string]: number },
+      row: { customer_name: string; total_purchases: string },
+    ) => {
       acc[row.customer_name] = Number(row.total_purchases)
       return acc
     },
-    {}
+    {},
   )
 
   const globalCreditPaymentsByCustomer = globalCreditPayments.rows.reduce(
-    (acc: { [key: string]: number }, row: { customer_name: string; total_credit_payments: string }) => {
+    (
+      acc: { [key: string]: number },
+      row: { customer_name: string; total_credit_payments: string },
+    ) => {
       acc[row.customer_name] = Number(row.total_credit_payments)
       return acc
     },
-    {}
+    {},
   )
 
   // Create map for global credit balances by customer name
   const globalCreditBalancesByCustomer = globalCreditBalances.rows.reduce(
-    (acc: { [key: string]: number }, row: { customer_name: string; credit_balance: string }) => {
+    (
+      acc: { [key: string]: number },
+      row: { customer_name: string; credit_balance: string },
+    ) => {
       acc[row.customer_name] = Number(row.credit_balance)
       return acc
     },
-    {}
+    {},
   )
 
   const customerReportInfo = Object.keys(entriesGroupedByCustomerName).reduce(
@@ -492,9 +527,12 @@ export async function getMovementsReport(
       const entry = entriesGroupedByCustomerName[customerName]
       acc[customerName] = {
         movements: entry,
-        customerGlobalTotalPurchases: globalPurchasesByCustomer[customerName] ?? 0,
-        customerGlobalTotalCreditPayments: globalCreditPaymentsByCustomer[customerName] ?? 0,
-        customerGlobalTotalCreditBalance: globalCreditBalancesByCustomer[customerName] ?? 0,
+        customerGlobalTotalPurchases:
+          globalPurchasesByCustomer[customerName] ?? 0,
+        customerGlobalTotalCreditPayments:
+          globalCreditPaymentsByCustomer[customerName] ?? 0,
+        customerGlobalTotalCreditBalance:
+          globalCreditBalancesByCustomer[customerName] ?? 0,
       }
       return acc
     },
@@ -503,23 +541,30 @@ export async function getMovementsReport(
 
   // Calculate global totals across all customers
   const globalTotalPurchases = globalPurchases.rows.reduce(
-    (total: number, row: { total_purchases: string }) => total + Number(row.total_purchases),
-    0
+    (total: number, row: { total_purchases: string }) =>
+      total + Number(row.total_purchases),
+    0,
   )
 
   const globalTotalCreditPayments = globalCreditPayments.rows.reduce(
-    (total: number, row: { total_credit_payments: string }) => total + Number(row.total_credit_payments),
-    0
+    (total: number, row: { total_credit_payments: string }) =>
+      total + Number(row.total_credit_payments),
+    0,
   )
 
   const globalTotalCreditBalance = globalCreditBalances.rows.reduce(
-    (total: number, row: { credit_balance: string }) => total + Number(row.credit_balance),
-    0
+    (total: number, row: { credit_balance: string }) =>
+      total + Number(row.credit_balance),
+    0,
   )
 
   // Extract in-date-range totals
-  const inDateRangeTotalPurchases = Number(inDateRangeTotals.rows[0]?.total_purchases ?? 0)
-  const inDateRangeTotalCreditPayments = Number(inDateRangeTotals.rows[0]?.total_credit_payments ?? 0)
+  const inDateRangeTotalPurchases = Number(
+    inDateRangeTotals.rows[0]?.total_purchases ?? 0,
+  )
+  const inDateRangeTotalCreditPayments = Number(
+    inDateRangeTotals.rows[0]?.total_credit_payments ?? 0,
+  )
 
   return {
     customerReportInfo,
