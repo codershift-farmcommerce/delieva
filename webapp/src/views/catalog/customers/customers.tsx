@@ -45,7 +45,7 @@ const Customers = () => {
 
   const getCustomers = async (queryParam?: string) => {
     const response = await customerClient.list({ query: queryParam ?? query, page: 1 })
-    setCustomers(response.customers)
+    setCustomers(response.customers.filter(customer => customer.enabled))
   }
 
   useEffect(() => {
