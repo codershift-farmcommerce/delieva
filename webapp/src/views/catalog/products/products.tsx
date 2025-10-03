@@ -468,12 +468,7 @@ const Products = () => {
                 </div>
                 <div className={styles.form_container_input_container}>
                   <label className={styles.form_container_input_label}>
-                    {`Precio Mayoreo ${
-                      selectedProduct?.finished_products[0]?.unit_type ===
-                      FinishedProductUnitType.KILOGRAM
-                        ? '(mínimo 10 KG)'
-                        : ''
-                    }`}
+                    {'Precio Mayoreo (mínimo 10KG)'}
                   </label>
                   <input
                     className={styles.form_container_input}
@@ -483,12 +478,7 @@ const Products = () => {
                 </div>
                 <div className={styles.form_container_input_container}>
                   <label className={styles.form_container_input_label}>
-                    {`Precio Mayoreo ${
-                      selectedProduct?.finished_products[0]?.unit_type ===
-                      FinishedProductUnitType.KILOGRAM
-                        ? '(mínimo 20 KG)'
-                        : ''
-                    }`}
+                    {'Precio Mayoreo (mínimo 20KG)'}
                   </label>
                   <input
                     className={styles.form_container_input}
@@ -498,12 +488,7 @@ const Products = () => {
                 </div>
                 <div className={styles.form_container_input_container}>
                   <label className={styles.form_container_input_label}>
-                    {`Precio Mayoreo ${
-                      selectedProduct?.finished_products[0]?.unit_type ===
-                      FinishedProductUnitType.KILOGRAM
-                        ? '(mínimo 100 KG)'
-                        : ''
-                    }`}
+                    {'Precio Mayoreo (mínimo 100KG)'}
                   </label>
                   <input
                     className={styles.form_container_input}
