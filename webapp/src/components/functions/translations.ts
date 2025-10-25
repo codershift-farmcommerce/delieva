@@ -20,6 +20,7 @@ export const FormOfPaymentTranslation: Record<FormOfPayment, string> = {
   [FormOfPayment.TRANSFER]: 'Transferencia',
   [FormOfPayment.CREDIT_CARD]: 'Tarjeta de crédito',
   [FormOfPayment.CREDIT]: 'Crédito',
+  [FormOfPayment.DONATION]: 'Donación',
 }
 
 export const FinishedProductUnitTranslation: Record<FinishedProductUnitType, string> = {

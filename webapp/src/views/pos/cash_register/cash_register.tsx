@@ -579,6 +579,15 @@ const CashRegister = (): JSX.Element => {
         </option>,
       )
     })
+    formOfPaymentOptions.push(
+      <option
+        key={FormOfPayment.DONATION}
+        value={FormOfPayment.DONATION}
+        selected={formOfPayment === FormOfPayment.DONATION}
+      >
+        {FormOfPaymentTranslation[FormOfPayment.DONATION]}
+      </option>,
+    )
     return formOfPaymentOptions
   }
 

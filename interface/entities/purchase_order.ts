@@ -81,6 +81,7 @@ export enum FormOfPayment {
   TRANSFER = 'TRANSFER',
   CREDIT_CARD = 'CREDIT_CARD',
   CREDIT = 'CREDIT',
+  DONATION = 'DONATION',
 }
 
 export type FormOfPaymentWithAmount = {
