@@ -579,17 +579,22 @@ const CashRegister = (): JSX.Element => {
         </option>,
       )
     })
-    formOfPaymentOptions.push(
-      <option
-        key={FormOfPayment.DONATION}
-        value={FormOfPayment.DONATION}
-        selected={formOfPayment === FormOfPayment.DONATION}
-      >
-        {FormOfPaymentTranslation[FormOfPayment.DONATION]}
-      </option>,
-    )
+    if (selectedFormOfPayments.length === 1) {
+      formOfPaymentOptions.push(
+        <option
+          key={FormOfPayment.DONATION}
+          value={FormOfPayment.DONATION}
+          selected={formOfPayment === FormOfPayment.DONATION}
+        >
+          {FormOfPaymentTranslation[FormOfPayment.DONATION]}
+        </option>,
+      )
+    }
     return formOfPaymentOptions
   }
+
+  let isDonationSelected = selectedFormOfPayments.filter(fop => fop === FormOfPayment.DONATION)
+  const isAddFopLinkEnabled = !isDonationSelected.length
 
   return (
     <ViewContainer title={getCashRegisterName(cashRegister)}>
@@ -742,12 +747,14 @@ const CashRegister = (): JSX.Element => {
                   </div>
                 )
               })}
-              <div
-                className={styles.add_form_of_payment_link}
-                onClick={handleIncreaseFormOfPaymentCount}
-              >
-                + Agregar forma de pago
-              </div>
+              {isAddFopLinkEnabled && (
+                <div
+                  className={styles.add_form_of_payment_link}
+                  onClick={handleIncreaseFormOfPaymentCount}
+                >
+                  + Agregar forma de pago
+                </div>
+              )}
               <div className={styles.purchase_order_button_container}>
                 <button
                   onClick={handleProcessOrder}
