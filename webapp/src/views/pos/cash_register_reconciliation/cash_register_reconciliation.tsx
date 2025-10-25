@@ -128,6 +128,9 @@ const CashierClosing = () => {
             {
               value: formatMonetary(reconciliation.closing_bank_transfer_balance),
             },
+            {
+              value: formatMonetary(reconciliation.closing_donation_balance),
+            },
           ],
         }
       })
@@ -198,7 +201,7 @@ const CashierClosing = () => {
       <div>
         <Table
           selectedRowId={selectedReconciliation?.cash_register_id?.toString() ?? ''}
-          columnNames={['Caja', 'Efectivo', 'Crédito', 'Transferencias']}
+          columnNames={['Caja', 'Efectivo', 'Crédito', 'Transferencias', 'Donaciones']}
           rows={reconciliationsForTable}
           onSelectedRow={handleSelectedReconciliation}
         />

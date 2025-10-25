@@ -349,6 +349,7 @@ const ClosedReconciliationReceipt = (props: ClosedReconciliationReceiptProps) =>
               )}
             </div>
           ))}
+         //TODO: Add donations
         </div>
         <div className={styles.detail_section}>
           <div>

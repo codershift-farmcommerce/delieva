@@ -41,6 +41,7 @@ export type OpenedCashRegisterReconciliation = {
   closing_credit_card_voucher_count: number
   closing_bank_transfer_balance: number
   closing_credit_balance: number
+  closing_donation_balance: number
 }
 
 export enum CashRegisterReconciliationState {
@@ -80,6 +81,7 @@ export type CashRegisterReconciliation = {
   actual_credit_card_voucher_count: number
   actual_bank_transfer_balance: number
   closing_credit_balance: number
+  closing_donation_balance: number
   purchase_orders_receipt: PurchaseOrderForReconciliationReceipt
   customer_credit_payments_receipt: CustomerCreditPaymentForReconciliationReceipt
   cash_withdrawal_receipts: CashWithdrawalReceiptForReconciliationReport[]

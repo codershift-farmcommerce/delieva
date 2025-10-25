@@ -79,6 +79,7 @@ type RawReconciliation = {
   closing_credit_card_voucher_count: number
   closing_bank_transfer_balance: number
   closing_credit_balance: number
+  closing_donation_balance: number
   actual_cash_balance: string
   actual_credit_card_balance: string
   actual_credit_card_voucher_count: string
@@ -338,6 +339,7 @@ export async function closeReconciliation(
       'id',
       'closing_credit_card_balance',
       'closing_credit_balance',
+      'closing_donation_balance',
       'closing_bank_transfer_balance',
     )
     .where('cash_register_id', cash_register_id)
@@ -353,6 +355,7 @@ export async function closeReconciliation(
     id,
     closing_credit_card_balance,
     closing_credit_balance,
+    closing_donation_balance,
     closing_bank_transfer_balance,
   } = currentOpenReconciliations[0]
 
@@ -362,6 +365,7 @@ export async function closeReconciliation(
       actual_cash_balance: actual_cash_balance,
       actual_credit_card_balance: closing_credit_card_balance,
       actual_credit_balance: closing_credit_balance,
+      actual_donation_balance: closing_donation_balance,
       actual_credit_card_voucher_count: actual_credit_card_voucher_count,
       actual_bank_transfer_balance: closing_bank_transfer_balance,
       closed_at: ctx.knex.fn.now(),
@@ -430,6 +434,7 @@ export async function updateCashRegisterReconciliationWithTrx(
       formOfPaymentAmounts.TRANSFER ?? 0,
     )
     .increment('closing_credit_balance', formOfPaymentAmounts.CREDIT ?? 0)
+    .increment('closing_donation_balance', formOfPaymentAmounts.DONATION ?? 0)
     .update('updated_at', ctx.knex.fn.now())
     .where('id', openReconciliationId)
 }
@@ -475,6 +480,7 @@ export async function decrementCashRegisterReconciliationWithTrx(
       formOfPaymentAmounts.TRANSFER ?? 0,
     )
     .decrement('closing_credit_balance', formOfPaymentAmounts.CREDIT ?? 0)
+    .decrement('closing_donation_balance', formOfPaymentAmounts.DONATION ?? 0)
     .update('updated_at', ctx.knex.fn.now())
     .where('id', openReconciliationId)
 }
@@ -498,6 +504,7 @@ export async function getOpenedReconciliations(
       'cash_register_reconciliation.closing_credit_card_voucher_count AS closing_credit_card_voucher_count',
       'cash_register_reconciliation.closing_bank_transfer_balance AS closing_bank_transfer_balance',
       'cash_register_reconciliation.closing_credit_balance AS closing_credit_balance',
+      'cash_register_reconciliation.closing_donation_balance AS closing_donation_balance',
     )
     .innerJoin(
       'cash_register',
@@ -531,6 +538,7 @@ export async function getOpenedReconciliations(
           closing_bank_transfer_balance:
             reconciliation.closing_bank_transfer_balance,
           closing_credit_balance: reconciliation.closing_credit_balance,
+          closing_donation_balance: reconciliation.closing_donation_balance,
         }
       }
       return acc
@@ -563,6 +571,7 @@ export async function getOpenedReconciliation(
       'cash_register_reconciliation.closing_credit_card_voucher_count AS closing_credit_card_voucher_count',
       'cash_register_reconciliation.closing_bank_transfer_balance AS closing_bank_transfer_balance',
       'cash_register_reconciliation.closing_credit_balance AS closing_credit_balance',
+      'cash_register_reconciliation.closing_donation_balance AS closing_donation_balance',
     )
     .innerJoin(
       'cash_register',
@@ -589,6 +598,7 @@ export async function getOpenedReconciliation(
     closing_credit_card_voucher_count: result.closing_credit_card_voucher_count,
     closing_bank_transfer_balance: result.closing_bank_transfer_balance,
     closing_credit_balance: result.closing_credit_balance,
+    closing_donation_balance: result.closing_donation_balance,
   }
 }
 
@@ -675,6 +685,7 @@ export async function getClosedReconciliation(
       'cash_register_reconciliation.actual_credit_card_voucher_count AS actual_credit_card_voucher_count',
       'cash_register_reconciliation.actual_bank_transfer_balance AS actual_bank_transfer_balance',
       'cash_register_reconciliation.closing_credit_balance AS closing_credit_balance',
+      'cash_register_reconciliation.closing_donation_balance AS closing_donation_balance',
     )
     .innerJoin(
       'cash_register',
@@ -722,6 +733,7 @@ export async function getClosedReconciliation(
       actual_credit_card_voucher_count: result.actual_credit_card_voucher_count,
       actual_bank_transfer_balance: result.actual_bank_transfer_balance,
       closing_credit_balance: result.closing_credit_balance,
+      closing_donation_balance: result.closing_donation_balance,
       purchase_orders_receipt: purchaseOrdersReceipt,
       customer_credit_payments_receipt: customerCreditPaymentsReceipt,
       cash_withdrawal_receipts: cashWithdrawalReceipts,
@@ -1128,6 +1140,7 @@ export async function getReconciliationsReport(
         cash_register_reconciliation.actual_credit_card_voucher_count AS actual_credit_card_voucher_count,
         cash_register_reconciliation.actual_bank_transfer_balance AS actual_bank_transfer_balance,
         cash_register_reconciliation.closing_credit_balance AS closing_credit_balance,
+        cash_register_reconciliation.closing_donation_balance AS closing_donation_balance,
         cash_register_reconciliation.status AS status
       FROM cash_register_reconciliation
         INNER JOIN cash_register ON cash_register.id = cash_register_reconciliation.cash_register_id
@@ -1164,6 +1177,7 @@ export async function getReconciliationsReport(
           result.actual_bank_transfer_balance,
         ),
         closing_credit_balance: result.closing_credit_balance,
+        closing_donation_balance: result.closing_donation_balance,
         status: result.status as CashRegisterReconciliationState,
         purchase_orders_receipt: {
           cash_purchase_orders: [],
