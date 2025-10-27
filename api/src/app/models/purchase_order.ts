@@ -471,6 +471,12 @@ export async function getForReconciliationReceipt(
     FormOfPayment.CREDIT,
   )
 
+  const donationPurchaseOrders = await getForReconciliationReceiptByFormOfPayment(
+    ctx,
+    reconciliationId,
+    FormOfPayment.DONATION,
+  )
+
   const { transfer_bank_accounts } = await transfer_bank_account_model.list(
     ctx,
     {
@@ -523,6 +529,7 @@ export async function getForReconciliationReceipt(
   return {
     cash_purchase_orders: cashPurchaseOrders,
     credit_purchase_orders: creditPurchaseOrders,
+    donation_purchase_orders: donationPurchaseOrders,
     purchase_orders_by_transfer_bank_account: purchaseOrderForBankAccounts,
     total,
   }

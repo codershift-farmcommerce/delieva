@@ -95,6 +95,7 @@ export type FormOfPaymentWithAmount = {
 export type PurchaseOrderForReconciliationReceipt = {
   cash_purchase_orders: PurchaseOrderAmount[]
   credit_purchase_orders: PurchaseOrderAmount[]
+  donation_purchase_orders: PurchaseOrderAmount[]
   purchase_orders_by_transfer_bank_account: PurchaseOrderForBankAccount
   total: number
 }
