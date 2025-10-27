@@ -184,6 +184,17 @@ const ClosedReconciliationReceipt = (props: ClosedReconciliationReceiptProps) =>
       )
     : 0
 
+  const donationPurchaseOrdersTotal = closedReconciliationReceipt?.purchase_orders_receipt
+    ?.donation_purchase_orders
+    ? closedReconciliationReceipt.purchase_orders_receipt.donation_purchase_orders.reduce(
+        (acc, val) => {
+          acc += Number(val.amount)
+          return acc
+        },
+        0,
+      )
+    : 0
+
   const cashCustomerCreditPaymentsTotal = closedReconciliationReceipt
     ?.customer_credit_payments_receipt?.cash_credit_payments
     ? closedReconciliationReceipt.customer_credit_payments_receipt.cash_credit_payments.reduce(
@@ -320,36 +331,41 @@ const ClosedReconciliationReceipt = (props: ClosedReconciliationReceiptProps) =>
         <div className={styles.detail_section}>
           <div>
             <b>- Ventas p/transferencia y donaciones: </b>
-            <b>{formatMonetary(transferPurchasesTotal)}</b>
+            <b>{formatMonetary(transferPurchasesTotal + donationPurchaseOrdersTotal)}</b>
           </div>
-          {transferBankAccounts.map(transferBankAccount => (
-            <div key={transferBankAccount.id} className={styles.detail_section}>
-              <div>
-                <b>- Transf. {transferBankAccount.name}</b>&nbsp;
-                <b>
-                  {formatMonetary(
-                    getTransferBankAccountPurchaseOrdersTotal(transferBankAccount.id),
-                  )}
-                </b>
+          <div>
+            {transferBankAccounts.map(transferBankAccount => (
+              <div key={transferBankAccount.id}>
+                <div>
+                  <b>- Transf. {transferBankAccount.name}: </b>&nbsp;
+                  <b>
+                    {formatMonetary(
+                      getTransferBankAccountPurchaseOrdersTotal(transferBankAccount.id),
+                    )}
+                  </b>
+                </div>
+                {hasTransferBankAccountPurchaseOrders(transferBankAccount.id) && (
+                  <>
+                    <div className={styles.purchase_orders_receipts_container}>
+                      {closedReconciliationReceipt?.purchase_orders_receipt?.purchase_orders_by_transfer_bank_account[
+                        transferBankAccount.id
+                      ]?.purchase_order.map((purchaseOrder, index) => (
+                        <div key={index}>
+                          <span>#{purchaseOrder.purchase_order_id}</span>
+                          <span> - </span>
+                          <span>{formatMonetary(purchaseOrder.amount)}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </>
+                )}
               </div>
-              {hasTransferBankAccountPurchaseOrders(transferBankAccount.id) && (
-                <>
-                  <div className={styles.purchase_orders_receipts_container}>
-                    {closedReconciliationReceipt?.purchase_orders_receipt?.purchase_orders_by_transfer_bank_account[
-                      transferBankAccount.id
-                    ]?.purchase_order.map((purchaseOrder, index) => (
-                      <div key={index}>
-                        <span>#{purchaseOrder.purchase_order_id}</span>
-                        <span> - </span>
-                        <span>{formatMonetary(purchaseOrder.amount)}</span>
-                      </div>
-                    ))}
-                  </div>
-                </>
-              )}
-            </div>
-          ))}
-         //TODO: Add donations
+            ))}
+          </div>
+          <div>
+            <b>- Donaciones: </b>
+            <b>{formatMonetary(donationPurchaseOrdersTotal)}</b>
+          </div>
         </div>
         <div className={styles.detail_section}>
           <div>
