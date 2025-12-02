@@ -186,6 +186,19 @@ const OrderReceipt = (props: OrderReceiptProps) => {
             <div>{FormOfPaymentTranslation[orderReceipt?.form_of_payments[0].form_of_payment]}</div>
           </div>
         )}
+        {(orderReceipt?.form_of_payments?.length ?? 0) > 1 && (
+          <>
+            <div>Formas de pago:</div>
+            <div>
+              {orderReceipt?.form_of_payments.map((fop, i) => (
+                <div key={i} className={styles.subtotals_item_container}>
+                  <div>{FormOfPaymentTranslation[fop.form_of_payment]}:</div>
+                  <div>{formatMonetary(fop.amount)}</div>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
         <div className={styles.subtotals_item_container}>
           <div>Monto:</div>
           <div>
