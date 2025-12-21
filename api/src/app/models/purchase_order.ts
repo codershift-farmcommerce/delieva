@@ -35,6 +35,7 @@ import {
   PurchaseOrderStatus,
 } from 'interface/entities/purchase_order'
 import { FinishedProductUnitType } from 'interface/entities/finished_product'
+import { IEPS_PERCENTAGE } from 'interface/constants'
 
 type PurchaseOrderDetailSQLRow = {
   product: {
@@ -81,7 +82,6 @@ export async function process(
   req: PurchaseOrderProcessRQ,
 ): Promise<PurchaseOrderProcessSuccessRS | PurchaseOrderProcessFailRS> {
   const { customer_id, cart, form_of_payments } = req
-  const customer = await customerModel.get(ctx, customer_id)
   const { items } = cart
   const productUnitPrices = (
     await getUnitPricesForCart(ctx, {
@@ -100,7 +100,7 @@ export async function process(
 
     subtotal += itemTotal
     if (cartItem.should_add_ieps) {
-      tax1 += itemTotal * 0.08
+      tax1 += itemTotal * IEPS_PERCENTAGE
     }
   })
 

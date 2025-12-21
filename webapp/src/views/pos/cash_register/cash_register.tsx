@@ -29,7 +29,8 @@ import { TransferBankAccount } from 'interface/entities/transfer_bank_account'
 import { getCashRegisterName } from 'webapp/src/components/functions/cash_register'
 import { Notes } from 'webapp/src/components/notes/notes'
 import { NoteClient } from 'webapp/src/api/clients/note'
-import { NoteEntityType } from '../../../../../interface/entities/note'
+import { NoteEntityType } from 'interface/entities/note'
+import { IEPS_PERCENTAGE } from 'interface/constants'
 
 const cashRegisterClient = new CashRegisterClient()
 const productClient = new ProductClient()
@@ -37,17 +38,12 @@ const purchaseOrderClient = new PurchaseOrderClient()
 const transferBankAccountClient = new TransferBankAccountClient()
 const noteClient = new NoteClient()
 
-type ProductDiscount = {
-  [product_code: string]: Discount | null
-}
-
 const CashRegister = (): JSX.Element => {
   const [cashRegister, setCashRegister] = useState<CashRegisterType | null>(null)
   const [hasOpenReconciliation, setHasOpenReconciliation] = useState(false)
   const [cashRegisterLoaded, setCashRegisterLoaded] = useState(false)
   const [selectedCustomer, setSelectedCustomer] = useState<Customer>(GeneralPublicCustomer)
   const [productCodeInput, setProductCodeInput] = useState('')
-  const [discountsByProduct, setDiscountsByProduct] = useState<ProductDiscount>()
   const [quantity, setQuantity] = useState('1')
   const [notes, setNotes] = useState('')
   const [cartItems, setCartItems] = useState<CartItems>({})
@@ -189,7 +185,7 @@ const CashRegister = (): JSX.Element => {
       if (productsWithIeps[productCode]) {
         const quantity = cartItems[productCode].quantity
         const itemTotal = productUnitPrices[productCode] * quantity
-        acc += itemTotal * 0.08
+        acc += itemTotal * IEPS_PERCENTAGE
       }
       return acc
     }, 0)
@@ -203,7 +199,7 @@ const CashRegister = (): JSX.Element => {
     } else {
       setFormOfPaymentAmounts([''])
     }
-  }, [cartItems, discountsByProduct, productUnitPrices])
+  }, [cartItems, productUnitPrices])
 
   const getProductsUnitPricesForCart = async () => {
     const response = await productClient.getUnitPricesForCart({
@@ -281,7 +277,6 @@ const CashRegister = (): JSX.Element => {
   const handleClean = () => {
     setCartItems({})
     setTotal(0)
-    setDiscountsByProduct({})
     setProductUnitPrices({})
     setProductsWithIeps({})
     setSelectedFormOfPayments([FormOfPayment.CASH])
@@ -306,8 +301,10 @@ const CashRegister = (): JSX.Element => {
     Object.keys(cartItems).map((productCode: string, index: number) => {
       const cartItem = cartItems[productCode]
       const itemTotal = productUnitPrices[productCode] * cartItem.quantity
-      const customerPrice = discountsByProduct?.[productCode]?.fixed_price
-      const unitPrice = customerPrice ? customerPrice : productUnitPrices[productCode]
+      const ieps = productsWithIeps[productCode]
+        ? productUnitPrices[productCode] * IEPS_PERCENTAGE
+        : 0
+      const unitPrice = productUnitPrices[productCode] + ieps
       const retailUnitPrice = cartItem.retail_unit_price
 
       return {
