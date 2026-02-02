@@ -15,7 +15,7 @@ import { FormOfPayment } from 'interface/entities/purchase_order'
 export type ClosedReconciliationReceiptProps = {
   closedReconciliationId: number | null
   print: boolean
-  showReceipt: boolean
+  showReceipt?: boolean
   onAfterPrint?: () => void
 }
 
