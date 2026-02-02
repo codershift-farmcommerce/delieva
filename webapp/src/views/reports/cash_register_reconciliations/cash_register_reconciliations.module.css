@@ -12,6 +12,7 @@
 
 .body_container {
   display: flex;
+  margin-right: 1em;
 }
 
 .tables_container {

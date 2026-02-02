@@ -15,6 +15,7 @@ import { FormOfPayment } from 'interface/entities/purchase_order'
 export type ClosedReconciliationReceiptProps = {
   closedReconciliationId: number | null
   print: boolean
+  showReceipt: boolean
   onAfterPrint?: () => void
 }
 
@@ -23,7 +24,7 @@ const clientConfigurationClient = new ClientConfigurationClient()
 const transferBankAccountClient = new TransferBankAccountClient()
 
 const ClosedReconciliationReceipt = (props: ClosedReconciliationReceiptProps) => {
-  const { closedReconciliationId, print, onAfterPrint } = props
+  const { closedReconciliationId, print, showReceipt, onAfterPrint } = props
   if (!closedReconciliationId) {
     return null
   }
@@ -66,7 +67,7 @@ const ClosedReconciliationReceipt = (props: ClosedReconciliationReceiptProps) =>
   }
 
   useEffect(() => {
-    if (closedReconciliationId && print) {
+    if (closedReconciliationId && (print || showReceipt)) {
       getClosedReconciliationReceipt().catch(console.error)
     }
   }, [closedReconciliationId, print])

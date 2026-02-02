@@ -24,6 +24,7 @@ const CashRegisterReconciliation = () => {
   const [reconciliationsById, setReconciliationsById] = useState<ReconciliationById>({})
   const [selectedReconciliationId, setSelectedReconciliationId] = useState<string>('')
   const [printReceipt, setPrintReceipt] = useState(false)
+  const [showReceipt, setShowReceipt] = useState(false)
 
   const getCashRegisters = async () => {
     const result = await cashRegisterClient.list({})
@@ -78,6 +79,7 @@ const CashRegisterReconciliation = () => {
   const handleSelectReconciliation = (id: string) => {
     setSelectedReconciliationId(id)
     setPrintReceipt(false)
+    setShowReceipt(true)
   }
 
   const handlePrintReceipt = () => {
@@ -128,6 +130,7 @@ const CashRegisterReconciliation = () => {
           <ClosedReconciliationReceipt
             closedReconciliationId={Number(selectedReconciliationId)}
             print={printReceipt}
+            showReceipt={showReceipt}
           />
         </div>
       </div>
