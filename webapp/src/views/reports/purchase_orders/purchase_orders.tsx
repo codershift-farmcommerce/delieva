@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import dayjs from 'dayjs'
 import ViewContainer from 'webapp/src/components/views/container/container'
 import ViewHeader from 'webapp/src/components/views/header/header'
 import { PurchaseOrderClient } from 'webapp/src/api/clients/purchase_order'
@@ -37,6 +38,8 @@ const PurchaseOrdersReport = () => {
   const customerInputRef = React.useRef<HTMLInputElement>(null)
   const totalInputRef = React.useRef<HTMLInputElement>(null)
   const orderIdInputRef = React.useRef<HTMLInputElement>(null)
+
+  const minSelectableDate = dayjs().subtract(1, 'month').format('YYYY-MM-DD')
 
   const getReport = async () => {
     setCanGetReport(false)
@@ -187,6 +190,7 @@ const PurchaseOrdersReport = () => {
             <label>Fecha inicio: </label>
             <input
               type={'date'}
+              min={minSelectableDate}
               value={startDate.toISOString().substring(0, 10)}
               onChange={e => handleStartDateChange(e.target.value)}
             />
