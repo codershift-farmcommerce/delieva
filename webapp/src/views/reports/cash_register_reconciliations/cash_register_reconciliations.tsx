@@ -115,19 +115,21 @@ const CashRegisterReconciliation = () => {
           </button>
         </div>
       </ViewHeader>
-      <div className={styles.tables_container}>
-        <Table
-          selectedRowId={selectedReconciliationId}
-          columnNames={['#', 'Fecha de Cierre', 'Cajero', 'Status']}
-          rows={reportRows}
-          onSelectedRow={handleSelectReconciliation}
-        />
-      </div>
-      <div hidden={!printReceipt}>
-        <ClosedReconciliationReceipt
-          closedReconciliationId={Number(selectedReconciliationId)}
-          print={printReceipt}
-        />
+      <div className={styles.body_container}>
+        <div className={styles.tables_container}>
+          <Table
+            selectedRowId={selectedReconciliationId}
+            columnNames={['#', 'Fecha de Cierre', 'Cajero', 'Status']}
+            rows={reportRows}
+            onSelectedRow={handleSelectReconciliation}
+          />
+        </div>
+        <div>
+          <ClosedReconciliationReceipt
+            closedReconciliationId={Number(selectedReconciliationId)}
+            print={printReceipt}
+          />
+        </div>
       </div>
     </ViewContainer>
   )
