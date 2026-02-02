@@ -65,3 +65,26 @@
   border-right: 1px solid black;
   padding: 0.5em;
 }
+
+.table_cell_scroll_x {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.tbody {
+  display: block;
+  max-height: 30em; /* <- set the fixed body height you want */
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.thead {
+  display: block;
+}
+
+.thead tr,
+.tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}

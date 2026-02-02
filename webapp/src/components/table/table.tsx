@@ -88,7 +88,7 @@ function Table(props: TableProps) {
                         fontWeight: cell.fontWeight || 'normal',
                       }}
                     >
-                      {cell.value ?? cell.element}
+                      <div className={styles.table_cell_scroll_x}>{cell.value ?? cell.element}</div>
                     </td>
                   )
                 })}
