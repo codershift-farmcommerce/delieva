@@ -1147,7 +1147,7 @@ export async function getReconciliationsReport(
         INNER JOIN users ON users.email = cash_register_reconciliation.cashier_user_email
       WHERE cash_register_reconciliation.cash_register_id = :cash_register_id
       ORDER BY cash_register_reconciliation.created_at DESC
-      LIMIT 100
+      LIMIT 200
         `,
     {
       cash_register_id,
