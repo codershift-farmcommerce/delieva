@@ -39,7 +39,7 @@ const PurchaseOrdersReport = () => {
   const totalInputRef = React.useRef<HTMLInputElement>(null)
   const orderIdInputRef = React.useRef<HTMLInputElement>(null)
 
-  const minSelectableDate = dayjs().subtract(1, 'month').format('YYYY-MM-DD')
+  const minSelectableDate = dayjs().subtract(3, 'month').format('YYYY-MM-DD')
 
   const getReport = async () => {
     setCanGetReport(false)
