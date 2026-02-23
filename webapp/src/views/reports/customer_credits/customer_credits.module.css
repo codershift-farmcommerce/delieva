@@ -13,6 +13,11 @@
   margin-left: 1em;
 }
 
+.body_container {
+  display: flex;
+  margin-right: 1em;
+}
+
 .tables_container {
   margin-top: 0.5em;
   margin-bottom: 1em;

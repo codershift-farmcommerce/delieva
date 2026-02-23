@@ -10,13 +10,14 @@ import { useReactToPrint } from 'react-to-print'
 export type OrderReceiptProps = {
   orderId: number | null
   print: boolean
+  showReceipt?: boolean
   onAfterPrint?: () => void
 }
 
 const purchaseOrderClient = new PurchaseOrderClient()
 
 const OrderReceipt = (props: OrderReceiptProps) => {
-  const { orderId, print, onAfterPrint } = props
+  const { orderId, print, showReceipt, onAfterPrint } = props
   if (!orderId) {
     return null
   }
@@ -34,10 +35,10 @@ const OrderReceipt = (props: OrderReceiptProps) => {
   }
 
   useEffect(() => {
-    if (orderId) {
+    if (orderId && (print || showReceipt)) {
       getOrderReceipt().catch(console.error)
     }
-  }, [orderId])
+  }, [orderId, print, showReceipt])
 
   useEffect(() => {
     if (orderReceipt && print) {

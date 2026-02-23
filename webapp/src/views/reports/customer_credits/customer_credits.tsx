@@ -15,6 +15,7 @@ import { formatMonetary } from '../../../components/functions/formatting'
 import moment from 'moment'
 import { downloadFile } from 'webapp/src/components/functions/files'
 import { toast } from 'react-toastify'
+import OrderReceipt from '../../pos/order_receipt/order_receipt'
 
 const customerCreditClient = new CustomerCreditClient()
 
@@ -71,7 +72,7 @@ const CustomerCredits = () => {
   const purchaseOrdersRows = purchaseOrders
     ? purchaseOrders.map((row, index) => {
         return {
-          id: String(index),
+          id: String(row.order_id),
           cells: [
             {
               value: row.order_id,
@@ -148,19 +149,28 @@ const CustomerCredits = () => {
           <div className={styles.balance}>
             Saldo pendiente: <span>{formatMonetary(creditBalance)}</span>
           </div>
-          <div className={styles.tables_container}>
-            <Table
-              selectedRowIds={[selectedPurchaseOrderId]}
-              columnNames={['Ticket de venta', 'Fecha', 'Importe', 'Saldo pendiente']}
-              rows={purchaseOrdersRows}
-              onSelectedRow={handlePurchaseOrder}
-            />
-            <Table
-              selectedRowId={''}
-              columnNames={['Ticket de pago', 'Fecha', 'Importe']}
-              rows={paymentsRows}
-              onSelectedRow={() => {}}
-            />
+          <div className={styles.body_container}>
+            <div className={styles.tables_container}>
+              <Table
+                selectedRowIds={[selectedPurchaseOrderId]}
+                columnNames={['Ticket de venta', 'Fecha', 'Importe', 'Saldo pendiente']}
+                rows={purchaseOrdersRows}
+                onSelectedRow={handlePurchaseOrder}
+              />
+              <Table
+                selectedRowId={''}
+                columnNames={['Ticket de pago', 'Fecha', 'Importe']}
+                rows={paymentsRows}
+                onSelectedRow={() => {}}
+              />
+            </div>
+            <div>
+              <OrderReceipt
+                orderId={Number(selectedPurchaseOrderId)}
+                showReceipt={showReceipt}
+                print={false}
+              />
+            </div>
           </div>
         </div>
       </div>
