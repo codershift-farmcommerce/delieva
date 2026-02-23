@@ -23,6 +23,8 @@ const CustomerCredits = () => {
   const [purchaseOrders, setPurchaseOrders] = useState<CreditPurchaseOrder[]>([])
   const [creditBalance, setCreditBalance] = useState<number>()
   const [payments, setPayments] = useState<CustomerCreditPayment[]>([])
+  const [selectedPurchaseOrderId, setSelectedPurchaseOrderId] = useState<string>('')
+  const [showReceipt, setShowReceipt] = useState(false)
 
   const handleSelectedCustomer = (resultItem: SearchResultItem<Customer>) => {
     setSelectedCustomer(resultItem.data)
@@ -59,6 +61,11 @@ const CustomerCredits = () => {
       console.log(err)
       toast.error('Error al descargar el archivo')
     }
+  }
+
+  const handlePurchaseOrder = (id: string) => {
+    setSelectedPurchaseOrderId(id)
+    setShowReceipt(true)
   }
 
   const purchaseOrdersRows = purchaseOrders
@@ -143,10 +150,10 @@ const CustomerCredits = () => {
           </div>
           <div className={styles.tables_container}>
             <Table
-              selectedRowId={''}
+              selectedRowIds={[selectedPurchaseOrderId]}
               columnNames={['Ticket de venta', 'Fecha', 'Importe', 'Saldo pendiente']}
               rows={purchaseOrdersRows}
-              onSelectedRow={() => {}}
+              onSelectedRow={handlePurchaseOrder}
             />
             <Table
               selectedRowId={''}
