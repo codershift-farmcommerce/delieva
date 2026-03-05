@@ -116,7 +116,7 @@ const ReturnPurchaseOrder = () => {
           </div>
         </ViewHeader>
       </div>
-      <div>{orderId && <OrderReceipt orderId={orderId} print={false} />}</div>
+      <div>{orderId && <OrderReceipt orderId={orderId} print={false} showReceipt={true} />}</div>
     </ViewContainer>
   )
 }
