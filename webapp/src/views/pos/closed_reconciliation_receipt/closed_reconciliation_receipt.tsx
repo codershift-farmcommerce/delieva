@@ -251,7 +251,7 @@ const ClosedReconciliationReceipt = (props: ClosedReconciliationReceiptProps) =>
     closedReconciliationReceipt?.customer_credit_payments_receipt?.canceled_cash_credit_payments ??
     []
   ).reduce((acc, val) => {
-    acc += val.amount
+    acc += Number(val.amount)
     return acc
   }, 0)
 
