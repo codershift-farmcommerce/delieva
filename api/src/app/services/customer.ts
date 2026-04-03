@@ -63,7 +63,7 @@ export class CustomerService implements CustomerEndpoints {
   @action({ forApps: [Application.ADMIN] })
   async getMovementsReportAsExcelSheet(
     req: CustomerGetMovementsReportRQ,
-  ): Promise<ReadableStream> {
+  ): Promise<fs.ReadStream> {
     const report = await customer.getMovementsReport(this.ctx, req)
     const Excel = require('exceljs')
     const workbook = new Excel.Workbook()

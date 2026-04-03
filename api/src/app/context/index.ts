@@ -1,5 +1,4 @@
 import { Context as KoaContext } from 'koa'
-import { LogEntry } from 'api/src/util/logging/logger'
 import { Knex } from 'knex'
 import { UserRole } from 'interface/entities/user'
 import { DATABASE } from 'api/setup/db/types'
@@ -18,16 +17,14 @@ export type AuditEntry = {
 }
 
 export type WithSession = { session: SessionData }
-export type WithLog = { log: (logEntry: LogEntry) => void }
 export type WithKnex = { knex: Knex }
 export type WithAudit = { audit: (entry: AuditEntry) => void }
 export type WithUploadData = { uploadFilePath: string; uploadData: any }
 export type WithDatabaseName = { dbName: DATABASE }
-export type WithTracer = Tracer
+export type WithTracer = { tracer: Tracer }
 
 export type Ctx = KoaContext &
   WithSession &
-  WithLog &
   WithKnex &
   WithAudit &
   WithUploadData &

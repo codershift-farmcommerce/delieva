@@ -60,7 +60,7 @@ export class FinishedProductService implements FinishedProductEndpoints {
   @action({ forApps: [Application.ADMIN] })
   async getSalesReportAsExcelSheet(
     req: FinishedProductGetSalesReportRQ,
-  ): Promise<ReadableStream> {
+  ): Promise<fs.ReadStream> {
     const report = await finished_product.getSalesReport(this.ctx, req)
 
     const { outputFilePath } = await excel.writeOnFile(

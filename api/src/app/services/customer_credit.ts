@@ -35,7 +35,6 @@ import { FileType } from 'api/src/util/excel'
 import { Worksheet } from 'exceljs'
 import * as moment from 'moment/moment'
 import * as userModel from '../models/user'
-import { Span } from '@opentelemetry/api'
 import { withSpan } from '../../util/tracing/tracer'
 
 export class CustomerCreditService implements CustomerCreditEndpoints {
@@ -120,7 +119,7 @@ export class CustomerCreditService implements CustomerCreditEndpoints {
   @action({ forApps: [Application.ADMIN] })
   async getCustomerCreditPurchaseOrdersReportAsExcelSheet(
     req: CustomerCreditGetCustomerCreditPurchaseOrdersReportRQ,
-  ): Promise<ReadableStream> {
+  ): Promise<fs.ReadStream> {
     const customer = await customerModel.get(this.ctx, req.customer_id)
     const report = await customer_credit.getCustomerCreditPurchaseOrdersReport(
       this.ctx,

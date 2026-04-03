@@ -22,8 +22,6 @@ import {
   action,
   unsecured_action,
 } from 'api/src/app/context/decorators/endpoint_actions'
-import { LogType } from 'api/src/util/logging/logType'
-import { LogLevel } from 'api/src/util/logging/logger'
 import { UserRole, UserRoleApplications } from 'interface/entities/user'
 import { Application } from 'interface'
 import { DATABASE } from 'api/setup/db/types'
@@ -97,11 +95,6 @@ export class AuthService implements AuthEndpoints {
         success: true,
       }
     } catch (error: any) {
-      this.ctx.log({
-        type: LogType.APP_ERROR,
-        level: LogLevel.ERROR,
-        message: error.message,
-      })
       return {
         success: false,
       }

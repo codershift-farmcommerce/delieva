@@ -2,8 +2,6 @@ import Koa, { Context } from 'koa'
 import { trace } from '@opentelemetry/api'
 import sessionHandler from './middleware/session_handler'
 import fileUploadHandler from './middleware/file_upload_handler'
-import loggingHandler from './middleware/logging_handler'
-import apiLogger from './middleware/api_logger'
 import dbHandler from './middleware/db_handler'
 import cachingHandler from './middleware/caching_handler'
 import auditHandler from './middleware/audit_handler'
@@ -40,12 +38,10 @@ export class HttpServer {
       })
     })
     app.use(bodyParser())
-    app.use(loggingHandler)
     app.use(cachingHandler)
     app.use(errorHandler)
     app.use(dbHandler)
     app.use(sessionHandler)
-    app.use(apiLogger)
     app.use(auditHandler)
     app.use(fileUploadHandler)
     app.use(

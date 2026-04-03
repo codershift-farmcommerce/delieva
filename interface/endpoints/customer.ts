@@ -30,5 +30,5 @@ export interface CustomerEndpoints {
 
   disable(req: CustomerDisableRQ): Promise<ModifyRS>
 
-  getMovementsReportAsExcelSheet(req: CustomerGetMovementsReportRQ): Promise<ReadableStream>
+  getMovementsReportAsExcelSheet(req: CustomerGetMovementsReportRQ): Promise<import('fs').ReadStream>
 }

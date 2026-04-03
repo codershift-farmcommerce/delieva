@@ -83,7 +83,7 @@ export class ProductService implements ProductEndpoints {
   @action({ forApps: [Application.ADMIN] })
   async getSalesReportAsExcelSheet(
     req: ProductGetSalesReportRQ,
-  ): Promise<ReadableStream> {
+  ): Promise<fs.ReadStream> {
     const report = await product.getSalesReport(this.ctx, req)
     const { outputFilePath } = await excel.writeOnFile(
       FileType.PRODUCT_SALES_TEMPLATE,

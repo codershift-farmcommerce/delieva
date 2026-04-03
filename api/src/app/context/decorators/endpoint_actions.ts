@@ -1,9 +1,4 @@
 import { Application } from 'interface'
-import * as logger from 'api/src/util/logging/logger'
-import { LogLevel } from 'api/src/util/logging/logger'
-import { LogType } from 'api/src/util/logging/logType'
-
-const log = logger.getChildLogger({})
 
 export const actionApplications: { [actionPath: string]: Application[] } = {}
 export const actions: { [actionPath: string]: Function } = {}
@@ -25,14 +20,7 @@ export function action(params: SingleAppAction | MultipleAppAction) {
     _descriptor: PropertyDescriptor,
   ) => {
     if (!target.path) {
-      log({
-        type: LogType.APP_ERROR,
-        level: LogLevel.ERROR,
-        message: {
-          text:
-            'The path has not been set for service ' + target.constructor.name,
-        },
-      })
+      console.error('The path has not been set for service ' + target.constructor.name)
       return
     }
     const actionPath = target.path() + '/' + propertyKey

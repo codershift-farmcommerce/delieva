@@ -1,8 +1,6 @@
 import { Ctx } from 'api/src/app/context'
 import { ApiError } from 'api/src/app/context/api_error'
 import { ApiErrorCode } from 'interface/entities/api_error_code'
-import { LogLevel } from 'api/src/util/logging/logger'
-import { LogType } from 'api/src/util/logging/logType'
 import { ApiErrorRS } from 'interface/entities/common'
 
 export default async (ctx: Ctx, next: Function) => {
@@ -28,10 +26,5 @@ export default async (ctx: Ctx, next: Function) => {
       },
     }
     ctx.body = response
-    ctx.log({
-      level: LogLevel.INFO,
-      type: LogType.API_OUT_RESPONSE,
-      message: response,
-    })
   })
 }
