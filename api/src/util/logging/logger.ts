@@ -1,11 +1,14 @@
 import { CloudWatchLogs } from '@aws-sdk/client-cloudwatch-logs'
+import axios from 'axios'
 import * as winston from 'winston'
+import { trace } from '@opentelemetry/api'
 import redact from './redacter'
 import { LogType } from './logType'
 
 const cloudwatchlogs = new CloudWatchLogs({})
 const logGroupName = 'services'
 const logStreamName = 'api'
+const LOKI_URL = process.env.LOKI_URL || 'http://localhost:3100'
 
 const logger = winston.createLogger({
   format: winston.format.combine(
@@ -49,6 +52,7 @@ export function getChildLogger(logGroupData: LogGroupData) {
     if (process.env.NODE_ENV === 'production') {
       logToCloudWatchLogs(logEntry, logGroupData)
     } else {
+      logToLoki(logEntry, logGroupData)
       loggerChild[logEntry.level]({
         type: type.name,
         parentType: type.parentLogType,
@@ -56,6 +60,37 @@ export function getChildLogger(logGroupData: LogGroupData) {
       })
     }
   }
+}
+
+function logToLoki(logEntry: LogEntry, logGroupData: LogGroupData) {
+  const { message, type } = logEntry
+  const span = trace.getActiveSpan()
+  const traceId = span?.spanContext().traceId
+  const lokiMessage = {
+    ...message,
+    ...logGroupData,
+    traceId,
+    type: type.name,
+    parentType: type.parentLogType,
+  }
+  const payload = {
+    streams: [
+      {
+        stream: {
+          service: 'farmcommerce-api',
+          level: logEntry.level,
+        },
+        values: [
+          [String(Date.now() * 1_000_000), JSON.stringify(redact(lokiMessage))],
+        ],
+      },
+    ],
+  }
+  axios.post(`${LOKI_URL}/loki/api/v1/push`, payload, {
+    headers: { 'Content-Type': 'application/json' },
+  }).catch((err) => {
+    console.log('Failed to send logs to Loki. ' + err)
+  })
 }
 
 function logToCloudWatchLogs(logEntry: LogEntry, logGroupData: LogGroupData) {
