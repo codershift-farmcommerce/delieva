@@ -6,7 +6,8 @@ import {
   CustomerCreditCancelPaymentRQ,
   CustomerCreditGetCustomerCreditPurchaseOrdersReportRQ,
   CustomerCreditGetForCustomerRQ,
-  CustomerCreditGetPaymentReceiptRQ, CustomerCreditGetPaymentRQ,
+  CustomerCreditGetPaymentReceiptRQ,
+  CustomerCreditGetPaymentRQ,
   CustomerCreditGetPaymentsByCustomerRQ,
   CustomerCreditGetPaymentsOfCurrentOpenReconciliationRQ,
   CustomerCreditGetUnpaidPurchaseOrdersRQ,
@@ -17,7 +18,8 @@ import {
   CustomerCreditCancelPaymentRS,
   CustomerCreditGetCustomerCreditPurchaseOrdersReportRS,
   CustomerCreditGetForCustomerRS,
-  CustomerCreditGetPaymentReceiptRS, CustomerCreditGetPaymentRS,
+  CustomerCreditGetPaymentReceiptRS,
+  CustomerCreditGetPaymentRS,
   CustomerCreditGetPaymentsGetByCustomerRS,
   CustomerCreditGetPaymentsOfCurrentOpenReconciliationRS,
   CustomerCreditGetUnpaidPurchaseOrdersRS,
@@ -33,6 +35,7 @@ import { FileType } from 'api/src/util/excel'
 import { Worksheet } from 'exceljs'
 import * as moment from 'moment/moment'
 import * as userModel from '../models/user'
+import { Span } from '@opentelemetry/api'
 
 export class CustomerCreditService implements CustomerCreditEndpoints {
   private ctx: Ctx
@@ -105,7 +108,17 @@ export class CustomerCreditService implements CustomerCreditEndpoints {
   getCustomerCreditPurchaseOrdersReport(
     req: CustomerCreditGetCustomerCreditPurchaseOrdersReportRQ,
   ): Promise<CustomerCreditGetCustomerCreditPurchaseOrdersReportRS> {
-    return customer_credit.getCustomerCreditPurchaseOrdersReport(this.ctx, req)
+    return this.ctx.tracer.startActiveSpan(
+      'getCustomerCreditPurchaseOrdersReport',
+      (span: Span) => {
+        const result = customer_credit.getCustomerCreditPurchaseOrdersReport(
+          this.ctx,
+          req,
+        )
+        span.end()
+        return result
+      },
+    )
   }
 
   @action({ forApps: [Application.ADMIN] })

@@ -1,4 +1,5 @@
 import Koa, { Context } from 'koa'
+import { trace } from '@opentelemetry/api'
 import sessionHandler from './middleware/session_handler'
 import fileUploadHandler from './middleware/file_upload_handler'
 import loggingHandler from './middleware/logging_handler'
@@ -32,7 +33,9 @@ export class HttpServer {
     })
 
     endpoints.forEach(({ method, path, action }) => {
+      const tracer = trace.getTracer(path)
       router[method]('/' + path, async (ctx: Context) => {
+        ctx.tracer = tracer
         ctx.body = await action.call({ ctx }, ctx.request.body)
       })
     })
