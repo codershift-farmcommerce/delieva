@@ -8,7 +8,7 @@ import { LogType } from './logType'
 const cloudwatchlogs = new CloudWatchLogs({})
 const logGroupName = 'services'
 const logStreamName = 'api'
-const LOKI_URL = process.env.LOKI_URL || 'http://localhost:3100'
+const LOKI_URL = process.env.LOKI_URL || 'http://host.docker.internal:3100'
 
 const logger = winston.createLogger({
   format: winston.format.combine(
