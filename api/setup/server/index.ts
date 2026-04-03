@@ -1,7 +1,16 @@
 import { NodeSDK } from '@opentelemetry/sdk-node'
 import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-http'
 import { OTLPMetricExporter } from '@opentelemetry/exporter-metrics-otlp-http'
-import { PeriodicExportingMetricReader } from '@opentelemetry/sdk-metrics'
+import { ConsoleSpanExporter } from '@opentelemetry/sdk-trace-node'
+import {
+  PeriodicExportingMetricReader,
+  ConsoleMetricExporter,
+} from '@opentelemetry/sdk-metrics'
+import { resourceFromAttributes } from '@opentelemetry/resources'
+import {
+  ATTR_SERVICE_NAME,
+  ATTR_SERVICE_VERSION,
+} from '@opentelemetry/semantic-conventions'
 import { Endpoint, HttpServer } from 'api/setup/server/http'
 import { actions } from 'api/src/app/context/decorators/endpoint_actions'
 import { AuthService } from 'api/src/app/services/auth'
@@ -20,11 +29,21 @@ import { FinishedProductService } from 'api/src/app/services/finished_product'
 import { CauseService } from 'api/src/app/services/cause'
 import { NoteService } from 'api/src/app/services/note'
 
+// const traceExporter = new OTLPTraceExporter({
+//   url: 'http://localhost:4318/v1/traces',
+// })
+const traceExporter = new ConsoleSpanExporter()
+
 const sdk = new NodeSDK({
-  traceExporter: new OTLPTraceExporter({
-    url: 'http://localhost:4318/v1/traces',
+  resource: resourceFromAttributes({
+    [ATTR_SERVICE_NAME]: 'farmcommerceAPI',
+    [ATTR_SERVICE_VERSION]: '1.0',
   }),
+  traceExporter,
   metricReaders: [
+    new PeriodicExportingMetricReader({
+      exporter: new ConsoleMetricExporter(),
+    }),
     new PeriodicExportingMetricReader({
       exporter: new OTLPMetricExporter({
         url: 'http://localhost:4318/v1/metrics',
