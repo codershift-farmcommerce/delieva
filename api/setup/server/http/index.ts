@@ -1,8 +1,4 @@
 import Koa, { Context } from 'koa'
-import { NodeSDK } from '@opentelemetry/sdk-node'
-import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-http'
-import { OTLPMetricExporter } from '@opentelemetry/exporter-metrics-otlp-http'
-import { PeriodicExportingMetricReader } from '@opentelemetry/sdk-metrics'
 import sessionHandler from './middleware/session_handler'
 import fileUploadHandler from './middleware/file_upload_handler'
 import loggingHandler from './middleware/logging_handler'
@@ -15,19 +11,6 @@ import errorHandler from './middleware/error_handler'
 const Router = require('@koa/router')
 const bodyParser = require('koa-bodyparser')
 const cors = require('koa-cors')
-
-const sdk = new NodeSDK({
-  traceExporter: new OTLPTraceExporter({
-    url: 'http://localhost:4318/v1/traces',
-  }),
-  metricReaders: [
-    new PeriodicExportingMetricReader({
-      exporter: new OTLPMetricExporter({
-        url: 'http://localhost:4318/v1/metrics',
-      }),
-    }),
-  ],
-})
 
 const PORT = 3003
 const app = new Koa()
@@ -71,7 +54,6 @@ export class HttpServer {
     )
   }
   start() {
-    sdk.start()
     app.use(router.routes())
     this.server.listen(PORT, () => {
       console.log(`API is now running on port ${PORT}`)

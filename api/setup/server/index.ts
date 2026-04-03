@@ -1,3 +1,7 @@
+import { NodeSDK } from '@opentelemetry/sdk-node'
+import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-http'
+import { OTLPMetricExporter } from '@opentelemetry/exporter-metrics-otlp-http'
+import { PeriodicExportingMetricReader } from '@opentelemetry/sdk-metrics'
 import { Endpoint, HttpServer } from 'api/setup/server/http'
 import { actions } from 'api/src/app/context/decorators/endpoint_actions'
 import { AuthService } from 'api/src/app/services/auth'
@@ -15,6 +19,20 @@ import { ClientConfigurationService } from 'api/src/app/services/client_configur
 import { FinishedProductService } from 'api/src/app/services/finished_product'
 import { CauseService } from 'api/src/app/services/cause'
 import { NoteService } from 'api/src/app/services/note'
+
+const sdk = new NodeSDK({
+  traceExporter: new OTLPTraceExporter({
+    url: 'http://localhost:4318/v1/traces',
+  }),
+  metricReaders: [
+    new PeriodicExportingMetricReader({
+      exporter: new OTLPMetricExporter({
+        url: 'http://localhost:4318/v1/metrics',
+      }),
+    }),
+  ],
+})
+sdk.start()
 
 // Activate action decorators
 new AuthService()
