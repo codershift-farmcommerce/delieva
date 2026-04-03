@@ -36,6 +36,7 @@ import { Worksheet } from 'exceljs'
 import * as moment from 'moment/moment'
 import * as userModel from '../models/user'
 import { Span } from '@opentelemetry/api'
+import { withSpan } from '../../util/tracing/tracer'
 
 export class CustomerCreditService implements CustomerCreditEndpoints {
   private ctx: Ctx
@@ -108,17 +109,12 @@ export class CustomerCreditService implements CustomerCreditEndpoints {
   getCustomerCreditPurchaseOrdersReport(
     req: CustomerCreditGetCustomerCreditPurchaseOrdersReportRQ,
   ): Promise<CustomerCreditGetCustomerCreditPurchaseOrdersReportRS> {
-    return this.ctx.tracer.startActiveSpan(
-      'getCustomerCreditPurchaseOrdersReport',
-      (span: Span) => {
-        const result = customer_credit.getCustomerCreditPurchaseOrdersReport(
-          this.ctx,
-          req,
-        )
-        span.end()
-        return result
-      },
-    )
+    return withSpan(this.ctx, 'getCustomerCreditPurchaseOrdersReport', () => {
+      return customer_credit.getCustomerCreditPurchaseOrdersReport(
+        this.ctx,
+        req,
+      )
+    })
   }
 
   @action({ forApps: [Application.ADMIN] })
