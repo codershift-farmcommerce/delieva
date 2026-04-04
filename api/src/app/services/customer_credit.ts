@@ -35,7 +35,7 @@ import { FileType } from 'api/src/util/excel'
 import { Worksheet } from 'exceljs'
 import * as moment from 'moment/moment'
 import * as userModel from '../models/user'
-import { withSpan } from 'api/src/util/tracing/tracer'
+import { withActiveSpan } from 'api/src/util/tracing/tracer'
 
 export class CustomerCreditService implements CustomerCreditEndpoints {
   private ctx: Ctx
@@ -108,7 +108,7 @@ export class CustomerCreditService implements CustomerCreditEndpoints {
   getCustomerCreditPurchaseOrdersReport(
     req: CustomerCreditGetCustomerCreditPurchaseOrdersReportRQ,
   ): Promise<CustomerCreditGetCustomerCreditPurchaseOrdersReportRS> {
-    return withSpan(this.ctx, 'getCustomerCreditPurchaseOrdersReport', () => {
+    return withActiveSpan(this.ctx, 'getCustomerCreditPurchaseOrdersReport', () => {
       return customer_credit.getCustomerCreditPurchaseOrdersReport(
         this.ctx,
         req,
