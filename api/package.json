@@ -11,7 +11,7 @@
     "prebuild": "rm -rf build/api/",
     "build": "tsc && tsc-alias",
     "postbuild": "copyfiles src/**/*.xlsx build/api/",
-    "watch:dev": "tsc-watch --project . --onSuccess 'node --inspect=0.0.0.0:8226 -r ts-node/register -r tsconfig-paths/register setup/server/index.ts'",
+    "watch:dev": "OTEL_ENABLED=true tsc-watch --project . --onSuccess 'node --inspect=0.0.0.0:8226 -r ts-node/register -r tsconfig-paths/register setup/server/index.ts'",
     "db:init": "node build/api/setup/db/init.js",
     "dev": "yarn watch:dev",
     "publish:lib": "yarn build && cd build/api/lib && yarn publish",
