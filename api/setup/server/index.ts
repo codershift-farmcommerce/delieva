@@ -1,3 +1,6 @@
+import { diag, DiagConsoleLogger, DiagLogLevel } from '@opentelemetry/api'
+diag.setLogger(new DiagConsoleLogger(), DiagLogLevel.DEBUG)
+
 import { NodeSDK } from '@opentelemetry/sdk-node'
 import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-http'
 import { OTLPMetricExporter } from '@opentelemetry/exporter-metrics-otlp-http'
@@ -29,10 +32,10 @@ import { FinishedProductService } from 'api/src/app/services/finished_product'
 import { CauseService } from 'api/src/app/services/cause'
 import { NoteService } from 'api/src/app/services/note'
 
-// const traceExporter = new OTLPTraceExporter({
-//   url: 'http://localhost:4318/v1/traces',
-// })
-const traceExporter = new ConsoleSpanExporter()
+const traceExporter = new OTLPTraceExporter({
+  url: 'http://host.docker.internal:4318/v1/traces',
+})
+// const traceExporter = new ConsoleSpanExporter()
 
 const sdk = new NodeSDK({
   resource: resourceFromAttributes({
@@ -46,7 +49,7 @@ const sdk = new NodeSDK({
     }),
     new PeriodicExportingMetricReader({
       exporter: new OTLPMetricExporter({
-        url: 'http://localhost:4318/v1/metrics',
+        url: 'http://host.docker.internal:4318/v1/metrics',
       }),
     }),
   ],
