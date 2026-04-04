@@ -1,19 +1,3 @@
-import { diag, DiagConsoleLogger, DiagLogLevel } from '@opentelemetry/api'
-diag.setLogger(new DiagConsoleLogger(), DiagLogLevel.DEBUG)
-
-import { NodeSDK } from '@opentelemetry/sdk-node'
-import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-http'
-import { OTLPMetricExporter } from '@opentelemetry/exporter-metrics-otlp-http'
-import { ConsoleSpanExporter } from '@opentelemetry/sdk-trace-node'
-import {
-  PeriodicExportingMetricReader,
-  ConsoleMetricExporter,
-} from '@opentelemetry/sdk-metrics'
-import { resourceFromAttributes } from '@opentelemetry/resources'
-import {
-  ATTR_SERVICE_NAME,
-  ATTR_SERVICE_VERSION,
-} from '@opentelemetry/semantic-conventions'
 import { Endpoint, HttpServer } from 'api/setup/server/http'
 import { actions } from 'api/src/app/context/decorators/endpoint_actions'
 import { AuthService } from 'api/src/app/services/auth'
@@ -32,29 +16,40 @@ import { FinishedProductService } from 'api/src/app/services/finished_product'
 import { CauseService } from 'api/src/app/services/cause'
 import { NoteService } from 'api/src/app/services/note'
 
-const traceExporter = new OTLPTraceExporter({
-  url: 'http://host.docker.internal:4318/v1/traces',
-})
-// const traceExporter = new ConsoleSpanExporter()
+if (process.env.OTEL_ENABLED === 'true') {
+  const { diag, DiagConsoleLogger, DiagLogLevel } = require('@opentelemetry/api')
+  diag.setLogger(new DiagConsoleLogger(), DiagLogLevel.DEBUG)
 
-const sdk = new NodeSDK({
-  resource: resourceFromAttributes({
-    [ATTR_SERVICE_NAME]: 'farmcommerceAPI',
-    [ATTR_SERVICE_VERSION]: '1.0',
-  }),
-  traceExporter,
-  metricReaders: [
-    new PeriodicExportingMetricReader({
-      exporter: new ConsoleMetricExporter(),
+  const { NodeSDK } = require('@opentelemetry/sdk-node')
+  const { OTLPTraceExporter } = require('@opentelemetry/exporter-trace-otlp-http')
+  const { OTLPMetricExporter } = require('@opentelemetry/exporter-metrics-otlp-http')
+  const { PeriodicExportingMetricReader, ConsoleMetricExporter } = require('@opentelemetry/sdk-metrics')
+  const { resourceFromAttributes } = require('@opentelemetry/resources')
+  const { ATTR_SERVICE_NAME, ATTR_SERVICE_VERSION } = require('@opentelemetry/semantic-conventions')
+
+  const traceExporter = new OTLPTraceExporter({
+    url: 'http://host.docker.internal:4318/v1/traces',
+  })
+
+  const sdk = new NodeSDK({
+    resource: resourceFromAttributes({
+      [ATTR_SERVICE_NAME]: 'farmcommerceAPI',
+      [ATTR_SERVICE_VERSION]: '1.0',
     }),
-    new PeriodicExportingMetricReader({
-      exporter: new OTLPMetricExporter({
-        url: 'http://host.docker.internal:4318/v1/metrics',
+    traceExporter,
+    metricReaders: [
+      new PeriodicExportingMetricReader({
+        exporter: new ConsoleMetricExporter(),
       }),
-    }),
-  ],
-})
-sdk.start()
+      new PeriodicExportingMetricReader({
+        exporter: new OTLPMetricExporter({
+          url: 'http://host.docker.internal:4318/v1/metrics',
+        }),
+      }),
+    ],
+  })
+  sdk.start()
+}
 
 // Activate action decorators
 new AuthService()
