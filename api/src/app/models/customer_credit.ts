@@ -40,6 +40,7 @@ import {
   CustomerCreditPaymentStatus,
 } from 'interface/entities/customer_credit'
 import Transaction = Knex.Transaction
+import { withSpan } from 'api/src/util/tracing/tracer'
 
 type CustomerCreditGetPaymentReceiptRawSQL = {
   customer_credit_payment_id: string
@@ -321,7 +322,7 @@ async function updateCreditPurchaseOrderWithTrx(
         updated_at: ctx.knex.fn.now(),
       })
       .where('id', topCreditPurchase.id)
-debugger
+    debugger
     while (remainder > 0) {
       const topCreditPurchase = await trx('credit_purchase_order')
         .select('id', 'total', 'paid')
@@ -663,8 +664,9 @@ export async function getCustomerCreditPurchaseOrdersReport(
 ): Promise<CustomerCreditGetCustomerCreditPurchaseOrdersReportRS> {
   const { customer_id } = req
 
-  const purchaseOrdersResult = await ctx.knex.raw(
-    `
+  const purchaseOrdersResult = await withSpan(ctx, 'purchaseOrdersResult', () => {
+    return ctx.knex.raw(
+      `
     SELECT 
         purchase_order_id, 
         total, 
@@ -675,8 +677,9 @@ export async function getCustomerCreditPurchaseOrdersReport(
     AND status != 'CANCELLED'
     ORDER BY created_at DESC
   `,
-    { customerId: customer_id },
-  )
+      { customerId: customer_id },
+    )
+  })
 
   const purchaseOrders = purchaseOrdersResult.rows.map((row: any) => ({
     order_id: row.purchase_order_id,

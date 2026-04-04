@@ -35,7 +35,7 @@ import { FileType } from 'api/src/util/excel'
 import { Worksheet } from 'exceljs'
 import * as moment from 'moment/moment'
 import * as userModel from '../models/user'
-import { withSpan } from '../../util/tracing/tracer'
+import { withSpan } from 'api/src/util/tracing/tracer'
 
 export class CustomerCreditService implements CustomerCreditEndpoints {
   private ctx: Ctx
