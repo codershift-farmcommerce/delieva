@@ -17,15 +17,29 @@ import { CauseService } from 'api/src/app/services/cause'
 import { NoteService } from 'api/src/app/services/note'
 
 if (process.env.OTEL_ENABLED === 'true') {
-  const { diag, DiagConsoleLogger, DiagLogLevel } = require('@opentelemetry/api')
+  const {
+    diag,
+    DiagConsoleLogger,
+    DiagLogLevel,
+  } = require('@opentelemetry/api')
   diag.setLogger(new DiagConsoleLogger(), DiagLogLevel.DEBUG)
 
   const { NodeSDK } = require('@opentelemetry/sdk-node')
-  const { OTLPTraceExporter } = require('@opentelemetry/exporter-trace-otlp-http')
-  const { OTLPMetricExporter } = require('@opentelemetry/exporter-metrics-otlp-http')
-  const { PeriodicExportingMetricReader, ConsoleMetricExporter } = require('@opentelemetry/sdk-metrics')
+  const {
+    OTLPTraceExporter,
+  } = require('@opentelemetry/exporter-trace-otlp-http')
+  const {
+    OTLPMetricExporter,
+  } = require('@opentelemetry/exporter-metrics-otlp-http')
+  const {
+    PeriodicExportingMetricReader,
+    ConsoleMetricExporter,
+  } = require('@opentelemetry/sdk-metrics')
   const { resourceFromAttributes } = require('@opentelemetry/resources')
-  const { ATTR_SERVICE_NAME, ATTR_SERVICE_VERSION } = require('@opentelemetry/semantic-conventions')
+  const {
+    ATTR_SERVICE_NAME,
+    ATTR_SERVICE_VERSION,
+  } = require('@opentelemetry/semantic-conventions')
   const { PgInstrumentation } = require('@opentelemetry/instrumentation-pg')
 
   const traceExporter = new OTLPTraceExporter({
@@ -38,7 +52,12 @@ if (process.env.OTEL_ENABLED === 'true') {
       [ATTR_SERVICE_VERSION]: '1.0',
     }),
     traceExporter,
-    instrumentations: [new PgInstrumentation()],
+    instrumentations: [
+      new PgInstrumentation({
+        requireParentSpan: true,
+        addSqlCommenterCommentToQueries: true,
+      }),
+    ],
     metricReaders: [
       new PeriodicExportingMetricReader({
         exporter: new ConsoleMetricExporter(),
