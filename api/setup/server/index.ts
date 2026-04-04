@@ -26,6 +26,7 @@ if (process.env.OTEL_ENABLED === 'true') {
   const { PeriodicExportingMetricReader, ConsoleMetricExporter } = require('@opentelemetry/sdk-metrics')
   const { resourceFromAttributes } = require('@opentelemetry/resources')
   const { ATTR_SERVICE_NAME, ATTR_SERVICE_VERSION } = require('@opentelemetry/semantic-conventions')
+  const { PgInstrumentation } = require('@opentelemetry/instrumentation-pg')
 
   const traceExporter = new OTLPTraceExporter({
     url: 'http://host.docker.internal:4318/v1/traces',
@@ -37,6 +38,7 @@ if (process.env.OTEL_ENABLED === 'true') {
       [ATTR_SERVICE_VERSION]: '1.0',
     }),
     traceExporter,
+    instrumentations: [new PgInstrumentation()],
     metricReaders: [
       new PeriodicExportingMetricReader({
         exporter: new ConsoleMetricExporter(),
