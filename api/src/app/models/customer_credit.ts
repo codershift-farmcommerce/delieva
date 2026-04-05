@@ -40,7 +40,7 @@ import {
   CustomerCreditPaymentStatus,
 } from 'interface/entities/customer_credit'
 import Transaction = Knex.Transaction
-import { withActiveSpan } from 'api/src/util/tracing/tracer'
+import { setSpanAttribute, withActiveSpan } from 'api/src/util/tracing/tracer'
 
 type CustomerCreditGetPaymentReceiptRawSQL = {
   customer_credit_payment_id: string
@@ -664,9 +664,12 @@ export async function getCustomerCreditPurchaseOrdersReport(
 ): Promise<CustomerCreditGetCustomerCreditPurchaseOrdersReportRS> {
   const { customer_id } = req
 
-  const purchaseOrdersResult = await withActiveSpan(ctx, 'purchaseOrdersResult', () => {
-    return ctx.knex.raw(
-      `
+  const purchaseOrdersResult = await withActiveSpan(
+    ctx,
+    'purchaseOrdersResult',
+    async span => {
+      const purchaseOrders = await ctx.knex.raw(
+        `
     SELECT 
         purchase_order_id, 
         total, 
@@ -677,9 +680,12 @@ export async function getCustomerCreditPurchaseOrdersReport(
     AND status != 'CANCELLED'
     ORDER BY created_at DESC
   `,
-      { customerId: customer_id },
-    )
-  })
+        { customerId: customer_id },
+      )
+      setSpanAttribute(span, 'purchaseOrders', purchaseOrders.rows.length)
+      return purchaseOrders
+    },
+  )
 
   const purchaseOrders = purchaseOrdersResult.rows.map((row: any) => ({
     order_id: row.purchase_order_id,

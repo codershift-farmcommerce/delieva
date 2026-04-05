@@ -7,12 +7,26 @@ import { Span } from '@opentelemetry/api'
  * @param name
  * @param fn
  */
-export function withActiveSpan<T>(ctx: Ctx, name: string, fn: () => Promise<T>): Promise<T> {
+export function withActiveSpan<T>(
+  ctx: Ctx,
+  name: string,
+  fn: (span?: Span) => Promise<T>,
+): Promise<T> {
   return ctx.tracer.startActiveSpan(name, async (span: Span) => {
     try {
-      return await fn()
+      return await fn(span)
     } finally {
       span.end()
     }
   })
+}
+
+export function setSpanAttribute(
+  span: Span | undefined,
+  name: string,
+  value: string,
+) {
+  if (span) {
+    span.setAttribute(name, value)
+  }
 }
