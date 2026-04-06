@@ -1,5 +1,5 @@
 import { Ctx } from 'api/src/app/context'
-import { Span } from '@opentelemetry/api'
+import { Span, SpanStatusCode } from '@opentelemetry/api'
 import { ATTR_CODE_FUNCTION_NAME } from '@opentelemetry/semantic-conventions'
 
 /**
@@ -17,6 +17,12 @@ export function withActiveSpan<T>(
     try {
       span.setAttribute(ATTR_CODE_FUNCTION_NAME, fn.name)
       return await fn(span)
+    } catch (err) {
+      if (err instanceof Error) {
+        span.recordException(err)
+      }
+      span.setStatus({ code: SpanStatusCode.ERROR })
+      throw err
     } finally {
       span.end()
     }
