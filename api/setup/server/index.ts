@@ -48,7 +48,7 @@ if (process.env.OTEL_ENABLED === 'true') {
 
   const sdk = new NodeSDK({
     resource: resourceFromAttributes({
-      [ATTR_SERVICE_NAME]: 'farmcommerceAPI',
+      [ATTR_SERVICE_NAME]: 'farmcommerce-api',
       [ATTR_SERVICE_VERSION]: '1.0',
     }),
     traceExporter,
@@ -61,6 +61,7 @@ if (process.env.OTEL_ENABLED === 'true') {
     metricReaders: [
       new PeriodicExportingMetricReader({
         exporter: new ConsoleMetricExporter(),
+        exportIntervalMillis: 10000,
       }),
       new PeriodicExportingMetricReader({
         exporter: new OTLPMetricExporter({

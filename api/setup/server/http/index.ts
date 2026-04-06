@@ -1,11 +1,11 @@
 import Koa, { Context } from 'koa'
-import { trace } from '@opentelemetry/api'
 import sessionHandler from './middleware/session_handler'
 import fileUploadHandler from './middleware/file_upload_handler'
 import dbHandler from './middleware/db_handler'
 import cachingHandler from './middleware/caching_handler'
 import auditHandler from './middleware/audit_handler'
 import errorHandler from './middleware/error_handler'
+import tracingHandler from './middleware/tracing_handler'
 
 const Router = require('@koa/router')
 const bodyParser = require('koa-bodyparser')
@@ -31,13 +31,12 @@ export class HttpServer {
     })
 
     endpoints.forEach(({ method, path, action }) => {
-      const tracer = trace.getTracer(path)
       router[method]('/' + path, async (ctx: Context) => {
-        ctx.tracer = tracer
         ctx.body = await action.call({ ctx }, ctx.request.body)
       })
     })
     app.use(bodyParser())
+    app.use(tracingHandler)
     app.use(cachingHandler)
     app.use(errorHandler)
     app.use(dbHandler)
