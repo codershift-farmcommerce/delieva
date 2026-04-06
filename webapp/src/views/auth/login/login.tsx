@@ -54,20 +54,22 @@ const Login = () => {
       <div className={styles.container}>
         <div className={styles.login_form}>
           <div className={styles.login_form_title}>Farm Commerce Login</div>
-          <form autoComplete={'off'} onSubmit={onLogin}>
+          <form autoComplete={'on'} onSubmit={onLogin}>
             <div className={styles.login_form_field}>
               <label className={styles.login_form_field_label} htmlFor={'email'}>
                 Email:
               </label>
               <input
                 id={'email'}
+                name={'email'}
+                type={'email'}
                 className={styles.login_form_field_input}
                 value={email}
                 onChange={e => {
                   setEmail(e.target.value)
                   setInvalidCredentials(false)
                 }}
-                autoComplete={'new-password'}
+                autoComplete={'email'}
               />
             </div>
             <div className={styles.login_form_field}>
@@ -84,7 +86,8 @@ const Login = () => {
                   setPassword(e.target.value)
                   setInvalidCredentials(false)
                 }}
-                autoComplete={'new-password'}
+                name={'password'}
+                autoComplete={'current-password'}
               />
             </div>
             <input
