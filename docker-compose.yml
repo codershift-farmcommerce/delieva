@@ -69,6 +69,7 @@ services:
     container_name: farmcommerce-caching
     ports:
       - '7379:6379'
+    restart: unless-stopped
     volumes:
       - farmcommerce_cache:/data
     user: redis
