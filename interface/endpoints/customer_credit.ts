@@ -61,7 +61,7 @@ export interface CustomerCreditEndpoints {
 
   getCustomerCreditPurchaseOrdersReportAsExcelSheet(
     req: CustomerCreditGetCustomerCreditPurchaseOrdersReportRQ,
-  ): Promise<import('fs').ReadStream>
+  ): Promise<ReadableStream<any> | import('fs').ReadStream>
 
   getPaymentsOfCurrentOpenReconciliation(
     req: CustomerCreditGetPaymentsOfCurrentOpenReconciliationRQ,

@@ -41,7 +41,7 @@ export interface ProductEndpoints {
 
   getSalesReportAsExcelSheet(
     req: ProductGetSalesReportRQ,
-  ): Promise<import('fs').ReadStream>
+  ): Promise<ReadableStream<any> | import('fs').ReadStream>
 
   getUnitPricesForCart( //TODO: Move to cart endpoint file.
     req: ProductGetUnitPricesForCartRQ,
