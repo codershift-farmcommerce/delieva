@@ -30,5 +30,5 @@ export interface FinishedProductEndpoints {
 
   getSalesReportAsExcelSheet(
     req: FinishedProductGetSalesReportRQ,
-  ): Promise<ReadableStream<any> | import('fs').ReadStream>
+  ): Promise<import('stream/web').ReadableStream<any> | import('fs').ReadStream>
 }
