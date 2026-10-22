@@ -46,7 +46,7 @@ const CustomerCredits = () => {
     })
     const chunks: any[] = []
     try {
-      const reader = data.getReader()
+      const reader = (data as import('stream/web').ReadableStream<any>).getReader()
       reader.read().then(function processResult(result): any {
         if (result.done) {
           downloadFile(
