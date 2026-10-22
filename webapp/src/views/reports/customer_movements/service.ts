@@ -11,7 +11,7 @@ export async function downloadCustomerMovementsReport(req: CustomerMovementsRepo
   try {
     try {
       const stream = await client.getMovementsReportAsExcelSheet(req)
-      const blob = await new Response(stream).blob()
+      const blob = await new Response(stream as ReadableStream).blob()
       const url = window.URL.createObjectURL(blob)
       const a = document.createElement('a')
       a.href = url

@@ -1,4 +1,4 @@
-FROM node:20.11-bookworm
+FROM node:22.12-bookworm-slim
 
 WORKDIR /var/app/api
 
