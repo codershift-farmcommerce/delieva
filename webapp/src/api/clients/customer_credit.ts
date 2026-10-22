@@ -68,7 +68,7 @@ export class CustomerCreditClient implements CustomerCreditEndpoints {
 
   getCustomerCreditPurchaseOrdersReportAsExcelSheet(
     req: CustomerCreditGetCustomerCreditPurchaseOrdersReportRQ,
-  ): Promise<ReadableStream> {
+  ): Promise<import('stream/web').ReadableStream<any> | import('fs').ReadStream> {
     return sendRequest('/customer_credit/getCustomerCreditPurchaseOrdersReportAsExcelSheet', req)
   }
 

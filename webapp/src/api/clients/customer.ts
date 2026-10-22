@@ -46,7 +46,7 @@ export class CustomerClient implements CustomerEndpoints {
     return sendRequest('/customer/disable', req)
   }
 
-  getMovementsReportAsExcelSheet(req: CustomerGetMovementsReportRQ): Promise<ReadableStream<any>> {
+  getMovementsReportAsExcelSheet(req: CustomerGetMovementsReportRQ): Promise<import('stream/web').ReadableStream<any> | import('fs').ReadStream> {
     return sendRequest('/customer/getMovementsReportAsExcelSheet', req)
   }
 }

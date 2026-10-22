@@ -39,7 +39,7 @@ export class FinishedProductClient implements FinishedProductEndpoints {
     return sendRequest('/finished_product/getSalesReport', req)
   }
 
-  getSalesReportAsExcelSheet(req: FinishedProductGetSalesReportRQ): Promise<ReadableStream> {
+  getSalesReportAsExcelSheet(req: FinishedProductGetSalesReportRQ): Promise<import('stream/web').ReadableStream<any> | import('fs').ReadStream> {
     return sendRequest('/finished_product/getSalesReportAsExcelSheet', req)
   }
 }

@@ -65,7 +65,7 @@ export class ProductClient implements ProductEndpoints {
     return sendRequest('/product/getSalesReport', req)
   }
 
-  getSalesReportAsExcelSheet(req: ProductGetSalesReportRQ): Promise<ReadableStream> {
+  getSalesReportAsExcelSheet(req: ProductGetSalesReportRQ): Promise<import('stream/web').ReadableStream<any> | import('fs').ReadStream> {
     return sendRequest('/product/getSalesReportAsExcelSheet', req)
   }
 }
