@@ -35,6 +35,7 @@ const PurchaseOrdersReport = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [canGetReport, setCanGetReport] = useState(true)
   const [selectedYear, setSelectedYear] = useState(new Date().getFullYear())
+  const [isDownloadingAnnualReport, setIsDownloadingAnnualReport] = useState(false)
 
   const customerInputRef = React.useRef<HTMLInputElement>(null)
   const totalInputRef = React.useRef<HTMLInputElement>(null)
@@ -88,6 +89,7 @@ const PurchaseOrdersReport = () => {
   }
 
   const handleDownloadAnnualReport = async () => {
+    setIsDownloadingAnnualReport(true)
     const data = await purchaseOrderClient.getAnnualReportAsExcelSheet({
       year: selectedYear,
       withDetails: false,
@@ -105,6 +107,7 @@ const PurchaseOrdersReport = () => {
         a.click()
         window.URL.revokeObjectURL(url)
         document.body.removeChild(a)
+        setIsDownloadingAnnualReport(false)
       } else {
         chunks.push(result.value)
         return reader.read().then(processResult)
@@ -283,18 +286,29 @@ const PurchaseOrdersReport = () => {
           <legend>Reporte anual</legend>
           <div>
             <label>Año: </label>
-            <input
-              type={'number'}
+            <select
               value={selectedYear}
               onChange={e => setSelectedYear(Number(e.target.value))}
-            />
+            >
+              {Array.from(
+                { length: new Date().getFullYear() - 2022 + 1 },
+                (_, i) => 2022 + i,
+              ).map(year => (
+                <option key={year} value={year}>{year}</option>
+              ))}
+            </select>
           </div>
-          <button
-            className={viewStyles.secondary_button}
-            onClick={handleDownloadAnnualReport}
-          >
-            Descargar Excel
-          </button>
+          {isDownloadingAnnualReport ? (
+            <Spinner />
+          ) : (
+            <button
+              className={`${viewStyles.secondary_button} ${styles.annual_report_button}`}
+              disabled={isDownloadingAnnualReport}
+              onClick={handleDownloadAnnualReport}
+            >
+              Descargar Excel
+            </button>
+          )}
         </fieldset>
       </ViewHeader>
       {isLoading ? (
