@@ -2,6 +2,7 @@ import { Ctx } from 'api/src/app/context'
 import {
   PurchaseOrderGetReceiptRQ,
   PurchaseOrderGetReportRQ,
+  PurchaseOrderGetAnnualReportRQ,
   PurchaseOrderReturnOrderRQ,
   PurchaseOrderProcessRQ,
   PurchaseOrderReturnOrderDetailsRQ,
@@ -442,6 +443,37 @@ export async function getReport(
     ctx,
     `(purchase_order.created_at AT TIME ZONE 'America/Chihuahua')::date BETWEEN :start_date AND :end_date`,
     { start_date, end_date },
+  )
+
+  const data = rows.map((row: PurchaseOrderReportSQLRow) => {
+    return {
+      order_id: row.order_id,
+      created_at: row.created_at,
+      cash_register_name: row.cash_register_name,
+      customer: row.customer,
+      discount: row.discount,
+      tax1: row.tax1,
+      total: row.total,
+      form_of_payments: row.form_of_payments,
+      detail: row.purchase_order_detail,
+      status: row.status,
+    }
+  })
+
+  return {
+    entries: data,
+  }
+}
+
+export async function getAnnualReport(
+  ctx: Ctx,
+  req: PurchaseOrderGetAnnualReportRQ,
+): Promise<PurchaseOrderGetReportRS> {
+  const { year } = req
+  const rows = await queryPurchaseOrderReport(
+    ctx,
+    `EXTRACT(YEAR FROM (purchase_order.created_at AT TIME ZONE 'America/Chihuahua')) = :year`,
+    { year },
   )
 
   const data = rows.map((row: PurchaseOrderReportSQLRow) => {

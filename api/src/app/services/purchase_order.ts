@@ -47,9 +47,10 @@ export class PurchaseOrderService implements PurchaseOrderEndpoints {
   }
 
   @action({ forApps: [Application.ADMIN] })
-  getAnnualReportAsExcelSheet(
+  async getAnnualReportAsExcelSheet(
     req: PurchaseOrderGetAnnualReportRQ,
   ): Promise<import('stream/web').ReadableStream<any> | import('fs').ReadStream> {
+    const report = await purchase_order.getAnnualReport(this.ctx, req)
     return Promise.resolve(new ReadableStream())
   }
 
