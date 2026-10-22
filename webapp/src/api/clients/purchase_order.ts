@@ -5,6 +5,7 @@ import {
   PurchaseOrderReturnOrderDetailsRQ,
   PurchaseOrderReturnOrderRQ,
   PurchaseOrderProcessRQ,
+  PurchaseOrderGetAnnualReportRQ,
 } from 'interface/requests/purchase_order'
 import {
   PurchaseOrderGetReceiptRS,
@@ -31,6 +32,12 @@ export class PurchaseOrderClient implements PurchaseOrderEndpoints {
 
   getReport(req: PurchaseOrderGetReportRQ): Promise<PurchaseOrderGetReportRS> {
     return sendRequest('/purchase_order/getReport', req)
+  }
+
+  getAnnualReportAsExcelSheet(
+    req: PurchaseOrderGetAnnualReportRQ,
+  ): Promise<import('stream/web').ReadableStream<any> | import('fs').ReadStream> {
+    return sendRequest('/purchase_order/getAnnualReportAsExcelSheet', req)
   }
 
   returnOrder(req: PurchaseOrderReturnOrderRQ): Promise<PurchaseOrderReturnOrderRS> {

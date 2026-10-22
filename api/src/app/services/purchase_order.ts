@@ -5,6 +5,7 @@ import {
   PurchaseOrderGetReportRQ,
   PurchaseOrderProcessRQ,
   PurchaseOrderReturnOrderDetailsRQ,
+  PurchaseOrderGetAnnualReportRQ,
   PurchaseOrderReturnOrderRQ,
 } from 'interface/requests/purchase_order'
 import {
@@ -42,6 +43,13 @@ export class PurchaseOrderService implements PurchaseOrderEndpoints {
   @action({ forApps: [Application.ADMIN, Application.POS] })
   getReport(req: PurchaseOrderGetReportRQ): Promise<PurchaseOrderGetReportRS> {
     return purchase_order.getReport(this.ctx, req)
+  }
+
+  @action({ forApps: [Application.ADMIN] })
+  getAnnualReportAsExcelSheet(
+    req: PurchaseOrderGetAnnualReportRQ,
+  ): Promise<import('stream/web').ReadableStream<any> | import('fs').ReadStream> {
+    return Promise.resolve(new ReadableStream())
   }
 
   @action({ forApps: [Application.ADMIN] })

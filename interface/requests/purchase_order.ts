@@ -16,6 +16,11 @@ export type PurchaseOrderGetReportRQ = {
   end_date: Date
 }
 
+export type PurchaseOrderGetAnnualReportRQ = {
+  year: number
+  withDetails: boolean
+}
+
 export type PurchaseOrderReturnOrderRQ = {
   order_id: number
   cause_id: number
