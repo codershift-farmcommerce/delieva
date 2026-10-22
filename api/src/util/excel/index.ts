@@ -10,6 +10,7 @@ export enum FileType {
   CASH_REGISTER_RECONCILIATION_STATEMENT_TEMPLATE = 'CASH_REGISTER_RECONCILIATION_STATEMENT_TEMPLATE',
   CUSTOMER_CREDIT_BALANCE_TEMPLATE = 'CUSTOMER_CREDIT_BALANCE_TEMPLATE',
   CUSTOMER_MOVEMENTS_TEMPLATE = 'CUSTOMER_MOVEMENTS_TEMPLATE',
+  YEARLY_PURCHASE_ORDERS_TEMPLATE = 'YEARLY_PURCHASE_ORDERS_TEMPLATE',
 }
 export const InputFilePaths: Record<FileType, string> = {
   [FileType.PRODUCT_SALES_TEMPLATE]: path.join(
@@ -32,6 +33,10 @@ export const InputFilePaths: Record<FileType, string> = {
     __dirname,
     'input_files/customer_movements_template.xlsx',
   ),
+  [FileType.YEARLY_PURCHASE_ORDERS_TEMPLATE]: path.join(
+    __dirname,
+    'input_files/purchase_orders_template.xlsx',
+  ),
 }
 export const OutputFilePaths: Record<FileType, () => string> = {
   [FileType.PRODUCT_SALES_TEMPLATE]: () => {
@@ -53,6 +58,10 @@ export const OutputFilePaths: Record<FileType, () => string> = {
   [FileType.CUSTOMER_MOVEMENTS_TEMPLATE]: () => {
     const timestamp = new Date().getTime()
     return `/tmp/customer_movements_template-${timestamp}.xlsx`
+  },
+  [FileType.YEARLY_PURCHASE_ORDERS_TEMPLATE]: () => {
+    const timestamp = new Date().getTime()
+    return `/tmp/purchase_orders_template-${timestamp}.xlsx`
   },
 }
 
