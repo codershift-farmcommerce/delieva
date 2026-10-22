@@ -287,19 +287,22 @@ const PurchaseOrdersReport = () => {
           <div>
             <label>Año: </label>
             <select
+              className={styles.year_select}
               value={selectedYear}
               onChange={e => setSelectedYear(Number(e.target.value))}
             >
               {Array.from(
-                { length: new Date().getFullYear() - 2022 + 1 },
-                (_, i) => 2022 + i,
+                { length: Math.min(new Date().getFullYear() - 2022 + 1, 10) },
+                (_, i) => new Date().getFullYear() - Math.min(new Date().getFullYear() - 2022, 9) + i,
               ).map(year => (
                 <option key={year} value={year}>{year}</option>
               ))}
             </select>
           </div>
           {isDownloadingAnnualReport ? (
-            <Spinner />
+            <div className={styles.downloading_container}>
+              <Spinner />
+            </div>
           ) : (
             <button
               className={`${viewStyles.secondary_button} ${styles.annual_report_button}`}

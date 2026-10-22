@@ -28,3 +28,14 @@
 .annual_report_button {
   margin-top: 0.5em;
 }
+
+.year_select {
+  font-size: 1em;
+}
+
+.downloading_container {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: 0.5em;
+}
