@@ -42,10 +42,10 @@ type PurchaseOrderDetailSQLRow = {
     code: string
     name: string
   }
-  quantity: number
-  unit_price: number
-  discount: number
-  detail_total: number
+  quantity: string
+  unit_price: string
+  discount: string
+  detail_total: string
 }
 
 type PurchaseOrderCustomerSQLRow = {
@@ -61,11 +61,11 @@ type PurchaseOrderReportSQLRow = {
   created_at: string
   cash_register_name: string
   customer: PurchaseOrderCustomerSQLRow
-  discount: number
+  discount: string
   tax1: number
-  total: number
+  total: string
   form_of_payments: FormOfPaymentWithAmount[]
-  purchase_order_detail: PurchaseOrderDetailSQLRow
+  purchase_order_detail: PurchaseOrderDetailSQLRow[]
   status: PurchaseOrderStatus
 }
 
@@ -379,11 +379,11 @@ export function getFopAmountAndChange(
   }
 }
 
-export async function getReport(
+async function queryPurchaseOrderReport(
   ctx: Ctx,
-  req: PurchaseOrderGetReportRQ,
-): Promise<PurchaseOrderGetReportRS> {
-  const { start_date, end_date } = req
+  whereClause: string,
+  bindings: Record<string, any>,
+): Promise<PurchaseOrderReportSQLRow[]> {
   //TODO: Investigate why this is being return are UTC when AT TIMEZONE is not being used
   const result = await ctx.knex.raw(
     `
@@ -397,8 +397,7 @@ export async function getReport(
             'city', customer.city,
             'email', customer.email
         ) AS customer,
-    purchase_order.discount AS
-    discount,
+    purchase_order.discount AS discount,
     purchase_order.tax1 AS tax1,
     purchase_order.total AS total,
     purchase_order.status AS status,
@@ -410,14 +409,14 @@ export async function getReport(
         'unit_price', purchase_order_detail.unit_price,
         'discount', purchase_order_detail.discount,
         'detail_total', purchase_order_detail.detail_total))
-     FROM purchase_order_detail 
-       INNER JOIN public.product ON product.code = purchase_order_detail.product_code 
+     FROM purchase_order_detail
+       INNER JOIN public.product ON product.code = purchase_order_detail.product_code
      WHERE purchase_order_detail.purchase_order_id = purchase_order.id
     ) AS purchase_order_detail,
     (SELECT JSON_AGG(JSON_BUILD_OBJECT(
          'form_of_payment', purchase_order_payment.form_of_payment,
          'amount', purchase_order_payment.amount,
-         'transfer_bank_account_name', transfer_bank_account.name)) 
+         'transfer_bank_account_name', transfer_bank_account.name))
       FROM purchase_order_payment
         LEFT JOIN public.transfer_bank_account ON transfer_bank_account.id = purchase_order_payment.transfer_bank_account_id
       WHERE purchase_order_payment.purchase_order_id = purchase_order.id
@@ -425,17 +424,27 @@ export async function getReport(
     FROM purchase_order
       INNER JOIN public.customer ON customer.id = purchase_order.customer_id
       INNER JOIN public.cash_register ON cash_register.id = purchase_order.cash_register_id
-    WHERE (purchase_order.created_at AT TIME ZONE 'America/Chihuahua')::date BETWEEN :start_date AND :end_date
+    WHERE ${whereClause}
     GROUP BY purchase_order.id, purchase_order.created_at, cash_register.name, customer.id, purchase_order.discount, purchase_order.total, purchase_order.status
     ORDER BY purchase_order.created_at DESC;
     `,
-    {
-      start_date,
-      end_date,
-    },
+    bindings,
+  )
+  return result.rows as PurchaseOrderReportSQLRow[]
+}
+
+export async function getReport(
+  ctx: Ctx,
+  req: PurchaseOrderGetReportRQ,
+): Promise<PurchaseOrderGetReportRS> {
+  const { start_date, end_date } = req
+  const rows = await queryPurchaseOrderReport(
+    ctx,
+    `(purchase_order.created_at AT TIME ZONE 'America/Chihuahua')::date BETWEEN :start_date AND :end_date`,
+    { start_date, end_date },
   )
 
-  const data = (result.rows || []).map((row: PurchaseOrderReportSQLRow) => {
+  const data = rows.map((row: PurchaseOrderReportSQLRow) => {
     return {
       order_id: row.order_id,
       created_at: row.created_at,

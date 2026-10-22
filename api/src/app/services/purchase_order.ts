@@ -19,6 +19,7 @@ import {
 import * as purchase_order from 'api/src/app/models/purchase_order'
 import { action } from '../context/decorators/endpoint_actions'
 import { Application } from 'interface'
+import { ReadableStream } from 'stream/web'
 
 export class PurchaseOrderService implements PurchaseOrderEndpoints {
   private ctx: Ctx
