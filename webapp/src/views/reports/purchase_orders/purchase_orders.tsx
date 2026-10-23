@@ -34,9 +34,6 @@ const PurchaseOrdersReport = () => {
   const [filteredPurchaseOrders, setFilteredPurchaseOrders] = useState<IndexedReport>({})
   const [isLoading, setIsLoading] = useState(false)
   const [canGetReport, setCanGetReport] = useState(true)
-  const [selectedYear, setSelectedYear] = useState(new Date().getFullYear())
-  const [isDownloadingAnnualReport, setIsDownloadingAnnualReport] = useState(false)
-
   const customerInputRef = React.useRef<HTMLInputElement>(null)
   const totalInputRef = React.useRef<HTMLInputElement>(null)
   const orderIdInputRef = React.useRef<HTMLInputElement>(null)
@@ -86,33 +83,6 @@ const PurchaseOrdersReport = () => {
       formOfPaymentString += ` - ${formOfPaymentObj.transfer_bank_account_name}`
     }
     return formOfPaymentString
-  }
-
-  const handleDownloadAnnualReport = async () => {
-    setIsDownloadingAnnualReport(true)
-    const data = await purchaseOrderClient.getAnnualReportAsExcelSheet({
-      year: selectedYear,
-      withDetails: false,
-    })
-    const chunks: any[] = []
-    const reader = (data as import('stream/web').ReadableStream<any>).getReader()
-    reader.read().then(function processResult(result): any {
-      if (result.done) {
-        const blob = new Blob(chunks)
-        const url = window.URL.createObjectURL(blob)
-        const a = document.createElement('a')
-        a.href = url
-        a.download = `ordenes_de_compra_${selectedYear}.xlsx`
-        document.body.appendChild(a)
-        a.click()
-        window.URL.revokeObjectURL(url)
-        document.body.removeChild(a)
-        setIsDownloadingAnnualReport(false)
-      } else {
-        chunks.push(result.value)
-        return reader.read().then(processResult)
-      }
-    })
   }
 
   const handleFilterTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -282,37 +252,6 @@ const PurchaseOrdersReport = () => {
             />
           </div>
         </div>
-        <fieldset>
-          <legend>Reporte anual</legend>
-          <div>
-            <label>Año: </label>
-            <select
-              className={styles.year_select}
-              value={selectedYear}
-              onChange={e => setSelectedYear(Number(e.target.value))}
-            >
-              {Array.from(
-                { length: Math.min(new Date().getFullYear() - 2022 + 1, 10) },
-                (_, i) => new Date().getFullYear() - Math.min(new Date().getFullYear() - 2022, 9) + i,
-              ).map(year => (
-                <option key={year} value={year}>{year}</option>
-              ))}
-            </select>
-          </div>
-          {isDownloadingAnnualReport ? (
-            <div className={styles.downloading_container}>
-              <Spinner />
-            </div>
-          ) : (
-            <button
-              className={`${viewStyles.secondary_button} ${styles.annual_report_button}`}
-              disabled={isDownloadingAnnualReport}
-              onClick={handleDownloadAnnualReport}
-            >
-              Descargar Excel
-            </button>
-          )}
-        </fieldset>
       </ViewHeader>
       {isLoading ? (
         <Spinner />
