@@ -21,7 +21,8 @@
     "migrate:down": "node build/api/setup/db/migrate.js down",
     "seed:make": "knex seed:make --cwd setup/db",
     "seed:run": "npx ts-node setup/db/seed.ts",
-    "generate:annual-report": "NODE_PATH=./build node build/api/src/tasks/generate_annual_report.js"
+    "generate:annual-report": "NODE_PATH=./build node build/api/src/tasks/generate_annual_report.js",
+    "generate:annual-report-with-details": "NODE_PATH=./build node build/api/src/tasks/generate_annual_report_with_details.js"
   },
   "devDependencies": {
     "@cucumber/cucumber": "^8.9.0",
