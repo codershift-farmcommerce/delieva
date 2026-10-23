@@ -24,9 +24,7 @@ async function run() {
   const outputPath = path.join(process.cwd(), `ordenes_de_compra_con_detalles_${year}.xlsx`)
 
   const workbook = new Excel.Workbook()
-  await workbook.xlsx.readFile(
-    InputFilePaths[FileType.YEARLY_PURCHASE_ORDERS_WITH_DETAILS_TEMPLATE],
-  )
+  await workbook.xlsx.readFile(InputFilePaths[FileType.YEARLY_PURCHASE_ORDERS_WITH_DETAILS_TEMPLATE])
   const worksheet = workbook.getWorksheet(1)
 
   if (worksheet) {
@@ -38,22 +36,20 @@ async function run() {
         row.getCell(2).value = moment(entry.created_at).format('DD/MM/YYYY')
         row.getCell(3).value = entry.cash_register_name
         row.getCell(4).value = entry.customer.name
-        row.getCell(5).value = detail.product.code
-        row.getCell(6).value = detail.product.name
-        row.getCell(7).value = Number(detail.quantity)
-        row.getCell(7).numFmt = '0.00'
-        row.getCell(8).value = Number(detail.unit_price)
-        row.getCell(8).numFmt = '0.00'
-        row.getCell(9).value = Number(detail.discount)
-        row.getCell(9).numFmt = '0.00'
-        row.getCell(10).value = Number(detail.detail_total)
-        row.getCell(10).numFmt = '0.00'
-        row.getCell(11).value = Number(entry.total)
-        row.getCell(11).numFmt = '0.00'
-        row.getCell(12).value = entry.form_of_payments
+        row.getCell(5).value = Number(entry.total)
+        row.getCell(5).numFmt = '0.00'
+        row.getCell(6).value = entry.form_of_payments
           .map(fop => fop.form_of_payment)
           .join(', ')
-        row.getCell(13).value = entry.status
+        row.getCell(7).value = entry.status
+        row.getCell(8).value = detail.product.code
+        row.getCell(9).value = detail.product.name
+        row.getCell(10).value = Number(detail.unit_price)
+        row.getCell(10).numFmt = '0.00'
+        row.getCell(11).value = Number(detail.quantity)
+        row.getCell(11).numFmt = '0.00'
+        row.getCell(12).value = Number(detail.detail_total)
+        row.getCell(12).numFmt = '0.00'
         row.commit()
         rowIndex++
       }
