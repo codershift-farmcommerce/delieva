@@ -41,6 +41,7 @@ async function run() {
         .map(fop => fop.form_of_payment)
         .join(', ')
       row.getCell(7).value = entry.status
+      row.getCell(8).value = entry.returned_cause
       row.commit()
     }
   }
