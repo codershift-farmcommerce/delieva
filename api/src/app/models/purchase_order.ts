@@ -68,6 +68,7 @@ type PurchaseOrderReportSQLRow = {
   form_of_payments: FormOfPaymentWithAmount[]
   purchase_order_detail: PurchaseOrderDetailSQLRow[]
   status: PurchaseOrderStatus
+  returned_cause: null | string
 }
 
 type PurchaseFormOfPaymentSQLRow = {
@@ -402,6 +403,7 @@ async function queryPurchaseOrderReport(
     purchase_order.tax1 AS tax1,
     purchase_order.total AS total,
     purchase_order.status AS status,
+    cause.description AS returned_cause,
     (SELECT JSON_AGG(JSON_BUILD_OBJECT(
         'product', JSON_BUILD_OBJECT(
             'code', purchase_order_detail.product_code,
@@ -425,8 +427,10 @@ async function queryPurchaseOrderReport(
     FROM purchase_order
       INNER JOIN public.customer ON customer.id = purchase_order.customer_id
       INNER JOIN public.cash_register ON cash_register.id = purchase_order.cash_register_id
+      LEFT JOIN public.returned_purchase_order ON returned_purchase_order.purchase_order_id = purchase_order.id
+      LEFT JOIN public.cause ON cause.id = returned_purchase_order.cause_id
     WHERE ${whereClause}
-    GROUP BY purchase_order.id, purchase_order.created_at, cash_register.name, customer.id, purchase_order.discount, purchase_order.total, purchase_order.status
+    GROUP BY purchase_order.id, purchase_order.created_at, cash_register.name, customer.id, purchase_order.discount, purchase_order.total, purchase_order.status, cause.description
     ORDER BY purchase_order.created_at DESC;
     `,
     bindings,
@@ -457,6 +461,7 @@ export async function getReport(
       form_of_payments: row.form_of_payments,
       detail: row.purchase_order_detail,
       status: row.status,
+      returned_cause: row.returned_cause,
     }
   })
 
@@ -488,6 +493,7 @@ export async function getAnnualReport(
       form_of_payments: row.form_of_payments,
       detail: row.purchase_order_detail,
       status: row.status,
+      returned_cause: row.returned_cause,
     }
   })
 
