@@ -32,7 +32,7 @@ async function run() {
       const row = worksheet.getRow(2 + i)
       const entry = report.entries[i]
       row.getCell(1).value = entry.order_id
-      row.getCell(2).value = moment(entry.created_at).format('DD/MM/YYYY')
+      row.getCell(2).value = moment(entry.created_at).format('DD/MM/YYYY hh:mm a')
       row.getCell(3).value = entry.cash_register_name
       row.getCell(4).value = entry.customer.name
       row.getCell(5).value = Number(entry.total)
