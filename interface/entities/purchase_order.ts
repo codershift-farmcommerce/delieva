@@ -64,6 +64,7 @@ export type PurchaseOrderReportEntry = {
   status: PurchaseOrderStatus
   tax1: number
   returned_cause: string | null
+  returned_at: string | null
 }
 
 export type PurchaseOrderReportEntryDetail = {

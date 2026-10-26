@@ -42,6 +42,7 @@ async function run() {
         .join(', ')
       row.getCell(7).value = entry.status
       row.getCell(8).value = entry.returned_cause
+      row.getCell(9).value = entry.returned_at ? moment(entry.returned_at).format('DD/MM/YYYY hh:mm a') : null
       row.commit()
     }
   }
