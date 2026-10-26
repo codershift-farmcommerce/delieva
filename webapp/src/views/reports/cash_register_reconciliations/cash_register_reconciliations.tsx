@@ -9,6 +9,8 @@ import Table from 'webapp/src/components/table/table'
 import { CashRegisterReconciliation } from 'interface/entities/cash_register'
 import clsx from 'clsx'
 import ClosedReconciliationReceipt from 'webapp/src/views/pos/closed_reconciliation_receipt/closed_reconciliation_receipt'
+import momentTz from 'moment-timezone'
+import { DefaultTimezone } from 'webapp/src/components/functions/constants'
 
 const cashRegisterClient = new CashRegisterClient()
 
@@ -56,7 +58,9 @@ const CashRegisterReconciliation = () => {
           value: reconciliation.id.toString(),
         },
         {
-          value: reconciliation.closed_at,
+          value: momentTz(reconciliation.closed_at)
+            .tz(DefaultTimezone)
+            .format('DD/MM/YYYY hh:mm a'),
         },
         {
           value: reconciliation.cashier_user_name,
